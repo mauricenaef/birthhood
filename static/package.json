@@ -1,0 +1,11 @@
+{
+  "name": "birthhood-static",
+  "version": "1.0.0",
+  "description": "Static version of birthhood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MAURICE NAEF webdesigner",
+  "license": "GPL-3.0"
+}
