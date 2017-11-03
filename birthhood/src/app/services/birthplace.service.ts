@@ -18,5 +18,10 @@ export class BirthplaceService {
     this.birthplaces.push(birthplace);
   }
 */
+/*getBirthplaceScoreById(id){
+  getExperiences
+  get Entries by experience
+  calculate score
+}*/
 }
 

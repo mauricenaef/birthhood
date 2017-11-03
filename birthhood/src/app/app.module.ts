@@ -13,13 +13,14 @@ import { BirthplacesComponent } from './birthplaces/birthplaces.component';
 import { AuthService } from './services/auth.service';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AgmCoreModule } from '@agm/core';
+import { CardComponent } from './card/card.component';
 
 
 const appRoutes: Routes = [
   { path: 'experiences', component: ExperiencesComponent },
   { path: 'birthplaces', component: BirthplacesComponent },
-
   { path: 'login-page', component: LoginPageComponent },
+  { path: 'cardsblah', component: CardComponent },
 ];
 
 @NgModule({
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     ExperiencesComponent,
     BirthplacesComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
