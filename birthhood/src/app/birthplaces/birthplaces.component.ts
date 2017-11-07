@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import {BirthplaceService} from '../services/birthplace.service';
+import { BirthplaceService } from '../services/birthplace.service';
+import {AgmCoreModule, LatLngLiteral, LatLngBounds, LatLng} from '@agm/core';
 
 @Component({
   selector: 'app-birthplaces',
@@ -45,17 +46,39 @@ export class BirthplacesComponent implements OnInit {
   }
 
   mapClicked($event: any) {
-    this.markers.push({
+    /*this.markers.push({
       lat: $event.coords.lat,
       lng: $event.coords.lng,
       draggable: true
-    });
+    });*/
   }
 
   markerDragEnd(m: Marker, $event: MouseEvent) {
     console.log('dragEnd', m, $event);
   }
 
+  updateCards($event: LatLngBounds){
+    // console.log($event.getCenter());
+
+    for (let marker of this.markers) {
+      // let thislatlong = new LatLngLiteral(marker.lat, marker.lng )
+      // let latlng = <LatLngLiteral>{lat: marker.lat, lng: marker.lng};
+      //let latLng = new MarkerAGM()
+      //latLng.constructor(parseFloat("51.373858"), parseFloat("7.895982"));
+      /*if ($event.contains(latLng)){
+          console.log(latLng);
+      }*/
+      if (marker.lat < $event.getNorthEast().lat() &&
+        marker.lng < $event.getNorthEast().lng() &&
+        marker.lat > $event.getSouthWest().lat() &&
+      marker.lng > $event.getSouthWest().lng()) {
+          console.log("inside", marker);
+      }
+
+    }
+
+
+  }
   ngOnInit() {
   }
 }
@@ -66,4 +89,27 @@ interface Marker {
   label?: string;
   draggable: boolean;
 }
+
+class MarkerAGM implements LatLng{
+
+  private _lat: number;
+  private _lng: number;
+  lat() : number {
+    return 51.373858;
+  }
+  lng() : number {
+    return 7.895982;
+  }
+  label?: string;
+  draggable: boolean;
+
+  "constructor"(lat: number, lng: number) {
+    this._lat = lat;
+    this._lng = lng;
+  }
+
+}
+
+
+
 

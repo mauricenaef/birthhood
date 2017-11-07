@@ -11,12 +11,15 @@ birthplaces-liste:
 </ul>
 
 <agm-map [latitude]="lat" [longitude]="lng"
-         (mapClick)="mapClicked($event)">
+         (mapClick)="mapClicked($event)"
+
+         (boundsChange)="updateCards($event)">
+
   <agm-marker
     *ngFor="let m of markers; let i = index"
     (markerClick)="clickedMarker(m.label, i)"
     [latitude]="m.lat"
-    [iconUrl]="'/assets/33622.svg'"
+
     [longitude]="m.lng"
     [label]="m.label"
     [markerDraggable]="m.draggable"
