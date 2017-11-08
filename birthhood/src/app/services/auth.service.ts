@@ -41,9 +41,9 @@ export class AuthService {
     );
   }
 
-  loginWithEmail() {
+  loginWithEmail(credentials: EmailPasswordCredentials) {
     return this.af.auth.signInWithEmailAndPassword(
-      'tobbrun@gmail.com', '123456'
+      credentials.email, credentials.password
     );
   }
 

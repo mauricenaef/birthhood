@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService, EmailPasswordCredentials} from '../services/auth.service';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -12,22 +12,32 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 export class LoginPageComponent implements OnInit {
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, public  authService: AuthService, private router: Router) { }
+  newUser: boolean = true; // to toggle login or signup form
+  passReset: boolean = false;
+
+  constructor(private fb: FormBuilder, public  authService: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.buildForm();
   }
 
-  login() {
-    this.authService.loginWithEmail().then((data) => {
+  login(credentials: EmailPasswordCredentials) {
+    this.authService.loginWithEmail(credentials).then((data) => {
       this.router.navigate(['']);
     });
   }
 
-  signup(){
-    // this.authService.emailSignUp()
+  signup() {
+    this.authService.emailSignUp(this.userForm.value).then(
+      (data) => {
+        this.login(this.userForm.value);
+        this.router.navigate(['']);
+      }
+    );
 
   }
+
   logout() {
     this.authService.logout().then((data) => {
       this.router.navigate(['']);
@@ -51,8 +61,11 @@ export class LoginPageComponent implements OnInit {
     this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
     this.onValueChanged(); // reset validation messages
   }
+
   onValueChanged(data?: any) {
-    if (!this.userForm) { return; }
+    if (!this.userForm) {
+      return;
+    }
     const form = this.userForm;
     for (const field in this.formErrors) {
       // clear previous error message (if any)
@@ -73,14 +86,14 @@ export class LoginPageComponent implements OnInit {
   };
   validationMessages = {
     'email': {
-      'required':      'Email is required.',
-      'email':         'Email must be a valid email'
+      'required': 'Email is required.',
+      'email': 'Email must be a valid email'
     },
     'password': {
-      'required':      'Password is required.',
-      'pattern':       'Password must be include at one letter and one number.',
-      'minlength':     'Password must be at least 4 characters long.',
-      'maxlength':     'Password cannot be more than 40 characters long.',
+      'required': 'Password is required.',
+      'pattern': 'Password must be include at one letter and one number.',
+      'minlength': 'Password must be at least 4 characters long.',
+      'maxlength': 'Password cannot be more than 40 characters long.',
     }
   };
 
