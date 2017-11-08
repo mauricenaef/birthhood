@@ -8,9 +8,9 @@ import {AngularFireAuth} from 'angularfire2/auth';
 @Injectable()
 export class AuthService {
 
-  private isLoggedIn: Boolean;
-  private user_displayName: String;
-  private user_email: String;
+  // private isLoggedIn: Boolean;
+  // private user_displayName: String;
+  // private user_email: String;
   authState: any = null;
   userRef: AngularFireObject<any>;
   constructor(public af: AngularFireAuth) {
@@ -23,15 +23,15 @@ export class AuthService {
       (auth) => {
         if (auth == null) {
           console.log('Logged out');
-          this.isLoggedIn = false;
-          this.user_displayName = '';
-          this.user_email = '';
+          //this.isLoggedIn = false;
+          // this.user_displayName = '';
+          // this.user_email = '';
           // this.router.navigate(['login']);
 
         } else {
-          this.isLoggedIn = true;
-          this.user_displayName = auth.displayName;
-          this.user_email = auth.email;
+          // this.isLoggedIn = true;
+          // this.user_displayName = auth.displayName;
+          // this.user_email = auth.email;
           console.log(auth.email);
           console.log('Logged in');
           console.log(auth);
@@ -41,6 +41,42 @@ export class AuthService {
     );
   }
 
+  // Returns true if user is logged in
+  get authenticated(): boolean {
+    return this.authState !== null;
+  }
+
+  // Returns current user data
+  get currentUser(): any {
+    return this.authenticated ? this.authState : null;
+  }
+
+  // Returns
+  get currentUserObservable(): any {
+    return this.af.authState
+  }
+
+  // Returns current user UID
+  get currentUserId(): string {
+    return this.authenticated ? this.authState.uid : '';
+  }
+
+  // Anonymous User
+  get currentUserAnonymous(): boolean {
+    return this.authenticated ? this.authState.isAnonymous : false
+  }
+
+  // Returns current user display name or Guest
+  get currentUserDisplayName(): string {
+    if (!this.authState) {
+      return 'Guest'
+    } else if (this.currentUserAnonymous) {
+      return 'Anonymous'
+    } else {
+      return this.authState['displayName'] || 'User without a Name'
+    }
+  }
+
   loginWithEmail(credentials: EmailPasswordCredentials) {
     return this.af.auth.signInWithEmailAndPassword(
       credentials.email, credentials.password
@@ -48,9 +84,12 @@ export class AuthService {
   }
 
   emailSignUp(credentials: EmailPasswordCredentials): Promise<any> {
-    return this.af.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
-      .then(() => console.log("success"))
-      .catch(error => console.log(error));
+    return this.af.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+      /*.then(() => console.log("success"))
+      .catch((error) => {
+      console.log(error);
+
+    });*/
   }
 
   logout() {

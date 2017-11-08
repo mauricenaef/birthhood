@@ -11,7 +11,7 @@ import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
   userForm: FormGroup;
-
+  errorMessage: String;
   newUser: boolean = true; // to toggle login or signup form
   passReset: boolean = false;
 
@@ -22,18 +22,29 @@ export class LoginPageComponent implements OnInit {
     this.buildForm();
   }
 
-  login(credentials: EmailPasswordCredentials) {
-    this.authService.loginWithEmail(credentials).then((data) => {
+
+  login() {
+    this.authService.loginWithEmail(this.userForm.value).then((data) => {
       this.router.navigate(['']);
+    }, (error) => {
+      this.errorMessage = error;
+      console.log("login:", error);
     });
+  }
+
+  toggleForm(): void {
+    this.newUser = !this.newUser;
   }
 
   signup() {
     this.authService.emailSignUp(this.userForm.value).then(
       (data) => {
-        this.login(this.userForm.value);
+        this.errorMessage = null;
+        //this.login(this.userForm.value);
         this.router.navigate(['']);
-      }
+      }, (error) => {
+        this.errorMessage = error;
+        console.log("login:", error)}
     );
 
   }
