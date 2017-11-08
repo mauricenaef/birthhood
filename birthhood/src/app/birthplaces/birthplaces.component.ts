@@ -63,17 +63,17 @@ export class BirthplacesComponent implements OnInit {
     for (let marker of this.markers) {
       // let thislatlong = new LatLngLiteral(marker.lat, marker.lng )
       // let latlng = <LatLngLiteral>{lat: marker.lat, lng: marker.lng};
-      //let latLng = new MarkerAGM()
-      //latLng.constructor(parseFloat("51.373858"), parseFloat("7.895982"));
-      /*if ($event.contains(latLng)){
+      let latLng = new MarkerAGM()
+      latLng.constructor(marker.lat, marker.lng);
+      if ($event.contains(latLng)){
           console.log(latLng);
-      }*/
-      if (marker.lat < $event.getNorthEast().lat() &&
+      }
+     /* if (marker.lat < $event.getNorthEast().lat() &&
         marker.lng < $event.getNorthEast().lng() &&
         marker.lat > $event.getSouthWest().lat() &&
       marker.lng > $event.getSouthWest().lng()) {
           console.log("inside", marker);
-      }
+      }*/
 
     }
 
@@ -91,21 +91,19 @@ interface Marker {
 }
 
 class MarkerAGM implements LatLng{
+/* Bug in AGM - das Interface erwartet Functions als Return values, GoogleMaps jedoch Floats.
+Deshalb als Type "any".
+ */
+  public lat: any;
+  public lng: any;
 
-  private _lat: number;
-  private _lng: number;
-  lat() : number {
-    return 51.373858;
-  }
-  lng() : number {
-    return 7.895982;
-  }
   label?: string;
   draggable: boolean;
 
   "constructor"(lat: number, lng: number) {
-    this._lat = lat;
-    this._lng = lng;
+
+    this.lat = lat;
+    this.lng = lng;
   }
 
 }

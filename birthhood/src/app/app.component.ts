@@ -13,15 +13,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
-  private isLoggedIn: Boolean;
+ /* private isLoggedIn: Boolean;
   private user_displayName: String;
-  private user_email: String;
+  private user_email: String;*/
   items: Observable<any[]>;
 
   constructor(db: AngularFirestore, public authService: AuthService, private router: Router) {
     this.items = db.collection('experiences').valueChanges();
     // this.login();
-
+/*
     this.authService.af.auth.onAuthStateChanged(
         (auth) => {
           if (auth == null) {
@@ -41,7 +41,7 @@ export class AppComponent {
             // this.router.navigate(['']);
           }
         }
-      );
+      );*/
   }
 
  /* login() {
