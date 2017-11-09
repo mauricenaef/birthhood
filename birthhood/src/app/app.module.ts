@@ -15,12 +15,15 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { AgmCoreModule } from '@agm/core';
 import { CardComponent } from './card/card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardFilterPipe } from './card-filter.pipe';
+import { AddExperienceComponent } from './add-experience/add-experience.component';
 
 const appRoutes: Routes = [
   { path: 'experiences', component: ExperiencesComponent },
   { path: 'birthplaces', component: BirthplacesComponent },
   { path: 'login-page', component: LoginPageComponent },
   { path: 'cardsblah', component: CardComponent },
+  { path: 'addExperience', component: AddExperienceComponent },
 ];
 
 @NgModule({
@@ -29,7 +32,9 @@ const appRoutes: Routes = [
     ExperiencesComponent,
     BirthplacesComponent,
     LoginPageComponent,
-    CardComponent
+    CardComponent,
+    CardFilterPipe,
+    AddExperienceComponent
   ],
   imports: [
     BrowserModule,

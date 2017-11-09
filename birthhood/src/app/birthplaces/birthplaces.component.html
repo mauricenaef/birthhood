@@ -9,6 +9,12 @@ birthplaces-liste:
     {{ item.adresse }}
   </li>
 </ul>
+<ul>
+<li *ngFor="let marker of markers | cardFilter">
+  {{marker.label}}
+    {{marker.visible}}
+</li>
+</ul>
 
 <agm-map [latitude]="lat" [longitude]="lng"
          (mapClick)="mapClicked($event)"
@@ -31,3 +37,5 @@ birthplaces-liste:
 
   </agm-marker>
 </agm-map>
+
+

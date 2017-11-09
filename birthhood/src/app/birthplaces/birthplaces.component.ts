@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BirthplaceService } from '../services/birthplace.service';
 import {AgmCoreModule, LatLngLiteral, LatLngBounds, LatLng} from '@agm/core';
-
+import { CardFilterPipe } from '../card-filter.pipe'
 @Component({
   selector: 'app-birthplaces',
   providers: [BirthplaceService],
@@ -21,19 +21,22 @@ export class BirthplacesComponent implements OnInit {
       lat: 51.673858,
       lng: 7.815982,
       label: 'A',
-      draggable: true
+      draggable: true,
+      visible: true
     },
     {
       lat: 51.373858,
       lng: 7.215982,
       label: 'B',
-      draggable: false
+      draggable: false,
+      visible: false
     },
     {
       lat: 51.723858,
       lng: 7.895982,
       label: 'C',
-      draggable: true
+      draggable: true,
+      visible: false
     }
   ]
   constructor(private service: BirthplaceService) {
@@ -65,9 +68,10 @@ export class BirthplacesComponent implements OnInit {
       // let latlng = <LatLngLiteral>{lat: marker.lat, lng: marker.lng};
       let latLng = new MarkerAGM()
       latLng.constructor(marker.lat, marker.lng);
-      if ($event.contains(latLng)){
-          console.log(latLng);
-      }
+      marker.visible = $event.contains(latLng) ? true : false;
+      // marker.label = Date.now().toString();
+      // console.log(marker);
+      // console.log(this.markers);
      /* if (marker.lat < $event.getNorthEast().lat() &&
         marker.lng < $event.getNorthEast().lng() &&
         marker.lat > $event.getSouthWest().lat() &&
@@ -88,6 +92,7 @@ interface Marker {
   lng: number;
   label?: string;
   draggable: boolean;
+  visible: boolean;
 }
 
 class MarkerAGM implements LatLng{
@@ -96,9 +101,6 @@ Deshalb als Type "any".
  */
   public lat: any;
   public lng: any;
-
-  label?: string;
-  draggable: boolean;
 
   "constructor"(lat: number, lng: number) {
 
