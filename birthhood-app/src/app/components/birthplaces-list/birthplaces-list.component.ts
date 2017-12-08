@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BirthplaceService } from '../../services/birthplace.service';
 
 @Component({
   selector: 'app-birthplaces-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BirthplacesListComponent implements OnInit {
 
-  constructor() { }
+  birthplaces;
+
+  constructor(private birthplaceService: BirthplaceService) {
+
+  }
 
   ngOnInit() {
+    this.birthplaceService.getBirthplaces().subscribe(
+      x => this.birthplaces = x
+      
+      
+    )
   }
 
 }

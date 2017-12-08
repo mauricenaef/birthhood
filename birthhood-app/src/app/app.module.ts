@@ -18,6 +18,9 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { UserExperienceAddComponent } from './components/user-experience-add/user-experience-add.component';
 import { UserExperienceListComponent } from './components/user-experience-list/user-experience-list.component';
 
+import { BirthplaceService } from './services/birthplace.service';
+import { ExperienceService } from './services/experience.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,7 @@ import { UserExperienceListComponent } from './components/user-experience-list/u
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [BirthplaceService, ExperienceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
