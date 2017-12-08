@@ -1,7 +1,7 @@
 /**
  * Created by tobiasbrunner on 02.11.17.
  * 
- * Upload Birthplaces. Currently JSON Objects are stored in the js file
+ * calculate scores.
  * 
  * TODO: 
  * read external JSON file.
@@ -11,107 +11,81 @@
  * 
  * 
  */
-//https://firebase.google.com/docs/firestore/quickstart
-//const admin = require('firebase-admin');
 
 const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
 var config = {
-    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-    authDomain: "birthhood.firebaseapp.com",
-    databaseURL: "https://birthhood.firebaseio.com",
-    projectId: "birthhood",
-    storageBucket: "birthhood.appspot.com",
-    messagingSenderId: "986661546141"
-  };
+  apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
+  authDomain: "birthhood.firebaseapp.com",
+  databaseURL: "https://birthhood.firebaseio.com",
+  projectId: "birthhood",
+  storageBucket: "birthhood.appspot.com",
+  messagingSenderId: "986661546141"
+};
 firebase.initializeApp(config);
-  
-  // Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
-//var birthplaces;
 
+var db = firebase.firestore();
 var birthplaces = db.collection('birthplaces');
 
+var birthplaces_sync = []; //local birthplaces with ids
 
+var items = birthplaces.where('NAME', '>=', '');
 
-
-
-
-var item = birthplaces.where('NAME', '>=', '');
-item.get().then(function(querySnapshot) {
- querySnapshot.forEach(function(doc) {
-     //console.log(doc.data()["NAME"]);
-     //console.log(doc.id);
-
-     var experiences = db.collection('birthexperiences').where('birthplace_id', '==', doc.id);
-
-
-
-    var b = [];
-    var g= [];
-    var i= [];
-    var u= [];
-    var w= [];
-
-
-     experiences.get().then(exp => {
-      exp.forEach( thisexperience => {
-        console.log(thisexperience.u1);
-        //b.push(thisexperience.b1)
-      });
-
-     })
-     //
-     //birthexperience["birthplace_id"] = doc.id;
-     //delete birthexperience["birthplace"];
-     //uploadExerience(birthexperience)
-     });
- })
- .catch(function(error) {
-     console.log("Error getting documents: ", error);
- });
-
-
-  //get birthplaces
-
-  //loop
-
-  //get experiences
-
-  //calculate Score
-
-  //end loop
-/*
-  let i = 0;
- for (birthplace of birthplaces) {
-     
-     //console.log(birthplace);
- 
-  db.collection("birthplaces").add(birthplace)
-.then(function(docRef) {
-    console.log(i);
-    i++;
-    console.log("Document written with ID: ", docRef.id);
+items.get().then(function (querySnapshot) {
+  querySnapshot.forEach(function (doc) {
+    const data = doc.data();
+    data.id = doc.id;
+    birthplaces_sync.push(data);
+  });
+  getScores();
 })
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
- }
+  .catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
 
-/*
-var serviceAccount = require("./importProjekt-478aba9ff144.json");
+//get Experiences for all birthplaces
+function getScores() {
+  for (let birthplace of birthplaces_sync) {
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
+    let scores = {};
+    scores.b = [];
+    scores.g = [];
+    scores.i = [];
+    scores.u = [];
+    scores.w = [];
 
-var db = admin.firestore();
+    var experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplace.id);
+    experiences.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        thisexperience = doc.data();
+        for (var property in thisexperience) {
+          if (thisexperience.hasOwnProperty(property)) {
+            if ("bgiuw".indexOf(property.charAt(0)) >= 0 && property.length < 4) {
+              scores[property.charAt(0)].push(thisexperience[property])
+            }
+          }
+        }
+      })
+      score = calculateScores(scores);
+      var docRef = db.collection('birthplaces').doc(birthplace.id);
 
-var docRef = db.collection('users').doc('alovelace');
+      docRef.update(score).then(function () {
+        console.log("Document successfully updated!");
+      })
+        .catch(function (error) {
+          console.error("Error updating document: ", error);
+        });
+    });
+  }
+}
 
-var setAda = docRef.set({
-    first: 'Ada',
-    last: 'Lovelace',
-    born: 1815
-});*/
+//calculate scores based on a collection of arrays
+function calculateScores(scores) {
+  let returnscores = { b: 0, g: 0, i: 0, u: 0, w: 0 }
+  for (var property in returnscores) {
+    cleanArray = scores[property].filter(x => x != '' && x != "-");
+    returnscores[property] = cleanArray.length > 0 ? cleanArray.reduce((a, b) => a + b) / cleanArray.length : null;
+  }
+  return returnscores;
+}
