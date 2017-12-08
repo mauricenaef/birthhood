@@ -37,7 +37,7 @@ firebase.initializeApp(config);
  let birthexperiences = [
   {
     "entry_date": "20.05.17 21:31:33",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Asana Spital Leuggern",
     "birth_date": "26.12.02",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -81,7 +81,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 13:01:37",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Asana Spital Leuggern",
     "birth_date": "18.10.16",
     "birth_type": "Vaginale Geburt",
@@ -125,7 +125,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 21:21:12",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Bethesda Spital",
     "birth_date": "22.07.16",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -169,7 +169,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:33:43",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Bethesda Spital",
     "birth_date": "28.05.15",
     "birth_type": "Vaginale Geburt",
@@ -213,7 +213,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 23:44:54",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Delphys",
     "birth_date": "29.01.17",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -257,7 +257,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 20:41:30",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Delphys",
     "birth_date": "05.06.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -301,7 +301,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 14:39:44",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Delphys",
     "birth_date": "18.12.16",
     "birth_type": "Vaginale Geburt",
@@ -345,7 +345,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:45:09",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Hamburg",
     "birth_date": "10.06.16",
     "birth_type": "Vaginale Geburt",
@@ -389,7 +389,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 07:32:15",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "Geburtshaus Hamburg",
     "birth_date": "27.02.17",
     "birth_type": "Vaginale Geburt",
@@ -433,7 +433,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "15.10.17 10:17:21",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "Geburtshaus Hamburg",
     "birth_date": "18.08.17",
     "birth_type": "Vaginale Geburt",
@@ -477,7 +477,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:09:10",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Terra Alta",
     "birth_date": "29.06.10",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -521,7 +521,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:23:51",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Terra Alta",
     "birth_date": "23.03.16",
     "birth_type": "Vaginale Geburt",
@@ -565,7 +565,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 19:53:55",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Terra Alta",
     "birth_date": "16.03.15",
     "birth_type": "Vaginale Geburt",
@@ -609,7 +609,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:08:40",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Zürcher Oberland",
     "birth_date": "29.06.10",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -653,7 +653,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:53:59",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Zürcher Oberland",
     "birth_date": "10.12.14",
     "birth_type": "Vaginale Geburt",
@@ -697,7 +697,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "02.02.17 05:59:02",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Zürcher Oberland",
     "birth_date": "14.04.15",
     "birth_type": "Vaginale Geburt",
@@ -741,7 +741,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:54:11",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Zürcher Oberland",
     "birth_date": "10.12.14",
     "birth_type": "Vaginale Geburt",
@@ -785,7 +785,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 15:51:55",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Zürcher Oberland",
     "birth_date": "15.09.13",
     "birth_type": "Vaginale Geburt",
@@ -829,7 +829,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "22.05.17 07:45:44",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Geburtshaus Zürcher Oberland",
     "birth_date": "16.10.16",
     "birth_type": "Vaginale Geburt",
@@ -873,7 +873,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:09:26",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Hirslanden",
     "birth_date": "20.04.10",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -917,7 +917,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 22:22:50",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Hirslanden",
     "birth_date": "29.05.16",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -961,7 +961,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:14:57",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Hirslanden",
     "birth_date": "29.10.12",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1005,7 +1005,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:08:37",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Hirslanden",
     "birth_date": "01.06.13",
     "birth_type": "Vaginale Geburt",
@@ -1049,7 +1049,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 17:41:55",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Hirslanden",
     "birth_date": "06.01.17",
     "birth_type": "Vaginale Geburt",
@@ -1093,7 +1093,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:49:35",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Inselspital",
     "birth_date": "23.07.14",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -1137,7 +1137,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:48:49",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Inselspital",
     "birth_date": "03.02.16",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -1181,7 +1181,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:41:57",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Inselspital",
     "birth_date": "06.05.14",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1225,7 +1225,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:47:59",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Inselspital",
     "birth_date": "06.08.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1269,7 +1269,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:48:02",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Inselspital",
     "birth_date": "04.05.17",
     "birth_type": "Vaginale Geburt",
@@ -1313,7 +1313,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:18:38",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Inselspital",
     "birth_date": "03.03.13",
     "birth_type": "Vaginale Geburt",
@@ -1357,7 +1357,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 22:03:47",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "18.09.16",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1401,7 +1401,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:46:15",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "10.11.10",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1445,7 +1445,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:47:43",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "06.08.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1489,7 +1489,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:16:42",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "04.02.17",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1533,7 +1533,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:23:17",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "07.03.17",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1577,7 +1577,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 19:19:22",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "27.05.15",
     "birth_type": "Vaginale Geburt",
@@ -1621,7 +1621,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:45:23",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baden",
     "birth_date": "05.11.13",
     "birth_type": "Vaginale Geburt",
@@ -1665,7 +1665,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 23:02:07",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Baselland",
     "birth_date": "03.10.15",
     "birth_type": "Vaginale Geburt",
@@ -1709,7 +1709,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 23:41:18",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Frauenfeld (STGAG)",
     "birth_date": "25.12.13",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1753,7 +1753,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:37:23",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Frauenfeld (STGAG)",
     "birth_date": "02.01.11",
     "birth_type": "Vaginale Geburt",
@@ -1797,7 +1797,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 06:36:53",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Frauenfeld (STGAG)",
     "birth_date": "02.12.10",
     "birth_type": "Vaginale Geburt",
@@ -1841,7 +1841,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:59:04",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Graubünden",
     "birth_date": "23.05.16",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -1885,7 +1885,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:08:05",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Luzern",
     "birth_date": "07.11.16",
     "birth_type": "Vaginale Geburt",
@@ -1929,7 +1929,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:29:21",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Luzern",
     "birth_date": "01.02.17",
     "birth_type": "Vaginale Geburt",
@@ -1973,7 +1973,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:25:42",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Münsterlingen (STGAG)",
     "birth_date": "12.03.09",
     "birth_type": "Vaginale Geburt",
@@ -2017,7 +2017,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:18:36",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Münsterlingen (STGAG)",
     "birth_date": "03.05.14",
     "birth_type": "Vaginale Geburt",
@@ -2061,7 +2061,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 22:44:00",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Nidwalden",
     "birth_date": "11.02.17",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2105,7 +2105,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 06:53:25",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital St. Gallen",
     "birth_date": "14.09.12",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -2149,7 +2149,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:56:36",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital St. Gallen",
     "birth_date": "28.05.14",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2193,7 +2193,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:40:01",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital St. Gallen",
     "birth_date": "04.06.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2237,7 +2237,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:22:34",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital St. Gallen",
     "birth_date": "23.06.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2281,7 +2281,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 06:20:11",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital St. Gallen",
     "birth_date": "18.11.15",
     "birth_type": "Vaginale Geburt",
@@ -2325,7 +2325,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:02:50",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital St. Gallen",
     "birth_date": "29.11.15",
     "birth_type": "Vaginale Geburt",
@@ -2369,7 +2369,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:33:28",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Winterthur (KSW)",
     "birth_date": "25.01.17",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -2413,7 +2413,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:33:42",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Winterthur (KSW)",
     "birth_date": "17.06.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2457,7 +2457,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:38:45",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Winterthur (KSW)",
     "birth_date": "02.07.08",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2501,7 +2501,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 20:29:39",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Winterthur (KSW)",
     "birth_date": "12.07.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2545,7 +2545,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:52:26",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Kantonsspital Winterthur (KSW)",
     "birth_date": "21.05.15",
     "birth_type": "Vaginale Geburt",
@@ -2589,7 +2589,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "22.10.17 06:54:45",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "Klinikum Mannheim",
     "birth_date": "05.11.09",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2633,7 +2633,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:36:17",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "09.07.14",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2677,7 +2677,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 20:59:57",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "18.06.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -2721,7 +2721,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:50:05",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "15.03.17",
     "birth_type": "Vaginale Geburt",
@@ -2765,7 +2765,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:45:53",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "28.04.17",
     "birth_type": "Vaginale Geburt",
@@ -2809,7 +2809,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:04:19",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "26.10.16",
     "birth_type": "Vaginale Geburt",
@@ -2853,7 +2853,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:38:29",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "03.09.11",
     "birth_type": "Vaginale Geburt",
@@ -2897,7 +2897,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:53:11",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Paracelsus Spital",
     "birth_date": "20.08.16",
     "birth_type": "Vaginale Geburt",
@@ -2941,7 +2941,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:23:16",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "See-Spital",
     "birth_date": "20.11.13",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -2985,7 +2985,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:49:02",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "12.04.17",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3029,7 +3029,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:50:45",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "03.09.15",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3073,7 +3073,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:45:34",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "22.09.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3117,7 +3117,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:12:42",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "06.01.12",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3161,7 +3161,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 17:22:54",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "09.10.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3205,7 +3205,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 06:20:08",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "07.02.17",
     "birth_type": "Vaginale Geburt",
@@ -3249,7 +3249,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 06:35:48",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "18.12.16",
     "birth_type": "Vaginale Geburt",
@@ -3293,7 +3293,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "06.06.17 14:02:31",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Bülach",
     "birth_date": "18.11.13",
     "birth_type": "Vaginale Geburt",
@@ -3337,7 +3337,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:04:01",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Grabs",
     "birth_date": "28.01.17",
     "birth_type": "Vaginale Geburt",
@@ -3381,7 +3381,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:44:19",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Herisau",
     "birth_date": "13.03.17",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3425,7 +3425,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:12:25",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Interlaken (fmi)",
     "birth_date": "28.10.15",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3469,7 +3469,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:07:30",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Interlaken (fmi)",
     "birth_date": "26.12.11",
     "birth_type": "Vaginale Geburt",
@@ -3513,7 +3513,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:57:14",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Interlaken (fmi)",
     "birth_date": "12.11.09",
     "birth_type": "Vaginale Geburt",
@@ -3557,7 +3557,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:51:07",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Limmattal",
     "birth_date": "10.07.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3601,7 +3601,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:43:18",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Limmattal",
     "birth_date": "27.08.16",
     "birth_type": "Vaginale Geburt",
@@ -3645,7 +3645,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 17:23:27",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Männedorf",
     "birth_date": "10.11.16",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3689,7 +3689,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 21:43:19",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Münsingen",
     "birth_date": "11.07.16",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3733,7 +3733,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:27:19",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Muri",
     "birth_date": "04.10.16",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3777,7 +3777,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:27:39",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Muri",
     "birth_date": "04.10.16",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3821,7 +3821,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:48:42",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Thun (STS)",
     "birth_date": "19.06.16",
     "birth_type": "Vaginale Geburt",
@@ -3865,7 +3865,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 09:04:25",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Uster",
     "birth_date": "13.02.17",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -3909,7 +3909,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:07:09",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Uster",
     "birth_date": "20.07.16",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -3953,7 +3953,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:29:18",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Walenstadt",
     "birth_date": "20.08.14",
     "birth_type": "Vaginale Geburt",
@@ -3997,7 +3997,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:58:21",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Wetzikon (GZO)",
     "birth_date": "06.06.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -4041,7 +4041,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:18:44",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Wetzikon (GZO)",
     "birth_date": "24.09.16",
     "birth_type": "Vaginale Geburt",
@@ -4085,7 +4085,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.10.17 15:40:37",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Wetzikon (GZO)",
     "birth_date": "18.04.05",
     "birth_type": "Vaginale Geburt",
@@ -4129,7 +4129,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:26:12",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Zollikerberg",
     "birth_date": "31.08.11",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -4173,7 +4173,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:28:31",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Zollikerberg",
     "birth_date": "18.07.13",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -4217,7 +4217,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 22:30:28",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Zollikerberg",
     "birth_date": "30.03.17",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -4261,7 +4261,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 22:39:18",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Zollikerberg",
     "birth_date": "22.08.15",
     "birth_type": "Ungeplanter Kaiserschnitt",
@@ -4305,7 +4305,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:08:23",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Zollikerberg",
     "birth_date": "17.09.16",
     "birth_type": "Vaginale Geburt",
@@ -4349,7 +4349,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 07:23:14",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Spital Zollikerberg",
     "birth_date": "05.03.17",
     "birth_type": "Vaginale Geburt",
@@ -4393,7 +4393,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "20.05.17 21:17:47",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Stadtspital Triemli",
     "birth_date": "04.05.16",
     "birth_type": "Vaginale Geburt",
@@ -4437,7 +4437,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 11:07:33",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "universitätsklinikum freiburg",
     "birth_date": "05.09.15",
     "birth_type": "Vaginale Geburt",
@@ -4481,7 +4481,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "22.10.17 09:27:40",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "Universitätsklinikum Mannheim",
     "birth_date": "25.04.12",
     "birth_type": "Vaginale Geburt",
@@ -4525,7 +4525,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "22.10.17 09:33:51",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "Universitätsklinikum Mannheim",
     "birth_date": "01.06.17",
     "birth_type": "Vaginale Geburt",
@@ -4569,7 +4569,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 21:44:54",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Universitätsspital Basel",
     "birth_date": "22.09.15",
     "birth_type": "Vaginale Geburt",
@@ -4613,7 +4613,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 22:24:23",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Universitätsspital Basel",
     "birth_date": "21.01.16",
     "birth_type": "Vaginale Geburt",
@@ -4657,7 +4657,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:24:54",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Universitätsspital Zürich (USZ)",
     "birth_date": "20.09.14",
     "birth_type": "Geplanter Kaiserschnitt",
@@ -4701,7 +4701,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "18.05.17 20:52:08",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Universitätsspital Zürich (USZ)",
     "birth_date": "26.01.17",
     "birth_type": "Vaginale Geburt",
@@ -4745,7 +4745,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 10:23:03",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Universitätsspital Zürich (USZ)",
     "birth_date": "03.06.16",
     "birth_type": "Vaginale Geburt",
@@ -4789,7 +4789,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "19.05.17 10:24:04",
-    "count": "Schweiz",
+    "country": "Schweiz",
     "birthplace": "Universitätsspital Zürich (USZ)",
     "birth_date": "03.06.16",
     "birth_type": "Vaginale Geburt",
@@ -4833,7 +4833,7 @@ firebase.initializeApp(config);
   },
   {
     "entry_date": "15.10.17 19:23:50",
-    "count": "Deutschland",
+    "country": "Deutschland",
     "birthplace": "ZENTRALKLINIKUM AUGSBURG",
     "birth_date": "12.01.04",
     "birth_type": "Vaginale Geburt",
@@ -4877,18 +4877,12 @@ firebase.initializeApp(config);
   }
 ]
 
-
 let i = 0;
 var birthplaces = db.collection('birthplaces');
-//console.log(typeof(birthexperiences));
 for (let birthexperience of birthexperiences) {
-   console.log(birthexperience.birth_date);
-   var item = birthplaces.where('NAME', '==', birthexperience["birthplace"]);
+   var item = birthplaces.where('name', '==', birthexperience["birthplace"]);
    item.get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-        //console.log(doc.data()["NAME"]);
-        //console.log(doc.id);
-        //
         birthexperience["birthplace_id"] = doc.id;
         delete birthexperience["birthplace"];
         uploadExerience(birthexperience)
@@ -4900,7 +4894,6 @@ for (let birthexperience of birthexperiences) {
   }
 
   function uploadExerience(experience) {
-    console.log(experience.birth_date);
     db.collection("birthexperiences").add(experience)
     .then(function(docRef) {
       console.log(i);
@@ -4911,35 +4904,3 @@ for (let birthexperience of birthexperiences) {
       console.error("Error adding document: ", error);
     });
   }
-   //console.log(birthexperience["birthplace"]);
-   //var item = db.collection('birthplaces');
-   /*, ref => ref.where('NAME', '==', 'Geburtshaus Delphys') ).valueChanges();
-   item.subscribe(data => console.log(data) )
-
-   /*
-db.collection("birthplaces").add(birthplace)
-.then(function(docRef) {
-  console.log(i);
-  i++;
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});*/
-
-/*
-var serviceAccount = require("./importProjekt-478aba9ff144.json");
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
-
-var db = admin.firestore();
-
-var docRef = db.collection('users').doc('alovelace');
-
-var setAda = docRef.set({
-    first: 'Ada',
-    last: 'Lovelace',
-    born: 1815
-});*/

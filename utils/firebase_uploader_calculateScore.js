@@ -30,7 +30,8 @@ var birthplaces = db.collection('birthplaces');
 
 var birthplaces_sync = []; //local birthplaces with ids
 
-var items = birthplaces.where('NAME', '>=', '');
+//get all birthplaces
+var items = birthplaces.where('name', '>=', '');
 
 items.get().then(function (querySnapshot) {
   querySnapshot.forEach(function (doc) {
@@ -44,16 +45,15 @@ items.get().then(function (querySnapshot) {
     console.log("Error getting documents: ", error);
   });
 
+  var scorenames = ["b", "g", "i", "u", "w"];
 //get Experiences for all birthplaces
 function getScores() {
   for (let birthplace of birthplaces_sync) {
 
     let scores = {};
-    scores.b = [];
-    scores.g = [];
-    scores.i = [];
-    scores.u = [];
-    scores.w = [];
+    scorenames.forEach( (scorename) => {
+      scores[scorename] = [];
+    });
 
     var experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplace.id);
     experiences.get().then((querySnapshot) => {
@@ -61,15 +61,15 @@ function getScores() {
         thisexperience = doc.data();
         for (var property in thisexperience) {
           if (thisexperience.hasOwnProperty(property)) {
-            if ("bgiuw".indexOf(property.charAt(0)) >= 0 && property.length < 4) {
-              scores[property.charAt(0)].push(thisexperience[property])
+            if (scorenames.includes(property.charAt(0)) && property.length < 4) {
+                scores[property.charAt(0)].push(thisexperience[property])
             }
           }
         }
       })
       score = calculateScores(scores);
       var docRef = db.collection('birthplaces').doc(birthplace.id);
-
+      
       docRef.update(score).then(function () {
         console.log("Document successfully updated!");
       })
@@ -82,10 +82,10 @@ function getScores() {
 
 //calculate scores based on a collection of arrays
 function calculateScores(scores) {
-  let returnscores = { b: 0, g: 0, i: 0, u: 0, w: 0 }
-  for (var property in returnscores) {
-    cleanArray = scores[property].filter(x => x != '' && x != "-");
-    returnscores[property] = cleanArray.length > 0 ? cleanArray.reduce((a, b) => a + b) / cleanArray.length : null;
+  let returnscores = {};
+  for (let scorename of scorenames) {
+    cleanArray = scores[scorename].filter(x => x != '' && x != "-");
+    returnscores["score_"+scorename] = cleanArray.length > 0 ? cleanArray.reduce((a, b) => a + b) / cleanArray.length : null;
   }
   return returnscores;
 }

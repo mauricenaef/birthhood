@@ -32,545 +32,546 @@ firebase.initializeApp(config);
 
 var birthplaces = [
   {
-    "NAME": "Asana Spital Leuggern",
-    "STRASSE": "Schulweg 3",
-    "PLZ": 5316,
-    "ORT": "Leuggern",
-    "URL": "http://www.spitalleuggern.ch/"
+    "name": "Asana Spital Leuggern",
+    "strasse": "Schulweg 3",
+    "plz": 5316,
+    "ort": "Leuggern",
+    "url": "http://www.spitalleuggern.ch/"
   },
   {
-    "NAME": "Bethesda Spital",
-    "STRASSE": "Gellertstrasse 144",
-    "PLZ": 4052,
-    "ORT": "Basel",
-    "URL": "https://bethesda-spital.ch"
+    "name": "Bethesda Spital",
+    "strasse": "Gellertstrasse 144",
+    "plz": 4052,
+    "ort": "Basel",
+    "url": "https://bethesda-spital.ch"
   },
   {
-    "NAME": "Gesundheitszentrum Fricktal (GZF)",
-    "STRASSE": "Spitalstrasse 10",
-    "PLZ": 5080,
-    "ORT": "Laufenburg",
-    "URL": "https://www.gzf.ch"
+    "name": "Gesundheitszentrum Fricktal (GZF)",
+    "strasse": "Spitalstrasse 10",
+    "plz": 5080,
+    "ort": "Laufenburg",
+    "url": "https://www.gzf.ch"
   },
   {
-    "NAME": "Hirslanden",
-    "STRASSE": "Witellikerstrasse 40",
-    "PLZ": 8032,
-    "ORT": "Zürich",
-    "URL": "http://hirslanden.ch"
+    "name": "Hirslanden",
+    "strasse": "Witellikerstrasse 40",
+    "plz": 8032,
+    "ort": "Zürich",
+    "url": "http://hirslanden.ch"
   },
   {
-    "NAME": "Inselspital",
-    "STRASSE": "Freiburgstrasse 8",
-    "PLZ": 3010,
-    "ORT": "Bern",
-    "URL": "https://www.insel.ch"
+    "name": "Inselspital",
+    "strasse": "Freiburgstrasse 8",
+    "plz": 3010,
+    "ort": "Bern",
+    "url": "https://www.insel.ch"
   },
   {
-    "NAME": "Kantonsspital Aarau (KSA)",
-    "STRASSE": "Tellstrasse 25",
-    "PLZ": 5001,
-    "ORT": "Aarau",
-    "URL": "https://www.ksa.ch"
+    "name": "Kantonsspital Aarau (KSA)",
+    "strasse": "Tellstrasse 25",
+    "plz": 5001,
+    "ort": "Aarau",
+    "url": "https://www.ksa.ch"
   },
   {
-    "NAME": "Kantonsspital Baden",
-    "STRASSE": "Im Ergel 1",
-    "PLZ": 5404,
-    "ORT": "Baden",
-    "URL": "www.kantonsspitalbaden.ch/"
+    "name": "Kantonsspital Baden",
+    "strasse": "Im Ergel 1",
+    "plz": 5404,
+    "ort": "Baden",
+    "url": "www.kantonsspitalbaden.ch/"
   },
   {
-    "NAME": "Kantonsspital Baselland",
-    "STRASSE": "Rheinstrasse 26",
-    "PLZ": 4410,
-    "ORT": "Liestal",
-    "URL": "https://www.ksbl.ch"
+    "name": "Kantonsspital Baselland",
+    "strasse": "Rheinstrasse 26",
+    "plz": 4410,
+    "ort": "Liestal",
+    "url": "https://www.ksbl.ch"
   },
   {
-    "NAME": "Kantonsspital Frauenfeld (STGAG)",
-    "STRASSE": "Pfaffenholzstrasse 4",
-    "PLZ": 8501,
-    "ORT": "Frauenfeld",
-    "URL": "http://www.stgag.ch/"
+    "name": "Kantonsspital Frauenfeld (STGAG)",
+    "strasse": "Pfaffenholzstrasse 4",
+    "plz": 8501,
+    "ort": "Frauenfeld",
+    "url": "http://www.stgag.ch/"
   },
   {
-    "NAME": "Kantonsspital Glarus",
-    "STRASSE": "Burgstrasse 99",
-    "PLZ": 8750,
-    "ORT": "Glarus",
-    "URL": "www.ksgl.ch"
+    "name": "Kantonsspital Glarus",
+    "strasse": "Burgstrasse 99",
+    "plz": 8750,
+    "ort": "Glarus",
+    "url": "www.ksgl.ch"
   },
   {
-    "NAME": "Kantonsspital Graubünden",
-    "STRASSE": "Loestrasse 170",
-    "PLZ": 7000,
-    "ORT": "Chur",
-    "URL": "https://www.ksgr.ch/"
+    "name": "Kantonsspital Graubünden",
+    "strasse": "Loestrasse 170",
+    "plz": 7000,
+    "ort": "Chur",
+    "url": "https://www.ksgr.ch/"
   },
   {
-    "NAME": "Kantonsspital Luzern (LUKS)|",
-    "STRASSE": "Spitalstrasse 34",
-    "PLZ": 6000,
-    "ORT": "Luzern",
-    "URL": "https://www.luks.ch"
+    "name": "Kantonsspital Luzern (LUKS)|",
+    "strasse": "Spitalstrasse 34",
+    "plz": 6000,
+    "ort": "Luzern",
+    "url": "https://www.luks.ch"
   },
   {
-    "NAME": "Kantonsspital Münsterlingen (STGAG)",
-    "STRASSE": "Spitalcampus 1",
-    "PLZ": 8596,
-    "ORT": "Münsterlingen",
-    "URL": "www.stgag.ch"
+    "name": "Kantonsspital Münsterlingen (STGAG)",
+    "strasse": "Spitalcampus 1",
+    "plz": 8596,
+    "ort": "Münsterlingen",
+    "url": "www.stgag.ch"
   },
   {
-    "NAME": "Kantonsspital Nidwalden",
-    "STRASSE": "Ennetmooserstrasse 19",
-    "PLZ": 6370,
-    "ORT": "Stans",
-    "URL": "www.ksnw.ch"
+    "name": "Kantonsspital Nidwalden",
+    "strasse": "Ennetmooserstrasse 19",
+    "plz": 6370,
+    "ort": "Stans",
+    "url": "www.ksnw.ch"
   },
   {
-    "NAME": "Kantonsspital Obwalden",
-    "STRASSE": "Brünigstrasse 181",
-    "PLZ": 6060,
-    "ORT": "Sarnen",
-    "URL": "https://www.ksow.ch"
+    "name": "Kantonsspital Obwalden",
+    "strasse": "Brünigstrasse 181",
+    "plz": 6060,
+    "ort": "Sarnen",
+    "url": "https://www.ksow.ch"
   },
   {
-    "NAME": "Kantonsspital Olten (soH)",
-    "STRASSE": "Baslerstrasse 150",
-    "PLZ": 4600,
-    "ORT": "Olten",
-    "URL": "https://www.so-h.ch/kantonsspital-olten"
+    "name": "Kantonsspital Olten (soH)",
+    "strasse": "Baslerstrasse 150",
+    "plz": 4600,
+    "ort": "Olten",
+    "url": "https://www.so-h.ch/kantonsspital-olten"
   },
   {
-    "NAME": "Kantonsspital St. Gallen",
-    "STRASSE": "Rorschacher Str. 95",
-    "PLZ": 9007,
-    "ORT": "St. Gallen",
-    "URL": "https://www.kssg.ch/"
+    "name": "Kantonsspital St. Gallen",
+    "strasse": "Rorschacher Str. 95",
+    "plz": 9007,
+    "ort": "St. Gallen",
+    "url": "https://www.kssg.ch/"
   },
   {
-    "NAME": "Kantonsspital Uri",
-    "STRASSE": "Spitalstrasse 1",
-    "PLZ": 6460,
-    "ORT": "Altdorf",
-    "URL": "https://www.ksuri.ch"
+    "name": "Kantonsspital Uri",
+    "strasse": "Spitalstrasse 1",
+    "plz": 6460,
+    "ort": "Altdorf",
+    "url": "https://www.ksuri.ch"
   },
   {
-    "NAME": "Kantonsspital Winterthur (KSW)",
-    "STRASSE": "Brauerstrasse 15",
-    "PLZ": 8401,
-    "ORT": "Winterthur",
-    "URL": "https://www.ksw.ch"
+    "name": "Kantonsspital Winterthur (KSW)",
+    "strasse": "Brauerstrasse 15",
+    "plz": 8401,
+    "ort": "Winterthur",
+    "url": "https://www.ksw.ch"
   },
   {
-    "NAME": "Kantonsspital Zug (ZGKS)|",
-    "STRASSE": "Landhausstrasse 11",
-    "PLZ": 6340,
-    "ORT": "Baar",
-    "URL": "https://www.zgks.ch"
+    "name": "Kantonsspital Zug (ZGKS)|",
+    "strasse": "Landhausstrasse 11",
+    "plz": 6340,
+    "ort": "Baar",
+    "url": "https://www.zgks.ch"
   },
   {
-    "NAME": "Klinik Bethanien",
-    "STRASSE": "Toblerstrasse 51",
-    "PLZ": 8044,
-    "ORT": "Zürich",
-    "URL": "https://www.klinikbethanien.ch"
+    "name": "Klinik Bethanien",
+    "strasse": "Toblerstrasse 51",
+    "plz": 8044,
+    "ort": "Zürich",
+    "url": "https://www.klinikbethanien.ch"
   },
   {
-    "NAME": "Paracelsus Spital",
-    "STRASSE": "Bergstrasse 16",
-    "PLZ": 8805,
-    "ORT": "Richterswil",
-    "URL": "https://paracelsus-spital.com"
+    "name": "Paracelsus Spital",
+    "strasse": "Bergstrasse 16",
+    "plz": 8805,
+    "ort": "Richterswil",
+    "url": "https://paracelsus-spital.com"
   },
   {
-    "NAME": "See-Spital",
-    "STRASSE": "Asylstrasse 19",
-    "PLZ": 8810,
-    "ORT": "Horgen",
-    "URL": "www.see-spital.ch"
+    "name": "See-Spital",
+    "strasse": "Asylstrasse 19",
+    "plz": 8810,
+    "ort": "Horgen",
+    "url": "www.see-spital.ch"
   },
   {
-    "NAME": "Spital Bülach",
-    "STRASSE": "Spitalstrasse 24",
-    "PLZ": 8180,
-    "ORT": "Bülach",
-    "URL": "https://www.spitalbuelach.ch/"
+    "name": "Spital Bülach",
+    "strasse": "Spitalstrasse 24",
+    "plz": 8180,
+    "ort": "Bülach",
+    "url": "https://www.spitalbuelach.ch/"
   },
   {
-    "NAME": "Spital Davos",
-    "STRASSE": "Promenade 4",
-    "PLZ": 7270,
-    "ORT": "Davos Platz",
-    "URL": "www.spitaldavos.ch"
+    "name": "Spital Davos",
+    "strasse": "Promenade 4",
+    "plz": 7270,
+    "ort": "Davos Platz",
+    "url": "www.spitaldavos.ch"
   },
   {
-    "NAME": "Spital Emmental",
-    "STRASSE": "Oberburgstrasse 54",
-    "PLZ": 3400,
-    "ORT": "Burgdorf",
-    "URL": "www.spital-emmental.ch"
+    "name": "Spital Emmental",
+    "strasse": "Oberburgstrasse 54",
+    "plz": 3400,
+    "ort": "Burgdorf",
+    "url": "www.spital-emmental.ch"
   },
   {
-    "NAME": "Spital Fürstenland Toggenburg (SRFT)",
-    "STRASSE": "Fürstenlandstrasse 32",
-    "PLZ": 9500,
-    "ORT": "Wil",
-    "URL": "https://www.srft.ch"
+    "name": "Spital Fürstenland Toggenburg (SRFT)",
+    "strasse": "Fürstenlandstrasse 32",
+    "plz": 9500,
+    "ort": "Wil",
+    "url": "https://www.srft.ch"
   },
   {
-    "NAME": "Spital Grabs",
-    "STRASSE": "Spitalstrasse 44",
-    "PLZ": 9472,
-    "ORT": "Grabs",
-    "URL": "www.spitalgrabs.ch"
+    "name": "Spital Grabs",
+    "strasse": "Spitalstrasse 44",
+    "plz": 9472,
+    "ort": "Grabs",
+    "url": "www.spitalgrabs.ch"
   },
   {
-    "NAME": "Spital Heiden",
-    "STRASSE": "Werdstrasse 1A",
-    "PLZ": 9410,
-    "ORT": "Heiden",
-    "URL": "www.spitalverbund.ch"
+    "name": "Spital Heiden",
+    "strasse": "Werdstrasse 1A",
+    "plz": 9410,
+    "ort": "Heiden",
+    "url": "www.spitalverbund.ch"
   },
   {
-    "NAME": "Spital Herisau",
-    "STRASSE": "Spitalstrasse 6",
-    "PLZ": 9100,
-    "ORT": "Herisau",
-    "URL": "www.spitalverbund.ch"
+    "name": "Spital Herisau",
+    "strasse": "Spitalstrasse 6",
+    "plz": 9100,
+    "ort": "Herisau",
+    "url": "www.spitalverbund.ch"
   },
   {
-    "NAME": "Spital Interlaken (fmi)",
-    "STRASSE": "Weissenaustrasse 27",
-    "PLZ": 3800,
-    "ORT": "Unterseen",
-    "URL": "https://www.spitalfmi.ch"
+    "name": "Spital Interlaken (fmi)",
+    "strasse": "Weissenaustrasse 27",
+    "plz": 3800,
+    "ort": "Unterseen",
+    "url": "https://www.spitalfmi.ch"
   },
   {
-    "NAME": "Spital Frutigen (fmi)",
-    "STRASSE": "Adelbodenstrasse 27",
-    "PLZ": 3714,
-    "ORT": "Frutigen",
-    "URL": "www.spitalfmi.ch"
+    "name": "Spital Frutigen (fmi)",
+    "strasse": "Adelbodenstrasse 27",
+    "plz": 3714,
+    "ort": "Frutigen",
+    "url": "www.spitalfmi.ch"
   },
   {
-    "NAME": "Spital Lachen",
-    "STRASSE": "Oberdorfstrasse 41",
-    "PLZ": 8853,
-    "ORT": "Lachen",
-    "URL": "https://www.spital-lachen.ch"
+    "name": "Spital Lachen",
+    "strasse": "Oberdorfstrasse 41",
+    "plz": 8853,
+    "ort": "Lachen",
+    "url": "https://www.spital-lachen.ch"
   },
   {
-    "NAME": "Spital Limmattal",
-    "STRASSE": "Urdorferstrasse 100",
-    "PLZ": 8952,
-    "ORT": "Schlieren",
-    "URL": "https://www.spital-limmattal.ch"
+    "name": "Spital Limmattal",
+    "strasse": "Urdorferstrasse 100",
+    "plz": 8952,
+    "ort": "Schlieren",
+    "url": "https://www.spital-limmattal.ch"
   },
   {
-    "NAME": "Spital Linth",
-    "STRASSE": "Gasterstrasse 25",
-    "PLZ": 8730,
-    "ORT": "Uznach",
-    "URL": "www.spital-linth.ch"
+    "name": "Spital Linth",
+    "strasse": "Gasterstrasse 25",
+    "plz": 8730,
+    "ort": "Uznach",
+    "url": "www.spital-linth.ch"
   },
   {
-    "NAME": "Spital Männedorf",
-    "STRASSE": "Asylstrasse 10",
-    "PLZ": 8708,
-    "ORT": "Männedorf",
-    "URL": "www.spitalmaennedorf.ch"
+    "name": "Spital Männedorf",
+    "strasse": "Asylstrasse 10",
+    "plz": 8708,
+    "ort": "Männedorf",
+    "url": "www.spitalmaennedorf.ch"
   },
   {
-    "NAME": "Spital Münsingen",
-    "STRASSE": "Krankenhausweg",
-    "PLZ": 3110,
-    "ORT": "Münsingen",
-    "URL": "https://www.spitalmuensingen.ch"
+    "name": "Spital Münsingen",
+    "strasse": "Krankenhausweg",
+    "plz": 3110,
+    "ort": "Münsingen",
+    "url": "https://www.spitalmuensingen.ch"
   },
   {
-    "NAME": "Spital Muri",
-    "STRASSE": "Spitalstrasse 144",
-    "PLZ": 5630,
-    "ORT": "Muri",
-    "URL": "www.spital-muri.ch"
+    "name": "Spital Muri",
+    "strasse": "Spitalstrasse 144",
+    "plz": 5630,
+    "ort": "Muri",
+    "url": "www.spital-muri.ch"
   },
   {
-    "NAME": "Spital Oberengadin",
-    "STRASSE": "Via Nouva 3",
-    "PLZ": 7503,
-    "ORT": "Samaden",
-    "URL": "www.spital-oberengadin.ch"
+    "name": "Spital Oberengadin",
+    "strasse": "Via Nouva 3",
+    "plz": 7503,
+    "ort": "Samaden",
+    "url": "www.spital-oberengadin.ch"
   },
   {
-    "NAME": "Spital Region Oberaargau (SRO)",
-    "STRASSE": "St. Urbanstrasse 67",
-    "PLZ": 4900,
-    "ORT": "Langenthal",
-    "URL": "www.sro.ch"
+    "name": "Spital Region Oberaargau (SRO)",
+    "strasse": "St. Urbanstrasse 67",
+    "plz": 4900,
+    "ort": "Langenthal",
+    "url": "www.sro.ch"
   },
   {
-    "NAME": "Spital regiunal Surselva",
-    "STRASSE": "Spitalstrasse 6",
-    "PLZ": 7130,
-    "ORT": "Ilanz",
-    "URL": "https://www.spitalilanz.ch"
+    "name": "Spital regiunal Surselva",
+    "strasse": "Spitalstrasse 6",
+    "plz": 7130,
+    "ort": "Ilanz",
+    "url": "https://www.spitalilanz.ch"
   },
   {
-    "NAME": "Spital Schwyz",
-    "STRASSE": "Waldeggstrasse 10",
-    "PLZ": 6430,
-    "ORT": "Schwyz",
-    "URL": "www.spital-schwyz.ch"
+    "name": "Spital Schwyz",
+    "strasse": "Waldeggstrasse 10",
+    "plz": 6430,
+    "ort": "Schwyz",
+    "url": "www.spital-schwyz.ch"
   },
   {
-    "NAME": "Spital Thun (STS)",
-    "STRASSE": "Krankenhausstrasse 12",
-    "PLZ": 3600,
-    "ORT": "Thun",
-    "URL": "www.spitalstsag.ch"
+    "name": "Spital Thun (STS)",
+    "strasse": "Krankenhausstrasse 12",
+    "plz": 3600,
+    "ort": "Thun",
+    "url": "www.spitalstsag.ch"
   },
   {
-    "NAME": "Spital Thusis",
-    "STRASSE": "Alte Str. 31",
-    "PLZ": 7430,
-    "ORT": "Thusis",
-    "URL": "www.spitalthusis.ch"
+    "name": "Spital Thusis",
+    "strasse": "Alte Str. 31",
+    "plz": 7430,
+    "ort": "Thusis",
+    "url": "www.spitalthusis.ch"
   },
   {
-    "NAME": "Spital Uster",
-    "STRASSE": "Brunnenstrasse 42",
-    "PLZ": 8610,
-    "ORT": "Uster",
-    "URL": "https://www.spitaluster.ch"
+    "name": "Spital Uster",
+    "strasse": "Brunnenstrasse 42",
+    "plz": 8610,
+    "ort": "Uster",
+    "url": "https://www.spitaluster.ch"
   },
   {
-    "NAME": "Spital Walenstadt",
-    "STRASSE": "Spitalstrasse 5",
-    "PLZ": 8880,
-    "ORT": "Walenstadt",
-    "URL": "https://www.srrws.ch"
+    "name": "Spital Walenstadt",
+    "strasse": "Spitalstrasse 5",
+    "plz": 8880,
+    "ort": "Walenstadt",
+    "url": "https://www.srrws.ch"
   },
   {
-    "NAME": "Spital Wallis",
-    "STRASSE": "Pflanzettastrasse 8",
-    "PLZ": 3930,
-    "ORT": "Visp",
-    "URL": "http://www.hopitalduvalais.ch/"
+    "name": "Spital Wallis",
+    "strasse": "Pflanzettastrasse 8",
+    "plz": 3930,
+    "ort": "Visp",
+    "url": "http://www.hopitalduvalais.ch/"
   },
   {
-    "NAME": "Spital Wetzikon (GZO)",
-    "STRASSE": "Spitalstrasse 66",
-    "PLZ": 8620,
-    "ORT": "Wetzikon",
-    "URL": "https://www.gzo.ch"
+    "name": "Spital Wetzikon (GZO)",
+    "strasse": "Spitalstrasse 66",
+    "plz": 8620,
+    "ort": "Wetzikon",
+    "url": "https://www.gzo.ch"
   },
   {
-    "NAME": "Spital Zollikerberg",
-    "STRASSE": "Trichtenhauser Str. 20",
-    "PLZ": 8125,
-    "ORT": "Zollikerberg",
-    "URL": "https://www.spitalzollikerberg.ch"
+    "name": "Spital Zollikerberg",
+    "strasse": "Trichtenhauser Str. 20",
+    "plz": 8125,
+    "ort": "Zollikerberg",
+    "url": "https://www.spitalzollikerberg.ch"
   },
   {
-    "NAME": "Spitalzentrum Biel",
-    "STRASSE": "Vogelsang 84",
-    "PLZ": 2501,
-    "ORT": "Biel",
-    "URL": "https://www.spitalzentrum-biel.ch"
+    "name": "Spitalzentrum Biel",
+    "strasse": "Vogelsang 84",
+    "plz": 2501,
+    "ort": "Biel",
+    "url": "https://www.spitalzentrum-biel.ch"
   },
   {
-    "NAME": "Stadtspital Triemli",
-    "STRASSE": "Birmensdorferstrasse 497",
-    "PLZ": 8063,
-    "ORT": "Zürich",
-    "URL": "https://www.stadt-zuerich.ch/triemli"
+    "name": "Stadtspital Triemli",
+    "strasse": "Birmensdorferstrasse 497",
+    "plz": 8063,
+    "ort": "Zürich",
+    "url": "https://www.stadt-zuerich.ch/triemli"
   },
   {
-    "NAME": "Universitätsspital Basel",
-    "STRASSE": "Spitalstrasse 21",
-    "PLZ": 4031,
-    "ORT": "Basel",
-    "URL": "http://www.unispital-basel.ch/"
+    "name": "Universitätsspital Basel",
+    "strasse": "Spitalstrasse 21",
+    "plz": 4031,
+    "ort": "Basel",
+    "url": "http://www.unispital-basel.ch/"
   },
   {
-    "NAME": "Universitätsspital Zürich (USZ)",
-    "STRASSE": "Frauenklinikstrasse 10",
-    "PLZ": 8006,
-    "ORT": "Zürich",
-    "URL": "https://www.geburtshilfe.usz.ch/"
+    "name": "Universitätsspital Zürich (USZ)",
+    "strasse": "Frauenklinikstrasse 10",
+    "plz": 8006,
+    "ort": "Zürich",
+    "url": "https://www.geburtshilfe.usz.ch/"
   },
   {
-    "NAME": "Kantonsspital Freiburg",
-    "STRASSE": "Chemin des Pensionnats 2",
-    "PLZ": 1708,
-    "ORT": "Fribourg",
-    "URL": "http://www.fr.ch/"
+    "name": "Kantonsspital Freiburg",
+    "strasse": "Chemin des Pensionnats 2",
+    "plz": 1708,
+    "ort": "Fribourg",
+    "url": "http://www.fr.ch/"
   },
   {
-    "NAME": "Universitätsspital Genf",
-    "STRASSE": "Rue Gabrielle-Perret-Gentil 4",
-    "PLZ": 1205,
-    "ORT": "Genève",
-    "URL": "https://www.hug-ge.ch/"
+    "name": "Universitätsspital Genf",
+    "strasse": "Rue Gabrielle-Perret-Gentil 4",
+    "plz": 1205,
+    "ort": "Genève",
+    "url": "https://www.hug-ge.ch/"
   },
   {
-    "NAME": "Geburtshaus Delphys",
-    "STRASSE": "Badenerstrasse 177",
-    "PLZ": 8003,
-    "ORT": "Zürich",
-    "URL": "http://www.delphys.ch"
+    "name": "Geburtshaus Delphys",
+    "strasse": "Badenerstrasse 177",
+    "plz": 8003,
+    "ort": "Zürich",
+    "url": "http://www.delphys.ch"
   },
   {
-    "NAME": "Geburtshaus Zürcher Oberland AG",
-    "STRASSE": "Schürlistrasse 3",
-    "PLZ": 8344,
-    "ORT": "Bäretswil",
-    "URL": "http://www.geburtshaus-zho.ch"
+    "name": "Geburtshaus Zürcher Oberland AG",
+    "strasse": "Schürlistrasse 3",
+    "plz": 8344,
+    "ort": "Bäretswil",
+    "url": "http://www.geburtshaus-zho.ch"
   },
   {
-    "NAME": "Geburtshaus Schaffhausen",
-    "STRASSE": "Beckengässchen 11",
-    "PLZ": 8200,
-    "ORT": "Schaffhausen",
-    "URL": "http://www.geburtshaus-sh.ch"
+    "name": "Geburtshaus Schaffhausen",
+    "strasse": "Beckengässchen 11",
+    "plz": 8200,
+    "ort": "Schaffhausen",
+    "url": "http://www.geburtshaus-sh.ch"
   },
   {
-    "NAME": "Philina GmbH",
-    "STRASSE": "Hinderbergstrasse 14",
-    "PLZ": 9473,
-    "ORT": "Gams",
-    "URL": "https://www.philina.ch/"
+    "name": "Philina GmbH",
+    "strasse": "Hinderbergstrasse 14",
+    "plz": 9473,
+    "ort": "Gams",
+    "url": "https://www.philina.ch/"
   },
   {
-    "NAME": "Geburtshus Storchenäscht",
-    "STRASSE": "Hendschikerstrasse 12",
-    "PLZ": 5504,
-    "ORT": "Othmarsingen",
-    "URL": "http://www.storchenaescht.ch"
+    "name": "Geburtshus Storchenäscht",
+    "strasse": "Hendschikerstrasse 12",
+    "plz": 5504,
+    "ort": "Othmarsingen",
+    "url": "http://www.storchenaescht.ch"
   },
   {
-    "NAME": "Geburtshaus Maternité Alpine",
-    "STRASSE": "Eggetlistrasse 5a",
-    "PLZ": 3770,
-    "ORT": "Zweisimmen",
-    "URL": "https://www.maternitealpine.ch"
+    "name": "Geburtshaus Maternité Alpine",
+    "strasse": "Eggetlistrasse 5a",
+    "plz": 3770,
+    "ort": "Zweisimmen",
+    "url": "https://www.maternitealpine.ch"
   },
   {
-    "NAME": "Geburtshaus Ita Wegman",
-    "STRASSE": "Pfeffingerweg 1",
-    "PLZ": 4144,
-    "ORT": "Arlesheim",
-    "URL": "https://www.maternitealpine.ch"
+    "name": "Geburtshaus Ita Wegman",
+    "strasse": "Pfeffingerweg 1",
+    "plz": 4144,
+    "ort": "Arlesheim",
+    "url": "https://www.maternitealpine.ch"
   },
   {
-    "NAME": "Geburtshaus Ambra",
-    "STRASSE": "Unterdorfstrasse 25",
-    "PLZ": 4443,
-    "ORT": "Wittinsburg",
-    "URL": "http://www.gebaeren.ch"
+    "name": "Geburtshaus Ambra",
+    "strasse": "Unterdorfstrasse 25",
+    "plz": 4443,
+    "ort": "Wittinsburg",
+    "url": "http://www.gebaeren.ch"
   },
   {
-    "NAME": "Geburtshaus Tagmond",
-    "STRASSE": "Hauptstrasse 26",
-    "PLZ": 4133,
-    "ORT": "Pratteln",
-    "URL": "http://www.tagmond.ch"
+    "name": "Geburtshaus Tagmond",
+    "strasse": "Hauptstrasse 26",
+    "plz": 4133,
+    "ort": "Pratteln",
+    "url": "http://www.tagmond.ch"
   },
   {
-    "NAME": "Geburtshaus Basel GmbH Basel",
-    "STRASSE": "Schweizergasse 8",
-    "PLZ": 4054,
-    "ORT": "Basel",
-    "URL": "http://www.geburtshausbasel.ch"
+    "name": "Geburtshaus Basel GmbH Basel",
+    "strasse": "Schweizergasse 8",
+    "plz": 4054,
+    "ort": "Basel",
+    "url": "http://www.geburtshausbasel.ch"
   },
   {
-    "NAME": "Maison de naissance Le Petit Prince",
-    "STRASSE": "Route du Petit Moncor 1d",
-    "PLZ": 1752,
-    "ORT": "Villars-sur-Glâne",
-    "URL": "http://www.le-petit-prince.ch"
+    "name": "Maison de naissance Le Petit Prince",
+    "strasse": "Route du Petit Moncor 1d",
+    "plz": 1752,
+    "ort": "Villars-sur-Glâne",
+    "url": "http://www.le-petit-prince.ch"
   },
   {
-    "NAME": "Maison de Naissance Dix Lunes",
-    "STRASSE": "Presinge 45",
-    "PLZ": 1241,
-    "ORT": "Puplinge",
-    "URL": "http://www.maisondenaissancelaroseraie.ch"
+    "name": "Maison de Naissance Dix Lunes",
+    "strasse": "Presinge 45",
+    "plz": 1241,
+    "ort": "Puplinge",
+    "url": "http://www.maisondenaissancelaroseraie.ch"
   },
   {
-    "NAME": "Maison de naissance Les Cigognes",
-    "STRASSE": "Route Principale 21",
-    "PLZ": 2824,
-    "ORT": "Vicques",
-    "URL": "http://www.les-cigognes.ch"
+    "name": "Maison de naissance Les Cigognes",
+    "strasse": "Route Principale 21",
+    "plz": 2824,
+    "ort": "Vicques",
+    "url": "http://www.les-cigognes.ch"
   },
   {
-    "NAME": "Geburtshaus Terra Alta",
-    "STRASSE": "Schellenrain 20",
-    "PLZ": 6208,
-    "ORT": "Oberkirch",
-    "URL": "http://www.geburtshaus-terra-alta.ch"
+    "name": "Geburtshaus Terra Alta",
+    "strasse": "Schellenrain 20",
+    "plz": 6208,
+    "ort": "Oberkirch",
+    "url": "http://www.geburtshaus-terra-alta.ch"
   },
   {
-    "NAME": "Maison de naissance Tilia",
-    "STRASSE": "Valangines 9",
-    "PLZ": 2000,
-    "ORT": "Neuchâtel",
-    "URL": "http://www.tilia-naissance.ch"
+    "name": "Maison de naissance Tilia",
+    "strasse": "Valangines 9",
+    "plz": 2000,
+    "ort": "Neuchâtel",
+    "url": "http://www.tilia-naissance.ch"
   },
   {
-    "NAME": "Geburtshaus & HebammenpraxisGeburtshaus Stans GmbH",
-    "STRASSE": "Rosenweg 3",
-    "PLZ": 6371,
-    "ORT": "Stans",
-    "URL": "http://www.geburtshaus-stans.ch"
+    "name": "Geburtshaus & HebammenpraxisGeburtshaus Stans GmbH",
+    "strasse": "Rosenweg 3",
+    "plz": 6371,
+    "ort": "Stans",
+    "url": "http://www.geburtshaus-stans.ch"
   },
   {
-    "NAME": "Casa Maternità e Nascita Lediecilune",
-    "STRASSE": "Via Guglielmo Canevascini 4",
-    "PLZ": 6900,
-    "ORT": "Lugano",
-    "URL": "http://www.lediecilune.ch"
+    "name": "Casa Maternità e Nascita Lediecilune",
+    "strasse": "Via Guglielmo Canevascini 4",
+    "plz": 6900,
+    "ort": "Lugano",
+    "url": "http://www.lediecilune.ch"
   },
   {
-    "NAME": "Maison de naissance La Grange Rouge",
-    "STRASSE": "Rue du Village 5",
-    "PLZ": 1274,
-    "ORT": "Grens",
-    "URL": "http://www.lagrangerouge.ch"
+    "name": "Maison de naissance La Grange Rouge",
+    "strasse": "Rue du Village 5",
+    "plz": 1274,
+    "ort": "Grens",
+    "url": "http://www.lagrangerouge.ch"
   },
   {
-    "NAME": "Maison de naissance Zoé",
-    "STRASSE": "Poyet 9",
-    "PLZ": 1510,
-    "ORT": "Moudon",
-    "URL": "http://www.naissance-zoe.ch"
+    "name": "Maison de naissance Zoé",
+    "strasse": "Poyet 9",
+    "plz": 1510,
+    "ort": "Moudon",
+    "url": "http://www.naissance-zoe.ch"
   },
   {
-    "NAME": "Maison de naissance Aquila",
-    "STRASSE": "Ch. du Grand Chêne",
-    "PLZ": 1860,
-    "ORT": "Aigle",
-    "URL": "http://www.aquila-naissance.ch"
+    "name": "Maison de naissance Aquila",
+    "strasse": "Ch. du Grand Chêne",
+    "plz": 1860,
+    "ort": "Aigle",
+    "url": "http://www.aquila-naissance.ch"
   },
   {
-    "NAME": "Maison de naissance Lunaissance",
-    "STRASSE": "ch de la Lune 3",
-    "PLZ": 1132,
-    "ORT": "Lullly s/ Morges",
-    "URL": "http://www.lunaissance.ch/"
+    "name": "Maison de naissance Lunaissance",
+    "strasse": "ch de la Lune 3",
+    "plz": 1132,
+    "ort": "Lullly s/ Morges",
+    "url": "http://www.lunaissance.ch/"
   },
   {
-    "NAME": "Maison de naissance Gaïa",
-    "STRASSE": "Av. Grand Champsec 80",
-    "PLZ": 1950,
-    "ORT": "Sion",
-    "URL": "http://www.gaïa.ch"
+    "name": "Maison de naissance Gaïa",
+    "strasse": "Av. Grand Champsec 80",
+    "plz": 1950,
+    "ort": "Sion",
+    "url": "http://www.gaïa.ch"
   }
 ]
+
 
 
   let i = 0;
