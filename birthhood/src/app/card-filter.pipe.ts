@@ -7,6 +7,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CardFilterPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
+    
+    console.log("haha");
     return value.filter( (item) => item.visible);
   }
 

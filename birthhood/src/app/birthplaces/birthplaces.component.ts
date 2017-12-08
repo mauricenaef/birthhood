@@ -84,6 +84,7 @@ export class BirthplacesComponent implements OnInit {
 
   }
   ngOnInit() {
+    debugger;
   }
 }
 // just an interface for type safety.
