@@ -6,6 +6,6 @@ export const environment = {
     databaseURL: 'https://firestore-testprojekt.firebaseio.com',
     projectId: 'firestore-testprojekt',
     storageBucket: 'firestore-testprojekt.appspot.com',
-    messagingSenderId: '566415541949'
+    messagingSenderId: '566415541949' 
   }
 };
