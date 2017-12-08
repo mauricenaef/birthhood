@@ -1,5 +1,15 @@
 /**
  * Created by tobiasbrunner on 02.11.17.
+ * 
+ * Upload Birthplaces. Currently JSON Objects are stored in the js file
+ * 
+ * TODO: 
+ * read external JSON file.
+ * 
+ * Start from npm
+ * 
+ * 
+ * 
  */
 //https://firebase.google.com/docs/firestore/quickstart
 //const admin = require('firebase-admin');
@@ -20,7 +30,8 @@ firebase.initializeApp(config);
   // Initialize Cloud Firestore through Firebase
   var db = firebase.firestore();
 
-var birthplaces = [{
+var birthplaces = [
+  {
     "NAME": "Asana Spital Leuggern",
     "STRASSE": "Schulweg 3",
     "PLZ": 5316,
@@ -45,7 +56,7 @@ var birthplaces = [{
     "NAME": "Hirslanden",
     "STRASSE": "Witellikerstrasse 40",
     "PLZ": 8032,
-    "ORT": "Z�rich",
+    "ORT": "Zürich",
     "URL": "http://hirslanden.ch"
   },
   {
@@ -91,7 +102,7 @@ var birthplaces = [{
     "URL": "www.ksgl.ch"
   },
   {
-    "NAME": "Kantonsspital Graub�nden",
+    "NAME": "Kantonsspital Graubünden",
     "STRASSE": "Loestrasse 170",
     "PLZ": 7000,
     "ORT": "Chur",
@@ -105,10 +116,10 @@ var birthplaces = [{
     "URL": "https://www.luks.ch"
   },
   {
-    "NAME": "Kantonsspital M�nsterlingen (STGAG)",
+    "NAME": "Kantonsspital Münsterlingen (STGAG)",
     "STRASSE": "Spitalcampus 1",
     "PLZ": 8596,
-    "ORT": "M�nsterlingen",
+    "ORT": "Münsterlingen",
     "URL": "www.stgag.ch"
   },
   {
@@ -120,7 +131,7 @@ var birthplaces = [{
   },
   {
     "NAME": "Kantonsspital Obwalden",
-    "STRASSE": "Br�nigstrasse 181",
+    "STRASSE": "Brünigstrasse 181",
     "PLZ": 6060,
     "ORT": "Sarnen",
     "URL": "https://www.ksow.ch"
@@ -164,7 +175,7 @@ var birthplaces = [{
     "NAME": "Klinik Bethanien",
     "STRASSE": "Toblerstrasse 51",
     "PLZ": 8044,
-    "ORT": "Z�rich",
+    "ORT": "Zürich",
     "URL": "https://www.klinikbethanien.ch"
   },
   {
@@ -182,10 +193,10 @@ var birthplaces = [{
     "URL": "www.see-spital.ch"
   },
   {
-    "NAME": "Spital B�lach",
+    "NAME": "Spital Bülach",
     "STRASSE": "Spitalstrasse 24",
     "PLZ": 8180,
-    "ORT": "B�lach",
+    "ORT": "Bülach",
     "URL": "https://www.spitalbuelach.ch/"
   },
   {
@@ -203,8 +214,8 @@ var birthplaces = [{
     "URL": "www.spital-emmental.ch"
   },
   {
-    "NAME": "Spital F�rstenland Toggenburg (SRFT)",
-    "STRASSE": "F�rstenlandstrasse 32",
+    "NAME": "Spital Fürstenland Toggenburg (SRFT)",
+    "STRASSE": "Fürstenlandstrasse 32",
     "PLZ": 9500,
     "ORT": "Wil",
     "URL": "https://www.srft.ch"
@@ -266,17 +277,17 @@ var birthplaces = [{
     "URL": "www.spital-linth.ch"
   },
   {
-    "NAME": "Spital M�nnedorf",
+    "NAME": "Spital Männedorf",
     "STRASSE": "Asylstrasse 10",
     "PLZ": 8708,
-    "ORT": "M�nnedorf",
+    "ORT": "Männedorf",
     "URL": "www.spitalmaennedorf.ch"
   },
   {
-    "NAME": "Spital M�nsingen",
+    "NAME": "Spital Münsingen",
     "STRASSE": "Krankenhausweg",
     "PLZ": 3110,
-    "ORT": "M�nsingen",
+    "ORT": "Münsingen",
     "URL": "https://www.spitalmuensingen.ch"
   },
   {
@@ -374,21 +385,21 @@ var birthplaces = [{
     "NAME": "Stadtspital Triemli",
     "STRASSE": "Birmensdorferstrasse 497",
     "PLZ": 8063,
-    "ORT": "Z�rich",
+    "ORT": "Zürich",
     "URL": "https://www.stadt-zuerich.ch/triemli"
   },
   {
-    "NAME": "Universit�tsspital Basel",
+    "NAME": "Universitätsspital Basel",
     "STRASSE": "Spitalstrasse 21",
     "PLZ": 4031,
     "ORT": "Basel",
     "URL": "http://www.unispital-basel.ch/"
   },
   {
-    "NAME": "Universit�tsspital Z�rich (USZ)",
+    "NAME": "Universitätsspital Zürich (USZ)",
     "STRASSE": "Frauenklinikstrasse 10",
     "PLZ": 8006,
-    "ORT": "Z�rich",
+    "ORT": "Zürich",
     "URL": "https://www.geburtshilfe.usz.ch/"
   },
   {
@@ -399,29 +410,29 @@ var birthplaces = [{
     "URL": "http://www.fr.ch/"
   },
   {
-    "NAME": "Universit�tsspital Genf",
+    "NAME": "Universitätsspital Genf",
     "STRASSE": "Rue Gabrielle-Perret-Gentil 4",
     "PLZ": 1205,
-    "ORT": "Gen�ve",
+    "ORT": "Genève",
     "URL": "https://www.hug-ge.ch/"
   },
   {
     "NAME": "Geburtshaus Delphys",
     "STRASSE": "Badenerstrasse 177",
     "PLZ": 8003,
-    "ORT": "Z�rich",
+    "ORT": "Zürich",
     "URL": "http://www.delphys.ch"
   },
   {
-    "NAME": "Geburtshaus Z�rcher Oberland AG",
-    "STRASSE": "Sch�rlistrasse 3",
+    "NAME": "Geburtshaus Zürcher Oberland AG",
+    "STRASSE": "Schürlistrasse 3",
     "PLZ": 8344,
-    "ORT": "B�retswil",
+    "ORT": "Bäretswil",
     "URL": "http://www.geburtshaus-zho.ch"
   },
   {
     "NAME": "Geburtshaus Schaffhausen",
-    "STRASSE": "Beckeng�sschen 11",
+    "STRASSE": "Beckengässchen 11",
     "PLZ": 8200,
     "ORT": "Schaffhausen",
     "URL": "http://www.geburtshaus-sh.ch"
@@ -434,14 +445,14 @@ var birthplaces = [{
     "URL": "https://www.philina.ch/"
   },
   {
-    "NAME": "Geburtshus Storchen�scht",
+    "NAME": "Geburtshus Storchenäscht",
     "STRASSE": "Hendschikerstrasse 12",
     "PLZ": 5504,
     "ORT": "Othmarsingen",
     "URL": "http://www.storchenaescht.ch"
   },
   {
-    "NAME": "Geburtshaus Maternit� Alpine",
+    "NAME": "Geburtshaus Maternité Alpine",
     "STRASSE": "Eggetlistrasse 5a",
     "PLZ": 3770,
     "ORT": "Zweisimmen",
@@ -479,7 +490,7 @@ var birthplaces = [{
     "NAME": "Maison de naissance Le Petit Prince",
     "STRASSE": "Route du Petit Moncor 1d",
     "PLZ": 1752,
-    "ORT": "Villars-sur-Gl�ne",
+    "ORT": "Villars-sur-Glâne",
     "URL": "http://www.le-petit-prince.ch"
   },
   {
@@ -490,7 +501,7 @@ var birthplaces = [{
     "URL": "http://www.maisondenaissancelaroseraie.ch"
   },
   {
-    "NAME": "Maison de naissance�Les Cigognes",
+    "NAME": "Maison de naissance Les Cigognes",
     "STRASSE": "Route Principale 21",
     "PLZ": 2824,
     "ORT": "Vicques",
@@ -507,7 +518,7 @@ var birthplaces = [{
     "NAME": "Maison de naissance Tilia",
     "STRASSE": "Valangines 9",
     "PLZ": 2000,
-    "ORT": "Neuch�tel",
+    "ORT": "Neuchâtel",
     "URL": "http://www.tilia-naissance.ch"
   },
   {
@@ -518,7 +529,7 @@ var birthplaces = [{
     "URL": "http://www.geburtshaus-stans.ch"
   },
   {
-    "NAME": "Casa Maternit� e Nascita Lediecilune",
+    "NAME": "Casa Maternità e Nascita Lediecilune",
     "STRASSE": "Via Guglielmo Canevascini 4",
     "PLZ": 6900,
     "ORT": "Lugano",
@@ -532,7 +543,7 @@ var birthplaces = [{
     "URL": "http://www.lagrangerouge.ch"
   },
   {
-    "NAME": "Maison de naissance Zo�",
+    "NAME": "Maison de naissance Zoé",
     "STRASSE": "Poyet 9",
     "PLZ": 1510,
     "ORT": "Moudon",
@@ -540,7 +551,7 @@ var birthplaces = [{
   },
   {
     "NAME": "Maison de naissance Aquila",
-    "STRASSE": "Ch. du Grand Ch�ne",
+    "STRASSE": "Ch. du Grand Chêne",
     "PLZ": 1860,
     "ORT": "Aigle",
     "URL": "http://www.aquila-naissance.ch"
@@ -553,12 +564,14 @@ var birthplaces = [{
     "URL": "http://www.lunaissance.ch/"
   },
   {
-    "NAME": "Maison de naissance�Ga�a",
+    "NAME": "Maison de naissance Gaïa",
     "STRASSE": "Av. Grand Champsec 80",
     "PLZ": 1950,
     "ORT": "Sion",
-    "URL": "http://www.ga�a.ch"
-  }]
+    "URL": "http://www.gaïa.ch"
+  }
+]
+
 
   let i = 0;
  for (birthplace of birthplaces) {

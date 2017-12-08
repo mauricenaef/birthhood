@@ -24,7 +24,7 @@
     "NAME": "Hirslanden",
     "STRASSE": "Witellikerstrasse 40",
     "PLZ": 8032,
-    "ORT": "Zürich",
+    "ORT": "ZÃ¼rich",
     "URL": "http://hirslanden.ch"
   },
   {
@@ -70,7 +70,7 @@
     "URL": "www.ksgl.ch"
   },
   {
-    "NAME": "Kantonsspital Graubünden",
+    "NAME": "Kantonsspital GraubÃ¼nden",
     "STRASSE": "Loestrasse 170",
     "PLZ": 7000,
     "ORT": "Chur",
@@ -84,10 +84,10 @@
     "URL": "https://www.luks.ch"
   },
   {
-    "NAME": "Kantonsspital Münsterlingen (STGAG)",
+    "NAME": "Kantonsspital MÃ¼nsterlingen (STGAG)",
     "STRASSE": "Spitalcampus 1",
     "PLZ": 8596,
-    "ORT": "Münsterlingen",
+    "ORT": "MÃ¼nsterlingen",
     "URL": "www.stgag.ch"
   },
   {
@@ -99,7 +99,7 @@
   },
   {
     "NAME": "Kantonsspital Obwalden",
-    "STRASSE": "Brünigstrasse 181",
+    "STRASSE": "BrÃ¼nigstrasse 181",
     "PLZ": 6060,
     "ORT": "Sarnen",
     "URL": "https://www.ksow.ch"
@@ -143,7 +143,7 @@
     "NAME": "Klinik Bethanien",
     "STRASSE": "Toblerstrasse 51",
     "PLZ": 8044,
-    "ORT": "Zürich",
+    "ORT": "ZÃ¼rich",
     "URL": "https://www.klinikbethanien.ch"
   },
   {
@@ -161,10 +161,10 @@
     "URL": "www.see-spital.ch"
   },
   {
-    "NAME": "Spital Bülach",
+    "NAME": "Spital BÃ¼lach",
     "STRASSE": "Spitalstrasse 24",
     "PLZ": 8180,
-    "ORT": "Bülach",
+    "ORT": "BÃ¼lach",
     "URL": "https://www.spitalbuelach.ch/"
   },
   {
@@ -182,8 +182,8 @@
     "URL": "www.spital-emmental.ch"
   },
   {
-    "NAME": "Spital Fürstenland Toggenburg (SRFT)",
-    "STRASSE": "Fürstenlandstrasse 32",
+    "NAME": "Spital FÃ¼rstenland Toggenburg (SRFT)",
+    "STRASSE": "FÃ¼rstenlandstrasse 32",
     "PLZ": 9500,
     "ORT": "Wil",
     "URL": "https://www.srft.ch"
@@ -245,17 +245,17 @@
     "URL": "www.spital-linth.ch"
   },
   {
-    "NAME": "Spital Männedorf",
+    "NAME": "Spital MÃ¤nnedorf",
     "STRASSE": "Asylstrasse 10",
     "PLZ": 8708,
-    "ORT": "Männedorf",
+    "ORT": "MÃ¤nnedorf",
     "URL": "www.spitalmaennedorf.ch"
   },
   {
-    "NAME": "Spital Münsingen",
+    "NAME": "Spital MÃ¼nsingen",
     "STRASSE": "Krankenhausweg",
     "PLZ": 3110,
-    "ORT": "Münsingen",
+    "ORT": "MÃ¼nsingen",
     "URL": "https://www.spitalmuensingen.ch"
   },
   {
@@ -353,21 +353,21 @@
     "NAME": "Stadtspital Triemli",
     "STRASSE": "Birmensdorferstrasse 497",
     "PLZ": 8063,
-    "ORT": "Zürich",
+    "ORT": "ZÃ¼rich",
     "URL": "https://www.stadt-zuerich.ch/triemli"
   },
   {
-    "NAME": "Universitätsspital Basel",
+    "NAME": "UniversitÃ¤tsspital Basel",
     "STRASSE": "Spitalstrasse 21",
     "PLZ": 4031,
     "ORT": "Basel",
     "URL": "http://www.unispital-basel.ch/"
   },
   {
-    "NAME": "Universitätsspital Zürich (USZ)",
+    "NAME": "UniversitÃ¤tsspital ZÃ¼rich (USZ)",
     "STRASSE": "Frauenklinikstrasse 10",
     "PLZ": 8006,
-    "ORT": "Zürich",
+    "ORT": "ZÃ¼rich",
     "URL": "https://www.geburtshilfe.usz.ch/"
   },
   {
@@ -378,29 +378,29 @@
     "URL": "http://www.fr.ch/"
   },
   {
-    "NAME": "Universitätsspital Genf",
+    "NAME": "UniversitÃ¤tsspital Genf",
     "STRASSE": "Rue Gabrielle-Perret-Gentil 4",
     "PLZ": 1205,
-    "ORT": "Genève",
+    "ORT": "GenÃ¨ve",
     "URL": "https://www.hug-ge.ch/"
   },
   {
     "NAME": "Geburtshaus Delphys",
     "STRASSE": "Badenerstrasse 177",
     "PLZ": 8003,
-    "ORT": "Zürich",
+    "ORT": "ZÃ¼rich",
     "URL": "http://www.delphys.ch"
   },
   {
-    "NAME": "Geburtshaus Zürcher Oberland AG",
-    "STRASSE": "Schürlistrasse 3",
+    "NAME": "Geburtshaus ZÃ¼rcher Oberland AG",
+    "STRASSE": "SchÃ¼rlistrasse 3",
     "PLZ": 8344,
-    "ORT": "Bäretswil",
+    "ORT": "BÃ¤retswil",
     "URL": "http://www.geburtshaus-zho.ch"
   },
   {
     "NAME": "Geburtshaus Schaffhausen",
-    "STRASSE": "Beckengässchen 11",
+    "STRASSE": "BeckengÃ¤sschen 11",
     "PLZ": 8200,
     "ORT": "Schaffhausen",
     "URL": "http://www.geburtshaus-sh.ch"
@@ -413,14 +413,14 @@
     "URL": "https://www.philina.ch/"
   },
   {
-    "NAME": "Geburtshus Storchenäscht",
+    "NAME": "Geburtshus StorchenÃ¤scht",
     "STRASSE": "Hendschikerstrasse 12",
     "PLZ": 5504,
     "ORT": "Othmarsingen",
     "URL": "http://www.storchenaescht.ch"
   },
   {
-    "NAME": "Geburtshaus Maternité Alpine",
+    "NAME": "Geburtshaus MaternitÃ© Alpine",
     "STRASSE": "Eggetlistrasse 5a",
     "PLZ": 3770,
     "ORT": "Zweisimmen",
@@ -458,7 +458,7 @@
     "NAME": "Maison de naissance Le Petit Prince",
     "STRASSE": "Route du Petit Moncor 1d",
     "PLZ": 1752,
-    "ORT": "Villars-sur-Glâne",
+    "ORT": "Villars-sur-GlÃ¢ne",
     "URL": "http://www.le-petit-prince.ch"
   },
   {
@@ -469,7 +469,7 @@
     "URL": "http://www.maisondenaissancelaroseraie.ch"
   },
   {
-    "NAME": "Maison de naissance Les Cigognes",
+    "NAME": "Maison de naissanceÂ Les Cigognes",
     "STRASSE": "Route Principale 21",
     "PLZ": 2824,
     "ORT": "Vicques",
@@ -486,7 +486,7 @@
     "NAME": "Maison de naissance Tilia",
     "STRASSE": "Valangines 9",
     "PLZ": 2000,
-    "ORT": "Neuchâtel",
+    "ORT": "NeuchÃ¢tel",
     "URL": "http://www.tilia-naissance.ch"
   },
   {
@@ -497,7 +497,7 @@
     "URL": "http://www.geburtshaus-stans.ch"
   },
   {
-    "NAME": "Casa Maternità e Nascita Lediecilune",
+    "NAME": "Casa MaternitÃ  e Nascita Lediecilune",
     "STRASSE": "Via Guglielmo Canevascini 4",
     "PLZ": 6900,
     "ORT": "Lugano",
@@ -511,7 +511,7 @@
     "URL": "http://www.lagrangerouge.ch"
   },
   {
-    "NAME": "Maison de naissance Zoé",
+    "NAME": "Maison de naissance ZoÃ©",
     "STRASSE": "Poyet 9",
     "PLZ": 1510,
     "ORT": "Moudon",
@@ -519,7 +519,7 @@
   },
   {
     "NAME": "Maison de naissance Aquila",
-    "STRASSE": "Ch. du Grand Chêne",
+    "STRASSE": "Ch. du Grand ChÃªne",
     "PLZ": 1860,
     "ORT": "Aigle",
     "URL": "http://www.aquila-naissance.ch"
@@ -532,10 +532,10 @@
     "URL": "http://www.lunaissance.ch/"
   },
   {
-    "NAME": "Maison de naissance Gaïa",
+    "NAME": "Maison de naissanceÂ GaÃ¯a",
     "STRASSE": "Av. Grand Champsec 80",
     "PLZ": 1950,
     "ORT": "Sion",
-    "URL": "http://www.gaïa.ch"
+    "URL": "http://www.gaÃ¯a.ch"
   }
 ]
