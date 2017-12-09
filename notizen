@@ -1,27 +1,10 @@
-
-csvtofirebase myUsers.csv private.json "your-database-url.firebaseio.com" users memberId
-
-
-firebase-import --database_url https://birthhood.firebaseio.com --path / --json birthplaces_ch.json
-
-
-<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-    authDomain: "birthhood.firebaseapp.com",
-    databaseURL: "https://birthhood.firebaseio.com",
-    projectId: "birthhood",
-    storageBucket: "birthhood.appspot.com",
-    messagingSenderId: "986661546141"
-  };
-  firebase.initializeApp(config);
-</script>
-
- 
+Fragen:
 
 - id bei firebase
 - firebase - usergesteuertes speichen / rechteübeprüfung
 - routing bei unterseiten (z.B. Birthplaces => map, list, detail)
 - nach redirect ist Birthplaces leer. warum?
+
+todo:
+- errorhandling
+- unit-tests
