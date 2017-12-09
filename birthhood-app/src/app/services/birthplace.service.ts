@@ -11,27 +11,38 @@ export class BirthplaceService {
 
   birthplaceCollection;
   birthplaces;
+
   constructor(private db: AngularFirestore) { 
-    this.birthplaceCollection = db.collection('birthplaces');
-    // .snapshotChanges() returns a DocumentChangeAction[], which contains
-    // a lot of information about "what happened" with each change. If you want to
-    // get the data and the id use the map operator.
-    this.birthplaces = this.birthplaceCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
+
+    this.birthplaceCollection = this.db.collection('birthplaces');
+    /*this.birthplaces = this.birthplaceCollection.snapshotChanges().map(actions => {
+      return this.birthplaceCollection.snapshotChanges().map(actions => {
+        return actions.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      });
+    });*/
+  }
+
+  ngOnInit(){
+  }
+
+  getBirthplace(id: string): Observable<any>{
+    var docRef = this.db.collection('birthplaces').doc(id);
+    return docRef.valueChanges();
+      /*return this.birthplaces.map(element => {
+        return element.filter( x => x.id == id)}).mergeMap(x => x);*/
+  }
+
+  getBirthplaces(): Observable<any> {
+    return this.birthplaceCollection.snapshotChanges().map(actions => {
+        return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
         return { id, ...data };
       });
     });
-  }
-
-  getBirthplace(id: string): Observable<any>{
-      return this.birthplaces.map(element => {
-        return element.filter( x => x.id == id)}).mergeMap(x => x);
-  }
-
-  getBirthplaces(): Observable<any> {
-    return this.birthplaces;
   }
 
   recalculateScore(birthplaceId: string){

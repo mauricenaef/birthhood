@@ -2,7 +2,10 @@ liste
 
 <ul >
   <li *ngFor="let birthplace of birthplaces">
-    {{birthplace.name}}<br>
-    {{birthplace.score_b}}
+
+    <a [routerLink]="['/birthplaces/birthplace-details', birthplace.id]">
+    {{ birthplace.name }}
+  </a>
   </li>
 </ul>
+ 
