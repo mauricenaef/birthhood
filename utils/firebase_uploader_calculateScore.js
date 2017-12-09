@@ -29,7 +29,9 @@ var db = firebase.firestore();
 var birthplaces = db.collection('birthplaces');
 
 var birthplaces_sync = []; //local birthplaces with ids
+  var scorenames = ["b", "g", "i", "u", "w"];
 
+  
 //get all birthplaces
 var items = birthplaces.where('name', '>=', '');
 
@@ -45,7 +47,7 @@ items.get().then(function (querySnapshot) {
     console.log("Error getting documents: ", error);
   });
 
-  var scorenames = ["b", "g", "i", "u", "w"];
+
 //get Experiences for all birthplaces
 function getScores() {
   for (let birthplace of birthplaces_sync) {

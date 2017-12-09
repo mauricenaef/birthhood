@@ -15,7 +15,7 @@ export class BirthplacesDetailComponent implements OnInit {
 
   ngOnInit() {
     //debugger;
-    this.birthplaceService.getBirthplace("0kuLVvy4bq7xJuBM1DlN").
+    this.birthplaceService.getBirthplace("hizYlnFJUx83SL2Sadmj").
     subscribe(x => {
       console.log(x);
       this.birthplace = x;
