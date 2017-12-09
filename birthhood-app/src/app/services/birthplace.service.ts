@@ -10,13 +10,13 @@ import 'rxjs/add/operator/mergeMap';
 export class BirthplaceService {
 
   birthplaceCollection;
-  birthplacesId;
+  birthplaces;
   constructor(private db: AngularFirestore) { 
     this.birthplaceCollection = db.collection('birthplaces');
     // .snapshotChanges() returns a DocumentChangeAction[], which contains
     // a lot of information about "what happened" with each change. If you want to
     // get the data and the id use the map operator.
-    this.birthplacesId = this.birthplaceCollection.snapshotChanges().map(actions => {
+    this.birthplaces = this.birthplaceCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -25,13 +25,13 @@ export class BirthplaceService {
     });
   }
 
-  getBirthplace(id: string){
-      return this.birthplacesId.map(element => {
+  getBirthplace(id: string): Observable<any>{
+      return this.birthplaces.map(element => {
         return element.filter( x => x.id == id)}).mergeMap(x => x);
   }
 
   getBirthplaces(): Observable<any> {
-    return this.birthplacesId;
+    return this.birthplaces;
   }
 
   recalculateScore(birthplaceId: string){
