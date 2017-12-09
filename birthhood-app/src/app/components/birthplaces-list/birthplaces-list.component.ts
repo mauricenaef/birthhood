@@ -15,6 +15,7 @@ export class BirthplacesListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("initialized");
     this.birthplaceService.getBirthplaces().subscribe(
       x => this.birthplaces = x
       

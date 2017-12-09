@@ -17,9 +17,13 @@ import { BirthplacesDetailComponent } from './components/birthplaces-detail/birt
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserExperienceAddComponent } from './components/user-experience-add/user-experience-add.component';
 import { UserExperienceListComponent } from './components/user-experience-list/user-experience-list.component';
-
+import { FormsModule } from '@angular/forms';
 import { BirthplaceService } from './services/birthplace.service';
 import { ExperienceService } from './services/experience.service';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './services/auth.service';
+import { SignupComponent } from './components/signup/signup.component';
+import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,15 +37,19 @@ import { ExperienceService } from './services/experience.service';
     BirthplacesDetailComponent,
     UserDashboardComponent,
     UserExperienceAddComponent,
-    UserExperienceListComponent
+    UserExperienceListComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AppRoutingModule,
+    FormsModule, 
+    BrowserAnimationsModule
   ],
-  providers: [BirthplaceService, ExperienceService],
+  providers: [BirthplaceService, ExperienceService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
