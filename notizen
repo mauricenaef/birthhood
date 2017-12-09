@@ -19,8 +19,9 @@ firebase-import --database_url https://birthhood.firebaseio.com --path / --json 
   firebase.initializeApp(config);
 </script>
 
-
+ 
 
 - id bei firebase
+- firebase - usergesteuertes speichen / rechteübeprüfung
 - routing bei unterseiten (z.B. Birthplaces => map, list, detail)
 - nach redirect ist Birthplaces leer. warum?

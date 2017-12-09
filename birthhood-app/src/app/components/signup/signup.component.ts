@@ -12,6 +12,8 @@ import { EmailPasswordCredentials } from '../../models/email-password-credential
 export class SignupComponent implements OnInit {
 
   error: any;
+  email:string;
+  password: string;
   
   constructor(private authService: AuthService) { }
 
