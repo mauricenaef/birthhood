@@ -24,6 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
 import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,10 @@ import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule, 
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
+    })
   ],
   providers: [BirthplaceService, ExperienceService, AuthService],
   bootstrap: [AppComponent]

@@ -1,3 +1,20 @@
-<p>
-  birthplaces-map works!
-</p>
+map:
+<agm-map [latitude]="lat" [longitude]="lng"
+
+(boundsChange)="updateCards($event)">
+
+<agm-marker
+*ngFor="let m of items; let i = index"
+(markerClick)="clickedMarker(m.id)"
+[latitude]="m.lat"
+
+[longitude]="m.lng"
+[label]="m.name"
+>
+
+<!--agm-info-window>
+<strong>InfoWindow content</strong>
+</agm-info-window-->
+
+</agm-marker>
+</agm-map>

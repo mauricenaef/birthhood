@@ -3,7 +3,7 @@ liste
 <ul >
   <li *ngFor="let birthplace of birthplaces">
 
-    <a [routerLink]="['/birthplaces/birthplace-details', birthplace.id]">
+    <a [routerLink]="['/birthplaces/details', birthplace.id]">
     {{ birthplace.name }}
   </a>
   </li>
