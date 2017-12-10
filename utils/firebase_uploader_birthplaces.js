@@ -13,22 +13,22 @@
  */
 //https://firebase.google.com/docs/firestore/quickstart
 //const admin = require('firebase-admin');
-
+const https = require("https");
 const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
 var config = {
-    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-    authDomain: "birthhood.firebaseapp.com",
-    databaseURL: "https://birthhood.firebaseio.com",
-    projectId: "birthhood",
-    storageBucket: "birthhood.appspot.com",
-    messagingSenderId: "986661546141"
-  };
+  apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
+  authDomain: "birthhood.firebaseapp.com",
+  databaseURL: "https://birthhood.firebaseio.com",
+  projectId: "birthhood",
+  storageBucket: "birthhood.appspot.com",
+  messagingSenderId: "986661546141"
+};
 firebase.initializeApp(config);
-  
-  // Initialize Cloud Firestore through Firebase
-  var db = firebase.firestore();
+
+// Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
 
 var birthplaces = [
   {
@@ -574,35 +574,34 @@ var birthplaces = [
 
 
 
-  let i = 0;
- for (birthplace of birthplaces) {
-     
-     //console.log(birthplace);
- 
-  db.collection("birthplaces").add(birthplace)
-.then(function(docRef) {
-    console.log(i);
-    i++;
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
- }
+let i = 0;
+let baseurl = "https://maps.googleapis.com/maps/api/geocode/json?"
+let gmKey = "&key=AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU"
+for (birthplace of birthplaces) {
 
-/*
-var serviceAccount = require("./importProjekt-478aba9ff144.json");
+  let addressstring = encodeURI(`address= ${birthplace.strasse} ${birthplace.plz} ${birthplace.ort}`);
+  let url = baseurl + addressstring + gmKey;
+  https.get(url, res => {
+    res.setEncoding("utf8");
+    let body = "";
+    res.on("data", data => {
+      body += data;
+    });
+    res.on("end", () => {
+      body = JSON.parse(body);
+      let lat = body.results[0].geometry.location.lat;
+      let lng = body.results[0].geometry.location.lng;
+      birthplace.lat = lat;
+      birthplace.lng = lng;
+      db.collection("birthplaces").add(birthplace)
+        .then(function (docRef) {
+          console.log(i++);
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
+    });
+  });
+}
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
-
-var db = admin.firestore();
-
-var docRef = db.collection('users').doc('alovelace');
-
-var setAda = docRef.set({
-    first: 'Ada',
-    last: 'Lovelace',
-    born: 1815
-});*/
