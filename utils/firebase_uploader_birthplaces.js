@@ -577,7 +577,7 @@ var birthplaces = [
 let i = 0;
 let baseurl = "https://maps.googleapis.com/maps/api/geocode/json?"
 let gmKey = "&key=AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU"
-for (birthplace of birthplaces) {
+for (let birthplace of birthplaces) {
 
   let addressstring = encodeURI(`address= ${birthplace.strasse} ${birthplace.plz} ${birthplace.ort}`);
   let url = baseurl + addressstring + gmKey;
