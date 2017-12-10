@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body  * {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: block;
 }
+
+agm-map {
+    height: 300px;
+  }

@@ -1,10 +1,10 @@
 map:
 <agm-map [latitude]="lat" [longitude]="lng"
 
-(boundsChange)="updateCards($event)">
+(boundsChange)="birthplaceService.updateBounds($event)">
 
 <agm-marker
-*ngFor="let m of items; let i = index"
+*ngFor="let m of items$; let i = index"
 (markerClick)="clickedMarker(m.id)"
 [latitude]="m.lat"
 

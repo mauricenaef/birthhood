@@ -1,9 +1,13 @@
+Herausforderungen:
+- id bei firebase
+
 Fragen:
 
-- id bei firebase
 - firebase - usergesteuertes speichen / rechteübeprüfung
 - routing bei unterseiten (z.B. Birthplaces => map, list, detail)
-- nach redirect ist Birthplaces leer. warum?
+- nach redirect ist Birthplaces leer. warum? => macht hier firebase schon was?
+- unterteilen in Module? z.b. Map Module, Experience-Module
+- mit service informationen teilen oder besser über inputs?
 
 todo:
 - errorhandling
