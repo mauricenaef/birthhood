@@ -63,6 +63,14 @@ export class BirthplaceService {
     this.birthplaceUpdatedSource.next(id);
   }
 
+  search(term: string): Observable<any[]> {
+    return this.getBirthplaces().map(actions =>
+      actions.filter(item =>
+        item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
+      )
+    );
+  }
+
   recalculateScore(birthplaceId: string) {
     //get all Experiences per Birthplaceid
 

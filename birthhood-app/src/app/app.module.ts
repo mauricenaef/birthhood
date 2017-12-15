@@ -25,6 +25,7 @@ import { AuthService } from './services/auth.service';
 import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
     UserDashboardComponent,
     UserExperienceAddComponent,
     UserExperienceListComponent,
-    SignupComponent
+    SignupComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
