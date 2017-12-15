@@ -25,6 +25,7 @@ todo (code):
 - unit-tests
 - routeGuards
 - firebase security
+  - zur zeit wird einfach das schreiben nur zugelassen, wenn der User authentifiziert ist.
 - Address-Search. Aber den lassen wir weg und weisen daraufhin in der Präsentation
 
 

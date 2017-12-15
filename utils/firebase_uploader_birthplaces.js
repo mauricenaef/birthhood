@@ -4,11 +4,7 @@
  * Upload Birthplaces. Currently JSON Objects are stored in the js file
  * 
  * TODO: 
- * read external JSON file.
- * 
  * Start from npm
- * 
- * 
  * 
  */
 //https://firebase.google.com/docs/firestore/quickstart

@@ -7,12 +7,8 @@
  * 
  *  
  * TODO:
- * Read external JSON file
- * 
  * Create NPM-Task
  * Combine with Birthplace Uploader
- * 
- * 
  */
 //https://firebase.google.com/docs/firestore/quickstart
 //const admin = require('firebase-admin');

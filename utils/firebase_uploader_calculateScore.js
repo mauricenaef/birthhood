@@ -4,11 +4,7 @@
  * calculate scores.
  * 
  * TODO: 
- * read external JSON file.
- * 
  * Start from npm
- * 
- * 
  * 
  */
 var serviceAccount = require("./birthhood-0bd55101ecab.json");
