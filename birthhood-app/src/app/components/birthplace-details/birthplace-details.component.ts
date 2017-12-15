@@ -19,8 +19,10 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    
     this.subscription = this.route.params.subscribe(params => {
       this.id = params['id']; 
+      this.birthplaceService.zoomTo(this.id);
       this.birthplaceService.getBirthplace(this.id).
       subscribe(x => {
         this.birthplace = x;

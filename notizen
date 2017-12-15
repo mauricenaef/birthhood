@@ -4,11 +4,20 @@ Herausforderungen:
 Fragen:
 
 - firebase - usergesteuertes speichen / rechteübeprüfung
+=> ab min. 30 oder so
+https://firebase.google.com/docs/database/security/
 - routing bei unterseiten (z.B. Birthplaces => map, list, detail)
-- nach redirect ist Birthplaces leer. warum? => macht hier firebase schon was?
-- unterteilen in Module? z.b. Map Module, Experience-Module
-- mit service informationen teilen oder besser über inputs?
+=> wenn über Routes, dann mit ID-parameter oder über Services.
 
+https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
+changeDetection: ChangeDetectionStrategy.OnPush
+
+  
 todo:
+- Eigenes Modul erstellen.
+  - Login
+  - Experience
+- Suche nach Namen des Spitals. Für Form- und für "adresssuche"
+  => finde dein Spital
 - errorhandling
 - unit-tests

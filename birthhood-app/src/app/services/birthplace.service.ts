@@ -14,6 +14,8 @@ export class BirthplaceService {
   birthplaceCollection;
   displayedBounds: LatLngBounds;
 
+  birthplaceUpdatedSource = new Subject<string>();
+  birthplaceClicked$ = this.birthplaceUpdatedSource.asObservable();
   private boundsUpdatedSource = new Subject<LatLngBounds>();
   boundsUpdated$ = this.boundsUpdatedSource.asObservable();
 
@@ -54,6 +56,11 @@ export class BirthplaceService {
   updateBounds($event: LatLngBounds) {
     this.displayedBounds = $event ? $event : this.displayedBounds;
     this.boundsUpdatedSource.next(this.displayedBounds);
+  }
+
+  zoomTo(id) {
+
+    this.birthplaceUpdatedSource.next(id);
   }
 
   recalculateScore(birthplaceId: string) {

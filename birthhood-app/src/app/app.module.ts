@@ -24,7 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
 import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })
   ],
-  providers: [BirthplaceService, ExperienceService, AuthService],
+  providers: [BirthplaceService, ExperienceService, AuthService, GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,11 @@
 liste
 
-<ul >
+<ul>
   <li *ngFor="let birthplace of birthplaces">
 
     <a [routerLink]="['/birthplaces/details', birthplace.id]">
-    {{ birthplace.name }}
-  </a>
+
+      {{ birthplace.name }}
+    </a>
   </li>
 </ul>
- 
