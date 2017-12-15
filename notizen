@@ -13,11 +13,24 @@ https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explain
 changeDetection: ChangeDetectionStrategy.OnPush
 
   
-todo:
+todo (code):
 - Eigenes Modul erstellen.
   - Login
   - Experience
-- Suche nach Namen des Spitals. Für Form- und für "adresssuche"
-  => finde dein Spital
+  - Birthplaces könnte auch eigenes Modul sein.
+- filtern der Birthplaces
+- add Random Experiences for more Data => for each Birthplace add 5 Random Experiences
+- experience Erfassungsmaske
 - errorhandling
 - unit-tests
+- routeGuards
+- firebase security
+- Address-Search. Aber den lassen wir weg und weisen daraufhin in der Präsentation
+
+
+- Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
+Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoomen?
+- Beim Starten:
+  - wenn keine GeoLocation da ist, was zeigen wir dann? alles?
+  - wenn eine gefunden wird: wie gross zoomen wir dann? sodass mind. 1 Birthplace im Bild drin ist?
+    Oder mind 3?
