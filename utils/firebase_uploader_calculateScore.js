@@ -11,8 +11,9 @@
  * 
  * 
  */
-
-const firebase = require("firebase");
+var serviceAccount = require("./birthhood-0bd55101ecab.json");
+//const firebase = require("firebase");
+const admin = require('firebase-admin');
 // Required for side-effects
 require("firebase/firestore");
 var config = {
@@ -21,11 +22,12 @@ var config = {
   databaseURL: "https://birthhood.firebaseio.com",
   projectId: "birthhood",
   storageBucket: "birthhood.appspot.com",
-  messagingSenderId: "986661546141"
+  messagingSenderId: "986661546141",
+  credential: admin.credential.cert(serviceAccount)
 };
-firebase.initializeApp(config);
+admin.initializeApp(config);
 
-var db = firebase.firestore();
+var db = admin.firestore();
 var birthplaces = db.collection('birthplaces');
 
 var birthplaces_sync = []; //local birthplaces with ids
