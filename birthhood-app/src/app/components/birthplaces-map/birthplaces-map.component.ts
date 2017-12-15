@@ -18,8 +18,7 @@ export class BirthplacesMapComponent implements OnInit {
   @ViewChild(AgmMap) private map: any;
   items$: Observable<any[]>;
 
-  /*these will be set by the geolocation of the Browser. 
-  probably in ngOnInit()
+  /*
   bounds.extend um alle anzuzeigen*/
   lat = 47.2632317;
   lng = 8.5893569;
@@ -50,6 +49,15 @@ export class BirthplacesMapComponent implements OnInit {
             })
         });
       });
+
+      birthplaceService.zoomOut$.subscribe(
+        x => {
+          this.map.triggerResize()
+          .then(() => 
+            this.map._mapsWrapper.setZoom(12)
+          )
+        }
+      )
   }
 
   generateBounds(latLng: LatLngLiteral, buffer: number): LatLngBoundsLiteral {

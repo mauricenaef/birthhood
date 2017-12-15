@@ -19,6 +19,8 @@ export class BirthplaceService {
   private boundsUpdatedSource = new Subject<LatLngBounds>();
   boundsUpdated$ = this.boundsUpdatedSource.asObservable();
 
+  private zoomOutSource = new Subject<any>();
+  zoomOut$ = this.zoomOutSource.asObservable();
   constructor(private db: AngularFirestore) {
     this.birthplaceCollection = this.db.collection('birthplaces');
   }
@@ -59,8 +61,11 @@ export class BirthplaceService {
   }
 
   zoomTo(id) {
-
     this.birthplaceUpdatedSource.next(id);
+  }
+
+  zoomOut(){
+    this.zoomOutSource.next();
   }
 
   search(term: string): Observable<any[]> {

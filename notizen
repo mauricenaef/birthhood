@@ -30,7 +30,8 @@ todo (code):
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
 Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoomen?
+ => jetzt wird zoomlevel in Birthplace-list gesetzt und geolocation in birthplace-map
 - Beim Starten:
   - wenn keine GeoLocation da ist, was zeigen wir dann? alles?
-  - wenn eine gefunden wird: wie gross zoomen wir dann? sodass mind. 1 Birthplace im Bild drin ist?
-    Oder mind 3?
+   Ev. Sprache auslesen und auf Sprachregion zoomen.
+  - wenn eine gefunden wird:  mind 4-5 Birthplaces darstellen. Auf diesen Extent zoomen.

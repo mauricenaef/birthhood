@@ -30,11 +30,12 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
           })
       }
     )
-
-    /* as the boundschanged Event is not emitted (as of 10.12.2017), we have to manually
+    this.birthplaceService.zoomOut();
+    /* as the boundschanged Event is not emitted yet (as of 10.12.2017), we have to manually
     trigger the services boundsupdated-subject */
     this.birthplaceService.displayedBounds && this.birthplaceService.updateBounds(null);
 
+    //Zoom out
   }
 
   ngOnDestroy() {
