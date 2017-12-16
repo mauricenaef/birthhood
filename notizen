@@ -20,10 +20,12 @@ todo (code):
   - Birthplaces könnte auch eigenes Modul sein.
 - filtern der Birthplaces
 - add Random Experiences for more Data => for each Birthplace add 5 Random Experiences
+ => nicht nötig, da wir so den Blank Slate verwenden können
 - experience Erfassungsmaske
 - errorhandling
 - unit-tests
 - routeGuards
+- uploader als es6 Module definieren
 - firebase security
   - zur zeit wird einfach das schreiben nur zugelassen, wenn der User authentifiziert ist.
 - Address-Search. Aber den lassen wir weg und weisen daraufhin in der Präsentation

@@ -1,9 +1,8 @@
-import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Subscribable } from 'rxjs/Observable';
 import 'rxjs/add/operator/merge';
-import { LatLngBounds } from '@agm/core';
 
 @Component({
   selector: 'app-birthplaces-list',
@@ -12,7 +11,6 @@ import { LatLngBounds } from '@agm/core';
 })
 export class BirthplacesListComponent implements OnInit, OnDestroy {
 
-  @Input() bounds: LatLngBounds;
   birthplaces;
   subscription: Subscription;
 
@@ -31,11 +29,6 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
       }
     )
     this.birthplaceService.zoomOut();
-    /* as the boundschanged Event is not emitted yet (as of 10.12.2017), we have to manually
-    trigger the services boundsupdated-subject */
-    this.birthplaceService.displayedBounds && this.birthplaceService.updateBounds(null);
-
-    //Zoom out
   }
 
   ngOnDestroy() {

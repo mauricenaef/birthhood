@@ -14,8 +14,8 @@ export class BirthplaceService {
   birthplaceCollection;
   displayedBounds: LatLngBounds;
 
-  birthplaceUpdatedSource = new Subject<string>();
-  birthplaceClicked$ = this.birthplaceUpdatedSource.asObservable();
+  birthplaceClickedSource = new Subject<string>();
+  birthplaceClicked$ = this.birthplaceClickedSource.asObservable();
   private boundsUpdatedSource = new Subject<LatLngBounds>();
   boundsUpdated$ = this.boundsUpdatedSource.asObservable();
 
@@ -60,8 +60,8 @@ export class BirthplaceService {
     this.boundsUpdatedSource.next(this.displayedBounds);
   }
 
-  zoomTo(id) {
-    this.birthplaceUpdatedSource.next(id);
+  zoomToBirthplace(id) {
+    this.birthplaceClickedSource.next(id);
   }
 
   zoomOut(){

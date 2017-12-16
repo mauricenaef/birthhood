@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild, EventEmitter } from '@angular/core';
-import { AgmCoreModule, LatLngLiteral, LatLngBoundsLiteral, LatLngBounds, LatLng } from '@agm/core';
+import { AgmCoreModule, LatLngLiteral, LatLngBoundsLiteral, LatLng } from '@agm/core';
 import { Observable } from 'rxjs/Observable';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Router } from '@angular/router';
-import { MarkerAGM } from '../../models/marker-agm';
 import { AgmMap } from '@agm/core/directives/map';
-
+declare var google: any;
 
 @Component({
   selector: 'app-birthplaces-map',
@@ -15,22 +14,22 @@ import { AgmMap } from '@agm/core/directives/map';
 })
 export class BirthplacesMapComponent implements OnInit {
 
+
   @ViewChild(AgmMap) private map: any;
   items$: Observable<any[]>;
 
   /*
-  bounds.extend um alle anzuzeigen*/
-  lat = 47.2632317;
-  lng = 8.5893569;
+  fallback-location. HSR?*/
+  lat = 47.2;
+  lng = 8.6;
+  // radius of earth in km
+  R = 6371;
+  zoomOutNumber = 3;
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
-    birthplaceService.getBirthplaces().subscribe(
-      x => {
-        this.items$ = x;
-      }
+    birthplaceService.getBirthplaces().subscribe(x => this.items$ = x);
 
-    );
-
+    //zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
       id => {
         this.birthplaceService.getBirthplace(id).subscribe(x => {
@@ -50,14 +49,19 @@ export class BirthplacesMapComponent implements OnInit {
         });
       });
 
-      birthplaceService.zoomOut$.subscribe(
-        x => {
-          this.map.triggerResize()
-          .then(() => 
-            this.map._mapsWrapper.setZoom(12)
-          )
-        }
-      )
+    birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
+  }
+
+
+
+  ngOnInit() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.zoomOut();
+      });
+    }
   }
 
   generateBounds(latLng: LatLngLiteral, buffer: number): LatLngBoundsLiteral {
@@ -69,19 +73,50 @@ export class BirthplacesMapComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(position => {
-        //this.location = position.coords;
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-        //console.log(position.coords); 
-      });
-   }
+  updateCenter(latLng: LatLngLiteral) {
+    this.lat = latLng.lat;
+    this.lng = latLng.lng;
   }
 
   clickedMarker(id: string) {
     this.router.navigate(['/birthplaces/details', id]);
   }
 
+  rad(x) {
+    return x * Math.PI / 180;
+  }
+
+  calculateDistance(item): number {
+    let mlat = item.lat;
+    let mlng = item.lng;
+    let dLat = this.rad(mlat - this.lat);
+    let dLong = this.rad(mlng - this.lng);
+    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.rad(this.lat)) * Math.cos(this.rad(this.lat)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return this.R * c;
+
+  }
+  zoomOut() {
+    let itemsWithDistances = [];
+    this.birthplaceService.getBirthplaces().subscribe(
+      x => {
+        x.map(item => {
+          item.distance = this.calculateDistance(item);
+          itemsWithDistances.push(item);
+        }
+        );
+
+        itemsWithDistances.sort((x, y) => x.distance - y.distance);
+        let nearestBirthplaces = itemsWithDistances.slice(0, this.zoomOutNumber);
+        let bounds = new google.maps.LatLngBounds();
+        nearestBirthplaces.forEach(
+          thisBirthplace =>
+            bounds.extend(<LatLng>{ lat: thisBirthplace.lat, lng: thisBirthplace.lng })
+        );
+        this.map._mapsWrapper.fitBounds(bounds);
+        this.map._mapsWrapper.setCenter({ lat: this.lat, lng: this.lng });
+      }
+    );
+  }
 }
