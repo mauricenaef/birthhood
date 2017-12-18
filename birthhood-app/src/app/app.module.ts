@@ -14,9 +14,7 @@ import { BirthplacesComponent } from './components/birthplaces/birthplaces.compo
 import { BirthplacesMapComponent } from './components/birthplaces-map/birthplaces-map.component';
 import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
 import { BirthplaceDetailsComponent } from './components/birthplace-details/birthplace-details.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
-import { UserExperienceAddComponent } from './components/user-experience-add/user-experience-add.component';
-import { UserExperienceListComponent } from './components/user-experience-list/user-experience-list.component';
+
 import { FormsModule } from '@angular/forms';
 import { BirthplaceService } from './services/birthplace.service';
 import { ExperienceService } from './services/experience.service';
@@ -26,6 +24,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 import { SearchComponent } from './components/search/search.component';
+import { UserDashboardComponent } from './modules/experience/user-dashboard/user-dashboard.component';
+import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
+import { UserExperienceListComponent } from './modules/experience/user-experience-list/user-experience-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { SearchComponent } from './components/search/search.component';
     UserExperienceAddComponent,
     UserExperienceListComponent,
     SignupComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
