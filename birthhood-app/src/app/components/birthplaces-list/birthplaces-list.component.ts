@@ -19,15 +19,18 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    
     this.subscription = this.birthplaceService.boundsUpdated$.subscribe(
       bounds => {
         this.birthplaceService.getDisplayedBirthplaces(bounds).subscribe(
           displayedBirthplaces => {
+            //console.log(displayedBirthplaces);
             this.birthplaces = displayedBirthplaces;
           })
       }
     )
+
+    
     this.birthplaceService.zoomOut();
   }
 

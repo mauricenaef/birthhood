@@ -1,0 +1,11 @@
+<label for="hospitalFilterCbx">
+    show Hospitals
+  <input name="hospitalFilterCbx" type="checkbox" [(ngModel)]="filter.showHospitals"  
+  (change)="updateFilter()">
+</label>
+
+<label for="housesFilterCbx">
+    show Hospitals
+  <input name="housesFilterCbx" type="checkbox" [(ngModel)]="filter.showHouses" 
+  (change)="updateFilter()">
+</label>

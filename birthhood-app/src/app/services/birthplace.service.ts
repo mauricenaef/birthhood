@@ -4,29 +4,41 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { LatLngBounds } from '@agm/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+
+
 import { MarkerAGM } from '../models/marker-agm';
 import { Subject } from 'rxjs/Subject';
+import { BirthplaceFilter } from '../models/birthplace-filter';
 
 @Injectable()
 export class BirthplaceService {
 
   birthplaceCollection;
   displayedBounds: LatLngBounds;
+  displayedBirthplaces$:  Observable<any>;
+  filter: BirthplaceFilter;
 
-  birthplaceClickedSource = new Subject<string>();
+
+
+  private birthplaceClickedSource = new Subject<string>();
   birthplaceClicked$ = this.birthplaceClickedSource.asObservable();
+  
   private boundsUpdatedSource = new Subject<LatLngBounds>();
   boundsUpdated$ = this.boundsUpdatedSource.asObservable();
 
   private zoomOutSource = new Subject<any>();
   zoomOut$ = this.zoomOutSource.asObservable();
+  
+  private filterChangedSource = new Subject<any>();
+  filterChanged$ = this.filterChangedSource.asObservable();
+  
+  private filteredBirthplaces = new Subject<any>();
+  filteredBirthplaces$ = this.filteredBirthplaces.asObservable();
+
   constructor(private db: AngularFirestore) {
     this.birthplaceCollection = this.db.collection('birthplaces');
   }
 
-  ngOnInit() {
-  }
 
   getBirthplace(id: string): Observable<any> {
     var docRef = this.db.collection('birthplaces').doc(id);
@@ -34,16 +46,22 @@ export class BirthplaceService {
   }
 
   getBirthplaces(): Observable<any> {
-    return this.birthplaceCollection.snapshotChanges().map(actions => {
+   return  this.birthplaceCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
+        //console.log(data.type);
         return { id, ...data };
       });
     });
   }
 
-  getDisplayedBirthplaces(bounds: LatLngBounds): Observable<any> {
+  getFilteredBirthplaces(): Observable<any> {
+    return this.filteredBirthplaces$;
+  }
+
+
+ getDisplayedBirthplaces(bounds: LatLngBounds): Observable<any> {
 
     return this.getBirthplaces().map(actions => {
       return actions.filter(item => {
@@ -55,9 +73,21 @@ export class BirthplaceService {
     );
   }
 
-  updateBounds($event: LatLngBounds) {
-    this.displayedBounds = $event ? $event : this.displayedBounds;
+
+  updateBounds(bounds: LatLngBounds) {
+    this.displayedBounds = bounds ? bounds : this.displayedBounds;
     this.boundsUpdatedSource.next(this.displayedBounds);
+  }
+
+  updateFilter(filter: BirthplaceFilter) {
+    this.filter = filter ? filter : this.filter;
+    this.filterChangedSource.next(this.filter);
+    this.filteredBirthplaces.next("asdf"
+      //this.filter
+      //get filtered Birthplaces
+      //hier muss ein wert rein. 
+     
+    );
   }
 
   zoomToBirthplace(id) {
@@ -65,6 +95,7 @@ export class BirthplaceService {
   }
 
   zoomOut(){
+    console.log("zoom out");
     this.zoomOutSource.next();
   }
 

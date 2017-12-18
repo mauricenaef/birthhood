@@ -27,8 +27,14 @@ export class BirthplacesMapComponent implements OnInit {
   zoomOutNumber = 3;
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
-    birthplaceService.getBirthplaces().subscribe(x => this.items$ = x);
-
+    birthplaceService.filteredBirthplaces$.subscribe(x => console.log("filtered", x));
+    birthplaceService.getFilteredBirthplaces().subscribe(x => {
+        console.log("infiltered", x);
+       this.items$ = x;
+      });
+      
+    // Da der Filter noch nie getriggert wurde.
+    birthplaceService.updateFilter(null);
     //zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
       id => {
