@@ -15,7 +15,7 @@ export const appStates = [
 
 /** UIRouter Config  */
 export function UIRouterConfigFn(router: UIRouter, injector: Injector) {
-    // If no URL matches, go to the `personal` state's name by default
+    // If no URL matches, go to the `personel` state's name by default
     router.urlService.rules.otherwise({ state: 'personel' });
 }
 
