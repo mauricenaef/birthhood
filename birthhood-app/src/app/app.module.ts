@@ -38,6 +38,7 @@ import { FormFlowService } from './services/form-flow.service';
 import { FormUmfeldComponent } from './components/form/form-umfeld/form-umfeld.component';
 import { UIRouterConfigFn, appStates } from './app.states';
 
+import { OwlModule } from 'ng2-owl-carousel';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { UIRouterConfigFn, appStates } from './app.states';
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule, 
+    OwlModule,
     /*UIRouterModule.forRoot({ 
       states: appStates,
       useHash: true,
