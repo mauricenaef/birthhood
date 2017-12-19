@@ -28,12 +28,17 @@ export class BirthplacesMapComponent implements OnInit {
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
    //birthplaceService.filteredBirthplaces$.subscribe(x => console.log("filtered", x));
-   //birthplaceService.getBirthplaces().subscribe(x => {
-   /*   birthplaceService.filteredBirthplaces.subscribe(x => {
-       x.subscribe( y => { // console.log("infiltered", x);
-       this.items$ = y;
-      })});
-      */
+  /* birthplaceService.changeFilter.map(
+     birthplaceService.getBirthplaces).subscribe(
+       x => console.log(x)
+   );*/
+   birthplaceService.getBirthplacesV2().subscribe(x => {
+   //   birthplaceService.filteredBirthplaces.subscribe(x => {
+       // console.log("infiltered", x);
+       console.log(x);
+       this.items$ = x;
+      });
+    
 
     /*  birthplaceService.birthplaces$.subscribe(x => {
        
@@ -68,10 +73,7 @@ export class BirthplacesMapComponent implements OnInit {
 
 
   ngOnInit() {
-    this.birthplaceService.changeFilter.switchMap(
-      this.birthplaceService.getBirthplaces).subscribe(
-      x => console.log(x)
-    )
+   
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;

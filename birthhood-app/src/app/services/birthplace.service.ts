@@ -1,6 +1,6 @@
 import { Injectable , OnInit} from '@angular/core';
 import * as firebase from 'firebase/app';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument  } from 'angularfire2/firestore';
 import { LatLngBounds } from '@agm/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -53,19 +53,25 @@ export class BirthplaceService {
       filter: <BirthplaceFilter>{spital: true, geburtshaus: true}
     });
 
-    this.changeFilter.switchMap(this.getBirthplaces).subscribe(x => console.log(x));
+    //this.changeFilter.switchMap(this.getBirthplaces).subscribe(x => console.log(x));
 
   }
+  
+  getBirthplacesV2(){
+    return this.changeFilter.switchMap(this.getBirthplaces);
+  }
 
-  getBirthplaces(inputfilter): Observable<any> {
-    return this.birthplaceCollection.snapshotChanges().map(actions => {
+  getBirthplaces(): Observable<any> {
+    
+    let birthplaceCollection = this.db.collection('birthplaces');
+    return birthplaceCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
         return { id, ...data };
-      }).filter(x => {
+      })/*.filter(x => {
         return this.filter[x.type];
-      });
+      })*/;
 
     });
   }
@@ -74,7 +80,7 @@ export class BirthplaceService {
     var docRef = this.db.collection('birthplaces').doc(id);
     return docRef.valueChanges();
   }
-  
+
   getFilteredBirthplaces(): Observable<any> {
     return this.filteredBirthplaces;
   }
@@ -84,10 +90,10 @@ export class BirthplaceService {
     console.log("bounds updated", bounds);
     this.displayedBounds = bounds ? bounds : this.displayedBounds;
     
-    this.changeFilter.next({
+   /* this.changeFilter.next({
       map: this.displayedBounds,
       filter: this.filter
-    });
+    });*/
 
   }
 
@@ -112,10 +118,7 @@ export class BirthplaceService {
 
   search(term: string): Observable<any[]> {
     return this.getBirthplaces(
-      {
-        map: this.displayedBounds,
-        filter: this.filter
-      }
+      
     ).map(actions =>
       actions.filter(item =>
         item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
