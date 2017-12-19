@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Router } from '@angular/router';
 import { AgmMap } from '@agm/core/directives/map';
+import { Subject } from 'rxjs/Subject';
 declare var google: any;
 
 @Component({
@@ -18,16 +19,21 @@ export class BirthplacesMapComponent implements OnInit {
   @ViewChild(AgmMap) private map: any;
   items$: Observable<any[]>;
 
-  /*
-  fallback-location. HSR?*/
-  lat = 47.2;
-  lng = 8.6;
+
+  latLng: LatLngLiteral;
   // radius of earth in km
   R = 6371;
   zoomOutNumber = 3;
+  bounds: LatLngBoundsLiteral;
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
-    birthplaceService.getBirthplaces().subscribe(x => this.items$ = x);
+      /*
+  fallback-location. HSR?*/
+  this.latLng = <LatLngLiteral>{lat: 47.2,
+  lng : 8.6};
+    birthplaceService.getBirthplacesFiltered().subscribe(x => {
+      this.items$ = x;
+    }) 
 
     //zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
@@ -57,14 +63,14 @@ export class BirthplacesMapComponent implements OnInit {
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
+        this.latLng = <LatLngLiteral>{lat: position.coords.latitude,
+        lng: position.coords.longitude};
         this.zoomOut();
       });
     }
   }
 
-  generateBounds(latLng: LatLngLiteral, buffer: number): LatLngBoundsLiteral {
+  private generateBounds(latLng: LatLngLiteral, buffer: number): LatLngBoundsLiteral {
     return {
       east: latLng.lng + buffer,
       north: latLng.lat + buffer,
@@ -73,33 +79,30 @@ export class BirthplacesMapComponent implements OnInit {
     }
   }
 
-  updateCenter(latLng: LatLngLiteral) {
-    this.lat = latLng.lat;
-    this.lng = latLng.lng;
-  }
 
+ 
   clickedMarker(id: string) {
     this.router.navigate(['/birthplaces/details', id]);
   }
 
-  rad(x) {
+  private rad(x) {
     return x * Math.PI / 180;
   }
 
-  calculateDistance(item): number {
+  private calculateDistance(item): number {
     let mlat = item.lat;
     let mlng = item.lng;
-    let dLat = this.rad(mlat - this.lat);
-    let dLong = this.rad(mlng - this.lng);
+    let dLat = this.rad(mlat - this.latLng.lat);
+    let dLong = this.rad(mlng - this.latLng.lng);
     let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(this.rad(this.lat)) * Math.cos(this.rad(this.lat)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
+      Math.cos(this.rad(this.latLng.lat)) * Math.cos(this.rad(this.latLng.lat)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return this.R * c;
 
   }
   zoomOut() {
     let itemsWithDistances = [];
-    this.birthplaceService.getBirthplaces().subscribe(
+    this.birthplaceService.getAllBirthplaces().subscribe(
       x => {
         x.map(item => {
           item.distance = this.calculateDistance(item);
@@ -115,7 +118,7 @@ export class BirthplacesMapComponent implements OnInit {
             bounds.extend(<LatLng>{ lat: thisBirthplace.lat, lng: thisBirthplace.lng })
         );
         this.map._mapsWrapper.fitBounds(bounds);
-        this.map._mapsWrapper.setCenter({ lat: this.lat, lng: this.lng });
+        this.map._mapsWrapper.setCenter(this.latLng);
       }
     );
   }
