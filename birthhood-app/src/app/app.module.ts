@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { UIRouterModule } from "@uirouter/angular";
+
+
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
@@ -27,6 +30,15 @@ import { SearchComponent } from './components/search/search.component';
 import { UserDashboardComponent } from './modules/experience/user-dashboard/user-dashboard.component';
 import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
 import { UserExperienceListComponent } from './modules/experience/user-experience-list/user-experience-list.component';
+import { FormNavbarComponent } from './components/form/form-navbar/form-navbar.component';
+import { FormPersonelComponent } from './components/form/form-personel/form-personel.component';
+
+import { FormDataService } from './services/form-data.service';
+import { FormFlowService } from './services/form-flow.service';
+import { FormUmfeldComponent } from './components/form/form-umfeld/form-umfeld.component';
+import { UIRouterConfigFn, appStates } from './app.states';
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +55,9 @@ import { UserExperienceListComponent } from './modules/experience/user-experienc
     UserExperienceListComponent,
     SignupComponent,
     SearchComponent,
+    FormNavbarComponent,
+    FormPersonelComponent,
+    FormUmfeldComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,12 +66,17 @@ import { UserExperienceListComponent } from './modules/experience/user-experienc
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule, 
+    /*UIRouterModule.forRoot({ 
+      states: appStates,
+      useHash: true,
+      config: UIRouterConfigFn
+    }),*/
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })
   ],
-  providers: [BirthplaceService, ExperienceService, AuthService, GoogleMapsAPIWrapper],
+  providers: [BirthplaceService, ExperienceService, AuthService, GoogleMapsAPIWrapper, FormDataService, FormFlowService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

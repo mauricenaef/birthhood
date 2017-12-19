@@ -1,0 +1,26 @@
+<form #personelForm="ngForm" class="editForm" novalidate>
+    <h2 class="head text-center">{{title}}</h2>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-12 cell">
+            <label>Birth Name
+                <input class="form-input" #birthname="ngModel" required id="birthname" name="birth_name" type="text" placeholder="Birth Name" [(ngModel)]="personel.birth_name">
+            </label>
+          </div>
+          <div class="medium-12 cell">
+            <label>Birth Date
+                <input class="form-input" #birthdate="ngModel" required id="birth_date" name="birthdate" type="text" placeholder="Birth Date" [(ngModel)]="personel.birth_date">
+            </label>
+          </div>
+
+          <div class="medium-12 cell">
+            <label>Birth Type
+                <input class="form-input" #birthtype="ngModel" required id="birth_type" name="birthtype" type="text" placeholder="Birth Date" [(ngModel)]="personel.birth_type">
+            </label>
+          </div>
+
+        </div>
+
+        <button uiSref="umfeld" class="button" [disabled]="!personelForm.valid" (click)="save(personelForm)">Next</button>
+      </div>
+</form>
