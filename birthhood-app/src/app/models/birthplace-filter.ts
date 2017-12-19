@@ -1,4 +1,4 @@
 export class BirthplaceFilter {
-    showHospitals: boolean;
-    showHouses: boolean;
+    geburtshaus: boolean;
+    spital: boolean;
 }

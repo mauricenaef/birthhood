@@ -19,16 +19,22 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+    this.birthplaceService.displayedBirthplaces$.subscribe(x => {console.log(x);this.birthplaces = x});
     
-    this.subscription = this.birthplaceService.boundsUpdated$.subscribe(
-      bounds => {
-        this.birthplaceService.getDisplayedBirthplaces(bounds).subscribe(
+    /*this.subscription = this.birthplaceService.displayedBirthplaces.subscribe(
+      
           displayedBirthplaces => {
-            //console.log(displayedBirthplaces);
-            this.birthplaces = displayedBirthplaces;
-          })
-      }
-    )
+            
+            displayedBirthplaces.subscribe(x => {
+              console.log("new list", x);
+              this.birthplaces = x});
+            /*
+            console.log("list", displayedBirthplaces);
+            this.birthplaces = displayedBirthplaces;*/
+        //  })
+      
+    
 
     
     this.birthplaceService.zoomOut();
@@ -36,7 +42,7 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     /*gemäss Michael nicht mehr nötig in Angular5 oder so*/
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 
 }

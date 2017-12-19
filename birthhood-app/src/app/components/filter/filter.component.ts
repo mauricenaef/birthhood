@@ -15,17 +15,18 @@ export class FilterComponent implements OnInit {
 
   constructor(private birthplaceService: BirthplaceService) {
     this.filter = new BirthplaceFilter();
-    this.filter.showHospitals = true;
-    this.filter.showHouses = true;
-    this.updateFilter();
+    this.filter.spital = true;
+    this.filter.geburtshaus = false;
+
   }
 
   ngOnInit() {
+    this.updateFilter();
   }
 
 
   updateFilter() {
-    console.log("updateFilter");
+    console.log("updateFilterin Component");
     this.birthplaceService.updateFilter(this.filter);
   }
 }
