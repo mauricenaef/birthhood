@@ -21,12 +21,12 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.updateFilter();
+    //this.updateFilter();
   }
 
 
   updateFilter() {
-    console.log("updateFilterin Component");
+    //console.log("updateFilterin Component");
     this.birthplaceService.updateFilter(this.filter);
   }
 }

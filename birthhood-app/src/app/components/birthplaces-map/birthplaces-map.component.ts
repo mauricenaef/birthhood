@@ -35,11 +35,11 @@ export class BirthplacesMapComponent implements OnInit {
       })});
       */
 
-      birthplaceService.birthplaces$.subscribe(x => {
+    /*  birthplaceService.birthplaces$.subscribe(x => {
        
         this.items$ = x;
        });
-       
+       */
     // Da der Filter noch nie getriggert wurde.
    // birthplaceService.updateFilter(null);
     //zoom to clicked Birthplace
@@ -68,6 +68,10 @@ export class BirthplacesMapComponent implements OnInit {
 
 
   ngOnInit() {
+    this.birthplaceService.changeFilter.switchMap(
+      this.birthplaceService.getBirthplaces).subscribe(
+      x => console.log(x)
+    )
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
@@ -112,7 +116,7 @@ export class BirthplacesMapComponent implements OnInit {
   }
   zoomOut() {
     let itemsWithDistances = [];
-    this.birthplaceService.getBirthplaces().subscribe(
+   /* this.birthplaceService.getBirthplaces().subscribe(
       x => {
         x.map(item => {
           item.distance = this.calculateDistance(item);
@@ -130,6 +134,6 @@ export class BirthplacesMapComponent implements OnInit {
         this.map._mapsWrapper.fitBounds(bounds);
         this.map._mapsWrapper.setCenter({ lat: this.lat, lng: this.lng });
       }
-    );
+    );*/
   }
 }

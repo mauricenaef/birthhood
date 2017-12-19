@@ -20,8 +20,9 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.birthplaceService.displayedBirthplaces$.subscribe(x => {console.log(x);this.birthplaces = x});
-    
+    /*this.birthplaceService.displayedBirthplaces$.subscribe(x => {console.log(x);
+      this.birthplaces = x});
+    */
     /*this.subscription = this.birthplaceService.displayedBirthplaces.subscribe(
       
           displayedBirthplaces => {
@@ -37,7 +38,7 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
     
 
     
-    this.birthplaceService.zoomOut();
+    //this.birthplaceService.zoomOut();
   }
 
   ngOnDestroy() {
