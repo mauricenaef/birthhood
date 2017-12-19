@@ -1,6 +1,6 @@
-<p>
-  header works!
-</p>
-<a routerLink="/login" routerLinkActive="active">login</a>
-<button  (click)="logout()"> logout </button>
-<a routerLink="/birthplaces" routerLinkActive="active">Home</a>
+<ul class="menu">
+  <li><a routerLink="/birthplaces" routerLinkActive="active">Home</a></li>
+  <li><a routerLink="/login" routerLinkActive="active">login</a></li>
+  <li><a  (click)="logout()"> logout </a></li>
+  <li><a href="/experience/new" routerLinkActive="active">Add new Experience</a></li>
+</ul>
