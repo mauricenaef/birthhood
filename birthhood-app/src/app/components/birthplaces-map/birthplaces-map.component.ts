@@ -27,13 +27,15 @@ export class BirthplacesMapComponent implements OnInit {
   bounds: LatLngBoundsLiteral;
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
-      /*
-  fallback-location. HSR?*/
-  this.latLng = <LatLngLiteral>{lat: 47.2,
-  lng : 8.6};
-    birthplaceService.getBirthplacesFiltered().subscribe(x => {
+    /*
+fallback-location. HSR?*/
+    this.latLng = <LatLngLiteral>{
+      lat: 47.2,
+      lng: 8.6
+    };
+    birthplaceService.getBirhplacesOnMap().subscribe(x => {
       this.items$ = x;
-    }) 
+    })
 
     //zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
@@ -61,12 +63,18 @@ export class BirthplacesMapComponent implements OnInit {
 
 
   ngOnInit() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.latLng = <LatLngLiteral>{lat: position.coords.latitude,
-        lng: position.coords.longitude};
-        this.zoomOut();
-      });
+    //only zoom out if not on Detail Page
+    if (this.router.url.indexOf("details") == -1) {
+      console.log("drin");
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.latLng = <LatLngLiteral>{
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          this.zoomOut();
+        });
+      }
     }
   }
 
@@ -79,8 +87,6 @@ export class BirthplacesMapComponent implements OnInit {
     }
   }
 
-
- 
   clickedMarker(id: string) {
     this.router.navigate(['/birthplaces/details', id]);
   }
@@ -102,8 +108,9 @@ export class BirthplacesMapComponent implements OnInit {
   }
   zoomOut() {
     let itemsWithDistances = [];
-    this.birthplaceService.getAllBirthplaces().subscribe(
+    this.birthplaceService.getBirthplacesFiltered().subscribe(
       x => {
+
         x.map(item => {
           item.distance = this.calculateDistance(item);
           itemsWithDistances.push(item);
@@ -113,10 +120,12 @@ export class BirthplacesMapComponent implements OnInit {
         itemsWithDistances.sort((x, y) => x.distance - y.distance);
         let nearestBirthplaces = itemsWithDistances.slice(0, this.zoomOutNumber);
         let bounds = new google.maps.LatLngBounds();
+
         nearestBirthplaces.forEach(
           thisBirthplace =>
             bounds.extend(<LatLng>{ lat: thisBirthplace.lat, lng: thisBirthplace.lng })
         );
+
         this.map._mapsWrapper.fitBounds(bounds);
         this.map._mapsWrapper.setCenter(this.latLng);
       }

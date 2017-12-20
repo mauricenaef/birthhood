@@ -26,7 +26,7 @@ export class FilterComponent implements OnInit {
 
 
   updateFilter() {
-    console.log("updateFilterin Component");
+    //console.log("updateFilterin Component");
     //noch nötig?
     this.birthplaceService.updateFilter(this.filter);
   }

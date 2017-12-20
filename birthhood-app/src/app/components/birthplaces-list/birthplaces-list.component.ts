@@ -15,7 +15,6 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   birthplaces: Observable<any[]>;
   subscription: Subscription;
 
-<<<<<<< HEAD
 
   public slider_options = {
     items: 3, 
@@ -26,39 +25,29 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
     loop:true, 
     autoWidth:false
   }
-
-  constructor(private birthplaceService: BirthplaceService) {
-=======
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
     this.subscription = this.route.params.subscribe(params => {
-      console.log("route");
-      this.birthplaceService.getBirthplacesFiltered().debounceTime(400).subscribe( 
+      this.birthplaceService.getBirhplacesOnMap().debounceTime(400).subscribe( 
         displayedBirthplaces => {
-        console.log("list", displayedBirthplaces);
-        this.birthplaces = displayedBirthplaces;
+        this.birthplaces = displayedBirthplaces.slice(0,7);
       });
     });
->>>>>>> f03d18afb5b8695679386ebee3a41505cc30a8c4
 
   }
 
   ngOnInit() {
     
     this.birthplaceService.zoomOut();
-<<<<<<< HEAD
 
 
-=======
     
     //nötig, damit die Liste neu initialisiert wird.
     //this.birthplaceService.updateFilter(null);
->>>>>>> f03d18afb5b8695679386ebee3a41505cc30a8c4
   }
 
   ngOnDestroy() {
     /*gemäss Michael nicht mehr nötig in Angular5 oder so*/
-    console.log("destroooooy");
     this.subscription.unsubscribe();
   }
 

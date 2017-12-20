@@ -45,14 +45,17 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
 
 
 
-- bei Liste mindestens 3 - wenn  möglich die 3 nächsten
+
 - filter in localstorage speichern.
-- filter als Filterobject machen
-- Anfrage an Firestore mit Filter machen.
+- Anfrage an Firestore mit Filter machen. => geht nicht richtig.
 - recalculate Score
 - nie beide leer
 - google maps link fürs routing
 - Unit tests
+- Anzahl resultate bei suche anzeigen. auch 0 resultate
+- suche an gefilterte Objekte anpassen
+
+- endless scroll bei carousel ist etwas komisch, wenn nicht alle in der karte kommen.
 
 css-reset: alles auf 0
 css-normalize: alles auf gewisse werte
@@ -69,3 +72,11 @@ abolute-elemente beziehen sich immer auf das nächsthöhere Relative-Element.
 
 visibility: bezieht sich auch auf die DOm-Platzierung und Dimensionen des Doms. 
 Mit 0 ist es wie "hidden". Kann über CSS animiert werden.
+
+
+
+Firestore:
+- kein Geo
+- keine multiple range-queries auf mehreren feldern
+- keine not-operatoren
+- keine or-operatoren

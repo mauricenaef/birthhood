@@ -13,4 +13,12 @@ export const environment = {
     storageBucket: "birthhood.appspot.com",
     messagingSenderId: "986661546141"
   }
+  /*firebase: {
+    apiKey: "AIzaSyDVePpFvjZE1yncoErl9otAq3LHrZF4GYk",
+    authDomain: "testprojekt-36812.firebaseapp.com",
+    databaseURL: "https://testprojekt-36812.firebaseio.com",
+    projectId: "testprojekt-36812",
+    storageBucket: "testprojekt-36812.appspot.com",
+    messagingSenderId: "888866002076"
+  }*/
 };
