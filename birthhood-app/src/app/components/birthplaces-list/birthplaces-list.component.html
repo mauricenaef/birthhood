@@ -1,4 +1,4 @@
-<owl-carousel [options]="{items: 3, dots: true, navigation: false, margin: 20, center: true, loop:true, autoWidth:false}" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']" #owlElement>
+<owl-carousel [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']" >
   <div class="item" *ngFor="let birthplace of birthplaces" style="height: 300px; background-color:gray;">
       <a [routerLink]="['/birthplaces/details', birthplace.id]">
         {{ birthplace.name }}

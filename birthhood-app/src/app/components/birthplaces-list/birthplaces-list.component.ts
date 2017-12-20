@@ -14,6 +14,17 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   birthplaces;
   subscription: Subscription;
 
+
+  public slider_options = {
+    items: 3, 
+    dots: true, 
+    navigation: false, 
+    margin: 20, 
+    center: true, 
+    loop:true, 
+    autoWidth:false
+  }
+
   constructor(private birthplaceService: BirthplaceService) {
 
   }
@@ -29,6 +40,8 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
       }
     )
     this.birthplaceService.zoomOut();
+
+
   }
 
   ngOnDestroy() {
