@@ -1,6 +1,7 @@
 <div id="search-component">
   <h4>Search</h4>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  {{this.details.length}}
   <div>
     <div *ngFor="let item of searchresults | async"
     [routerLink]="['/birthplaces/details', item.id]">

@@ -27,9 +27,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 import { SearchComponent } from './components/search/search.component';
-<<<<<<< HEAD
 import { FilterComponent } from './components/filter/filter.component';
-=======
+
 import { UserDashboardComponent } from './modules/experience/user-dashboard/user-dashboard.component';
 import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
 import { UserExperienceListComponent } from './modules/experience/user-experience-list/user-experience-list.component';
@@ -39,11 +38,9 @@ import { FormPersonelComponent } from './components/form/form-personel/form-pers
 import { FormDataService } from './services/form-data.service';
 import { FormFlowService } from './services/form-flow.service';
 import { FormUmfeldComponent } from './components/form/form-umfeld/form-umfeld.component';
-import { UIRouterConfigFn, appStates } from './app.states';
+//import { UIRouterConfigFn, } from './app.states';
 
 import { OwlModule } from 'ng2-owl-carousel';
-
->>>>>>> 1368bd4a6efac2696343d13c466974f043169deb
 
 @NgModule({
   declarations: [
@@ -60,13 +57,10 @@ import { OwlModule } from 'ng2-owl-carousel';
     UserExperienceListComponent,
     SignupComponent,
     SearchComponent,
-<<<<<<< HEAD
-    FilterComponent
-=======
+    FilterComponent,
     FormNavbarComponent,
     FormPersonelComponent,
     FormUmfeldComponent,
->>>>>>> 1368bd4a6efac2696343d13c466974f043169deb
   ],
   imports: [
     BrowserModule,
