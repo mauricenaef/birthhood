@@ -53,8 +53,6 @@ export class BirthplaceService {
       filter: <BirthplaceFilter>{spital: true, geburtshaus: true}
     });
 
-    //this.changeFilter.switchMap(this.getBirthplaces).subscribe(x => console.log(x));
-
   }
   
   getBirthplacesV2(){

@@ -27,28 +27,24 @@ export class BirthplacesMapComponent implements OnInit {
   zoomOutNumber = 3;
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
-   //birthplaceService.filteredBirthplaces$.subscribe(x => console.log("filtered", x));
-  /* birthplaceService.changeFilter.map(
-     birthplaceService.getBirthplaces).subscribe(
-       x => console.log(x)
-   );*/
-   birthplaceService.getBirthplacesV2().subscribe(x => {
-   //   birthplaceService.filteredBirthplaces.subscribe(x => {
-       // console.log("infiltered", x);
-       console.log(x);
-       this.items$ = x;
-      });
-    
+    //birthplaceService.filteredBirthplaces$.subscribe(x => console.log("filtered", x));
+    /* birthplaceService.changeFilter.map(
+       birthplaceService.getBirthplaces).subscribe(
+         x => console.log(x)
+     );*/
 
-    /*  birthplaceService.birthplaces$.subscribe(x => {
-       
-        this.items$ = x;
-       });
-       */
-    // Da der Filter noch nie getriggert wurde.
-   // birthplaceService.updateFilter(null);
-    //zoom to clicked Birthplace
-    birthplaceService.birthplaceClicked$.subscribe(
+    //birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
+  }
+
+
+
+  ngOnInit() {
+    this.birthplaceService.getBirthplacesV2().subscribe(x => {
+      console.log(x);
+      this.items$ = x;
+    });
+
+    this.birthplaceService.birthplaceClicked$.subscribe(
       id => {
         this.birthplaceService.getBirthplace(id).subscribe(x => {
           let birthplace = x;
@@ -67,13 +63,6 @@ export class BirthplacesMapComponent implements OnInit {
         });
       });
 
-    //birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
-  }
-
-
-
-  ngOnInit() {
-   
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
@@ -118,24 +107,24 @@ export class BirthplacesMapComponent implements OnInit {
   }
   zoomOut() {
     let itemsWithDistances = [];
-   /* this.birthplaceService.getBirthplaces().subscribe(
-      x => {
-        x.map(item => {
-          item.distance = this.calculateDistance(item);
-          itemsWithDistances.push(item);
-        }
-        );
-
-        itemsWithDistances.sort((x, y) => x.distance - y.distance);
-        let nearestBirthplaces = itemsWithDistances.slice(0, this.zoomOutNumber);
-        let bounds = new google.maps.LatLngBounds();
-        nearestBirthplaces.forEach(
-          thisBirthplace =>
-            bounds.extend(<LatLng>{ lat: thisBirthplace.lat, lng: thisBirthplace.lng })
-        );
-        this.map._mapsWrapper.fitBounds(bounds);
-        this.map._mapsWrapper.setCenter({ lat: this.lat, lng: this.lng });
-      }
-    );*/
+    /* this.birthplaceService.getBirthplaces().subscribe(
+       x => {
+         x.map(item => {
+           item.distance = this.calculateDistance(item);
+           itemsWithDistances.push(item);
+         }
+         );
+ 
+         itemsWithDistances.sort((x, y) => x.distance - y.distance);
+         let nearestBirthplaces = itemsWithDistances.slice(0, this.zoomOutNumber);
+         let bounds = new google.maps.LatLngBounds();
+         nearestBirthplaces.forEach(
+           thisBirthplace =>
+             bounds.extend(<LatLng>{ lat: thisBirthplace.lat, lng: thisBirthplace.lng })
+         );
+         this.map._mapsWrapper.fitBounds(bounds);
+         this.map._mapsWrapper.setCenter({ lat: this.lat, lng: this.lng });
+       }
+     );*/
   }
 }
