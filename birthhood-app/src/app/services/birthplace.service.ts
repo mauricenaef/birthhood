@@ -46,31 +46,6 @@ export class BirthplaceService {
         geburtshaus: true
       }
     )
-    /*this.birthplaces$ = this.birthplaceCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        //console.log(data.type);
-        return { id, ...data };
-      });
-    });*/
-
-
-  /*  this.displayedBirthplaces$ = Observable.combineLatest(this.birthplaces$, 
-      this.boundsUpdated$, this.filterChanged$ 
-    //.do(values => console.log('computed fired'))
-    ,(bp: Observable<any>, bounds, filter) => {
-      //console.log("combined", bp);
-      return bp.filter(x => {
-       // console.log(x);
-        return this.filter[x.type]}
-      ).filter(item => {
-          let latLng = new MarkerAGM();
-          latLng.constructor(item.lat, item.lng);
-          //console.log(item);
-          return bounds.contains(latLng);
-        });
-      })*/
   }
 
   getAllBirthplaces(): Observable<any>{
@@ -87,16 +62,12 @@ export class BirthplaceService {
   getBirthplacesFiltered(): Observable<any> {
     return Observable.combineLatest(this.getAllBirthplaces(), 
       this.boundsUpdated$, this.filterChanged$ 
-    //.do(values => console.log('computed fired'))
     ,(bp: Observable<any>, bounds, filter) => {
-      //console.log("combined", bp);
       return bp.filter(x => {
-       // console.log(x);
         return this.filter[x.type]}
       ).filter(item => {
           let latLng = new MarkerAGM();
           latLng.constructor(item.lat, item.lng);
-          //console.log(item);
           return bounds.contains(latLng);
         });
       })
@@ -107,28 +78,6 @@ export class BirthplaceService {
     return docRef.valueChanges();
   }
 
-/*  getBirthplaces(): Observable<any> {
-    return this.birthplaceCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      });
-    });
-  }*/
-
-
- /* getDisplayedBirthplaces(bounds: LatLngBounds): Observable<any> {
-
-    return this.getBirthplaces().map(actions => {
-      return actions.filter(item => {
-        let latLng = new MarkerAGM();
-        latLng.constructor(item.lat, item.lng);
-        return bounds.contains(latLng);
-      })
-    }
-    );
-  }*/
 
   updateFilter(filter: BirthplaceFilter) {
     this.filter = filter ? filter : this.filter;

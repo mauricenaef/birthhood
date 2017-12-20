@@ -38,3 +38,34 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
   - wenn keine GeoLocation da ist, was zeigen wir dann? alles?
    Ev. Sprache auslesen und auf Sprachregion zoomen.
   - wenn eine gefunden wird:  mind 4-5 Birthplaces darstellen. Auf diesen Extent zoomen.
+
+
+
+- angular-cli.json: scripts registrieren, z.B. jQuery
+
+
+
+- bei Liste mindestens 3 - wenn  möglich die 3 nächsten
+- filter in localstorage speichern.
+- filter als Filterobject machen
+- Anfrage an Firestore mit Filter machen.
+- recalculate Score
+- nie beide leer
+- google maps link fürs routing
+- Unit tests
+
+css-reset: alles auf 0
+css-normalize: alles auf gewisse werte
+
+
+
+fixed: eigenes Element, nicht im Flow des Bodys
+absolute: hat keine Width und height im Bezug aufs den Document-Flow
+Relative: im document flow, ist Standard, 
+
+
+abolute-elemente beziehen sich immer auf das nächsthöhere Relative-Element.
+
+
+visibility: bezieht sich auch auf die DOm-Platzierung und Dimensionen des Doms. 
+Mit 0 ist es wie "hidden". Kann über CSS animiert werden.
