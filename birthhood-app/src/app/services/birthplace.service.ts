@@ -1,6 +1,6 @@
-import { Injectable , OnInit} from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument  } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { LatLngBounds } from '@agm/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -26,7 +26,7 @@ export class BirthplaceService {
 
   private boundsUpdatedSource = new Subject<LatLngBounds>();
   boundsUpdated$ = this.boundsUpdatedSource.asObservable();
-  boundsUpdated : BehaviorSubject<any>;
+  boundsUpdated: BehaviorSubject<any>;
 
   private zoomOutSource = new Subject<any>();
   zoomOut$ = this.zoomOutSource.asObservable();
@@ -35,10 +35,10 @@ export class BirthplaceService {
   filterChanged$ = this.filterChangedSource.asObservable();
 
   birthplaces$;
-   filteredBirthplaces  : BehaviorSubject<any>;
-  filteredBirthplaces$ ;// this.filteredBirthplaces.asObservable();
+  filteredBirthplaces: BehaviorSubject<any>;
+  filteredBirthplaces$;// this.filteredBirthplaces.asObservable();
 
-   displayedBirthplaces;// : BehaviorSubject<any>;
+  displayedBirthplaces;// : BehaviorSubject<any>;
   displayedBirthplaces$;// = this.displayedBirthplaces.asObservable();
 
   changeFilter: BehaviorSubject<any>;
@@ -50,19 +50,17 @@ export class BirthplaceService {
 
     this.changeFilter = new BehaviorSubject<any>({
       map: null,
-      filter: <BirthplaceFilter>{spital: true, geburtshaus: true}
+      filter: <BirthplaceFilter>{ spital: true, geburtshaus: true }
     });
 
   }
-  
-  getBirthplacesV2(){
+
+  getBirthplacesV2() {
     return this.changeFilter.switchMap(this.getBirthplaces);
   }
 
   getBirthplaces(): Observable<any> {
-    
-    let birthplaceCollection = this.db.collection('birthplaces');
-    return birthplaceCollection.snapshotChanges().map(actions => {
+    return this.birthplaceCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -87,11 +85,11 @@ export class BirthplaceService {
   updateBounds(bounds: LatLngBounds) {
     console.log("bounds updated", bounds);
     this.displayedBounds = bounds ? bounds : this.displayedBounds;
-    
-   /* this.changeFilter.next({
-      map: this.displayedBounds,
-      filter: this.filter
-    });*/
+
+    /* this.changeFilter.next({
+       map: this.displayedBounds,
+       filter: this.filter
+     });*/
 
   }
 
@@ -116,12 +114,12 @@ export class BirthplaceService {
 
   search(term: string): Observable<any[]> {
     return this.getBirthplaces(
-      
+
     ).map(actions =>
       actions.filter(item =>
         item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
       )
-    );
+      );
   }
 
   recalculateScore(birthplaceId: string) {
