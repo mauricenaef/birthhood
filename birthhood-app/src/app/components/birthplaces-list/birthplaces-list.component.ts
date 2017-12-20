@@ -15,6 +15,20 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   birthplaces: Observable<any[]>;
   subscription: Subscription;
 
+<<<<<<< HEAD
+
+  public slider_options = {
+    items: 3, 
+    dots: true, 
+    navigation: false, 
+    margin: 20, 
+    center: true, 
+    loop:true, 
+    autoWidth:false
+  }
+
+  constructor(private birthplaceService: BirthplaceService) {
+=======
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
     this.subscription = this.route.params.subscribe(params => {
@@ -25,15 +39,21 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
         this.birthplaces = displayedBirthplaces;
       });
     });
+>>>>>>> f03d18afb5b8695679386ebee3a41505cc30a8c4
 
   }
 
   ngOnInit() {
     
     this.birthplaceService.zoomOut();
+<<<<<<< HEAD
+
+
+=======
     
     //nötig, damit die Liste neu initialisiert wird.
     //this.birthplaceService.updateFilter(null);
+>>>>>>> f03d18afb5b8695679386ebee3a41505cc30a8c4
   }
 
   ngOnDestroy() {
