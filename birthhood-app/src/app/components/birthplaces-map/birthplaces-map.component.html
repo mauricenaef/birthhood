@@ -1,9 +1,9 @@
 map:
 <agm-map [latitude]="lat" [longitude]="lng"
 
-(boundsChange)="birthplaceService.updateBounds($event)"
-
-(centerChange)="updateCenter($event)">
+(boundsChange)="this.bounds = $event"
+(idle)="birthplaceService.updateBounds(this.bounds)"
+(centerChange)="this.latLng = $event">
 
 <agm-marker
 *ngFor="let m of items$; let i = index"
