@@ -15,7 +15,6 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   birthplaces: Observable<any[]>;
   subscription: Subscription;
 
-
   public slider_options = {
     items: 3, 
     dots: true, 

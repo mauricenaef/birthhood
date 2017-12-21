@@ -42,6 +42,7 @@ import { FormFlowService } from './modules/experience/user-experience-add/servic
 
 
 import { OwlModule } from 'ng2-owl-carousel';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -61,22 +62,18 @@ import { OwlModule } from 'ng2-owl-carousel';
     FilterComponent,
     FormNavbarComponent,
     FormBioComponent,
-    FormUmfeldComponent,
+    FormUmfeldComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule, 
     OwlModule,
-    /*UIRouterModule.forRoot({ 
-      states: appStates,
-      useHash: true,
-      config: UIRouterConfigFn
-    }),*/
-    BrowserAnimationsModule,
+    DateTimePickerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })
