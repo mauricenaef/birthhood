@@ -13,6 +13,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { BirthplaceFilter } from '../models/birthplace-filter';
 import { LatLngBoundsLiteral } from '@agm/core/services/google-maps-types';
 
+
 declare var google: any;
 
 @Injectable()

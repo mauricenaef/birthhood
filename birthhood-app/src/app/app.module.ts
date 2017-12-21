@@ -32,16 +32,18 @@ import { FilterComponent } from './components/filter/filter.component';
 import { UserDashboardComponent } from './modules/experience/user-dashboard/user-dashboard.component';
 import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
 import { UserExperienceListComponent } from './modules/experience/user-experience-list/user-experience-list.component';
-import { FormNavbarComponent } from './components/form/form-navbar/form-navbar.component';
-import { FormPersonelComponent } from './components/form/form-personel/form-personel.component';
 
-import { FormDataService } from './services/form-data.service';
-import { FormFlowService } from './services/form-flow.service';
-import { FormUmfeldComponent } from './components/form/form-umfeld/form-umfeld.component';
-//import { UIRouterConfigFn, } from './app.states';
+import { FormNavbarComponent } from './modules/experience/user-experience-add/components/form-navbar/form-navbar.component';
+import { FormBioComponent } from './modules/experience/user-experience-add/components/form-bio/form-bio.component';
+import { FormUmfeldComponent } from './modules/experience/user-experience-add/components/form-umfeld/form-umfeld.component'
 
-//import { OwlModule } from 'ng2-owl-carousel';
+import { FormDataService } from './modules/experience/user-experience-add/services/form-data.service';
+import { FormFlowService } from './modules/experience/user-experience-add/services/form-flow.service';
+
+
+
 import { OwlModule } from 'ngx-owl-carousel';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -60,23 +62,19 @@ import { OwlModule } from 'ngx-owl-carousel';
     SearchComponent,
     FilterComponent,
     FormNavbarComponent,
-    FormPersonelComponent,
-    FormUmfeldComponent,
+    FormBioComponent,
+    FormUmfeldComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule, 
     OwlModule,
-    /*UIRouterModule.forRoot({ 
-      states: appStates,
-      useHash: true,
-      config: UIRouterConfigFn
-    }),*/
-    BrowserAnimationsModule,
+    DateTimePickerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })

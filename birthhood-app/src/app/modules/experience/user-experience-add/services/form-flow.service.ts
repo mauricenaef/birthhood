@@ -6,7 +6,7 @@ import { FormSteps } from '../models/form-steps';
 export class FormFlowService {
 
   private formflow = [
-    { step: FormSteps.personel, valid: false },
+    { step: FormSteps.bio, valid: false },
     // add missing steps
   ];
 

@@ -12,7 +12,7 @@ export class FormData {
     }
 } 
 
-export class Personel {
+export class Bio {
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Umfeld } from '../../../models/form-data';
-import { FormDataService } from '../../../services/form-data.service';
+import { Umfeld } from '../../models/form-data';
+import { FormDataService } from '../../services/form-data.service';
 
 @Component({
   selector: 'app-form-umfeld',

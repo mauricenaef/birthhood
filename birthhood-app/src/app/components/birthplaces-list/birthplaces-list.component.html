@@ -1,14 +1,8 @@
-<div *ngIf="(birthplaces | async)?.length > 0">
-  <owl-carousel [options]="slider_options" 
-  [items]="birthplaces | async" 
-  [carouselClasses]="['owl-theme', 'row', 'sliding']" >
- 
- <div class="item" 
- *ngFor="let birthplace of birthplaces | async; let i = index; trackBy: trackFbObjects" 
- style="height: 300px; background-color:gray;">
+<div *ngIf="(birthplaces | async)?.length > 1">
+  <owl-carousel [options]="slider_options" [items]="birthplaces | async" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    <div class="item" *ngFor="let birthplace of birthplaces | async; let i = index; trackBy: trackFbObjects" style="height: 300px; background-color:gray;">
       <a [routerLink]="['/birthplaces/details', birthplace.id]">
-        {{ birthplace.name }}
-      </a>
-  </div>
-</owl-carousel>
+        {{i}}{{ birthplace.name }}</a>
+    </div>
+  </owl-carousel>
 </div>

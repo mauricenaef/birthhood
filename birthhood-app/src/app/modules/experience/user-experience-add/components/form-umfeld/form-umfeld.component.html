@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <button uiSref="personel" class="button" (click)="save(umfeldForm)">Zurück</button>
-    <button uiSref=".." class="button" [disabled]="!umfeldForm.valid" (click)="save(umfeldForm)">Weiter</button>
+    <button routerLink=".." class="button" (click)="save(umfeldForm)">Zurück</button>
+    <button routerLink=".." class="button" [disabled]="!umfeldForm.valid" (click)="save(umfeldForm)">Weiter</button>
   </div>
 
 </form>
