@@ -1,7 +1,8 @@
 <div id="search-component">
   <h4>Search</h4>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  
+  <div *ngIf="(searchresults | async)?.length > 0"> {{(searchresults | async)?.length}} Resultate</div>
+  <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
   <div>
     <div *ngFor="let item of searchresults | async"
     [routerLink]="['/birthplaces/details', item.id]">

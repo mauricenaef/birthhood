@@ -33,9 +33,12 @@ fallback-location. HSR?*/
       lat: 47.2,
       lng: 8.6
     };
-    birthplaceService.getBirhplacesOnMap().subscribe(x => {
+    /* birthplaceService.getBirhplacesOnMap().subscribe(x => {
       this.items$ = x;
-    })
+    }) */
+   
+    
+    this.items$ = birthplaceService.getBirhplacesOnMap();
 
     //zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
@@ -86,6 +89,9 @@ fallback-location. HSR?*/
       west: latLng.lng - buffer
     }
   }
+
+  //um punkte weniger flickern zu lassen
+  trackFbObjects = (idx, obj) => obj.$key;
 
   clickedMarker(id: string) {
     this.router.navigate(['/birthplaces/details', id]);

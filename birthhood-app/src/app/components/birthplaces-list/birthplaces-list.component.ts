@@ -27,13 +27,21 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
   }
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
-    this.subscription = this.route.params.subscribe(params => {
+   /*  this.subscription = this.route.params.subscribe(params => {
       this.birthplaceService.getBirhplacesOnMap().debounceTime(400).subscribe( 
         displayedBirthplaces => {
         this.birthplaces = displayedBirthplaces.slice(0,7);
       });
-    });
+    }); */
 
+
+      this.birthplaceService.getBirhplacesOnMap().subscribe(x => console.log("obs", x));
+      this.birthplaces = 
+      this.birthplaceService.getBirhplacesOnMap()/*.subscribe( 
+        displayedBirthplaces => {
+        this.birthplaces = displayedBirthplaces.slice(0,7);
+      });*/
+    console.log(this.birthplaces)
   }
 
   ngOnInit() {
@@ -46,6 +54,10 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
     //this.birthplaceService.updateFilter(null);
   }
 
+  //um punkte weniger flickern zu lassen
+  trackFbObjects = (idx, obj) => obj.$key;
+
+  
   ngOnDestroy() {
     /*gemäss Michael nicht mehr nötig in Angular5 oder so*/
     this.subscription.unsubscribe();

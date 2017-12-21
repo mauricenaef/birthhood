@@ -40,7 +40,8 @@ import { FormFlowService } from './services/form-flow.service';
 import { FormUmfeldComponent } from './components/form/form-umfeld/form-umfeld.component';
 //import { UIRouterConfigFn, } from './app.states';
 
-import { OwlModule } from 'ng2-owl-carousel';
+//import { OwlModule } from 'ng2-owl-carousel';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
