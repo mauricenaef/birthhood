@@ -13,31 +13,33 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BirthplacesListComponent implements OnInit {
 
-  birthplaces: Observable<any[]>;
+  birthplaces;//Observable<any[]>;
   subscription: Subscription;
 
   public slider_options = {
-    items: 3, 
-    dots: true, 
-    navigation: false, 
-    margin: 20, 
-    center: true, 
-    loop:true, 
-    autoWidth:false
+    items: 3,
+    dots: true,
+    navigation: false,
+    margin: 20,
+    center: true,
+    loop: true,
+    autoWidth: false
   }
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
-      this.birthplaces = this.birthplaceService.getBirhplacesOnMap().take(5);
+    //this.birthplaces = 
+    this.birthplaceService.getBirhplacesOnMap()
+      .subscribe(x => this.birthplaces = x.splice(0, 7));
   }
 
   ngOnInit() {
-    
+
     this.birthplaceService.zoomOut();
   }
 
   //um punkte weniger flickern zu lassen
   trackFbObjects = (idx, obj) => obj.$key;
 
-  
+
 
 }
