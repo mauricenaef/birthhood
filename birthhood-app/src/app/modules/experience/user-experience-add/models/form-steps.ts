@@ -1,4 +1,4 @@
 export const FormSteps = {
-    personel: 'personel',
+    bio: 'bio',
     umfeld: 'umfeld'
 } 

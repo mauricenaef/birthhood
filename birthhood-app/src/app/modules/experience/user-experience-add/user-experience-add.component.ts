@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { FormDataService } from '../../../services/form-data.service';
+import { FormDataService } from './services/form-data.service';
 
 @Component({
   selector: 'app-user-experience-add',

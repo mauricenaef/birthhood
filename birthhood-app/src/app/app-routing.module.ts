@@ -9,9 +9,8 @@ import { BirthplaceDetailsComponent } from './components/birthplace-details/birt
 import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
 import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
 
-import { FormFlowService } from './services/form-flow.service';
-import { FormPersonelComponent } from './components/form/form-personel/form-personel.component';
-import { FormUmfeldComponent } from './components/form/form-umfeld/form-umfeld.component';
+import { FormBioComponent } from './modules/experience/user-experience-add/components/form-bio/form-bio.component';
+import { FormUmfeldComponent } from './modules/experience/user-experience-add/components/form-umfeld/form-umfeld.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
@@ -21,8 +20,8 @@ const routes: Routes = [
   { path: 'experience/new', component: UserExperienceAddComponent,
   children: [
     /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
-    { path: '', component: FormPersonelComponent },
-    { path: 'personel', component: FormPersonelComponent },
+    { path: '', component: FormBioComponent },
+    { path: 'bio', component: FormBioComponent },
     { path: 'umfeld', component: FormUmfeldComponent }
   ]
   },
