@@ -26,6 +26,11 @@ export class BirthplacesListComponent implements OnInit {
     autoWidth: false,
     //startPosition: 1
   }
+
+  trackByFn(birthplace: any){
+    return birthplace != null ? birthplace.id: null;
+ }
+ 
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
     //this.birthplaces = 

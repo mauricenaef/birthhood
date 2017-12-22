@@ -65,6 +65,47 @@
 // 1. Global
 // ---------
 
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+ $primary-color: #E06C6D;
+
+ /**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+  $primary-color-bright: #FF8486;
+ 
+ 
+ /**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+ $secondary-color: #8BB5A4;
+ 
+ /**
+  * Secondary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+  $secondary-color-bright: #AFF8C8;
+ 
+  /**
+   * Alert
+   * 
+   * @color
+   * @section Main Color Scheme
+   */
+ $alert-color: #cc4b37;
+
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
