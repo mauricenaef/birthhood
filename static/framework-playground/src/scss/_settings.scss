@@ -60,59 +60,17 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import '../node_modules/foundation-sites/scss/util/util';
+@import '../../node_modules/foundation-sites/scss/util/util';
 
 // 1. Global
 // ---------
-
-/**
- * Primary
- * 
- * @color
- * @section Main Color Scheme
- */
- $primary-color: #E06C6D;
-
- /**
-  * Primary Bright
-  * 
-  * @color
-  * @section Main Color Scheme
-  */
-  $primary-color-bright: #FF8486;
- 
- 
- /**
-  * Secondary
-  * 
-  * @color
-  * @section Main Color Scheme
-  */
- $secondary-color: #8BB5A4;
- 
- /**
-  * Secondary Bright
-  * 
-  * @color
-  * @section Main Color Scheme
-  */
-  $secondary-color-bright: #AFF8C8;
- 
-  /**
-   * Alert
-   * 
-   * @color
-   * @section Second Color Scheme
-   */
- $alert-color: #cc4b37;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: $primary-color,
-  primary-bright: $primary-color-bright,
-  secondary:$secondary-color,
+  primary: #1779ba,
+  secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -131,7 +89,7 @@ $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 3;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -803,11 +761,11 @@ $switch-height: 2rem;
 $switch-height-tiny: 1.5rem;
 $switch-height-small: 1.75rem;
 $switch-height-large: 2.5rem;
-$switch-radius: $global-radius;
+$switch-radius: 100px;
 $switch-margin: $global-margin;
 $switch-paddle-background: $white;
 $switch-paddle-offset: 0.25rem;
-$switch-paddle-radius: $global-radius;
+$switch-paddle-radius: 100px;
 $switch-paddle-transition: all 0.25s ease-out;
 
 // 50. Table

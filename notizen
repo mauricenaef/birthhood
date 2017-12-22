@@ -28,7 +28,12 @@ todo (code):
 - uploader als es6 Module definieren
 - firebase security
   - zur zeit wird einfach das schreiben nur zugelassen, wenn der User authentifiziert ist.
+- filter immer der Methode mitgeben
 - Address-Search. Aber den lassen wir weg und weisen daraufhin in der Präsentation
+-name vs id bei labels für
+- wie können wir die einzelnen sass-files der components auch wirklich verwenden?
+- Hinweis bei suche, ob filter aktiv
+
 
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
@@ -54,6 +59,10 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
 - Unit tests
 - errorhandling
 
+- routeGuards in user-experience-add form-nav
+- angularfirebase spinner https://angularfirebase.com/lessons/show-loading-spinners-for-firebase-data/
+- ng4 loading spinner https://www.npmjs.com/package/ng4-loading-spinner
+
 
 css-reset: alles auf 0
 css-normalize: alles auf gewisse werte
@@ -78,3 +87,22 @@ Firestore:
 - keine multiple range-queries auf mehreren feldern
 - keine not-operatoren
 - keine or-operatoren
+
+
+
+
+SASS:
+Import files immer mit Underscore
+
+
+CSS Namespaces
+
+
+
+
+https://holidaypirates.github.io/nucleus/
+
+> nucleus init
+> src/**/*.scss
+> static/styleguide
+> 

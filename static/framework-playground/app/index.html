@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Playground for birthhood</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+  </head>
+  <body class="site">
+    
+    <main class="main-container grid-container fluid">
+
+      <header>
+        <a href="#" class="logo-link">
+          <img src="assets/img/logo.svg" class="logo" title="logo">
+        </a>
+      </header>
+      <div class="map">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=winterthur,+switerland&zoom=10&scale=2&size=640x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:small%7Ccolor:0xff0000%7Clabel:%7Cwinterthur,+switerland&markers=size:small%7Ccolor:0xff0000%7Clabel:%7Cbülach,+switerland&markers=size:small%7Ccolor:0xff0000%7Clabel:%7Czurich,+switerland&markers=size:small%7Ccolor:0xff0000%7Clabel:%7Cfrauenfeld,+switerland" alt="Google Map of winterthur, switerland">
+      </div>
+      <div class="search-bar">
+        <form>
+          <div class="grid-x">
+            <div class="cell">
+              <div class="input-group">
+                <input class="input-group-field" type="text">
+                <div class="input-group-button">
+                  <input type="submit" class="button" value="Search">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="carousel grid-x grid-padding-x grid-margin-x small-up-3 medium-up-4 large-up-6">
+        <div class="cell" style="height: 200px; background-color: grey">Item</div>
+        <div class="cell" style="height: 200px; background-color: grey">Item</div>
+        <div class="cell" style="height: 200px; background-color: grey">Item</div>
+        <div class="cell" style="height: 200px; background-color: grey">Item</div>
+        <div class="cell" style="height: 200px; background-color: grey">Item</div>
+        <div class="cell" style="height: 200px; background-color: grey">Item</div>
+      </div>
+      <nav class="main-nav">
+        <ul class="menu simple">
+          <li><a href="#" class="button nav-trigger-filter">Filter</a></li>
+          <li><a href="#" >Über uns</a></li>
+          <li><a href="#" >Geburt hinz.</a></li>
+          <li><a href="#" >Profil</a></li>
+          <li class="show-for-small-only"><a href="#" class="button nav-trigger-footer">Menu</a></li>
+        </ul>
+      </nav>
+      
+    </main>
+    
+    <aside class="filter-container grid-container">
+      <div class="app-menu-filter">
+        
+     
+        <div class="grid-x">
+          <div class="cell small-10 medium-8">
+            <a href="#" class="show-for-small-only close-nav-trigger nav-trigger-filter">back</a>
+            <h3>Geburtshäuser</h3>
+          </div>
+          <div class="cell auto">
+            <div class="switch small">
+              <input class="switch-input" id="geburtshaueser" type="checkbox" name="filter">
+              <label class="switch-paddle" for="geburtshaueser">
+                <span class="show-for-sr">Small Portions Only</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="grid-x">
+          <div class="cell small-10 medium-8">
+            <h3>Spitäler</h3>
+          </div>
+          <div class="cell auto">
+            <div class="switch small">
+              <input class="switch-input" id="spitaeler" type="checkbox" name="filter">
+              <label class="switch-paddle" for="spitaeler">
+                <span class="show-for-sr">Small Portions Only</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </aside>
+    
+    <footer class="footer-container grid-container">
+      <div class="grid-x grid-padding-x medium-up-4 app-menu-footer">
+        <div class="cell">
+          <a href="#" class="show-for-small-only close-nav-trigger nav-trigger-footer">back</a>
+          <ul class="menu vertical">
+            <li><a href="#">Geburstort Finden</a></li>
+            <li><a href="#">Geburt hinzufügen</a></li>
+            <li><a href="#">Login / Registrieren</a></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <ul class="menu vertical">
+            <li><a href="#">Über birthhood<sup>®</sup></a></li>
+            <li><a href="#">Geburtskriterien</a></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <ul class="menu vertical">
+            <li><a href="#">Ich bin ein Geburtshaus</a></li>
+            <li><a href="#">Ich bin ein Spital</a></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <ul class="menu vertical">
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+
+    <script src="assets/components/jquery/jquery.min.js"></script>
+    <script src="assets/js/scripts.min.js"></script>
+
+  </body>
+</html>
