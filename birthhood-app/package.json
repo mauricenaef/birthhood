@@ -4,11 +4,12 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve && start gulp",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "styleguide": "nucleus --config config.nucleus.json"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,7 @@
     "angularfire2": "^5.0.0-rc.5-next",
     "core-js": "^2.5.3",
     "firebase": "4.6.0",
+    "gulp": "^3.9.1",
     "jquery": "^3.2.1",
     "ng-pick-datetime": "^5.0.0-beta.15",
     "ng2-owl-carousel": "^0.1.15",

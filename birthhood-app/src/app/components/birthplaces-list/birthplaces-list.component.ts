@@ -24,6 +24,11 @@ export class BirthplacesListComponent implements OnInit, OnDestroy {
     loop:true, 
     autoWidth:false
   }
+
+  trackByFn(birthplace: any){
+    return birthplace != null ? birthplace.id: null;
+ }
+ 
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
     this.subscription = this.route.params.subscribe(params => {
