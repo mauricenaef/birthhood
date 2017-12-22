@@ -12,7 +12,7 @@ import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { BirthplaceFilter } from '../models/birthplace-filter';
 import { LatLngBoundsLiteral } from '@agm/core/services/google-maps-types';
-//import * as GeoFire from "geofire";
+
 
 declare var google: any;
 

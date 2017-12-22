@@ -41,7 +41,8 @@ import { FormDataService } from './modules/experience/user-experience-add/servic
 import { FormFlowService } from './modules/experience/user-experience-add/services/form-flow.service';
 
 
-import { OwlModule } from 'ng2-owl-carousel';
+
+import { OwlModule } from 'ngx-owl-carousel';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 
 @NgModule({

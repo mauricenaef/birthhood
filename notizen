@@ -52,10 +52,8 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
 - nie beide leer
 - google maps link fürs routing
 - Unit tests
-- Anzahl resultate bei suche anzeigen. auch 0 resultate
-- suche an gefilterte Objekte anpassen
+- errorhandling
 
-- endless scroll bei carousel ist etwas komisch, wenn nicht alle in der karte kommen.
 
 css-reset: alles auf 0
 css-normalize: alles auf gewisse werte

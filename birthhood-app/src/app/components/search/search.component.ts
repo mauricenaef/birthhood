@@ -8,6 +8,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 
 import 'rxjs/add/operator/distinctUntilChanged';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +19,7 @@ export class SearchComponent implements OnInit {
 
   searchresults: Observable<any>;
 
-  private searchTerms = new Subject<string>();
+  private searchTerms = new BehaviorSubject<string>(null);
 
   constructor(private birthplaceService: BirthplaceService,
     private router: Router) { }
