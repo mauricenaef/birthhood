@@ -54,6 +54,10 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
 - Unit tests
 - errorhandling
 
+- routeGuards in user-experience-add form-nav
+- angularfirebase spinner https://angularfirebase.com/lessons/show-loading-spinners-for-firebase-data/
+- ng4 loading spinner https://www.npmjs.com/package/ng4-loading-spinner
+
 
 css-reset: alles auf 0
 css-normalize: alles auf gewisse werte
