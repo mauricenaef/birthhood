@@ -23,7 +23,8 @@ export class BirthplacesListComponent implements OnInit {
     margin: 20,
     center: true,
     loop: true,
-    autoWidth: false
+    autoWidth: false,
+    //startPosition: 1
   }
 
   trackByFn(birthplace: any){
