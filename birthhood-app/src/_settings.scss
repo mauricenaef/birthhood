@@ -102,7 +102,7 @@
    * Alert
    * 
    * @color
-   * @section Main Color Scheme
+   * @section Second Color Scheme
    */
  $alert-color: #cc4b37;
 
@@ -110,8 +110,9 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
+  primary: $primary-color,
+  primary-bright: $primary-color-bright,
+  secondary:$secondary-color,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
