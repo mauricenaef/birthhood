@@ -52,24 +52,24 @@ export class BirthplaceService {
     })
    }
 
-  getDirectFromFirebase = (inputfilter) => {
+//  getDirectFromFirebase = (inputfilter) => {
     // leider gibt es GeoFire für FireStore nicht - die Funktionalität werde erst später
     //nachgebaut: https://stackoverflow.com/questions/46553682/is-there-a-way-to-use-geofire-with-firestore
     //Deshalb verzichten wir hier auf das räumliche Filtern der Daten direkt in Firestore und
     //machen es im .filter*/
-    console.log(inputfilter);
+  //  console.log(inputfilter);
     //console.log(inputfilter.bounds.south);
     /*return this.db.collection('birthplaces', ref => 
     ref.where('type', '!=', inputfilter.filter.spital?
     "": "spital")
     .where('type', '!=', inputfilter.filter.geburtshaus?
     "": "geburtshaus"))*/
-    return this.birthplaceCollection
+   // return this.birthplaceCollection
       //.where("lat", ">=", inputfilter.bounds.lat)
       //.where("lat", "<=", inputfilter.bounds.lat)
-      .snapshotChanges().map(actions => {
+     // .snapshotChanges().map(actions => {
         //return this.birthplaceCollection.snapshotChanges().map(actions => {
-
+/*
         console.log("gtetall");
         return actions.map(a => {
           const data = a.payload.doc.data();
@@ -85,7 +85,7 @@ export class BirthplaceService {
             return inputfilter.bounds ? inputfilter.bounds.contains(latLng) : true;
           });
       });
-  }
+  } */
 
 
   getBirthplacesFiltered = () => {

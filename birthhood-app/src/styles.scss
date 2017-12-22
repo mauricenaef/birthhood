@@ -58,10 +58,12 @@ $dot-background-active:	$color-base !default;
 agm-map {
     height: 300px;
     // temp
-    width: 1000px;
+    width: 100%;
 }
 
-
+app-root{
+	width: 100%;
+}
 .menu.simple {
 	justify-content: space-around;
 	padding: 1rem 0;

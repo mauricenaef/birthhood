@@ -68,7 +68,6 @@ fallback-location. HSR?*/
   ngOnInit() {
     //only zoom out if not on Detail Page
     if (this.router.url.indexOf("details") == -1) {
-      console.log("drin");
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
           this.latLng = <LatLngLiteral>{

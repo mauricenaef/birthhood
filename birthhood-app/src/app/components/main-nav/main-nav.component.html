@@ -1,49 +1,15 @@
-<script>
-  (function ($, window, document, undefined) {
 
-'use strict';
-
-$(function () {
-  
-  var isLateralNavAnimating = false;
-  //open/close lateral navigation
-  $('.nav-trigger-footer').on('click', toggle("footer"));
-    
-
-  $('.nav-trigger-filter').on('click', toggle("filter"));
-
-  let toggle = function(event, htmlType){
-        event.preventDefault();
-        //stop if nav animation is running 
-        if( !isLateralNavAnimating ) {
-          if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
-          
-          $('body').toggleClass(htmlType+'-navigation-is-open');
-          $(this).toggleClass('is-active');
-
-          $('.navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-            //animation is over
-            isLateralNavAnimating = false;
-          });
-        }
-
-  }
-});
-
-})(jQuery, window, document);
-
-</script>
 
   <nav class="main-nav">
       <ul class="menu simple">
 
-        <li><a href="#" class="button nav-trigger-filter">Filter</a></li>
+        <li><a (click)='toggle($event, "filter")' class="button nav-trigger-filter">Filter</a></li>
         <!-- <li><a routerLink="/birthplaces" routerLinkActive="active">Home</a></li> -->
 
         <li><a routerLink="/login" routerLinkActive="active">Profil</a></li>
         <!--<li><a (click)="logout()">logout</a></li>-->
 
         <li><a routerLink="/experience/new" routerLinkActive="active">Geburt hinz.</a></li>
-        <li class="show-for-small-only"><a href="#" class="button nav-trigger-footer">Menu</a></li>
+        <li (click)='toggle($event, "footer")' class="show-for-small-only"><a href="#" class="button nav-trigger-footer">Menu</a></li>
       </ul>
     </nav>

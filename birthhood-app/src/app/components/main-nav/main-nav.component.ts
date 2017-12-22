@@ -1,16 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent implements OnInit {
+  
+  isLateralNavAnimating = false;
 
   constructor() { }
 
   ngOnInit() {
     
+  }
+  
+  toggle(event, htmlType){
+    console.log(event, htmlType);
+        //event.preventDefault();
+        //stop if nav animation is running 
+        if( !this.isLateralNavAnimating ) {
+          if($(this).parents('.csstransitions').length > 0 ) this.isLateralNavAnimating = true; 
+          
+          $('body').toggleClass(htmlType+'-navigation-is-open');
+          $(this).toggleClass('is-active');
+
+          $('.navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+            //animation is over
+            this.isLateralNavAnimating = false;
+          });
+        }
+
   }
 
 }

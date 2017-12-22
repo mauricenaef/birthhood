@@ -33,7 +33,7 @@ todo (code):
 -name vs id bei labels für
 - wie können wir die einzelnen sass-files der components auch wirklich verwenden?
 - Hinweis bei suche, ob filter aktiv
-
+- search-reset button / cross
 
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
@@ -43,7 +43,7 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
   - wenn keine GeoLocation da ist, was zeigen wir dann? alles?
    Ev. Sprache auslesen und auf Sprachregion zoomen.
   - wenn eine gefunden wird:  mind 4-5 Birthplaces darstellen. Auf diesen Extent zoomen.
-
+- filter-button wird zu back/home button
 
 
 - angular-cli.json: scripts registrieren, z.B. jQuery
