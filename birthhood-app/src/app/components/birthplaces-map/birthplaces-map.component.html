@@ -1,5 +1,4 @@
-map:
-<agm-map [latitude]="lat" [longitude]="lng"
+<agm-map class="map" [latitude]="lat" [longitude]="lng"
 
 (boundsChange)="this.bounds = $event"
 (idle)="birthplaceService.updateBounds(this.bounds)"
