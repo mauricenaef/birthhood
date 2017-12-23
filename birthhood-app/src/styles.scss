@@ -35,9 +35,9 @@ $dot-background-active:	$color-base !default;
 @import '../node_modules/owl.carousel/src/scss/lazyload';
 @import '../node_modules/owl.carousel/src/scss/theme';
 
-.owl-carousel.owl-loaded {
+/* .owl-carousel.owl-loaded {
     max-width: 1000px !important;
-}
+} */
 
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
@@ -58,7 +58,7 @@ $dot-background-active:	$color-base !default;
 agm-map {
     height: 300px;
     // temp
-    width: 100%;
+    //width: 100%;
 }
 
 app-root{

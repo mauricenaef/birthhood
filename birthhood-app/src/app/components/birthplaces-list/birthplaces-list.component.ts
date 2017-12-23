@@ -21,16 +21,28 @@ export class BirthplacesListComponent implements OnInit {
     dots: true,
     navigation: false,
     margin: 20,
-    center: true,
-    loop: true,
+
     autoWidth: false,
-    //startPosition: 1
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+        center: true,
+        loop: true,
+        startPosition: 1
+      }
+    }
   }
 
-  trackByFn(birthplace: any){
-    return birthplace != null ? birthplace.id: null;
- }
- 
+  trackByFn(birthplace: any) {
+    return birthplace != null ? birthplace.id : null;
+  }
+
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
 
     //this.birthplaces = 

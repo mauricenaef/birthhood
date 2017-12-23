@@ -1,13 +1,14 @@
 {
-    "title": "Nucleus",
+    "title": "birthood styleguide",
     "files": [
         "src/**/*.scss"
     ],
     "target": "../static/styleguide",
-    "css": "",
+    "css":["../style.css", "../styleguide/custom-theme/style/changes.css"],
     "namespace": "page",
     "verbose": 3,
     "counterCSS": null,
     "staticLipsum": false,
-    "placeholderService": false
+    "placeholderService": false,
+    "template": "../static/styleguide/custom-theme"
 }

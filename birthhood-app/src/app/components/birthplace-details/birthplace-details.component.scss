@@ -1,0 +1,19 @@
+@import "~_settings.scss";
+
+/**
+* @atom button
+* @section Navi > Buttons
+* @modifiers
+*  .button--alert an alert button
+*  .button-hollow a hollow button 
+* @markup
+*  <button class='button'>
+*    A button
+*  </button>
+*  <button class='button button--alert'>
+*    An alert button
+*  </button>
+*/
+.bp-container {
+    background: $primary-color;
+}
