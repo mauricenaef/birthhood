@@ -76,33 +76,17 @@ app-root{
 }
 
 
+
 @include breakpoint(medium up) {
 	.main-container {
 		display: flex;
 		flex-direction: column;
-		header {
-			order: 1;
+		app-main-nav {
+			order: -1;
 		}
-		.map {
-			order: 3;
-			img {
-				width: 100%;
-			}
-		}	
-		.search-bar {
-			order: 4;
-		}
-		.carousel {
-			order: 5;
-		}
-		.main-nav {
-			order: 2;
-		}	
 	}
 	
 }
-
-
 
 
 @include breakpoint(small only) {
