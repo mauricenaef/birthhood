@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../../services/auth.service';
+
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-user-dashboard-sidebar',
@@ -10,11 +11,11 @@ export class UserDashboardSidebarComponent implements OnInit {
 
   currentUser;
 
-  constructor( private authService: AuthService ) { }
+  constructor( private af: AngularFireAuth ) { }
 
 
   ngOnInit() {
-  this.authService.currentUserObservable.subscribe(
+    this.af.auth.onAuthStateChanged(
        x => this.currentUser = x );
   }
 

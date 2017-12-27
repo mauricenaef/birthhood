@@ -20,7 +20,6 @@ import { BirthplaceDetailsComponent } from './components/birthplace-details/birt
 import { FormsModule } from '@angular/forms';
 import { BirthplaceService } from './services/birthplace.service';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthService } from './services/auth.service';
 import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
@@ -41,6 +40,7 @@ import { UserExperienceListComponent } from './modules/experience/components/use
 import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
 import { UserDashboardSidebarComponent } from './modules/experience/components/user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { ExperienceService } from './modules/experience/services/experience.service';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 
 @NgModule({
@@ -80,7 +80,9 @@ import { ExperienceService } from './modules/experience/services/experience.serv
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })
   ],
-  providers: [BirthplaceService, AuthService, GoogleMapsAPIWrapper, FormDataService, FormFlowService, ExperienceService ],
+  providers: [BirthplaceService, GoogleMapsAPIWrapper, FormDataService,
+     FormFlowService, ExperienceService,
+     AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

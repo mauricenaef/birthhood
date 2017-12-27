@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../../services/auth.service';
 import { ExperienceService } from '../../services/experience.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-user-experience-list',
@@ -11,13 +11,13 @@ export class UserExperienceListComponent implements OnInit {
 
   experienceList;
 
-  constructor( private authService: AuthService, private experienceService: ExperienceService  ) { }
+  constructor( private af: AngularFireAuth, private experienceService: ExperienceService  ) { }
 
   ngOnInit() {
     /*let userId = this.authService.currentUserId;
     console.log("userexperience " + userId);
 */
-    this.authService.currentUserObservable.subscribe(
+  this.af.auth.onAuthStateChanged(
       currentUser => 
     this.experienceService.getExperiencesByUserId(currentUser.uid).subscribe(
       x => this.experienceList = x

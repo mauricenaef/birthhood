@@ -1,5 +1,6 @@
 Herausforderungen:
 - id bei firebase
+- Firebase-services können schlecht gekapselt werden.
 
 Fragen:
 
@@ -36,7 +37,7 @@ todo (code):
 - search-reset button / cross
 - pipe für Searchresult- highlighting des Searchterms
 - UserID geht verloren bei refresh. Weshalb? => googlen wegen Firebase
--loading Component
+- loading Component
 
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?

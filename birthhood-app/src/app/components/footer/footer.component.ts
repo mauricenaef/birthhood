@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  userLoggedIn: boolean = false;
+
+  constructor(private af: AngularFireAuth) { 
+    this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true: false)
+
+  }
 
   ngOnInit() {
   }
 
+  logout(){
+    this.af.auth.signOut();
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-main-nav',
@@ -10,11 +11,13 @@ import * as $ from 'jquery';
 export class MainNavComponent implements OnInit {
   
   isLateralNavAnimating = false;
+  userLoggedIn: boolean = false;
+  constructor(private af: AngularFireAuth) { 
+    this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true: false)
 
-  constructor() { }
+  }
 
   ngOnInit() {
-    
   }
   
   toggle(event, htmlType){

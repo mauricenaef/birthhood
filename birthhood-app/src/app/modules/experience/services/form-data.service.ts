@@ -4,7 +4,8 @@ import { FormData, Bio, Umfeld } from '../models/form-data';
 import { FormSteps } from '../models/form-steps';
 import { FormFlowService } from '../services/form-flow.service';
 import { ExperienceService } from './experience.service';
-import { AuthService } from '../../../services/auth.service';
+
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class FormDataService {
@@ -13,12 +14,12 @@ export class FormDataService {
   private isBioFormValid: boolean = false;
   private isUmefeldFormValid: boolean = false;
 
-  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService, private authService: AuthService) {
+  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService, private af: AngularFireAuth) {
 
   }
 
   saveToFirebase() {
-    this.authService.currentUserObservable.subscribe(
+    this.af.auth.onAuthStateChanged(
       user => {
         this.formData.user_id = user.uid;
         this.experienceService.save(this.formData);

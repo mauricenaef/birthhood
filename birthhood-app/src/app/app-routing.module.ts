@@ -14,6 +14,7 @@ import { ExperienceAddUmfeldComponent } from './modules/experience/components/ex
 import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
 import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
 import { UserExperienceListComponent } from './modules/experience/components/user-experience-list/user-experience-list.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: '', component: UserExperienceListComponent },
       { 
         path: 'experience/new', component: ExperienceAddComponent,
+        canActivate: [AuthGuard],
         children: [
           /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
           { path: '', component: ExperienceAddBioComponent },

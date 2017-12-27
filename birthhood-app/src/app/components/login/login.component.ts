@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
 
+import { AngularFireAuth } from 'angularfire2/auth';
 import { EmailPasswordCredentials } from '../../models/email-password-credentials';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private af: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   onSubmit(formData) {
     if (formData.valid) {
       console.log(formData.value);
-      this.authService.loginWithEmail(new EmailPasswordCredentials(formData.value.email,
-        formData.value.password)).then(x => {
+      this.af.auth.signInWithEmailAndPassword(formData.value.email,
+        formData.value.password).then(x => {
           console.log("eingeloggt");
           this.router.navigate(['/user-dashboard']);
 
