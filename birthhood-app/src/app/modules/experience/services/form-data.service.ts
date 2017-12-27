@@ -4,6 +4,7 @@ import { FormData, Bio, Umfeld } from '../models/form-data';
 import { FormSteps } from '../models/form-steps';
 import { FormFlowService } from '../services/form-flow.service';
 import { ExperienceService } from './experience.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Injectable()
 export class FormDataService {
@@ -12,11 +13,12 @@ export class FormDataService {
   private isBioFormValid: boolean = false;
   private isUmefeldFormValid: boolean = false;
 
-  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService) {
+  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService, private authService: AuthService) {
 
   }
 
   saveToFirebase() {
+    this.formData.user_id = this.authService.currentUserId;
     this.experienceService.save(this.formData);
   }
 
@@ -68,7 +70,7 @@ export class FormDataService {
     // Return the form data after all this.* members had been reset
     this.formData.clear();
     // Add all private Methods to set Validation
-    this.isBioFormValid  = false;
+    this.isBioFormValid = false;
     return this.formData;
   }
 

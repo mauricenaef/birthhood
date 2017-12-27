@@ -25,6 +25,7 @@ constructor(public af: AngularFireAuth) {
         } else {
           console.log(auth.email);
           console.log('Logged in');
+          console.log(auth.uid);
           console.log(auth);
         }
       }

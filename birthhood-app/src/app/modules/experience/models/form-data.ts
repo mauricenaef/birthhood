@@ -1,4 +1,5 @@
 export class FormData {
+    user_id: string = '';
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
