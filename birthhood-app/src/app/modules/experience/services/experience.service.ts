@@ -8,9 +8,18 @@ export class ExperienceService {
 
   constructor(private db: AngularFirestore, private birthplaceService: BirthplaceService) { }
 
+  convertObject(data) {
+    var obj = {}
+    Object.keys(data).forEach(function(key,index) {
+        //console.log(key);
+        obj[key] = data[key];
+    });
+    return obj;
+  }
+
   save( experience: any )  {
     console.log(experience);
-    this.db.collection("birthexperiences").add(experience)
+    this.db.collection("birthexperiences").add(this.convertObject(experience))
       .then(function (docRef) {
         console.log(docRef.id);
       })
