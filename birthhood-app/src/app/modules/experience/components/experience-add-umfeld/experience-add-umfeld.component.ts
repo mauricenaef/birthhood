@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Umfeld } from '../../models/form-data';
 import { FormDataService } from '../../services/form-data.service';
 
 @Component({
-  selector: 'app-form-umfeld',
-  templateUrl: './form-umfeld.component.html',
-  styleUrls: ['./form-umfeld.component.scss']
+  selector: 'app-experience-add-umfeld',
+  templateUrl: './experience-add-umfeld.component.html',
+  styleUrls: ['./experience-add-umfeld.component.scss']
 })
-export class FormUmfeldComponent implements OnInit {
+export class ExperienceAddUmfeldComponent implements OnInit {
 
   title = 'Umfeld Formular Titel';
   umfeld: Umfeld;

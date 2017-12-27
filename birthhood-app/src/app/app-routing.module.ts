@@ -7,22 +7,23 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { BirthplaceDetailsComponent } from './components/birthplace-details/birthplace-details.component';
 import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
-import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
 
-import { FormBioComponent } from './modules/experience/user-experience-add/components/form-bio/form-bio.component';
-import { FormUmfeldComponent } from './modules/experience/user-experience-add/components/form-umfeld/form-umfeld.component';
+
+import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
+import { ExperienceAddUmfeldComponent } from './modules/experience/components/experience-add-umfeld/experience-add-umfeld.component';
+import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
 
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'experience/new', component: UserExperienceAddComponent,
+  { path: 'experience/new', component: ExperienceAddComponent,
   children: [
     /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
-    { path: '', component: FormBioComponent },
-    { path: 'bio', component: FormBioComponent },
-    { path: 'umfeld', component: FormUmfeldComponent }
+    { path: '', component: ExperienceAddBioComponent },
+    { path: 'bio', component: ExperienceAddBioComponent },
+    { path: 'umfeld', component: ExperienceAddUmfeldComponent }
   ]
   },
   /*{ path: 'birthplace-details/:id', component: BirthplaceDetailsComponent },*/

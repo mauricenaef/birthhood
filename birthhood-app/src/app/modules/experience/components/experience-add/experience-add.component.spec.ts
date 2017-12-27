@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormNavbarComponent } from './form-navbar.component';
+import { ExperienceAddComponent } from './experience-add.component';
 
-describe('FormNavbarComponent', () => {
-  let component: FormNavbarComponent;
-  let fixture: ComponentFixture<FormNavbarComponent>;
+describe('ExperienceAddComponent', () => {
+  let component: ExperienceAddComponent;
+  let fixture: ComponentFixture<ExperienceAddComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormNavbarComponent ]
+      declarations: [ ExperienceAddComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormNavbarComponent);
+    fixture = TestBed.createComponent(ExperienceAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

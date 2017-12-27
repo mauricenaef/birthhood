@@ -1,0 +1,23 @@
+<form #umfeldForm="ngForm" class="editForm" novalidate>
+    <h2 class="head text-center">{{title}}</h2>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-12 cell">
+          <label>U1
+            <input class="form-input" #u1="ngModel" required id="u1" name="u1" type="text" placeholder="U1"
+              [(ngModel)]="umfeld.u1">
+          </label>
+        </div>
+        <div class="medium-12 cell">
+          <label>U2
+            <input class="form-input" #u2="ngModel" required id="u2" name="u2" type="text" placeholder="U2"
+              [(ngModel)]="umfeld.u2">
+          </label>
+        </div>
+      </div>
+  
+      <button routerLink=".." class="button" (click)="save(umfeldForm)">Zurück</button>
+      <button routerLink=".." class="button" [disabled]="!umfeldForm.valid" (click)="save(umfeldForm)">Weiter</button>
+    </div>
+  
+  </form>

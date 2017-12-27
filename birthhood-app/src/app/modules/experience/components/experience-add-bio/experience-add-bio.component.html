@@ -1,0 +1,30 @@
+<form #bioForm="ngForm" class="editForm" novalidate>
+    <h2 class="head text-center">{{title}}</h2>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-12 cell">
+          <label>Birth Name
+            <input class="form-input" #birthname="ngModel" required id="birthname" name="birth_name" type="text" placeholder="Birth Name"
+              [(ngModel)]="bio.birth_name">
+          </label>
+        </div>
+        <div class="medium-12 cell">
+          <label>Birth Date
+            <owl-date-time [(ngModel)]="bio.birth_date" [inputId]="'birth_date'" [dateFormat]="'DD.MM.YYYY'" [showHeader]="false" [readonlyInput]="false"
+              [required]="true" [type]="'calendar'" [placeHolder]="'dd.mm.yyyy'" [max]="max" required id="birth_date" name="birthdate"
+              #birthdate="ngModel" [locale]="de"></owl-date-time>
+          </label>
+        </div>
+  
+        <div class="medium-12 cell">
+          <label>Birth Type
+            <input class="form-input" #birthtype="ngModel" required id="birthtype" name="birth_type" type="text" placeholder="Birth Type"
+              [(ngModel)]="bio.birth_type">
+          </label>
+        </div>
+  
+      </div>
+  
+      <button routerLink="umfeld" class="button" [disabled]="!bioForm.valid" (click)="save(bioForm)">Next</button>
+    </div>
+  </form>

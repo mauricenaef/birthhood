@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { UIRouterModule } from "@uirouter/angular";
 
-
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
@@ -29,23 +28,18 @@ import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 import { SearchComponent } from './components/search/search.component';
 import { FilterComponent } from './components/filter/filter.component';
 
-import { UserDashboardComponent } from './modules/experience/user-dashboard/user-dashboard.component';
-import { UserExperienceAddComponent } from './modules/experience/user-experience-add/user-experience-add.component';
-import { UserExperienceListComponent } from './modules/experience/user-experience-list/user-experience-list.component';
-
-import { FormNavbarComponent } from './modules/experience/user-experience-add/components/form-navbar/form-navbar.component';
-import { FormBioComponent } from './modules/experience/user-experience-add/components/form-bio/form-bio.component';
-import { FormUmfeldComponent } from './modules/experience/user-experience-add/components/form-umfeld/form-umfeld.component'
-
-import { FormDataService } from './modules/experience/user-experience-add/services/form-data.service';
-import { FormFlowService } from './modules/experience/user-experience-add/services/form-flow.service';
-
-
-
 import { OwlModule } from 'ngx-owl-carousel';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
+import { ExperienceAddNavbarComponent } from './modules/experience/components/experience-add-navbar/experience-add-navbar.component';
+import { ExperienceAddUmfeldComponent } from './modules/experience/components/experience-add-umfeld/experience-add-umfeld.component';
+import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
+import { FormDataService } from './modules/experience/services/form-data.service';
+import { FormFlowService } from './modules/experience/services/form-flow.service';
+import { UserExperienceListComponent } from './modules/experience/components/user-experience-list/user-experience-list.component';
+import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -58,16 +52,16 @@ import { LoaderComponent } from './components/loader/loader.component';
     BirthplacesListComponent,
     BirthplaceDetailsComponent,
     UserDashboardComponent,
-    UserExperienceAddComponent,
     UserExperienceListComponent,
     SignupComponent,
     SearchComponent,
     FilterComponent,
-    FormNavbarComponent,
-    FormBioComponent,
-    FormUmfeldComponent,
     MainNavComponent,
-    LoaderComponent
+    LoaderComponent,
+    ExperienceAddBioComponent,
+    ExperienceAddNavbarComponent,
+    ExperienceAddUmfeldComponent,
+    ExperienceAddComponent
   ],
   imports: [
     BrowserModule,
@@ -76,8 +70,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    FormsModule, 
     OwlModule,
+    FormsModule,
     DateTimePickerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'

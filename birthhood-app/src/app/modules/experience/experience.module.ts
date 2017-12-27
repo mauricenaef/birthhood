@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { UserExperienceAddComponent } from './user-experience-add/user-experience-add.component';
-import { UserExperienceListComponent } from './user-experience-list/user-experience-list.component';
-import { FormNavbarComponent } from './user-experience-add/components/form-navbar/form-navbar.component';
-import { FormBioComponent } from './user-experience-add/components/form-bio/form-bio.component';
-import { FormUmfeldComponent } from './user-experience-add/components/form-umfeld/form-umfeld.component';
-
+import { ExperienceAddComponent } from './components/experience-add/experience-add.component';
+import { ExperienceAddBioComponent } from './components/experience-add-bio/experience-add-bio.component';
+import { ExperienceAddNavbarComponent } from './components/experience-add-navbar/experience-add-navbar.component';
+import { ExperienceAddUmfeldComponent } from './components/experience-add-umfeld/experience-add-umfeld.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [UserDashboardComponent, UserExperienceAddComponent, UserExperienceListComponent, FormNavbarComponent, FormBioComponent, FormUmfeldComponent]
+  declarations: [ExperienceAddComponent, ExperienceAddBioComponent, ExperienceAddNavbarComponent, ExperienceAddUmfeldComponent ]
 })
 export class ExperienceModule { }
