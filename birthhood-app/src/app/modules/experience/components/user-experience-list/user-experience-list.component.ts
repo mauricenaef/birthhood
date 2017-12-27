@@ -15,9 +15,9 @@ export class UserExperienceListComponent implements OnInit {
 
   ngOnInit() {
     let userId = this.authService.currentUserId;
-    console.log("userexperience", userId);
+    console.log("userexperience " + userId);
     this.experienceService.getExperiencesByUserId(userId).subscribe(
-      x => {this.experienceService = x;
+      x => {this.experienceList = x;
         console.log(this.authService.currentUserId, x);}
     );
     

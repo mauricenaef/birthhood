@@ -32,9 +32,7 @@ export class ExperienceService {
 
   getExperiencesByUserId( userId: string ): Observable<any> {
     console.log("experience-service", userId);
-    return this.db.collection("birthexperiences", ref => ref.where(
-      "user_id", "==" , userId)).valueChanges()
-    ;
+    return this.db.collection("birthexperiences", ref => ref.where("user_id", "==" , userId)).valueChanges();
   }
 
 
