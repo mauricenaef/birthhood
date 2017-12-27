@@ -8,17 +8,18 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthService {
 
-  authState: any = null;
+  //authState: any = null;
   userRef: AngularFireObject<any>;
 
 constructor(public af: AngularFireAuth) {
-    this.af.authState.subscribe((auth) => {
+   /* this.af.authState.subscribe((auth) => {
       this.authState = auth
-    });
+    });*/
 
 
     this.af.auth.onAuthStateChanged(
       (auth) => {
+        //this.authState = auth;
         if (auth == null) {
           console.log('Logged out');
 
@@ -34,14 +35,14 @@ constructor(public af: AngularFireAuth) {
 
 
   // Returns true if user is logged in
-  get authenticated(): boolean {
+  /*get authenticated(): boolean {
     return this.authState !== null;
-  }
+  }*/
 
   // Returns current user data
-  get currentUser(): any {
+  /*get currentUser(): any {
     return this.authenticated ? this.authState : null;
-  }
+  }*/
 
   // Returns
   get currentUserObservable(): Observable<any> {
@@ -49,9 +50,9 @@ constructor(public af: AngularFireAuth) {
   }
 
   // Returns current user UID
-  get currentUserId(): string {
+  /*get currentUserId(): string {
     return this.authenticated ? this.authState.uid : '';
-  }
+  }*/
 
   // Anonymous User
  /* get currentUserAnonymous(): boolean {
@@ -59,15 +60,15 @@ constructor(public af: AngularFireAuth) {
   }*/
 
   // Returns current user display name or Guest
-  get currentUserDisplayName(): string {
+  /*get currentUserDisplayName(): string {
     if (!this.authState) {
       return 'Guest'
     } /*else if (this.currentUserAnonymous) {
       return 'Anonymous'
-    } */else {
+    } else {
       return this.authState['displayName'] || 'User without a Name'
     }
-  }
+  }*/
 
   loginWithEmail(credentials: EmailPasswordCredentials) {
     console.log(credentials);

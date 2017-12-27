@@ -14,8 +14,8 @@ export class UserDashboardSidebarComponent implements OnInit {
 
 
   ngOnInit() {
-     this.currentUser = this.authService.currentUserObservable;
-     console.log(this.authService.currentUserObservable);
+  this.authService.currentUserObservable.subscribe(
+       x => this.currentUser = x );
   }
 
 }

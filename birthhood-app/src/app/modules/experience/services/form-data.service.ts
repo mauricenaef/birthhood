@@ -18,8 +18,12 @@ export class FormDataService {
   }
 
   saveToFirebase() {
-    this.formData.user_id = this.authService.currentUserId;
-    this.experienceService.save(this.formData);
+    this.authService.currentUserObservable.subscribe(
+      user => {
+        this.formData.user_id = user.uid;
+        this.experienceService.save(this.formData);
+      }
+    )
   }
 
   getBio(): Bio {

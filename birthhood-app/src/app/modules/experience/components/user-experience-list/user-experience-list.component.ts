@@ -14,12 +14,14 @@ export class UserExperienceListComponent implements OnInit {
   constructor( private authService: AuthService, private experienceService: ExperienceService  ) { }
 
   ngOnInit() {
-    let userId = this.authService.currentUserId;
+    /*let userId = this.authService.currentUserId;
     console.log("userexperience " + userId);
-    this.experienceService.getExperiencesByUserId(userId).subscribe(
-      x => {this.experienceList = x;
-        console.log(this.authService.currentUserId, x);}
-    );
+*/
+    this.authService.currentUserObservable.subscribe(
+      currentUser => 
+    this.experienceService.getExperiencesByUserId(currentUser.uid).subscribe(
+      x => this.experienceList = x
+    ));
     
 
   }
