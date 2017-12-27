@@ -7,11 +7,15 @@ import { ExperienceAddUmfeldComponent } from './components/experience-add-umfeld
 import { UserDashboardSidebarComponent } from './components/user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserExperienceListComponent } from './components/user-experience-list/user-experience-list.component';
+import { ExperienceService } from './services/experience.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ExperienceAddComponent, ExperienceAddBioComponent, ExperienceAddNavbarComponent, ExperienceAddUmfeldComponent, UserDashboardSidebarComponent, UserDashboardComponent, UserExperienceListComponent ]
+  declarations: [ExperienceAddComponent, ExperienceAddBioComponent, ExperienceAddNavbarComponent, ExperienceAddUmfeldComponent, UserDashboardSidebarComponent, UserDashboardComponent, UserExperienceListComponent ],
+  providers: [
+    ExperienceService
+  ]
 })
 export class ExperienceModule { }

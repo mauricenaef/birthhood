@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 import { EmailPasswordCredentials } from '../../models/email-password-credentials';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,19 +14,22 @@ export class LoginComponent implements OnInit {
   error: any;
   email: string;
   password: string;
-  
-  constructor(private authService: AuthService) { }
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
 
   onSubmit(formData) {
-    if(formData.valid) {
+    if (formData.valid) {
       console.log(formData.value);
       this.authService.loginWithEmail(new EmailPasswordCredentials(formData.value.email,
-        formData.value.password)).then( x => 
-          console.log("eingeloggt")
+        formData.value.password)).then(x => {
+          console.log("eingeloggt");
+          this.router.navigate(['/user-dashboard']);
+
+        }
         );
       /*this.af.auth.login({
         email: formData.value.email,

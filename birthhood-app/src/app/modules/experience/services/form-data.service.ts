@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormData, Bio, Umfeld } from '../models/form-data';
 import { FormSteps } from '../models/form-steps';
 import { FormFlowService } from '../services/form-flow.service';
+import { ExperienceService } from './experience.service';
 
 @Injectable()
 export class FormDataService {
@@ -11,7 +12,11 @@ export class FormDataService {
   private isBioFormValid: boolean = false;
   private isUmefeldFormValid: boolean = false;
 
-  constructor(private formFlowService: FormFlowService) {
+  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService) {
+  }
+
+  saveToFirebase() {
+    this.experienceService.save(this.formData);
   }
 
   getBio(): Bio {

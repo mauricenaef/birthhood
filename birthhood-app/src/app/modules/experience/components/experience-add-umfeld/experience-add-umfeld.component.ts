@@ -29,6 +29,8 @@ export class ExperienceAddUmfeldComponent implements OnInit {
     console.log('save form success');
     this.formDataService.setUmfeld(this.umfeld);
 
+    this.formDataService.saveToFirebase();
+
   }
 
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 import { EmailPasswordCredentials } from '../../models/email-password-credentials';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,7 @@ export class SignupComponent implements OnInit {
   email:string;
   password: string;
   
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,7 +27,7 @@ export class SignupComponent implements OnInit {
       this.authService.emailSignUp(new EmailPasswordCredentials(formData.value.email,formData.value.password)).then(
         (success) => {
         console.log(success);
-        //this.router.navigate(['/login'])
+        this.router.navigate(['/user-dashboard'])
       }).catch(
         (err) => {
         console.log(err);

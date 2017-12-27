@@ -19,7 +19,6 @@ import { BirthplaceDetailsComponent } from './components/birthplace-details/birt
 
 import { FormsModule } from '@angular/forms';
 import { BirthplaceService } from './services/birthplace.service';
-import { ExperienceService } from './services/experience.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
 import { SignupComponent } from './components/signup/signup.component';
@@ -40,6 +39,9 @@ import { FormDataService } from './modules/experience/services/form-data.service
 import { FormFlowService } from './modules/experience/services/form-flow.service';
 import { UserExperienceListComponent } from './modules/experience/components/user-experience-list/user-experience-list.component';
 import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
+import { UserDashboardSidebarComponent } from './modules/experience/components/user-dashboard-sidebar/user-dashboard-sidebar.component';
+import { ExperienceService } from './modules/experience/services/experience.service';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { UserDashboardComponent } from './modules/experience/components/user-das
     BirthplaceDetailsComponent,
     UserDashboardComponent,
     UserExperienceListComponent,
+    UserDashboardSidebarComponent,
     SignupComponent,
     SearchComponent,
     FilterComponent,
@@ -77,7 +80,7 @@ import { UserDashboardComponent } from './modules/experience/components/user-das
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })
   ],
-  providers: [BirthplaceService, ExperienceService, AuthService, GoogleMapsAPIWrapper, FormDataService, FormFlowService ],
+  providers: [BirthplaceService, AuthService, GoogleMapsAPIWrapper, FormDataService, FormFlowService, ExperienceService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
