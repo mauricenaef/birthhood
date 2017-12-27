@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase'
 import 'firebase/firestore'
@@ -30,6 +30,10 @@ export class AppComponent {
     body.classList.add("loaded"); 
 
     this.showSpiner = false;
+
+  }
+
+  ngAfterViewInit () {
 
   }
 
