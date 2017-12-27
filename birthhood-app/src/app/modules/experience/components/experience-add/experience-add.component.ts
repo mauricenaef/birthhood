@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormDataService } from '../../services/form-data.service';
 
 @Component({
   selector: 'app-experience-add',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceAddComponent implements OnInit {
 
-  constructor() { }
+  title = 'Add new Birth Experience';
+
+  @Input() formData;
+
+  constructor(private formDataService: FormDataService) { }
 
   ngOnInit() {
+    this.formData = this.formDataService.getFormData();
+    console.log(this.title + ' loaded');
   }
 
 }
