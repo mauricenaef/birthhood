@@ -24,7 +24,7 @@ todo (code):
 - migrate to database for Spatial queries and GeoFire
 - errorhandling
 - unit-tests
-- routeGuards
+- routeGuards => beispiel ok.
 - uploader als es6 Module definieren
 - firebase security
   - zur zeit wird einfach das schreiben nur zugelassen, wenn der User authentifiziert ist.
@@ -32,12 +32,15 @@ todo (code):
 - filter immer der Methode mitgeben 
 - Address-Search. Aber den lassen wir weg und weisen daraufhin in der Präsentation
 - name vs id bei labels für
-- wie können wir die einzelnen sass-files der components auch wirklich verwenden?
 - Hinweis bei suche, ob filter aktiv
 - search-reset button / cross
 - pipe für Searchresult- highlighting des Searchterms
-- UserID geht verloren bei refresh. Weshalb? => googlen wegen Firebase
 - loading Component
+- filter in localstorage speichern.
+- recalculate Score
+- google maps link fürs routing
+- nie beide Filter leer!
+- teilweise kommen keine Pins. Wieso? => abfangen
 
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
@@ -55,19 +58,15 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
 
 
 
-- filter in localstorage speichern.
-- Anfrage an Firestore mit Filter machen. => geht nicht richtig.
-- recalculate Score
-- nie beide leer
-- google maps link fürs routing
-- Unit tests
-- errorhandling
 
-- routeGuards in user-experience-add form-nav
 - angularfirebase spinner https://angularfirebase.com/lessons/show-loading-spinners-for-firebase-data/
 - ng4 loading spinner https://www.npmjs.com/package/ng4-loading-spinner
 
 
+
+
+
+Notizen Tobias:
 css-reset: alles auf 0
 css-normalize: alles auf gewisse werte
 
