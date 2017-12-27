@@ -35,7 +35,7 @@ todo (code):
 - Hinweis bei suche, ob filter aktiv
 - search-reset button / cross
 - pipe für Searchresult- highlighting des Searchterms
-
+- UserID geht verloren bei refresh. Weshalb? => googlen wegen Firebase
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
 Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoomen?
