@@ -1,0 +1,7 @@
+@import "~_settings.scss";
+
+@include breakpoint(medium up) {
+    app-header {
+        order: 3;
+    }
+}

@@ -37,7 +37,7 @@
 	.main-container {
 		display: flex;
 		flex-direction: column;
-		header {
+		header, app-header {
 			order: 1;
 		}
 		.map {
@@ -52,7 +52,7 @@
 		.carousel {
 			order: 5;
 		}
-		.main-nav {
+		.main-nav, app-main-nav {
 			order: 2;
 		}	
 	}

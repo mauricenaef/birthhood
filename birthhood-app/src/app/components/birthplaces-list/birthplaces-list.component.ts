@@ -21,7 +21,6 @@ export class BirthplacesListComponent implements OnInit {
     dots: true,
     navigation: false,
     margin: 20,
-
     autoWidth: false,
     responsive: {
       0: {
@@ -47,7 +46,7 @@ export class BirthplacesListComponent implements OnInit {
 
     //this.birthplaces = 
     this.birthplaceService.getBirhplacesOnMap()
-      .subscribe(x => this.birthplaces = x.splice(0, 7));
+      .subscribe(x => this.birthplaces = x.splice(0, 7) );
   }
 
   ngOnInit() {

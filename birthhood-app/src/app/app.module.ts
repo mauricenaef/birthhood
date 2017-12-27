@@ -45,6 +45,7 @@ import { FormFlowService } from './modules/experience/user-experience-add/servic
 import { OwlModule } from 'ngx-owl-carousel';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
     FormNavbarComponent,
     FormBioComponent,
     FormUmfeldComponent,
-    MainNavComponent
+    MainNavComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
