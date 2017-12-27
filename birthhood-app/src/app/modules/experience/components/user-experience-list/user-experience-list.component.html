@@ -1,4 +1,7 @@
 <p>Top</p>
+<div *ngIf="!experienceList">
+ loading....
+</div>
 <div *ngFor="let experience of experienceList">
 {{experience.user_id}}
 </div>
