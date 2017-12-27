@@ -18,22 +18,23 @@ todo (code):
   - Login
   - Experience
   - Birthplaces könnte auch eigenes Modul sein.
-- filtern der Birthplaces
 - add Random Experiences for more Data => for each Birthplace add 5 Random Experiences
  => nicht nötig, da wir so den Blank Slate verwenden können
-- experience Erfassungsmaske
+- migrate to database for Spatial queries and GeoFire
 - errorhandling
 - unit-tests
 - routeGuards
 - uploader als es6 Module definieren
 - firebase security
   - zur zeit wird einfach das schreiben nur zugelassen, wenn der User authentifiziert ist.
-- filter immer der Methode mitgeben
+  - man müsste noch ein check machen, damit Einträge eines Users nicht überschrieben werden können.
+- filter immer der Methode mitgeben 
 - Address-Search. Aber den lassen wir weg und weisen daraufhin in der Präsentation
--name vs id bei labels für
+- name vs id bei labels für
 - wie können wir die einzelnen sass-files der components auch wirklich verwenden?
 - Hinweis bei suche, ob filter aktiv
 - search-reset button / cross
+- pipe für Searchresult- highlighting des Searchterms
 
 
 - Design Frage: wenn man aus der Details ansicht zurück zur Liste/Karte kommt. Was möchte man dann sehen?
