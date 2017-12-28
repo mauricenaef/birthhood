@@ -40,7 +40,7 @@ const environment = {
   }
 };
 
-fdescribe('BirthplacesMapComponent', () => {
+describe('BirthplacesMapComponent', () => {
   let component: BirthplacesMapComponent;
   let fixture: ComponentFixture<BirthplacesMapComponent>;
 
