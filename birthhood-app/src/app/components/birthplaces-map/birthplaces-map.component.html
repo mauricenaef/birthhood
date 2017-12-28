@@ -2,8 +2,8 @@
 
 (boundsChange)="this.bounds = $event"
 (idle)="birthplaceService.updateBounds(this.bounds)"
-(centerChange)="this.latLng = $event">
-
+(centerChange)="this.latLng = $event"
+[streetViewControl]="false">
 <agm-marker
 *ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects"
 (markerClick)="clickedMarker(m.id)"
