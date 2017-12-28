@@ -11,19 +11,6 @@ import { Observable } from  'rxjs/Rx';
 import { AgmCoreModule, GoogleMapsAPIWrapper, MapsAPILoader, LatLngBounds, LatLng } from '@agm/core';
 import { BirthplaceFilter } from '../models/birthplace-filter';
 
-//import { environment } from '../../../environments/environment';
-const environment = {
-  firebase: {
-    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-    authDomain: "birthhood.firebaseapp.com",
-    databaseURL: "https://birthhood.firebaseio.com",
-    projectId: "birthhood",
-    storageBucket: "birthhood.appspot.com",
-    messagingSenderId: "986661546141"
-  }
-  };
-
-  declare var google: any;
 
   const input = [[{
     payload : {
@@ -59,7 +46,7 @@ const environment = {
   const angularFirestoreStub = {
     collection: jasmine.createSpy('collection').and.returnValue(collectionStub)
   }
-describe('BirthplaceService - mockdata', () => {
+fdescribe('BirthplaceService - mockdata', () => {
   let service: BirthplaceService;
 
   beforeEach(() => {
@@ -68,7 +55,6 @@ describe('BirthplaceService - mockdata', () => {
       imports: [
         BrowserModule,
         AgmCoreModule,
-        AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule
       ],
       providers: [GoogleMapsAPIWrapper, MapsAPILoader, BirthplaceService,
