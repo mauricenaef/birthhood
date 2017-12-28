@@ -88,11 +88,5 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should redirect to main page upon logout', fakeAsync(() => {
-    component.logout();
-    tick(); 
-    expect(location.path()).toBe('/birthplaces');
-  }));
-
   
 });
