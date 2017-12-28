@@ -113,7 +113,7 @@ export class BirthplaceService {
   }
 
   getBirthplace(id: string): Observable<any> {
-    var docRef = this.db.collection('birthplaces').doc(id);
+    var docRef = this.birthplaceCollection.doc(id);
     return docRef.valueChanges();
   }
 
