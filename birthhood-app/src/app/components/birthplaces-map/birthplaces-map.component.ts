@@ -34,9 +34,6 @@ fallback-location. HSR?*/
       lat: 47.2,
       lng: 8.6
     };
-    /* birthplaceService.getBirhplacesOnMap().subscribe(x => {
-      this.items$ = x;
-    }) */
    
     
     this.items$ = birthplaceService.getBirhplacesOnMap();
