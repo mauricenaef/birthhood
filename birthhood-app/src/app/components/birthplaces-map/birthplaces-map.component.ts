@@ -5,6 +5,7 @@ import { BirthplaceService } from '../../services/birthplace.service';
 import { Router } from '@angular/router';
 import { AgmMap } from '@agm/core/directives/map';
 import { Subject } from 'rxjs/Subject';
+import { Location } from "@angular/common";
 declare var google: any;
 
 @Component({
@@ -67,8 +68,8 @@ fallback-location. HSR?*/
 
   ngOnInit() {
     //only zoom out if not on Detail Page
-    if (this.router.url.indexOf("details") == -1) {
-      if (navigator.geolocation) {
+      if (this.router.url == "/birthplaces") {
+        if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
           this.latLng = <LatLngLiteral>{
             lat: position.coords.latitude,
