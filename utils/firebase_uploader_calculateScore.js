@@ -39,10 +39,10 @@ ScoreCalculator.prototype.calculateScores = function (db) {
         scores[scorename] = [];
       });
 
-      var experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplace.id);
+      let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplace.id);
       experiences.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          thisexperience = doc.data();
+          let thisexperience = doc.data();
           for (var property in thisexperience) {
             if (thisexperience.hasOwnProperty(property)) {
               if (scorenames.includes(property.charAt(0)) && property.length < 4) {
@@ -51,7 +51,7 @@ ScoreCalculator.prototype.calculateScores = function (db) {
             }
           }
         })
-        score = calculateScores(scores);
+        let score = calculateScores(scores);
         var docRef = db.collection('birthplaces').doc(birthplace.id);
 
         docRef.update(score).then(function () {
@@ -68,7 +68,7 @@ ScoreCalculator.prototype.calculateScores = function (db) {
   function calculateScores(scores) {
     let returnscores = {};
     for (let scorename of scorenames) {
-      cleanArray = scores[scorename].filter(x => x != '' && x != "-");
+      let cleanArray = scores[scorename].filter(x => x != '' && x != "-");
       returnscores["score_" + scorename] = cleanArray.length > 0 ? cleanArray.reduce((a, b) => a + b) / cleanArray.length : null;
     }
     return returnscores;

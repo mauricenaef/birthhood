@@ -6,18 +6,25 @@ admin = require('firebase-admin');
 require('firebase/firestore');
 
 config = {
-  apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-  authDomain: "birthhood.firebaseapp.com",
-  databaseURL: "https://birthhood.firebaseio.com",
-  projectId: "birthhood",
-  storageBucket: "birthhood.appspot.com",
-  messagingSenderId: "986661546141",
-  credential: admin.credential.cert(serviceAccount)
+    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
+    authDomain: "birthhood.firebaseapp.com",
+    databaseURL: "https://birthhood.firebaseio.com",
+    projectId: "birthhood",
+    storageBucket: "birthhood.appspot.com",
+    messagingSenderId: "986661546141",
+    credential: admin.credential.cert(serviceAccount)
 };
 
 admin.initializeApp(config);
 var db = admin.firestore();
 
-bpUploader.uploadBirthplaces(db);
-exUploader.uploadExperiences(db);
-sCalculator.calculateScores(db);
+
+exUploader.uploadExperiences(db).then(
+   
+)
+
+/*
+bpUploader.uploadBirthplaces(db).then(
+    exUploader.uploadExperiences(db).then(
+        sCalculator.calculateScores(db)
+    )).catch(error => console.log("hobbla", error));*/

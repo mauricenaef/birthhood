@@ -5,47 +5,54 @@
 var BirthplaceUploader = function (db) { };
 
 BirthplaceUploader.prototype.uploadBirthplaces = function (db) {
-  'use strict';
+  return new Promise(
+    function (resolve, reject) {
+      'use strict';
 
-  const https = require("https");
-  let fs = require('fs')
+      const https = require("https");
+      let fs = require('fs')
+      let baseurl = "https://maps.googleapis.com/maps/api/geocode/json?"
+      //let gmKey = "&key=AIzaSyDPFOtfpOWNYJOpKO0bU4etLEJ6ipqvqKY"
+      let gmKey = "&key=AIzaSyCjUUWddqTNe8uUCYuOJvf44TKWJQ43z8E" //yvonne
+      let content = fs.readFileSync('birthplaces_ch.json');
+      let birthplaces = JSON.parse(content);
 
-  let baseurl = "https://maps.googleapis.com/maps/api/geocode/json?"
-  let gmKey = "&key=AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU"
+      let i = 0;
 
+      for (let birthplace of birthplaces) {
+        let addressstring = encodeURI(`address= ${birthplace.strasse} ${birthplace.plz} ${birthplace.ort}`);
+        let url = baseurl + addressstring + gmKey;
 
-  let content = fs.readFileSync('birthplaces_ch.json');
-  let birthplaces = JSON.parse(content);
+        https.get(url, res => {
+          res.setEncoding("utf8");
+          let body = "";
 
-  let i = 0;
-
-  for (let birthplace of birthplaces) {
-    let addressstring = encodeURI(`address= ${birthplace.strasse} ${birthplace.plz} ${birthplace.ort}`);
-    let url = baseurl + addressstring + gmKey;
-    console.log(url);
-    https.get(url, res => {
-      res.setEncoding("utf8");
-      let body = "";
-      res.on("data", data => {
-        body += data;
-      });
-      res.on("end", () => {
-        body = JSON.parse(body);
-        let lat = body.results[0].geometry.location.lat;
-        let lng = body.results[0].geometry.location.lng;
-        birthplace.lat = lat;
-        birthplace.lng = lng;
-        db.collection("birthplaces").add(birthplace)
-          .then(function (docRef) {
-            console.log(i++);
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch(function (error) {
-            console.error("Error adding document: ", error);
+          res.on("data", data => {
+            body += data;
           });
-      });
-    });
-  }
+
+          res.on("end", () => {
+            body = JSON.parse(body);
+            console.log(body);
+            let lat = body.results[0].geometry.location.lat;
+            let lng = body.results[0].geometry.location.lng;
+
+            birthplace.lat = lat;
+            birthplace.lng = lng;
+            db.collection("birthplaces").add(birthplace)
+              .then(function (docRef) {
+                console.log(i++);
+                console.log("Birthplace written with ID: ", docRef.id);
+              })
+              .catch(function (error) {
+                console.error("Error adding document: ", error);
+              });
+          });
+        });
+
+      }
+      resolve("Upload finished");
+    })
 };
 
 
