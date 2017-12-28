@@ -46,7 +46,7 @@ import { BirthplaceFilter } from '../models/birthplace-filter';
   const angularFirestoreStub = {
     collection: jasmine.createSpy('collection').and.returnValue(collectionStub)
   }
-fdescribe('BirthplaceService - mockdata', () => {
+describe('BirthplaceService - mockdata', () => {
   let service: BirthplaceService;
 
   beforeEach(() => {
