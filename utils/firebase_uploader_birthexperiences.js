@@ -14,14 +14,12 @@ ExperienceUploader.prototype.uploadExperiences = function (db) {
       let content = fs.readFileSync('birthexperience_data.json');
       let birthexperiences = JSON.parse(content);
 
-
-
       var birthplaces = db.collection('birthplaces');
       for (let birthexperience of birthexperiences) {
         var item = birthplaces.where('name', '==', birthexperience["birthplace"]);
         item.get().then(function (querySnapshot) {
           if (querySnapshot.empty) {
-            console.log(birthexperience["birthplace"]);
+            console.log("Nicht gefunden: ", birthexperience["birthplace"]);
           }
           querySnapshot.forEach(function (doc) {
             birthexperience["birthplace_id"] = doc.id;
