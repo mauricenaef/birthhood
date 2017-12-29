@@ -1,23 +1,18 @@
+<label for="search-box" class="show-for-sr">
+  Search</label>
+<input type="text" #searchBox id="search-box" class="search-box" [ngClass]="{'search-box-active': isActive }" (focus)="activateSearch()"
+  (keyup)="search(searchBox.value)" placeholder="Suchen" />
 
-  <div class="grid-x grid-margin-x">
-    <div class="form-container cell">
+<div class="search-overlay" (click)="deactivateSearch()">
 
-        <label for="search-box" class="show-for-sr">Search</label>
-        <input type="text" #searchBox id="search-box" class="search-box txt" 
-        (keyup)="search(searchBox.value)" placeholder="Suchen" />
+  <div class="search-results">
+    <div *ngIf="(searchresults | async)?.length > 0"> {{(searchresults | async)?.length}} Resultate</div>
+    <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
 
-        <div class="search-overlay">
-
-          <div class="search-results">
-            <div *ngIf="(searchresults | async)?.length > 0"> {{(searchresults | async)?.length}} Resultate</div>
-            <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
-
-            <div *ngFor="let item of searchresults | async" [routerLink]="['/birthplaces/details', item.id]">
-              {{item.name}}
-            </div>
-
-          </div>
-
-      </div>
+    <div *ngFor="let item of searchresults | async" [routerLink]="['/birthplaces/details', item.id]">
+      {{item.name}}
     </div>
+
   </div>
+
+</div>
