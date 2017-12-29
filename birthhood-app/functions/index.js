@@ -10,9 +10,14 @@ const functions = require('firebase-functions');
 
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
-exports.addMessage = functions.https.onRequest((req, res) => {
-  const original = req.query.text;
-  admin.database().ref('/messages').push({original: original}).then(snapshot => {
-    res.redirect(303, snapshot.ref);
+
+exports.logWrite = functions.firestore
+  .document('birthexperiences/{documentId}')
+  .onWrite((event) => {
+    var db = admin.firestore();
+    let birthplaceid = event.data.get('birthplace_id');
+    let birthdate = event.data.get('birth_date');
+    console.log(event);
+    let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceid);
+    db.collection('messages').add({"birthdate": birthdate});
   });
-});
