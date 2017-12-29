@@ -1,9 +1,9 @@
-<agm-map class="map" [latitude]="lat" [longitude]="lng"
+<agm-map class="map" [latitude]="latLng.lat" [longitude]="latLng.lng"
 
 (boundsChange)="this.bounds = $event"
 (idle)="birthplaceService.updateBounds(this.bounds)"
-(centerChange)="this.latLng = $event">
-
+(centerChange)="this.latLng = $event"
+[streetViewControl]="false">
 <agm-marker
 *ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects"
 (markerClick)="clickedMarker(m.id)"
