@@ -40,7 +40,9 @@ export class BirthplaceService {
   constructor(private db: AngularFirestore, private mapsAPILoader: MapsAPILoader) {
 
     this.birthplaceCollection = this.db.collection('birthplaces');
-
+    /* this.birthplaceCollection.valueChanges().subscribe(
+      x => console.log(x)
+    ) */
     this.filter = <BirthplaceFilter>{
       spital: true,
       geburtshaus: true
@@ -92,7 +94,9 @@ export class BirthplaceService {
     return this.birthplaceCollection
       .snapshotChanges().map(actions => {
         return actions.map(a => {
+          
           const data = a.payload.doc.data();
+          console.log("hier", data);
           const id = a.payload.doc.id;
           return { id, ...data };
         })

@@ -20,36 +20,40 @@ BirthplaceUploader.prototype.uploadBirthplaces = function (db) {
       let i = 0;
 
       for (let birthplace of birthplaces) {
-        let addressstring = encodeURI(`address= ${birthplace.strasse} ${birthplace.plz} ${birthplace.ort}`);
-        let url = baseurl + addressstring + gmKey;
+        i++
+        (function (db) {
+          setTimeout(function () {
+            let addressstring = encodeURI(`address= ${birthplace.strasse} ${birthplace.plz} ${birthplace.ort}`);
+            let url = baseurl + addressstring + gmKey;
 
-        https.get(url, res => {
-          res.setEncoding("utf8");
-          let body = "";
+            https.get(url, res => {
+              i++;
+              res.setEncoding("utf8");
+              let body = "";
 
-          res.on("data", data => {
-            body += data;
-          });
-
-          res.on("end", () => {
-            body = JSON.parse(body);
-            console.log(body);
-            let lat = body.results[0].geometry.location.lat;
-            let lng = body.results[0].geometry.location.lng;
-
-            birthplace.lat = lat;
-            birthplace.lng = lng;
-            db.collection("birthplaces").add(birthplace)
-              .then(function (docRef) {
-                console.log(i++);
-                console.log("Birthplace written with ID: ", docRef.id);
-              })
-              .catch(function (error) {
-                console.error("Error adding document: ", error);
+              res.on("data", data => {
+                body += data;
               });
-          });
-        });
 
+              res.on("end", () => {
+                body = JSON.parse(body);
+                //console.log(body);
+                let lat = body.results[0].geometry.location.lat;
+                let lng = body.results[0].geometry.location.lng;
+
+                birthplace.lat = lat;
+                birthplace.lng = lng;
+                db.collection("birthplaces").add(birthplace)
+                  .then(function (docRef) {
+                    console.log("Birthplace written with ID: ", docRef.id);
+                  })
+                  .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                  });
+              });
+            });
+          }, i * 500);
+        })(db);
       }
       resolve("Upload finished");
     })

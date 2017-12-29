@@ -1,6 +1,8 @@
 Herausforderungen:
 - id bei firebase
 - Firebase-services können schlecht gekapselt werden.
+- google maps API zu viele Anfragen
+- firestore: zu viele Anfragen
 
 Fragen:
 
@@ -37,8 +39,9 @@ todo (code):
 - pipe für Searchresult- highlighting des Searchterms
 - loading Component
 - filter in localstorage speichern.
-- recalculate Score
+- recalculate Score => als Firestore function? so kann sie geschützt werden....
 - google maps link fürs routing
+https://www.google.com/maps/dir/?api=1&destination=bonaduz
 - nie beide Filter leer!
 - teilweise kommen keine Pins. Wieso? => abfangen
 
@@ -64,8 +67,56 @@ Alle pins? den vorher angeklickten pin? nur etwas vom angeklickten Pin rauszoome
 
 
 
+https://blog.realworldfullstack.io/real-world-app-part-16-from-firebase-to-firestore-f6c494e80237
+https://firebase.google.com/docs/firestore/security/get-started
+
+request.auth.uid 
+0bd55101ecab9a242ec823f1c0b5a5e198aebe80
+request.auth.token.email 
+birthhood@appspot.gserviceaccount.com
 
 
+
+******************************
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /birthplaces/{birthplace} {
+      allow read;
+      allow create: if request.auth.token.email == 'birthhood@appspot.gserviceaccount.com';
+      allow update: if request.auth.token.email == 'birthhood@appspot.gserviceaccount.com';
+    }
+
+    match /birthexperiences/{birthexperience} {
+      allow read;
+      allow create: request.auth.token.email == 'birthhood@appspot.gserviceaccount.com'; //for service account
+      allow update: if resource.data.user_id == request.auth.uid || request.auth.token.email == 'birthhood@appspot.gserviceaccount.com';
+    }
+
+    match /{document=**} {
+      allow read;
+      
+    }
+  }
+}
+******************************
+https://github.com/firebase/functions-samples
+https://blog.realworldfullstack.io/real-world-app-part-12-cloud-functions-for-firebase-8359787e26f3
+******************************
+const functions = require('firebase-functions');
+
+const admin = require('firebase-admin');
+admin.initializeApp(functions.config().firebase);
+var db = admin.firestore();
+
+exports.myFunctionName = functions.firestore
+  .document('birthexperiences/{documentId}')
+  .onWrite((event) => {
+    let birthplaceid = event.data.get('birthplace_id');
+    let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceid);
+      
+  });
+
+******************************
 Notizen Tobias:
 css-reset: alles auf 0
 css-normalize: alles auf gewisse werte
