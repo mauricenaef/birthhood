@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Observable } from 'rxjs/Observable';
 import { BirthplaceFilter } from '../../models/birthplace-filter';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { BirthplaceFilter } from '../../models/birthplace-filter';
 export class FilterComponent implements OnInit {
 
   filter: BirthplaceFilter;
+  isLateralNavAnimating = false;
 
   constructor(private birthplaceService: BirthplaceService) {
     this.filter = new BirthplaceFilter();
@@ -24,6 +26,22 @@ export class FilterComponent implements OnInit {
     this.updateFilter();
   }
 
+  toggle(event, htmlType) {
+    console.log(event, htmlType);
+    //event.preventDefault();
+    //stop if nav animation is running 
+    if (!this.isLateralNavAnimating) {
+      if ($(this).parents('.csstransitions').length > 0) this.isLateralNavAnimating = true;
+
+      $('body').toggleClass(htmlType + '-navigation-is-open');
+      $(this).toggleClass('is-active');
+
+      $('.navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+        //animation is over
+        this.isLateralNavAnimating = false;
+      });
+    }
+  }
 
   updateFilter() {
     //console.log("updateFilterin Component");

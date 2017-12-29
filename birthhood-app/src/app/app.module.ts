@@ -41,6 +41,7 @@ import { UserDashboardComponent } from './modules/experience/components/user-das
 import { UserDashboardSidebarComponent } from './modules/experience/components/user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { ExperienceService } from './modules/experience/services/experience.service';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { AuthGuard } from './shared/guards/auth.guard';
     ExperienceAddBioComponent,
     ExperienceAddNavbarComponent,
     ExperienceAddUmfeldComponent,
-    ExperienceAddComponent
+    ExperienceAddComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
