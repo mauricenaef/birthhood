@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -12,7 +12,7 @@ export class MainNavComponent implements OnInit {
 
   isLateralNavAnimating = false;
   userLoggedIn: boolean = false;
-  constructor(private af: AngularFireAuth) {
+  constructor(private af: AngularFireAuth, private router: Router) {
     this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false)
 
   }
