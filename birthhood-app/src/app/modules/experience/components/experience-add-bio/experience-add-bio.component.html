@@ -22,7 +22,11 @@
               [(ngModel)]="bio.birth_type">
           </label>
         </div>
-  
+        
+        <ul>
+          <li *ngFor="let birthplace of birthplacelist"> {{ birthplace.name }} </li>
+        </ul>
+
       </div>
   
       <button routerLink="umfeld" class="button" [disabled]="!bioForm.valid" (click)="save(bioForm)">Next</button>

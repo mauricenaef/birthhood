@@ -1,6 +1,8 @@
-<div id="search-component">
-  <h4>Search</h4>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+<div id="search-component" class="search-component">
+  <label for="search-box" class="show-for-sr">Search</label>
+  <input #searchBox id="search-box" class="search-box" (keyup)="search(searchBox.value)" placeholder="Suchen"/>
+  <div class="search-overlay"></div>
+  
   <div *ngIf="(searchresults | async)?.length > 0"> {{(searchresults | async)?.length}} Resultate</div>
   <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
   <div>

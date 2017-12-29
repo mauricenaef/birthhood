@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Bio } from '../../models/form-data';
 import { FormDataService } from '../../services/form-data.service';
+import { BirthplaceService } from '../../../../services/birthplace.service';
 
 @Component({
   selector: 'app-experience-add-bio',
@@ -13,6 +14,7 @@ export class ExperienceAddBioComponent implements OnInit {
   title = 'Bio Formular Titel';
   bio: Bio;
   form: any;
+  birthplacelist;
 
   public moment: Date = new Date();
   public pickerColor: string = '#0070ba';
@@ -25,12 +27,19 @@ export class ExperienceAddBioComponent implements OnInit {
   };
   public birth_date: any;
 
-  constructor(private formDataService: FormDataService) { }
+  constructor(private formDataService: FormDataService, private birthPlaceService: BirthplaceService) { }
 
   ngOnInit() {
+    
+    this.birthPlaceService.getBirthplaces().subscribe( x => { 
+      this.birthplacelist = x;
+      console.log(x);
+    });
+
     this.bio = this.formDataService.getBio();
 
     console.log('Form Bio loaded');
+
 
   }
 

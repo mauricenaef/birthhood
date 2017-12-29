@@ -87,6 +87,16 @@ export class BirthplaceService {
       });
   } */
 
+  getBirthplaces(): Observable<any> {
+    return this.birthplaceCollection
+      .snapshotChanges().map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      });
+  }
 
   getBirthplacesFiltered = () => {
     return this.birthplaceCollection
