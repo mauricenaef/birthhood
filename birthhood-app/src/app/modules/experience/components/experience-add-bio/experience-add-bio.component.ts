@@ -33,7 +33,7 @@ export class ExperienceAddBioComponent implements OnInit {
     
     this.birthPlaceService.getBirthplaces().subscribe( x => { 
       this.birthplacelist = x;
-      console.log(x);
+      //console.log(x);
     });
 
     this.bio = this.formDataService.getBio();

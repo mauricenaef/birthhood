@@ -96,9 +96,9 @@ app-root {
         -webkit-overflow-scrolling: touch;
         background-color: $white;
 
-        /* Force Hardware Acceleration in WebKit */
-        transform: translateZ(0);
+        //will-change: transform;
         -webkit-backface-visibility: hidden;
+
         backface-visibility: hidden;
         transition: transform $animation-duration;
         transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
@@ -131,7 +131,8 @@ app-root {
             padding: 1rem;
 
             /* Force Hardware Acceleration in WebKit */
-            transform: translateZ(0);
+            //will-change: transform;
+
             backface-visibility: hidden;
             transform: translateX(50%);
             transition: transform $animation-duration;
@@ -144,7 +145,7 @@ app-root {
 
             .app-menu-footer {
                 -webkit-overflow-scrolling: touch;
-                transform: translateX(0);
+                transform: none;
                 transition: transform ($animation-duration - 0.2s);
                 transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
             }
@@ -171,7 +172,7 @@ app-root {
             padding: 1rem;
 
             /* Force Hardware Acceleration in WebKit */
-            transform: translateZ(0);
+            //will-change: transform;
             backface-visibility: hidden;
             transform: translateX(50%);
             transition: transform $animation-duration;
@@ -184,7 +185,7 @@ app-root {
 
             .app-menu-filter {
                 -webkit-overflow-scrolling: touch;
-                transform: translateX(0);
+                transform: none;
                 transition: transform ($animation-duration - 0.2s);
                 transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
             }

@@ -1,13 +1,22 @@
 @import "~_settings.scss";
+
+app-search {
+    display: block;
+    width: 100%;
+    
+}
+
 .search-box {
-    transform: translateY(-250px);
+    //transform: translateY(-250px);
+    width: 100%;
+    position: relative;
 }
 
 .search-box-active {
-    position: fixed;
-    transform: translateY(-250px);
+    //position: fixed;
+    //transform: translateY(-250px);
     z-index: 100;
-    &+.search-overlay {
+    & + .search-overlay {
         display: block;
         position: fixed;
         padding: 10em 1em 1em 1em;
