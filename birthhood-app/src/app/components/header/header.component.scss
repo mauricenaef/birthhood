@@ -1,7 +1,24 @@
 @import "~_settings.scss";
 
+.site-header {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    .logo-link {
+        display: block;
+        background: rgba($white, .75);
+        border-radius: 100px;
+        padding: .5em;
+    }
+    .logo {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
+
 @include breakpoint(medium up) {
     app-header {
         order: 3;
     }
 }
+

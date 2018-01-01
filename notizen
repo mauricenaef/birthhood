@@ -138,7 +138,7 @@ abolute-elemente beziehen sich immer auf das nächsthöhere Relative-Element.
 visibility: bezieht sich auch auf die DOm-Platzierung und Dimensionen des Doms. 
 Mit 0 ist es wie "hidden". Kann über CSS animiert werden.
 
-
+BEM
 
 Firestore:
 - kein Geo

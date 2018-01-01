@@ -1,8 +1,8 @@
-<main class="main-container grid-container fluid" role="main">
+<main class="main-container grid-container full" role="main">
     <app-loader *ngIf="showSpiner" ></app-loader>
     <app-header></app-header>
     <router-outlet></router-outlet>
     <app-main-nav></app-main-nav>
-    <app-filter></app-filter>
-    <app-footer></app-footer>
 </main>
+<app-filter *ngIf="router.url == '/birthplaces'"></app-filter>
+<app-footer></app-footer>

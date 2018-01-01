@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase'
 import 'firebase/firestore'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AppComponent {
   showSpiner: boolean = true;
 
 
-  constructor(){
+  constructor(private router: Router){
     //this.items =      db.collection('birthplaces').valueChanges();
     //console.log("sdf");
     //this.items.subscribe(x => console.log(x));

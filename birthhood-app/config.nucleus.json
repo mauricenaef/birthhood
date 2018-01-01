@@ -4,7 +4,8 @@
         "src/**/*.scss"
     ],
     "target": "../static/styleguide",
-    "css":["../style.css", "../styleguide/custom-theme/style/changes.css"],
+    "css":[
+        "../styleguide/custom-theme/style/changes.css"],
     "namespace": "page",
     "verbose": 3,
     "counterCSS": null,

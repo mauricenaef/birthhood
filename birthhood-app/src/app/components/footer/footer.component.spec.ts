@@ -17,7 +17,7 @@ import { UserDashboardComponent } from '../../modules/experience/components/user
 import { UserDashboardSidebarComponent } from '../../modules/experience/components/user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { ExperienceAddBioComponent } from '../../modules/experience/components/experience-add-bio/experience-add-bio.component';
 import { ExperienceAddNavbarComponent } from '../../modules/experience/components/experience-add-navbar/experience-add-navbar.component';
-import { ExperienceAddUmfeldComponent } from '../../modules/experience/components/experience-add-umfeld/experience-add-umfeld.component';
+import { ExperienceAddUmgebungComponent } from '../../modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
 import { ExperienceAddComponent } from '../../modules/experience/components/experience-add/experience-add.component';
 import { FormsModule } from '@angular/forms';
 
@@ -60,7 +60,7 @@ describe('FooterComponent', () => {
         BirthplaceDetailsComponent,
         ExperienceAddBioComponent,
         ExperienceAddNavbarComponent,
-        ExperienceAddUmfeldComponent,
+        ExperienceAddUmgebungComponent,
         ExperienceAddComponent,
 
         LoginComponent ],

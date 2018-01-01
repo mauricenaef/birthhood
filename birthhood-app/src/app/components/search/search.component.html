@@ -1,12 +1,32 @@
-<div id="search-component">
-  <h4>Search</h4>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  <div *ngIf="(searchresults | async)?.length > 0"> {{(searchresults | async)?.length}} Resultate</div>
-  <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
-  <div>
-    <div *ngFor="let item of searchresults | async"
-    [routerLink]="['/birthplaces/details', item.id]">
-      {{item.name}}
+<div class="search-container grid-container" [ngClass]="{'search-active': isActive }">
+  <div class="grid-x grid-margin-x">
+    <div class="cell search-input-container">
+
+      <label for="search-input" class="show-for-sr">Search</label>
+
+      <input type="text" #searchBox id="search-input" class="input-text search-input" (focus)="activateSearch()" (keyup)="search(searchBox.value)"
+        placeholder="Suchen">
+
+
+    </div>
+
+    <div class="cell search-list-container">
+      <div class="search-info">
+        <span *ngIf="(searchresults | async)?.length > 0" >{{(searchresults | async)?.length}} Resultate</span>
+        <span> xy filter ist aktiv</span>
+      </div>
+
+      <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
+      <ul class="no-bullet search-results-list">
+        <li class="search-results-list-item" *ngFor="let item of searchresults | async">
+          <a [routerLink]="['/birthplaces/details', item.id]">
+            {{item.name}}
+          </a>
+        </li>
+
+      </ul>
+
     </div>
   </div>
+  <div class="search-overlay" (click)="deactivateSearch()"></div>
 </div>

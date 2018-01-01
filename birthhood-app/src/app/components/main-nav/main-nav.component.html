@@ -1,12 +1,62 @@
+<nav class="main-nav">
+  <ul class="menu main-nav-list">
+    <li *ngIf="router.url == '/birthplaces'">
+      <a (click)='toggle($event, "filter")' class="nav-trigger-filter show-for-small-only">
+        <svg class="show-for-small-only icon icon-filter">
+          <use xlink:href="#filter"></use>
+        </svg>
+        <span>Filter</span>
+      </a>
+    </li>
 
+    <li *ngIf="router.url != '/birthplaces'">
+      <a routerLink="/" routerLinkActive="active">
+        <svg class="show-for-small-only icon icon-world">
+          <use xlink:href="#world"></use>
+        </svg>
+        <span>Karte</span>
+      </a>
+    </li>
 
-  <nav class="main-nav">
-      <ul class="menu simple">
-
-        <li><a (click)='toggle($event, "filter")' class="button nav-trigger-filter">Filter</a></li>
-        <li *ngIf="userLoggedIn"><a routerLink="/user-dashboard" routerLinkActive="active">Profil</a></li>
-        <li *ngIf="!userLoggedIn"><a routerLink="/login" routerLinkActive="active">Login</a></li>
-        <li><a routerLink="/user-dashboard/experience/new" routerLinkActive="active">Geburt hinz.</a></li>
-        <li class="show-for-small-only"><a (click)='toggle($event, "footer")' class="button nav-trigger-footer">Menu</a></li>
-      </ul>
-    </nav>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">
+        <svg class="show-for-small-only icon icon-stethoscope">
+          <use xlink:href="#stethoscope"></use>
+        </svg>
+        <span>Über uns</span>
+      </a>
+    </li>
+    <li *ngIf="userLoggedIn">
+      <a routerLink="/user-dashboard" routerLinkActive="active">
+        <svg class="show-for-small-only icon icon-profil">
+            <use xlink:href="#profil"></use>
+          </svg>
+        <span>Profil</span>
+      </a>
+    </li>
+    <li *ngIf="!userLoggedIn">
+      <a routerLink="/login" routerLinkActive="active">
+        <svg class="show-for-small-only icon icon-login">
+          <use xlink:href="#login"></use>
+        </svg>
+        <span>Login</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/user-dashboard/experience/new" routerLinkActive="active">
+        <svg class="show-for-small-only icon icon-baby">
+          <use xlink:href="#baby"></use>
+        </svg>
+        <span>Geburt</span>
+      </a>
+    </li>
+    <li class="show-for-small-only">
+      <a (click)='toggle($event, "footer")' class="nav-trigger-footer">
+        <svg class="show-for-small-only icon icon-hamburger">
+          <use xlink:href="#hamburger"></use>
+        </svg>
+        <span>Menu</span>
+      </a>
+    </li>
+  </ul>
+</nav>

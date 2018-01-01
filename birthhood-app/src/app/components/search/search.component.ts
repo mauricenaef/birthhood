@@ -18,7 +18,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class SearchComponent implements OnInit {
 
   searchresults: Observable<any>;
-
+  isActive: boolean = false;
   private searchTerms = new BehaviorSubject<string>(null);
 
   constructor(private birthplaceService: BirthplaceService,
@@ -42,6 +42,14 @@ export class SearchComponent implements OnInit {
 
   search(term: string): void {
     this.searchTerms.next(term);
+  }
+
+  activateSearch(){
+    this.isActive = true;
+  }
+
+  deactivateSearch(){
+    this.isActive = false;
   }
 
 }

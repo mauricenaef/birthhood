@@ -3,6 +3,7 @@ export class FormData {
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
+    birth_place: string = '';
     u1: string = '';
     u2: string = '';
     
@@ -10,6 +11,7 @@ export class FormData {
         this.birth_name = '';
         this.birth_date = '';
         this.birth_type = '';
+        this.birth_place = '';
     }
 } 
 
@@ -17,9 +19,10 @@ export class Bio {
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
+    birth_place: string = '';
 }
 
-export class Umfeld {
+export class Umgebung {
     u1: string = '';
     u2: string = '';
 }
