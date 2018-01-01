@@ -1850,7 +1850,7 @@
   {
     "entry_date": "19.05.17 21:08:05",
     "country": "Schweiz",
-    "birthplace": "Kantonsspital Luzern",
+    "birthplace": "Kantonsspital Luzern (LUKS)",
     "birth_date": "07.11.16",
     "birth_type": "Vaginale Geburt",
     "u1": 2.5,
@@ -1894,7 +1894,7 @@
   {
     "entry_date": "19.05.17 21:29:21",
     "country": "Schweiz",
-    "birthplace": "Kantonsspital Luzern",
+    "birthplace": "Kantonsspital Luzern (LUKS)",
     "birth_date": "01.02.17",
     "birth_type": "Vaginale Geburt",
     "u1": 3,
@@ -2554,7 +2554,7 @@
   {
     "entry_date": "22.10.17 06:54:45",
     "country": "Deutschland",
-    "birthplace": "Klinikum Mannheim",
+    "birthplace": "Universitätsklinikum Mannheim",
     "birth_date": "05.11.09",
     "birth_type": "Ungeplanter Kaiserschnitt",
     "u1": 3,
@@ -4402,7 +4402,7 @@
   {
     "entry_date": "19.05.17 11:07:33",
     "country": "Deutschland",
-    "birthplace": "universitätsklinikum freiburg",
+    "birthplace": "Universitätsklinikum Freiburg",
     "birth_date": "05.09.15",
     "birth_type": "Vaginale Geburt",
     "u1": 2,
@@ -4798,7 +4798,7 @@
   {
     "entry_date": "15.10.17 19:23:50",
     "country": "Deutschland",
-    "birthplace": "ZENTRALKLINIKUM AUGSBURG",
+    "birthplace": "Zentralklinikum Augsburg",
     "birth_date": "12.01.04",
     "birth_type": "Vaginale Geburt",
     "u1": 0,
