@@ -1,7 +1,7 @@
 <div class="grid-container main-content">
   <div class="grid-x grid-margin-x">
     <div class="form-container cell">
-      <h2>Login erstellen</h2>
+      <h2>Konto erstellen</h2>
 
       <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
 
@@ -11,8 +11,8 @@
         <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
 
 
-        <button type="submit" [disabled]="!formData.valid" class="button block-button">Login erstellen</button>
-        <a routerLink="/login" class="alc">Sie haben bereits einen Login? Loggen Sie sich ein.</a>
+        <button type="submit" [disabled]="!formData.valid" class="button expanded">Konto erstellen</button>
+        <a routerLink="/login" >Sie haben bereits ein Konto? Loggen Sie sich ein.</a>
       </form>
     </div>
   </div>

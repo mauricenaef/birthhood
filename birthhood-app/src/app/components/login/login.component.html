@@ -10,8 +10,8 @@
               <input type="text" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
               <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
         
-              <button type="submit" [disabled]="!formData.valid" class="button block-button">Log in</button>
-              <a routerLink="/signup" class="alc">Sie haben noch keinen Account?</a>
+              <button type="submit" [disabled]="!formData.valid" class="button expanded">Log in</button>
+              <a routerLink="/signup" >Sie haben noch kein Konto?</a>
           </form>
         </div>
     </div>
