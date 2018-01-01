@@ -20,4 +20,5 @@ exports.logWrite = functions.firestore
     console.log(event);
     let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceid);
     db.collection('messages').add({"birthdate": birthdate});
+    return true;
   });
