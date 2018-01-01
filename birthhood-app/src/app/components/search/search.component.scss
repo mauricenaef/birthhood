@@ -1,13 +1,12 @@
 @import "~_settings.scss";
-.search-box {
-    transform: translateY(-250px);
+.search-input {
 }
 
-.search-box-active {
+.search-input-active {
     position: fixed;
     transform: translateY(-250px);
     z-index: 100;
-    &+.search-overlay {
+    &+.search-results-overlay {
         display: block;
         position: fixed;
         padding: 10em 1em 1em 1em;
@@ -22,6 +21,7 @@
     }
 }
 
-.search-overlay {
+.search-results-overlay {
     display: none;
+   
 }

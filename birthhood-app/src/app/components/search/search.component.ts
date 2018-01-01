@@ -49,7 +49,6 @@ export class SearchComponent implements OnInit {
   }
 
   deactivateSearch(){
-    console.log("geklick");
     this.isActive = false;
   }
 
