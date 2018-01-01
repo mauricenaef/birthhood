@@ -10,7 +10,7 @@ import { BirthplacesListComponent } from './components/birthplaces-list/birthpla
 
 
 import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
-import { ExperienceAddUmfeldComponent } from './modules/experience/components/experience-add-umfeld/experience-add-umfeld.component';
+import { ExperienceAddUmgebungComponent } from './modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
 import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
 import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
 import { UserExperienceListComponent } from './modules/experience/components/user-experience-list/user-experience-list.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
     children: [
       { path: '', component: ExperienceAddBioComponent },
       { path: 'bio', component: ExperienceAddBioComponent },
-      { path: 'umfeld', component: ExperienceAddUmfeldComponent }
+      { path: 'umgebung', component: ExperienceAddUmgebungComponent }
     ]
   }, */
   {
@@ -48,7 +48,7 @@ const routes: Routes = [
           /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
           { path: '', component: ExperienceAddBioComponent },
           { path: 'bio', component: ExperienceAddBioComponent },
-          { path: 'umfeld', component: ExperienceAddUmfeldComponent }
+          { path: 'umgebung', component: ExperienceAddUmgebungComponent }
         ]
      }
     ]

@@ -3,7 +3,7 @@
     <li *ngIf="router.url == '/birthplaces'">
       <a (click)='toggle($event, "filter")' class="nav-trigger-filter show-for-small-only">
         <svg class="show-for-small-only icon icon-filter">
-          <use xlink:href="#icon-filter"></use>
+          <use xlink:href="#filter"></use>
         </svg>
         <span>Filter</span>
       </a>
@@ -12,7 +12,7 @@
     <li *ngIf="router.url != '/birthplaces'">
       <a routerLink="/" routerLinkActive="active">
         <svg class="show-for-small-only icon icon-world">
-          <use xlink:href="#icon-world"></use>
+          <use xlink:href="#world"></use>
         </svg>
         <span>Karte</span>
       </a>
@@ -21,7 +21,7 @@
     <li>
       <a routerLink="/about" routerLinkActive="active">
         <svg class="show-for-small-only icon icon-stethoscope">
-          <use xlink:href="#icon-stethoscope"></use>
+          <use xlink:href="#stethoscope"></use>
         </svg>
         <span>Über uns</span>
       </a>
@@ -29,7 +29,7 @@
     <li *ngIf="userLoggedIn">
       <a routerLink="/user-dashboard" routerLinkActive="active">
         <svg class="show-for-small-only icon icon-profil">
-            <use xlink:href="#icon-profil"></use>
+            <use xlink:href="#profil"></use>
           </svg>
         <span>Profil</span>
       </a>
@@ -37,7 +37,7 @@
     <li *ngIf="!userLoggedIn">
       <a routerLink="/login" routerLinkActive="active">
         <svg class="show-for-small-only icon icon-login">
-          <use xlink:href="#icon-login"></use>
+          <use xlink:href="#login"></use>
         </svg>
         <span>Login</span>
       </a>
@@ -45,7 +45,7 @@
     <li>
       <a routerLink="/user-dashboard/experience/new" routerLinkActive="active">
         <svg class="show-for-small-only icon icon-baby">
-          <use xlink:href="#icon-baby"></use>
+          <use xlink:href="#baby"></use>
         </svg>
         <span>Geburt</span>
       </a>
@@ -53,7 +53,7 @@
     <li class="show-for-small-only">
       <a (click)='toggle($event, "footer")' class="nav-trigger-footer">
         <svg class="show-for-small-only icon icon-hamburger">
-          <use xlink:href="#icon-hamburger"></use>
+          <use xlink:href="#hamburger"></use>
         </svg>
         <span>Menu</span>
       </a>

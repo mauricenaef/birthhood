@@ -4,5 +4,5 @@
     <router-outlet></router-outlet>
     <app-main-nav></app-main-nav>
 </main>
-<app-filter></app-filter>
+<app-filter *ngIf="router.url == '/birthplaces'"></app-filter>
 <app-footer></app-footer>

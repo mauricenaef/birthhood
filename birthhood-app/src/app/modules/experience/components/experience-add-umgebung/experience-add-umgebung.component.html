@@ -1,0 +1,62 @@
+<form #umgebungForm="ngForm" class="form form-experience form-experience-umgebung grid-container" novalidate>
+
+  <header class="grid-x grid-padding-x form-header">
+    <div class="medium-12 cell">
+      <h2 class="form-title">{{title}}</h2>
+    </div>
+  </header>
+
+  <div class="form-body grid-x grid-padding-x">
+
+    <div class="medium-12 cell">
+      <label class="form-label">Wie betriebsam war es während der Eröffnungsphase</label>
+
+      <div class="form-radio-group form-radio-group-smiley">
+
+        <label class="form-radio-group-label" for="u1_3">
+          <input type="radio" class="input-radio" [value]="3" #u1="ngModel" name="u1" id="u1_3" [(ngModel)]="umgebung.u1" required>
+          <svg class="icon icon-smiley_3">
+            <use xlink:href="#smiley_3"></use>
+          </svg>
+          <span class="show-for-sr">Sehr gut</span>
+        </label>
+
+        <label class="form-radio-group-label" for="u1_2">
+          <input type="radio" class="input-radio" [value]="2" #u1="ngModel" name="u1" id="u1_2" [(ngModel)]="umgebung.u1" required>
+          <svg class="icon icon-smiley_2">
+            <use xlink:href="#smiley_2"></use>
+          </svg>
+          <span class="show-for-sr">Gut</span>
+        </label>
+
+        <label class="form-radio-group-label" for="u1_1">
+          <input type="radio" class="input-radio" [value]="1" #u1="ngModel" name="u1" id="u1_1" [(ngModel)]="umgebung.u1" required>
+          <svg class="icon icon-smiley_1">
+            <use xlink:href="#smiley_1"></use>
+          </svg>
+          <span class="show-for-sr">Schlecht</span>
+        </label>
+
+
+        <label class="form-radio-group-label" for="u1_0">
+          <input type="radio" class="input-radio" [value]="0" #u1="ngModel" name="u1" id="u1_0" [(ngModel)]="umgebung.u1" required>
+          <svg class="icon icon-smiley_0">
+            <use xlink:href="#smiley_0"></use>
+          </svg>
+          <span class="show-for-sr">Sehr schlecht</span>
+        </label>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="grid-x grid-padding-x form-footer">
+    <div class="medium-12 cell">
+      <button routerLink=".." class="button button-previous" (click)="save(umgebungForm)">Zurück zu Schritt 1</button>
+      <button routerLink=".." class="button button-next" [disabled]="!umgebungForm.valid" (click)="save(umgebungForm)">Weiter zu Schritt 3</button>
+    </div>
+  </footer>
+
+</form>

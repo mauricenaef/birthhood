@@ -1,0 +1,22 @@
+/**
+* @atom Input Type Text
+* @section Form Elements > Input
+* @markup
+*   <input type="text" class="input_text" placeholder="" />
+*/
+[type='text'].input-text {
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+
+.input-radio {
+    .form-radio-group & {
+        display: none;
+    }
+}
