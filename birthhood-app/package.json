@@ -30,6 +30,7 @@
     "angularfire2": "^5.0.0-rc.5-next",
     "core-js": "^2.5.3",
     "firebase": "4.6.0",
+    "firebase-admin": "^5.6.0",
     "gulp": "^3.9.1",
     "ng-pick-datetime": "^5.0.0-beta.15",
     "ng2-notify-popup": "^0.1.25",

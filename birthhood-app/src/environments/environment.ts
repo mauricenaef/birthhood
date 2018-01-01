@@ -21,5 +21,5 @@ export const environment = {
     storageBucket: "birthhood.appspot.com",
     messagingSenderId: "986661546141"
   }*/
-  
+
 };
