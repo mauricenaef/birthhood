@@ -1,18 +1,18 @@
 <div class="grid-container main-content">
   <div class="grid-x grid-margin-x">
     <div class="form-container cell">
-      <h2>Join now</h2>
+      <h2>Login erstellen</h2>
 
       <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
 
       <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
 
-        <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
-        <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+        <input type="text" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
+        <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
 
 
-        <button type="submit" [disabled]="!formData.valid" class="button">Create my account</button>
-        <a routerLink="/login" class="alc">Already have an account? Login.</a>
+        <button type="submit" [disabled]="!formData.valid" class="button block-button">Login erstellen</button>
+        <a routerLink="/login" class="alc">Sie haben bereits einen Login? Loggen Sie sich ein.</a>
       </form>
     </div>
   </div>

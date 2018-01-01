@@ -4,7 +4,7 @@
 * @markup
 *   <input type="text" class="input_text" placeholder="" />
 */
-[type='text'].input-text {
+[type='text'].input-text, [type='password'].input-text  {
     padding: .5em .6em;
     display: inline-block;
     border: 1px solid #ccc;
@@ -13,6 +13,7 @@
     vertical-align: middle;
     box-sizing: border-box;
 }
+
 
 
 .input-radio {
