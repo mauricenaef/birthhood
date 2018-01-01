@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { Bio } from '../../models/form-data';
 import { FormDataService } from '../../services/form-data.service';
 import { BirthplaceService } from '../../../../services/birthplace.service';
+
+import { FormExperienceData } from '../../models/form-experience-data';
+
 
 @Component({
   selector: 'app-experience-add-bio',
@@ -11,10 +15,13 @@ import { BirthplaceService } from '../../../../services/birthplace.service';
 })
 export class ExperienceAddBioComponent implements OnInit {
 
-  title = 'Bio Formular Titel';
+  title = 'Generelle Angaben';
   bio: Bio;
   form: any;
   birthplacelist;
+
+  FormExperienceData;
+  userLoggedIn: boolean = false;
 
   public moment: Date = new Date();
   public pickerColor: string = '#0070ba';
@@ -27,7 +34,11 @@ export class ExperienceAddBioComponent implements OnInit {
   };
   public birth_date: any;
 
-  constructor(private formDataService: FormDataService, private birthPlaceService: BirthplaceService) { }
+  constructor(private af: AngularFireAuth, private formDataService: FormDataService, private birthPlaceService: BirthplaceService) {
+
+    this.FormExperienceData = FormExperienceData;
+    this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
+  }
 
   ngOnInit() {
     
@@ -39,7 +50,6 @@ export class ExperienceAddBioComponent implements OnInit {
     this.bio = this.formDataService.getBio();
 
     console.log('Form Bio loaded');
-
 
   }
 

@@ -20,7 +20,7 @@ gulp.task('svg-icons', function () {
                 plugins: [{
                     cleanupIDs: {
                         prefix: prefix + '-',
-                        minify: true
+                        minify: false
                     }
                 }]
             }

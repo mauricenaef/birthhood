@@ -17,7 +17,7 @@ import { BirthplacesMapComponent } from './components/birthplaces-map/birthplace
 import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
 import { BirthplaceDetailsComponent } from './components/birthplace-details/birthplace-details.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BirthplaceService } from './services/birthplace.service';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './components/signup/signup.component';
@@ -32,7 +32,7 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
 import { ExperienceAddNavbarComponent } from './modules/experience/components/experience-add-navbar/experience-add-navbar.component';
-import { ExperienceAddUmfeldComponent } from './modules/experience/components/experience-add-umfeld/experience-add-umfeld.component';
+import { ExperienceAddUmgebungComponent } from './modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
 import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
 import { FormDataService } from './modules/experience/services/form-data.service';
 import { FormFlowService } from './modules/experience/services/form-flow.service';
@@ -42,6 +42,7 @@ import { UserDashboardSidebarComponent } from './modules/experience/components/u
 import { ExperienceService } from './modules/experience/services/experience.service';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AboutComponent } from './components/about/about.component';
+import { ExperienceDynamicFormComponent } from './modules/experience/components/experience-dynamic-form/experience-dynamic-form.component';
 
 
 @NgModule({
@@ -64,9 +65,10 @@ import { AboutComponent } from './components/about/about.component';
     LoaderComponent,
     ExperienceAddBioComponent,
     ExperienceAddNavbarComponent,
-    ExperienceAddUmfeldComponent,
+    ExperienceAddUmgebungComponent,
     ExperienceAddComponent,
-    AboutComponent
+    AboutComponent,
+    ExperienceDynamicFormComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +80,7 @@ import { AboutComponent } from './components/about/about.component';
     OwlModule,
     FormsModule,
     DateTimePickerModule,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })

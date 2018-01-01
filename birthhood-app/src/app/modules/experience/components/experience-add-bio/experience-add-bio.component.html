@@ -1,15 +1,22 @@
-<form #bioForm="ngForm" class="editForm" novalidate>
-    <h2 class="head text-center">{{title}}</h2>
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
+<form #bioForm="ngForm" class="form form-experience form-experience-bio grid-container" novalidate>
+
+    <header class="grid-x grid-padding-x form-header">
         <div class="medium-12 cell">
-          <label>Birth Name
-            <input class="form-input" #birthname="ngModel" required id="birthname" name="birth_name" type="text" placeholder="Birth Name"
+            <h2 class="form-title">{{title}}</h2>
+        </div>
+    </header>
+
+    <div class="form-body grid-x grid-padding-x">
+
+        <div class="medium-12 cell">
+          <label class="form_label" for="birth_name">Name des Kindes?
+            <input class="input-text" #birthname="ngModel" required id="birthname" name="birth_name" type="text" placeholder="Birth Name"
               [(ngModel)]="bio.birth_name">
           </label>
         </div>
+
         <div class="medium-12 cell">
-          <label>Birth Date
+          <label class="form_label" for="birth_date">Datum der Geburt?
             <owl-date-time [(ngModel)]="bio.birth_date" [inputId]="'birth_date'" [dateFormat]="'DD.MM.YYYY'" [showHeader]="false" [readonlyInput]="false"
               [required]="true" [type]="'calendar'" [placeHolder]="'dd.mm.yyyy'" [max]="max" required id="birth_date" name="birthdate"
               #birthdate="ngModel" [autoClose]="true" [locale]="de" ></owl-date-time>
@@ -17,22 +24,30 @@
         </div>
   
         <div class="medium-12 cell">
-          <label>Birth Type
-            <input class="form-input" #birthtype="ngModel" required id="birthtype" name="birth_type" type="text" placeholder="Birth Type"
-              [(ngModel)]="bio.birth_type">
+          <label class="form_label" for="birth_type">Art der Geburt
+            <select #birthtype="ngModel" name="birth_type" id="birthtype" [(ngModel)]="bio.birth_type" required>
+              <option value="Vaginale Geburt">Vaginal</option>
+              <option value="Ungeplanter Kaiserschnitt">Ungeplanter Kaiserschnitt</option>
+              <option value="Geplanter Kaiserschnitt">Geplanter Kaiserschnitt</option>
+            </select>
           </label>
         </div>
 
         <div class="medium-12 cell">
-            <label>Geburts Ort
-                <select name="birth_place" id="birth_place" required>
-                  <option value="" disabled selected hidden>wählen Sie Ihren Geburts Ort</option>
-                  <option *ngFor="let birthplace of birthplacelist" value="{{ birthplace.id }}">{{ birthplace.name }}</option>
+            <label class="form_label" for="birth_place">Geburts Ort
+                <select #birthplace="ngModel"  name="birth_place" id="birth_place" [(ngModel)]="bio.birth_place" required>
+                  <option *ngFor="let birthplace of birthplacelist" value="{{ birthplace.id }}" >{{ birthplace.name }}</option>
                 </select>
             </label>
-          </div>
-      </div>
-  
-      <button routerLink="umfeld" class="button" [disabled]="!bioForm.valid" (click)="save(bioForm)">Next</button>
+        </div>
+
     </div>
+    <footer class="grid-x grid-padding-x form-footer">
+      <div class="medium-12 cell">
+          <button routerLink="umgebung" class="button button-next" [disabled]="!bioForm.valid" (click)="save(bioForm)">Weiter zu Schrit 2</button>
+      </div>
+    </footer>
+
   </form>
+
+<!--   <app-experience-dynamic-form [dataObject]="FormExperienceData.bio"></app-experience-dynamic-form> -->

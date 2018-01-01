@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { FormData, Bio, Umfeld } from '../models/form-data';
+import { FormData, Bio, Umgebung } from '../models/form-data';
 import { FormSteps } from '../models/form-steps';
 import { FormFlowService } from '../services/form-flow.service';
 import { ExperienceService } from './experience.service';
@@ -31,7 +31,8 @@ export class FormDataService {
     var bio: Bio = {
       birth_name: this.formData.birth_name,
       birth_date: this.formData.birth_date,
-      birth_type: this.formData.birth_type
+      birth_type: this.formData.birth_type,
+      birth_place: this.formData.birth_place
     }
     return bio;
   }
@@ -42,24 +43,25 @@ export class FormDataService {
     this.formData.birth_name = data.birth_name;
     this.formData.birth_date = data.birth_date;
     this.formData.birth_type = data.birth_type;
+    this.formData.birth_place = data.birth_place;
     // Validate Bio Step in formFlow
     this.formFlowService.validateStep(FormSteps.bio);
   }
 
-  getUmfeld(): Umfeld {
-    var umfeld: Umfeld = {
+  getUmgebung(): Umgebung {
+    var umgebung: Umgebung = {
       u1: this.formData.u1,
       u2: this.formData.u2
     }
-    return umfeld;
+    return umgebung;
   }
 
-  setUmfeld(data: Umfeld) {
+  setUmgebung(data: Umgebung) {
     this.isUmefeldFormValid = true;
     this.formData.u1 = data.u1;
     this.formData.u2 = data.u2;
 
-    this.formFlowService.validateStep(FormSteps.umfeld);
+    this.formFlowService.validateStep(FormSteps.umgebung);
   }
 
 
