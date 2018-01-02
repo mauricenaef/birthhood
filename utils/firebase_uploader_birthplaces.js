@@ -2,9 +2,9 @@
  * Created by tobiasbrunner on 02.11.17.
  * Upload Birthplaces module. Currently JSON Objects are stored in the js file
  */
-var BirthplaceUploader = function (db) { };
+var BirthplaceUploader = function () { };
 
-BirthplaceUploader.prototype.uploadBirthplaces = function (db) {
+BirthplaceUploader.prototype.uploadBirthplaces = function (db, birthplacesFilePath) {
   return new Promise(
     function (resolve, reject) {
       'use strict';
@@ -12,9 +12,10 @@ BirthplaceUploader.prototype.uploadBirthplaces = function (db) {
       const https = require("https");
       let fs = require('fs')
       let baseurl = "https://maps.googleapis.com/maps/api/geocode/json?"
-      //let gmKey = "&key=AIzaSyDPFOtfpOWNYJOpKO0bU4etLEJ6ipqvqKY"
-      let gmKey = "&key=AIzaSyCjUUWddqTNe8uUCYuOJvf44TKWJQ43z8E" //yvonne
-      let content = fs.readFileSync('birthplaces_ch.json');
+      let gmKey = "&key=AIzaSyDPFOtfpOWNYJOpKO0bU4etLEJ6ipqvqKY"
+      /* Backup Key */
+      //let gmKey = "&key=AIzaSyCjUUWddqTNe8uUCYuOJvf44TKWJQ43z8E"
+      let content = fs.readFileSync(birthplacesFilePath);
       let birthplaces = JSON.parse(content);
 
       let i = 0;
@@ -37,7 +38,6 @@ BirthplaceUploader.prototype.uploadBirthplaces = function (db) {
 
               res.on("end", () => {
                 body = JSON.parse(body);
-                //console.log(body);
                 let lat = body.results[0].geometry.location.lat;
                 let lng = body.results[0].geometry.location.lng;
 

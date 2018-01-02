@@ -6,12 +6,12 @@
 
 var ExperienceUploader = function () { };
 
-ExperienceUploader.prototype.uploadExperiences = function (db) {
+ExperienceUploader.prototype.uploadExperiences = function (db, experiencesFilePath) {
   return new Promise(
     function (resolve, reject) {
       'use strict';
       let fs = require('fs')
-      let content = fs.readFileSync('birthexperience_data.json');
+      let content = fs.readFileSync(experiencesFilePath);
       let birthexperiences = JSON.parse(content);
 
       var birthplaces = db.collection('birthplaces');
