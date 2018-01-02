@@ -23,7 +23,7 @@ ExperienceUploader.prototype.uploadExperiences = function (db, experiencesFilePa
           }
           querySnapshot.forEach(function (doc) {
             birthexperience["birthplace_id"] = doc.id;
-            delete birthexperience["birthplace"];
+            //delete birthexperience["birth_place"];
             uploadExerience(birthexperience)
           });
         }).catch(function (error) {

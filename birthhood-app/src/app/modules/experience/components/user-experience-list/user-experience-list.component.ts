@@ -23,7 +23,7 @@ export class UserExperienceListComponent implements OnInit {
       currentUser => {
         if (currentUser) {
           this.experienceService.getExperiencesByUserId(currentUser.uid).subscribe(
-            x => this.experienceList = x
+            experienceList => this.experienceList = experienceList
           )
         } else {
           //ev. gar nicht nötig, da über ROuteGuard gekapselt wird

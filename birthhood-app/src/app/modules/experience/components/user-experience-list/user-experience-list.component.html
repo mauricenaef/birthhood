@@ -1,12 +1,13 @@
-<p>Top</p>
 <div *ngIf="!experienceList">
- loading....
+  loading....
 </div>
-<div *ngFor="let experience of experienceList">
-{{experience.user_id}}
-</div>
-{{ experienceList?.length}}
+<ul *ngFor="let experience of experienceList">
+  <li>datum: {{experience.birth_date}} </li>
+  <li>name: {{experience.birth_name}}</li>
+  <li>score: {{experience.score}</li>
+  <li>Geburtsort: {{experience.birthplace}}
+  </li>
+</ul>
 <p>
-  user-experience-list works!
-  <a routerLink="/user-dashboard/experience/new" routerLinkActive="active">Geburt hinz.</a>
+  <a routerLink="/user-dashboard/experience/new" class="button" routerLinkActive="active">Geburt hinz.</a>
 </p>
