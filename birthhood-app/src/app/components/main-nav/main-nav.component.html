@@ -2,8 +2,8 @@
   <ul class="menu main-nav-list">
     <li *ngIf="router.url == '/birthplaces'">
       <a (click)='toggle($event, "filter")' class="nav-trigger-filter show-for-small-only">
-        <svg class="show-for-small-only icon icon-filter">
-          <use xlink:href="#filter"></use>
+        <svg class="show-for-small-only icon icon-settings-control-panel">
+          <use xlink:href="#settings-control-panel"></use>
         </svg>
         <span>Filter</span>
       </a>
@@ -28,8 +28,8 @@
     </li>
     <li *ngIf="userLoggedIn">
       <a routerLink="/user-dashboard" routerLinkActive="active">
-        <svg class="show-for-small-only icon icon-profil">
-            <use xlink:href="#profil"></use>
+        <svg class="show-for-small-only icon icon-user-woman">
+            <use xlink:href="#user-woman"></use>
           </svg>
         <span>Profil</span>
       </a>

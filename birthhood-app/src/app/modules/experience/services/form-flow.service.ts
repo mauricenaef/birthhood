@@ -7,6 +7,11 @@ export class FormFlowService {
 
   private formflow = [
     { step: FormSteps.bio, valid: false },
+    { step: FormSteps.umgebung, valid: false },
+    { step: FormSteps.emotional, valid: false },
+    { step: FormSteps.koerperlich, valid: false },
+    { step: FormSteps.mental, valid: false },
+    { step: FormSteps.wochenbett, valid: false }
     // add missing steps
   ];
 

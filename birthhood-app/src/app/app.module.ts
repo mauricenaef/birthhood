@@ -43,6 +43,10 @@ import { ExperienceService } from './modules/experience/services/experience.serv
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AboutComponent } from './components/about/about.component';
 import { ExperienceDynamicFormComponent } from './modules/experience/components/experience-dynamic-form/experience-dynamic-form.component';
+import { ExperienceAddEmotionalComponent } from './modules/experience/components/experience-add-emotional/experience-add-emotional.component';
+import { ExperienceAddKoerperlichComponent } from './modules/experience/components/experience-add-koerperlich/experience-add-koerperlich.component';
+import { ExperienceAddWochenbettComponent } from './modules/experience/components/experience-add-wochenbett/experience-add-wochenbett.component';
+import { ExperienceAddMentalComponent } from './modules/experience/components/experience-add-mental/experience-add-mental.component';
 
 
 @NgModule({
@@ -63,6 +67,10 @@ import { ExperienceDynamicFormComponent } from './modules/experience/components/
     FilterComponent,
     MainNavComponent,
     LoaderComponent,
+    ExperienceAddEmotionalComponent,
+    ExperienceAddKoerperlichComponent,
+    ExperienceAddWochenbettComponent,
+    ExperienceAddMentalComponent,
     ExperienceAddBioComponent,
     ExperienceAddNavbarComponent,
     ExperienceAddUmgebungComponent,

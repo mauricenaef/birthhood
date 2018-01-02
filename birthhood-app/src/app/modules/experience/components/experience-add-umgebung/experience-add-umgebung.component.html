@@ -1,62 +1,385 @@
 <form #umgebungForm="ngForm" class="form form-experience form-experience-umgebung grid-container" novalidate>
-
   <header class="grid-x grid-padding-x form-header">
     <div class="medium-12 cell">
       <h2 class="form-title">{{title}}</h2>
     </div>
   </header>
-
   <div class="form-body grid-x grid-padding-x">
 
-    <div class="medium-12 cell">
+    <!-- umgebung u1 -->
+    <div class="medium-12 cell switch-list">
       <label class="form-label">Wie betriebsam war es während der Eröffnungsphase</label>
-
-      <div class="form-radio-group form-radio-group-smiley">
-
-        <label class="form-radio-group-label" for="u1_3">
-          <input type="radio" class="input-radio" [value]="3" #u1="ngModel" name="u1" id="u1_3" [(ngModel)]="umgebung.u1" required>
-          <svg class="icon icon-smiley_3">
-            <use xlink:href="#smiley_3"></use>
-          </svg>
-          <span class="show-for-sr">Sehr gut</span>
-        </label>
-
-        <label class="form-radio-group-label" for="u1_2">
-          <input type="radio" class="input-radio" [value]="2" #u1="ngModel" name="u1" id="u1_2" [(ngModel)]="umgebung.u1" required>
-          <svg class="icon icon-smiley_2">
-            <use xlink:href="#smiley_2"></use>
-          </svg>
-          <span class="show-for-sr">Gut</span>
-        </label>
-
-        <label class="form-radio-group-label" for="u1_1">
-          <input type="radio" class="input-radio" [value]="1" #u1="ngModel" name="u1" id="u1_1" [(ngModel)]="umgebung.u1" required>
-          <svg class="icon icon-smiley_1">
-            <use xlink:href="#smiley_1"></use>
-          </svg>
-          <span class="show-for-sr">Schlecht</span>
-        </label>
-
-
-        <label class="form-radio-group-label" for="u1_0">
-          <input type="radio" class="input-radio" [value]="0" #u1="ngModel" name="u1" id="u1_0" [(ngModel)]="umgebung.u1" required>
-          <svg class="icon icon-smiley_0">
-            <use xlink:href="#smiley_0"></use>
-          </svg>
-          <span class="show-for-sr">Sehr schlecht</span>
-        </label>
-
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #u1="ngModel" name="u1" id="u1_3" [(ngModel)]="umgebung.u1" required>
+            <label for="u1_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #u1="ngModel" name="u1" id="u1_2" [(ngModel)]="umgebung.u1" required>
+            <label for="u1_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #u1="ngModel" name="u1" id="u1_1" [(ngModel)]="umgebung.u1" required>
+            <label for="u1_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #u1="ngModel" name="u1" id="u1_0" [(ngModel)]="umgebung.u1" required>
+            <label for="u1_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
       </div>
     </div>
+    <!-- @end umgebung u1 -->
+
+    <!-- umgebung u2 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie laut war die Umgebung während der Eröffnungsphase</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #u2="ngModel" name="u2" id="u2_3" [(ngModel)]="umgebung.u2" required>
+            <label for="u2_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #u2="ngModel" name="u2" id="u2_2" [(ngModel)]="umgebung.u2" required>
+            <label for="u2_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #u2="ngModel" name="u2" id="u2_1" [(ngModel)]="umgebung.u2" required>
+            <label for="u2_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #u2="ngModel" name="u2" id="u2_0" [(ngModel)]="umgebung.u2" required>
+            <label for="u2_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end umgebung u2 -->
+
+    <!-- umgebung u3 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie hell war es während der Eröffnungsphase</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #u3="ngModel" name="u3" id="u3_3" [(ngModel)]="umgebung.u3" required>
+            <label for="u3_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #u3="ngModel" name="u3" id="u3_2" [(ngModel)]="umgebung.u3" required>
+            <label for="u3_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #u3="ngModel" name="u3" id="u3_1" [(ngModel)]="umgebung.u3" required>
+            <label for="u3_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #u3="ngModel" name="u3" id="u3_0" [(ngModel)]="umgebung.u3" required>
+            <label for="u3_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end umgebung u3 -->
+
+    <!-- umgebung u4 -->
+    <div class="medium-12 cell switch-list">
+        <label class="form-label">Wie war die Privatsphäre während der Eröffnungsphase</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #u4="ngModel" name="u4" id="u4_3" [(ngModel)]="umgebung.u4" required>
+              <label for="u4_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #u4="ngModel" name="u4" id="u4_2" [(ngModel)]="umgebung.u4" required>
+              <label for="u4_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #u4="ngModel" name="u4" id="u4_1" [(ngModel)]="umgebung.u4" required>
+              <label for="u4_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #u4="ngModel" name="u4" id="u4_0" [(ngModel)]="umgebung.u4" required>
+              <label for="u4_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end umgebung u4 -->
+
+      <!-- umgebung u5 -->
+    <div class="medium-12 cell switch-list">
+        <label class="form-label">Wie betriebsam war es nach der Geburt</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #u5="ngModel" name="u5" id="u5_3" [(ngModel)]="umgebung.u5" required>
+              <label for="u5_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #u5="ngModel" name="u5" id="u5_2" [(ngModel)]="umgebung.u5" required>
+              <label for="u5_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #u5="ngModel" name="u5" id="u5_1" [(ngModel)]="umgebung.u5" required>
+              <label for="u5_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #u5="ngModel" name="u5" id="u5_0" [(ngModel)]="umgebung.u5" required>
+              <label for="u5_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end umgebung u5 -->
+
+      <!-- umgebung u6 -->
+    <div class="medium-12 cell switch-list">
+        <label class="form-label">Wie laut war die Umgebung nach der Geburt</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #u6="ngModel" name="u6" id="u6_3" [(ngModel)]="umgebung.u6" required>
+              <label for="u6_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #u6="ngModel" name="u6" id="u6_2" [(ngModel)]="umgebung.u6" required>
+              <label for="u6_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #u6="ngModel" name="u6" id="u6_1" [(ngModel)]="umgebung.u6" required>
+              <label for="u6_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #u6="ngModel" name="u6" id="u6_0" [(ngModel)]="umgebung.u6" required>
+              <label for="u6_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end umgebung u6 -->
+
+      <!-- umgebung u7 -->
+    <div class="medium-12 cell switch-list">
+        <label class="form-label">Wie hell war es nach der Geburt</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #u7="ngModel" name="u7" id="u7_3" [(ngModel)]="umgebung.u7" required>
+              <label for="u7_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #u7="ngModel" name="u7" id="u7_2" [(ngModel)]="umgebung.u7" required>
+              <label for="u7_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #u7="ngModel" name="u7" id="u7_1" [(ngModel)]="umgebung.u7" required>
+              <label for="u7_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #u7="ngModel" name="u7" id="u7_0" [(ngModel)]="umgebung.u7" required>
+              <label for="u7_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end umgebung u7 -->
+
+      <!-- umgebung u8 -->
+    <div class="medium-12 cell switch-list">
+        <label class="form-label">Wie war die Privatsphäre nach der Geburt</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #u8="ngModel" name="u8" id="u8_3" [(ngModel)]="umgebung.u8" required>
+              <label for="u8_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #u8="ngModel" name="u8" id="u8_2" [(ngModel)]="umgebung.u8" required>
+              <label for="u8_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #u8="ngModel" name="u8" id="u8_1" [(ngModel)]="umgebung.u8" required>
+              <label for="u8_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #u8="ngModel" name="u8" id="u8_0" [(ngModel)]="umgebung.u8" required>
+              <label for="u8_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end umgebung u8 -->
 
   </div>
-
 
   <footer class="grid-x grid-padding-x form-footer">
     <div class="medium-12 cell">
       <button routerLink=".." class="button button-previous" (click)="save(umgebungForm)">Zurück zu Schritt 1</button>
-      <button routerLink=".." class="button button-next" [disabled]="!umgebungForm.valid" (click)="save(umgebungForm)">Weiter zu Schritt 3</button>
+      <button routerLink="koerperlich" class="button button-next" [disabled]="!umgebungForm.valid" (click)="save(umgebungForm)">Weiter zu Schritt 3</button>
     </div>
   </footer>
-
 </form>

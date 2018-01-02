@@ -44,6 +44,29 @@ $dot-background-active: $color-base !default;
     padding-bottom: 5rem;
 }
 
+
+// Datepicker
+.owl-dateTime-dialog {
+    width: 100% !important;
+    @include breakpoint(medium up) {
+        width: auto !important;
+    }
+}
+.owl-dateTime-cancel {
+    right: 1em !important;
+}
+
+
+
+.owl-dateTime-inputWrapper {
+
+    input[type="text"] {
+        margin: 0;
+    }
+}
+
+
+
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
 @include foundation-flex-classes;
@@ -152,6 +175,8 @@ app-root {
             }
         }
     }
+
+    
 
     .filter-container {
         position: fixed;

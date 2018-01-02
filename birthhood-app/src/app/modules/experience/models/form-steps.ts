@@ -1,4 +1,8 @@
 export const FormSteps = {
     bio: 'bio',
-    umgebung: 'umgebung'
+    umgebung: 'umgebung',
+    emotional: 'emotional',
+    koerperlich: 'koerperlich',
+    mental: 'mental',
+    wochenbett: 'wochenbett'
 } 

@@ -9,12 +9,16 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { UserExperienceListComponent } from './components/user-experience-list/user-experience-list.component';
 import { ExperienceService } from './services/experience.service';
 import { ExperienceDynamicFormComponent } from './components/experience-dynamic-form/experience-dynamic-form.component';
+import { ExperienceAddEmotionalComponent } from './components/experience-add-emotional/experience-add-emotional.component';
+import { ExperienceAddKoerperlichComponent } from './components/experience-add-koerperlich/experience-add-koerperlich.component';
+import { ExperienceAddMentalComponent } from './components/experience-add-mental/experience-add-mental.component';
+import { ExperienceAddWochenbettComponent } from './components/experience-add-wochenbett/experience-add-wochenbett.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ExperienceAddComponent, ExperienceAddBioComponent, ExperienceAddNavbarComponent, ExperienceAddUmgebungComponent, UserDashboardSidebarComponent, UserDashboardComponent, UserExperienceListComponent, ExperienceDynamicFormComponent ],
+  declarations: [ExperienceAddComponent, ExperienceAddBioComponent, ExperienceAddNavbarComponent, ExperienceAddUmgebungComponent, UserDashboardSidebarComponent, UserDashboardComponent, UserExperienceListComponent, ExperienceDynamicFormComponent, ExperienceAddEmotionalComponent, ExperienceAddKoerperlichComponent, ExperienceAddMentalComponent, ExperienceAddWochenbettComponent ],
   providers: [
     ExperienceService
   ]

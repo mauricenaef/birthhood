@@ -5,21 +5,5 @@
 *  <label class="form_label">First Name</label>
 */
 .form-label {
-    text-transform: uppercase;
-}
-
-.form-radio-group-label {
-    padding: .75em 1em;
-    .form-radio-group & {
-
-        .icon {
-            width: 1.6rem;
-            height: 1.6rem;
-            cursor: pointer;
-        }
-        .input-radio:checked + .icon {
-            color: $primary-color;
-        }
-        
-    }
+    padding: 0 .3em;
 }

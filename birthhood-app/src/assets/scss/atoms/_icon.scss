@@ -7,4 +7,13 @@
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
-  }
+    &.icon-input {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin: .3rem;
+      color: $medium-gray;
+      &.icon-calendar {
+        margin-top: -.6px;
+      }
+    }
+}

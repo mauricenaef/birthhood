@@ -15,6 +15,10 @@ import { ExperienceAddComponent } from './modules/experience/components/experien
 import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
 import { UserExperienceListComponent } from './modules/experience/components/user-experience-list/user-experience-list.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { ExperienceAddEmotionalComponent } from './modules/experience/components/experience-add-emotional/experience-add-emotional.component';
+import { ExperienceAddWochenbettComponent } from './modules/experience/components/experience-add-wochenbett/experience-add-wochenbett.component';
+import { ExperienceAddMentalComponent } from './modules/experience/components/experience-add-mental/experience-add-mental.component';
+import { ExperienceAddKoerperlichComponent } from './modules/experience/components/experience-add-koerperlich/experience-add-koerperlich.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
@@ -48,7 +52,11 @@ const routes: Routes = [
           /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
           { path: '', component: ExperienceAddBioComponent },
           { path: 'bio', component: ExperienceAddBioComponent },
-          { path: 'umgebung', component: ExperienceAddUmgebungComponent }
+          { path: 'umgebung', component: ExperienceAddUmgebungComponent },
+          { path: 'emotional', component: ExperienceAddEmotionalComponent },
+          { path: 'koerperlich', component: ExperienceAddKoerperlichComponent },
+          { path: 'mental', component: ExperienceAddMentalComponent },
+          { path: 'wochenbett', component: ExperienceAddWochenbettComponent }
         ]
      }
     ]
