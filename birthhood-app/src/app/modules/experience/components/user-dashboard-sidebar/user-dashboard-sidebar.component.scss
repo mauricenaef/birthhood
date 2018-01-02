@@ -1,0 +1,31 @@
+@import "~_settings.scss";
+
+.dashboard-sidebar-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        
+    .avatar-container {
+        background-color: $secondary-color;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .dashboard-login-time {
+        span {
+            display:block;
+        }
+    }
+
+    .dashboard-logout-button-container {
+        display: flex;
+        flex: 1;
+        .button { 
+            align-self: flex-end;
+        }
+    }
+
+}
+

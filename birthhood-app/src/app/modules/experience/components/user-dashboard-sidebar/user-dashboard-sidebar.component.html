@@ -1,4 +1,22 @@
-<h5>Sidebar</h5>
-<p>
-  {{ currentUser?.email }}
-</p>
+<div class="dashboard-sidebar-container">
+  <div class="avatar-container">
+  </div>
+
+  <div class="dashboard-email">
+    {{ currentUser?.email }}
+  </div>
+
+  <div class="dashboard-login-time">
+    <span>
+      <strong>Mitglied seit:</strong> {{ currentUser?.metadata.creationTime }}
+    </span>
+    <span>
+      <strong>letzter Login:</strong> {{ currentUser?.metadata.lastSignInTime }}
+
+    </span>
+  </div>
+
+  <div class="dashboard-logout-button-container">
+    <button class="button" (click)="logout()">Logout</button>
+  </div>
+</div>
