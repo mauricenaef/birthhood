@@ -1,3 +1,476 @@
-<p>
-  experience-add-koerperlich works!
-</p>
+<form #koerperlichForm="ngForm" class="form form-experience form-experience-koerperlich grid-container" novalidate>
+    <header class="grid-x grid-padding-x form-header">
+      <div class="medium-12 cell">
+        <h2 class="form-title">{{title}}</h2>
+      </div>
+    </header>
+    <div class="form-body grid-x grid-padding-x">
+  
+      <!-- koerperlich k1 -->
+      <div class="medium-12 cell switch-list">
+        <label class="form-label">In welcher Position waren Sie bei der Aufnahme</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #k1="ngModel" name="k1" id="k1_3" [(ngModel)]="koerperlich.k1" required>
+              <label for="k1_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #k1="ngModel" name="k1" id="k1_2" [(ngModel)]="koerperlich.k1" required>
+              <label for="k1_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #k1="ngModel" name="k1" id="k1_1" [(ngModel)]="koerperlich.k1" required>
+              <label for="k1_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #k1="ngModel" name="k1" id="k1_0" [(ngModel)]="koerperlich.k1" required>
+              <label for="k1_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end koerperlich k1 -->
+  
+      <!-- koerperlich k2 -->
+      <div class="medium-12 cell switch-list">
+        <label class="form-label">Schwerkraft in Eröffnungsphase</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #k2="ngModel" name="k2" id="k2_3" [(ngModel)]="koerperlich.k2" required>
+              <label for="k2_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #k2="ngModel" name="k2" id="k2_2" [(ngModel)]="koerperlich.k2" required>
+              <label for="k2_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #k2="ngModel" name="k2" id="k2_1" [(ngModel)]="koerperlich.k2" required>
+              <label for="k2_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #k2="ngModel" name="k2" id="k2_0" [(ngModel)]="koerperlich.k2" required>
+              <label for="k2_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end koerperlich k2 -->
+  
+      <!-- koerperlich k3 -->
+      <div class="medium-12 cell switch-list">
+        <label class="form-label">Becken bewegen</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #k3="ngModel" name="k3" id="k3_3" [(ngModel)]="koerperlich.k3" required>
+              <label for="k3_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #k3="ngModel" name="k3" id="k3_2" [(ngModel)]="koerperlich.k3" required>
+              <label for="k3_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #k3="ngModel" name="k3" id="k3_1" [(ngModel)]="koerperlich.k3" required>
+              <label for="k3_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #k3="ngModel" name="k3" id="k3_0" [(ngModel)]="koerperlich.k3" required>
+              <label for="k3_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end koerperlich k3 -->
+  
+      <!-- koerperlich k4 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Schwerkraft in Pressphase</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k4="ngModel" name="k4" id="k4_3" [(ngModel)]="koerperlich.k4" required>
+                <label for="k4_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k4="ngModel" name="k4" id="k4_2" [(ngModel)]="koerperlich.k4" required>
+                <label for="k4_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k4="ngModel" name="k4" id="k4_1" [(ngModel)]="koerperlich.k4" required>
+                <label for="k4_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k4="ngModel" name="k4" id="k4_0" [(ngModel)]="koerperlich.k4" required>
+                <label for="k4_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @end koerperlich k4 -->
+  
+        <!-- koerperlich k5 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Steissbein frei bewelich</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k5="ngModel" name="k5" id="k5_3" [(ngModel)]="koerperlich.k5" required>
+                <label for="k5_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k5="ngModel" name="k5" id="k5_2" [(ngModel)]="koerperlich.k5" required>
+                <label for="k5_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k5="ngModel" name="k5" id="k5_1" [(ngModel)]="koerperlich.k5" required>
+                <label for="k5_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k5="ngModel" name="k5" id="k5_0" [(ngModel)]="koerperlich.k5" required>
+                <label for="k5_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @end koerperlich k5 -->
+  
+        <!-- koerperlich k6 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Aufforderung Rückenlage</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k6="ngModel" name="k6" id="k6_3" [(ngModel)]="koerperlich.k6" required>
+                <label for="k6_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k6="ngModel" name="k6" id="k6_2" [(ngModel)]="koerperlich.k6" required>
+                <label for="k6_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k6="ngModel" name="k6" id="k6_1" [(ngModel)]="koerperlich.k6" required>
+                <label for="k6_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k6="ngModel" name="k6" id="k6_0" [(ngModel)]="koerperlich.k6" required>
+                <label for="k6_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @end koerperlich k6 -->
+  
+        <!-- koerperlich k7 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Schiebedrang</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k7="ngModel" name="k7" id="k7_3" [(ngModel)]="koerperlich.k7" required>
+                <label for="k7_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k7="ngModel" name="k7" id="k7_2" [(ngModel)]="koerperlich.k7" required>
+                <label for="k7_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k7="ngModel" name="k7" id="k7_1" [(ngModel)]="koerperlich.k7" required>
+                <label for="k7_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k7="ngModel" name="k7" id="k7_0" [(ngModel)]="koerperlich.k7" required>
+                <label for="k7_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @end koerperlich k7 -->
+  
+        <!-- koerperlich k8 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Luft Anhalten</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k8="ngModel" name="k8" id="k8_3" [(ngModel)]="koerperlich.k8" required>
+                <label for="k8_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k8="ngModel" name="k8" id="k8_2" [(ngModel)]="koerperlich.k8" required>
+                <label for="k8_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k8="ngModel" name="k8" id="k8_1" [(ngModel)]="koerperlich.k8" required>
+                <label for="k8_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k8="ngModel" name="k8" id="k8_0" [(ngModel)]="koerperlich.k8" required>
+                <label for="k8_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @end koerperlich k8 -->
+        
+        <!-- koerperlich k9 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Zeitpunkt Abnabelung</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k9="ngModel" name="k9" id="k9_3" [(ngModel)]="koerperlich.k9" required>
+                <label for="k9_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k9="ngModel" name="k9" id="k9_2" [(ngModel)]="koerperlich.k9" required>
+                <label for="k9_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k9="ngModel" name="k9" id="k9_1" [(ngModel)]="koerperlich.k9" required>
+                <label for="k9_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k9="ngModel" name="k9" id="k9_0" [(ngModel)]="koerperlich.k9" required>
+                <label for="k9_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @end koerperlich k9 -->
+
+        <!-- koerperlich k10 -->
+      <div class="medium-12 cell switch-list">
+          <label class="form-label">Hautkontakt erste 2 Stunden</label>
+          <div class="switch-container">
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="input-radio" [value]="3" #k10="ngModel" name="k10" id="k10_3" [(ngModel)]="koerperlich.k10" required>
+                <label for="k10_3">
+                  <svg class="icon icon-smiley-3">
+                    <use xlink:href="#smiley-3"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="2" #k10="ngModel" name="k10" id="k10_2" [(ngModel)]="koerperlich.k10" required>
+                <label for="k10_2">
+                  <svg class="icon icon-smiley-2">
+                    <use xlink:href="#smiley-2"></use>
+                  </svg>
+                  <span class="show-for-sr">Gut</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="1" #k10="ngModel" name="k10" id="k10_1" [(ngModel)]="koerperlich.k10" required>
+                <label for="k10_1">
+                  <svg class="icon icon-smiley-1">
+                    <use xlink:href="#smiley-1"></use>
+                  </svg>
+                  <span class="show-for-sr">Schlecht</span>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="input-radio" [value]="0" #k10="ngModel" name="k10" id="k10_0" [(ngModel)]="koerperlich.k10" required>
+                <label for="k10_0">
+                  <svg class="icon icon-smiley-sad">
+                    <use xlink:href="#smiley-sad"></use>
+                  </svg>
+                  <span class="show-for-sr">Sehr schlecht</span>
+                </label>
+              </li>
+            </ul>
+          </div>  
+        </div>
+        <!-- @end koerperlich k10 -->
+    </div>
+  
+    <footer class="grid-x grid-padding-x form-footer">
+      <div class="medium-12 cell">
+        <button routerLink="emotional" class="button button-previous" (click)="save(koerperlichForm)">Zurück zu Schritt 3</button>
+        <button routerLink="mental" class="button button-next" [disabled]="!koerperlichForm.valid" (click)="save(koerperlichForm)">Weiter zu Schritt 5</button>
+      </div>
+    </footer>
+  </form>

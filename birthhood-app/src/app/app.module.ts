@@ -90,7 +90,12 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     DateTimePickerModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-full-width',
+      autoDismiss: false,
+      disableTimeOut: true,
+      closeButton: true
+    }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })

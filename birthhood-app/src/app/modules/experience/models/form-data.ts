@@ -1,9 +1,10 @@
 export class FormData {
+
     user_id: string = '';
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
-    birth_place: string = '';
+    birthplace: string = '';
     u1: string = '';
     u2: string = '';
     u3: string = '';
@@ -46,7 +47,7 @@ export class FormData {
         this.birth_name = '';
         this.birth_date = '';
         this.birth_type = '';
-        this.birth_place = '';
+        this.birthplace = '';
         this.u1 = '';
         this.u2 = '';
         this.u3 = '';
@@ -92,7 +93,7 @@ export class Bio {
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
-    birth_place: string = '';
+    birthplace: string = '';
 }
 
 export class Umgebung {

@@ -1,3 +1,337 @@
-<p>
-  experience-add-emotional works!
-</p>
+<form #emotionalForm="ngForm" class="form form-experience form-experience-emotional grid-container" novalidate>
+  <header class="grid-x grid-padding-x form-header">
+    <div class="medium-12 cell">
+      <h2 class="form-title">{{title}}</h2>
+    </div>
+  </header>
+  <div class="form-body grid-x grid-padding-x">
+
+    <!-- emotional e1 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Hatten Sie eine 1 zu 1 Betreuung?</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e1="ngModel" name="e1" id="e1_3" [(ngModel)]="emotional.e1" required>
+            <label for="e1_3">
+              Ja
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e1="ngModel" name="e1" id="e1_0" [(ngModel)]="emotional.e1" required>
+            <label for="e1_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e1 -->
+
+    <!-- emotional e2 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Haben Sie informationen / Erinnerung an Herzensfaden erhalten?</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e2="ngModel" name="e2" id="e2_3" [(ngModel)]="emotional.e2" required>
+            <label for="e2_3">
+              Ja
+            </label>
+          </li>
+
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e2="ngModel" name="e2" id="e2_0" [(ngModel)]="emotional.e2" required>
+            <label for="e2_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e2 -->
+
+    <!-- emotional e3 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurden Sie von der Hebamme ermutigt emotional fest in Kontakt mit Ihrem Baby zu sein und zu bleiben?</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e3="ngModel" name="e3" id="e3_3" [(ngModel)]="emotional.e3" required>
+            <label for="e3_3">
+              Ja
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e3="ngModel" name="e3" id="e3_0" [(ngModel)]="emotional.e3" required>
+            <label for="e3_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e3 -->
+
+    <!-- emotional e4 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurden Sie von der Hebamme ermutigt / bestärkt auf Ihr "Bauchgefühl" zu hören und dem zu folgen?</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e4="ngModel" name="e4" id="e4_3" [(ngModel)]="emotional.e4" required>
+            <label for="e4_3">
+              Ja
+            </label>
+          </li>
+
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e4="ngModel" name="e4" id="e4_0" [(ngModel)]="emotional.e4" required>
+            <label for="e4_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e4 -->
+
+    <!-- emotional e5 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">In welchem Umfang wurden Ihre Bedürfnisse während der Geburtsarbeit respektiert?</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e5="ngModel" name="e5" id="e5_3" [(ngModel)]="emotional.e5" required>
+            <label for="e5_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #e5="ngModel" name="e5" id="e5_2" [(ngModel)]="emotional.e5" required>
+            <label for="e5_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #e5="ngModel" name="e5" id="e5_1" [(ngModel)]="emotional.e5" required>
+            <label for="e5_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e5="ngModel" name="e5" id="e5_0" [(ngModel)]="emotional.e5" required>
+            <label for="e5_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e5 -->
+
+    <!-- emotional e6 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie emphatisch war das Personal während dem nähen</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e6="ngModel" name="e6" id="e6_3" [(ngModel)]="emotional.e6" required>
+            <label for="e6_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #e6="ngModel" name="e6" id="e6_2" [(ngModel)]="emotional.e6" required>
+            <label for="e6_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #e6="ngModel" name="e6" id="e6_1" [(ngModel)]="emotional.e6" required>
+            <label for="e6_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e6="ngModel" name="e6" id="e6_0" [(ngModel)]="emotional.e6" required>
+            <label for="e6_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e6 -->
+
+    <!-- emotional e7 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie emphatisch war das Personal während der OP</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e7="ngModel" name="e7" id="e7_3" [(ngModel)]="emotional.e7" required>
+            <label for="e7_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #e7="ngModel" name="e7" id="e7_2" [(ngModel)]="emotional.e7" required>
+            <label for="e7_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #e7="ngModel" name="e7" id="e7_1" [(ngModel)]="emotional.e7" required>
+            <label for="e7_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e7="ngModel" name="e7" id="e7_0" [(ngModel)]="emotional.e7" required>
+            <label for="e7_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e7 -->
+
+    <!-- emotional e8 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie war der emotionaler Kontakt zum Kind während der OP</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e8="ngModel" name="e8" id="e8_3" [(ngModel)]="emotional.e8" required>
+            <label for="e8_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #e8="ngModel" name="e8" id="e8_2" [(ngModel)]="emotional.e8" required>
+            <label for="e8_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #e8="ngModel" name="e8" id="e8_1" [(ngModel)]="emotional.e8" required>
+            <label for="e8_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e8="ngModel" name="e8" id="e8_0" [(ngModel)]="emotional.e8" required>
+            <label for="e8_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e8 -->
+
+    <!-- emotional e9 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie befriediegend war die Dauer des Hautkontaktes während der OP</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #e9="ngModel" name="e9" id="e9_3" [(ngModel)]="emotional.e9" required>
+            <label for="e9_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #e9="ngModel" name="e9" id="e9_2" [(ngModel)]="emotional.e9" required>
+            <label for="e9_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #e9="ngModel" name="e9" id="e9_1" [(ngModel)]="emotional.e9" required>
+            <label for="e9_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #e9="ngModel" name="e9" id="e9_0" [(ngModel)]="emotional.e9" required>
+            <label for="e9_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end emotional e9 -->
+
+  </div>
+
+  <footer class="grid-x grid-padding-x form-footer">
+    <div class="medium-12 cell">
+      <button routerLink="umgebung" class="button button-previous" (click)="save(emotionalForm)">Zurück zu Schritt 2</button>
+      <button routerLink="koerperlich" class="button button-next" [disabled]="!emotionalForm.valid" (click)="save(emotionalForm)">Weiter zu Schritt 4</button>
+    </div>
+  </footer>
+</form>

@@ -1,3 +1,154 @@
-<p>
-  experience-add-wochenbett works!
-</p>
+<form #wochenbettForm="ngForm" class="form form-experience form-experience-wochenbett grid-container" novalidate>
+  <header class="grid-x grid-padding-x form-header">
+    <div class="medium-12 cell">
+      <h2 class="form-title">{{title}}</h2>
+    </div>
+  </header>
+  <div class="form-body grid-x grid-padding-x">
+
+    <!-- wochenbett w1 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wie ruhig war das Wochenbett generell</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #w1="ngModel" name="w1" id="w1_3" [(ngModel)]="wochenbett.w1" required>
+            <label for="w1_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #w1="ngModel" name="w1" id="w1_2" [(ngModel)]="wochenbett.w1" required>
+            <label for="w1_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #w1="ngModel" name="w1" id="w1_1" [(ngModel)]="wochenbett.w1" required>
+            <label for="w1_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #w1="ngModel" name="w1" id="w1_0" [(ngModel)]="wochenbett.w1" required>
+            <label for="w1_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end wochenbett w1 -->
+
+    <!-- wochenbett w2 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Hatten Sie ausreichend Hautkontakt mit dem Baby während dem Wochenbett</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #w2="ngModel" name="w2" id="w2_3" [(ngModel)]="wochenbett.w2" required>
+            <label for="w2_3">
+              Ja
+            </label>
+          </li>
+
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #w2="ngModel" name="w2" id="w2_0" [(ngModel)]="wochenbett.w2" required>
+            <label for="w2_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end wochenbett w2 -->
+
+    <!-- wochenbett w3 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurde Ihnen ein Bonding Top für das Wochenbett angeboten</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #w3="ngModel" name="w3" id="w3_3" [(ngModel)]="wochenbett.w3" required>
+            <label for="w3_3">
+              Ja
+            </label>
+          </li>
+
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #w3="ngModel" name="w3" id="w3_0" [(ngModel)]="wochenbett.w3" required>
+            <label for="w3_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end wochenbett w3 -->
+
+    <!-- wochenbett w4 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurde Ihnen ein Babyheilbad angeboten</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #w4="ngModel" name="w4" id="w4_3" [(ngModel)]="wochenbett.w4" required>
+            <label for="w4_3">
+              Ja
+            </label>
+          </li>
+          
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #w4="ngModel" name="w4" id="w4_0" [(ngModel)]="wochenbett.w4" required>
+            <label for="w4_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end wochenbett w4 -->
+
+    <!-- wochenbett w5 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurde Ihnen ein Toiletten Hocker angeboten</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #w5="ngModel" name="w5" id="w5_3" [(ngModel)]="wochenbett.w5" required>
+            <label for="w5_3">
+              Ja
+            </label>
+          </li>
+          
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #w5="ngModel" name="w5" id="w5_0" [(ngModel)]="wochenbett.w5" required>
+            <label for="w5_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end wochenbett w5 -->
+
+  </div>
+  <footer class="grid-x grid-padding-x form-footer">
+    <div class="medium-12 cell">
+      <button routerLink="mental" class="button button-previous" (click)="save(wochenbettForm)">Zurück zu Schritt 5</button>
+      <button routerLink="wochenbett" class="button button-submit" [disabled]="!wochenbettForm.valid" (click)="save(wochenbettForm)">Formular Senden</button>
+    </div>
+  </footer>
+</form>

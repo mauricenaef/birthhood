@@ -1,3 +1,177 @@
-<p>
-  experience-add-mental works!
-</p>
+<form #mentalForm="ngForm" class="form form-experience form-experience-mental grid-container" novalidate>
+  <header class="grid-x grid-padding-x form-header">
+    <div class="medium-12 cell">
+      <h2 class="form-title">{{title}}</h2>
+    </div>
+  </header>
+  <div class="form-body grid-x grid-padding-x">
+
+    <!-- mental m1 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurden Sie über alle Möglichkeiten für die Geburt Informiert</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #m1="ngModel" name="m1" id="m1_3" [(ngModel)]="mental.m1" required>
+            <label for="m1_3">
+              Ja
+            </label>
+          </li>
+          
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #m1="ngModel" name="m1" id="m1_0" [(ngModel)]="mental.m1" required>
+            <label for="m1_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end mental m1 -->
+
+    <!-- mental m2 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurden Ihnen die vor und Nachteile der einzelnen Möglichkeiten informiert</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #m2="ngModel" name="m2" id="m2_3" [(ngModel)]="mental.m2" required>
+            <label for="m2_3">
+              Ja
+            </label>
+          </li>
+          
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #m2="ngModel" name="m2" id="m2_0" [(ngModel)]="mental.m2" required>
+            <label for="m2_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end mental m2 -->
+
+    <!-- mental m3 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurden sie über die möglichen Folgeinterventionen informiert</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #m3="ngModel" name="m3" id="m3_3" [(ngModel)]="mental.m3" required>
+            <label for="m3_3">
+              Ja
+            </label>
+          </li>
+          
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #m3="ngModel" name="m3" id="m3_0" [(ngModel)]="mental.m3" required>
+            <label for="m3_0">
+              Nein
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end mental m3 -->
+
+    <!-- mental m4 -->
+    <div class="medium-12 cell switch-list">
+        <label class="form-label">Einverständniss</label>
+        <div class="switch-container">
+          <ul class="radio-group">
+            <li>
+              <input type="radio" class="input-radio" [value]="3" #m4="ngModel" name="m4" id="m4_3" [(ngModel)]="mental.m4" required>
+              <label for="m4_3">
+                <svg class="icon icon-smiley-3">
+                  <use xlink:href="#smiley-3"></use>
+                </svg>
+                <span class="show-for-sr">Sehr gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="2" #m4="ngModel" name="m4" id="m4_2" [(ngModel)]="mental.m4" required>
+              <label for="m4_2">
+                <svg class="icon icon-smiley-2">
+                  <use xlink:href="#smiley-2"></use>
+                </svg>
+                <span class="show-for-sr">Gut</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="1" #m4="ngModel" name="m4" id="m4_1" [(ngModel)]="mental.m4" required>
+              <label for="m4_1">
+                <svg class="icon icon-smiley-1">
+                  <use xlink:href="#smiley-1"></use>
+                </svg>
+                <span class="show-for-sr">Schlecht</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="input-radio" [value]="0" #m4="ngModel" name="m4" id="m4_0" [(ngModel)]="mental.m4" required>
+              <label for="m4_0">
+                <svg class="icon icon-smiley-sad">
+                  <use xlink:href="#smiley-sad"></use>
+                </svg>
+                <span class="show-for-sr">Sehr schlecht</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- @end mental m4 -->
+
+    <!-- mental m5 -->
+    <div class="medium-12 cell switch-list">
+      <label class="form-label">Wurden Ihre Wünsche jederzeit respektiert</label>
+      <div class="switch-container">
+        <ul class="radio-group">
+          <li>
+            <input type="radio" class="input-radio" [value]="3" #m5="ngModel" name="m5" id="m5_3" [(ngModel)]="mental.m5" required>
+            <label for="m5_3">
+              <svg class="icon icon-smiley-3">
+                <use xlink:href="#smiley-3"></use>
+              </svg>
+              <span class="show-for-sr">Sehr gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="2" #m5="ngModel" name="m5" id="m5_2" [(ngModel)]="mental.m5" required>
+            <label for="m5_2">
+              <svg class="icon icon-smiley-2">
+                <use xlink:href="#smiley-2"></use>
+              </svg>
+              <span class="show-for-sr">Gut</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="1" #m5="ngModel" name="m5" id="m5_1" [(ngModel)]="mental.m5" required>
+            <label for="m5_1">
+              <svg class="icon icon-smiley-1">
+                <use xlink:href="#smiley-1"></use>
+              </svg>
+              <span class="show-for-sr">Schlecht</span>
+            </label>
+          </li>
+          <li>
+            <input type="radio" class="input-radio" [value]="0" #m5="ngModel" name="m5" id="m5_0" [(ngModel)]="mental.m5" required>
+            <label for="m5_0">
+              <svg class="icon icon-smiley-sad">
+                <use xlink:href="#smiley-sad"></use>
+              </svg>
+              <span class="show-for-sr">Sehr schlecht</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- @end mental m5 -->
+
+  </div>
+  <footer class="grid-x grid-padding-x form-footer">
+    <div class="medium-12 cell">
+      <button routerLink="koerperlich" class="button button-previous" (click)="save(mentalForm)">Zurück zu Schritt 4</button>
+      <button routerLink="wochenbett" class="button button-next" [disabled]="!mentalForm.valid" (click)="save(mentalForm)">Weiter zu Schritt 6</button>
+    </div>
+  </footer>
+</form>

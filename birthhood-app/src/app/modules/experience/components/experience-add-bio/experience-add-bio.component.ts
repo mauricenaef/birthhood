@@ -36,11 +36,11 @@ export class ExperienceAddBioComponent implements OnInit {
   public birth_date: any;
 
   constructor(
-    private af: AngularFireAuth, 
-    private formDataService: FormDataService, 
+    private af: AngularFireAuth,
+    private formDataService: FormDataService,
     private birthPlaceService: BirthplaceService,
     private toastr: ToastrService
-    ) {
+  ) {
     this.FormExperienceData = FormExperienceData;
     this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
   }
@@ -50,27 +50,20 @@ export class ExperienceAddBioComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-    this.birthPlaceService.getBirthplaces().subscribe( x => { 
+
+    this.birthPlaceService.getBirthplaces().subscribe(x => {
       this.birthplacelist = x;
-      //console.log(x);
     });
 
     this.bio = this.formDataService.getBio();
-
     console.log('Form Bio loaded');
-
-    
-
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-
     console.log('save form success');
     this.formDataService.setBio(this.bio);
-
   }
 
 }
