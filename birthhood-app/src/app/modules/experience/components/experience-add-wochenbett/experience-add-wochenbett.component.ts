@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Wochenbett } from '../../models/form-data';
 import { FormDataService } from '../../services/form-data.service';
 import { ToastrService } from 'ngx-toastr';
+//import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-experience-add-wochenbett',
@@ -16,6 +17,7 @@ export class ExperienceAddWochenbettComponent implements OnInit {
 
   constructor(
     private formDataService: FormDataService,
+    //private router: Routes,
     private toastr: ToastrService
   ) { }
 
@@ -31,6 +33,7 @@ export class ExperienceAddWochenbettComponent implements OnInit {
       docRef => {
         this.toastr.success('Form has been submited successfully', 'Write to Firebase');
         //redirect to Experiences List
+        //this.router.navigate(['./user-dashboard']);
       }
     ).catch( error => {
       this.toastr.success('Fehler', `Eintrag konnte nicht geschrieben werden: ${error}`);

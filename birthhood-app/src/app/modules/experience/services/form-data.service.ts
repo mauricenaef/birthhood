@@ -41,7 +41,8 @@ export class FormDataService {
       birth_name: this.formData.birth_name,
       birth_date: this.formData.birth_date,
       birth_type: this.formData.birth_type,
-      birthplace: this.formData.birthplace
+      birthplace: {name: this.formData.birthplace,
+      id: this.formData.birthplace_id},
     }
     return bio;
   }
@@ -52,7 +53,8 @@ export class FormDataService {
     this.formData.birth_name = data.birth_name;
     this.formData.birth_date = data.birth_date;
     this.formData.birth_type = data.birth_type;
-    this.formData.birthplace = data.birthplace;
+    this.formData.birthplace_id = data.birthplace.id;
+    this.formData.birthplace = data.birthplace.name;
     // Validate Bio Step in formFlow
     this.formFlowService.validateStep(FormSteps.bio);
   }

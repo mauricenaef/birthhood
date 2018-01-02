@@ -34,7 +34,7 @@ export class ExperienceAddBioComponent implements OnInit {
     monthNames: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
     monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
   };
-  public max : Date = new Date();
+  public max: Date = new Date();
   public birth_date: any;
 
   constructor(
@@ -62,9 +62,14 @@ export class ExperienceAddBioComponent implements OnInit {
   }
 
   save(form: any) {
-    if (!form.valid)
+    if (!form.valid) {
       return;
-    //console.log(this.bio);
+    }
+
+    // This saves the Birthplace Name from ID
+    this.bio.birthplace.name = this.birthplacelist.filter(x => x.id == this.bio.birthplace.id)[0].name;
+
+    console.log(this.bio);
     this.formDataService.setBio(this.bio);
     //console.log("new Bio", this.formDataService.getBio());
   }

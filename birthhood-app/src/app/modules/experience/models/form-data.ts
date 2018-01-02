@@ -4,6 +4,7 @@ export class FormData {
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
+    birthplace_id: string = '';
     birthplace: string = '';
     u1: string = '';
     u2: string = '';
@@ -47,6 +48,7 @@ export class FormData {
         this.birth_name = '';
         this.birth_date = '';
         this.birth_type = '';
+        this.birthplace_id = '';
         this.birthplace = '';
         this.u1 = '';
         this.u2 = '';
@@ -93,7 +95,7 @@ export class Bio {
     birth_name: string = '';
     birth_date: string = '';
     birth_type: string = '';
-    birthplace: string = '';
+    birthplace: any = {};
 }
 
 export class Umgebung {
