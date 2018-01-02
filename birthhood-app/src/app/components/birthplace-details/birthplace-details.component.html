@@ -2,12 +2,26 @@
 <ng-container *ngIf="birthplace">
     <div class="bp-container">
         {{birthplace.name}}
-        <br> score b: {{birthplace.score_b}}
-        <br> score g: {{birthplace.score_g}}
-        <br> score i: {{birthplace.score_i}}
-        <br> score u: {{birthplace.score_u}}
-        <br> score w: {{birthplace.score_w}}
         <br> {{birthplace.url}}
         <br>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}">Anfahrt</a>
+        <br>
+        <div *ngIf="birthplace.experiences > 0">
+            <br> score b: {{birthplace.score_b}}
+            <br> score g: {{birthplace.score_g}}
+            <br> score i: {{birthplace.score_i}}
+            <br> score u: {{birthplace.score_u}}
+            <br> score w: {{birthplace.score_w}}
+
+            <br> Anzahl Experiences: {{birthplace.experiences}}
+            <br>
+        </div>
+        <div *ngIf="!birthplace.experiences">
+            noch keine bewertungen
+        </div>
     </div>
 </ng-container>
+
+<div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
