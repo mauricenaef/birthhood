@@ -3,7 +3,10 @@
 (boundsChange)="this.bounds = $event"
 (idle)="birthplaceService.updateBounds(this.bounds)"
 (centerChange)="this.latLng = $event"
-[streetViewControl]="false">
+[streetViewControl]="false"
+[styles]="styles"
+
+>
 <agm-marker
 *ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects"
 (markerClick)="clickedMarker(m.id)"
@@ -11,7 +14,7 @@
 
 [longitude]="m.lng"
 [label]="m.name"
-
+[iconUrl]="'assets/images/gm_marker_gh.png'"
 >
 
 <!--agm-info-window>
