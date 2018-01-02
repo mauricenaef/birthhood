@@ -9,16 +9,65 @@ const functions = require('firebase-functions');
 
 
 const admin = require('firebase-admin');
+
+
+
 admin.initializeApp(functions.config().firebase);
 
-exports.logWrite = functions.firestore
+let scorenames = ["b", "g", "i", "u", "w"];
+let scores = {};
+  scorenames.forEach((scorename) => {
+    scores[scorename] = [];
+  });
+  
+function calculateScores(scores) {
+  let returnscores = {};
+  for (let scorename of scorenames) {
+    let cleanArray = scores[scorename].filter(x => x != '' && x != "-");
+    returnscores["score_" + scorename] = cleanArray.length > 0 ? cleanArray.reduce((a, b) => a + b) / cleanArray.length : null;
+  }
+  return returnscores;
+}
+
+exports.createExperience = functions.firestore
   .document('birthexperiences/{documentId}')
-  .onWrite((event) => {
-    var db = admin.firestore();
+  .onCreate((event) => {
+   
+
+
+
+    console.log("start");
+
+    let db = admin.firestore();
     let birthplaceid = event.data.get('birthplace_id');
-    let birthdate = event.data.get('birth_date');
-    console.log(event);
+    //let birthdate = event.data.get('birth_date');
+    console.info(event);
+    console.info(birthplaceid);
     let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceid);
-    db.collection('messages').add({"birthdate": birthdate});
-    return true;
+    
+    
+    experiences.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        let thisexperience = doc.data();
+        for (var property in thisexperience) {
+          if (thisexperience.hasOwnProperty(property)) {
+            if (scorenames.includes(property.charAt(0)) && property.length < 4) {
+              scores[property.charAt(0)].push(thisexperience[property])
+            }
+          }
+        }
+      })
+
+      let score = calculateScores(scores);
+      score["experiences"] = querySnapshot.size;
+      var docRef = db.collection('birthplaces').doc(birthplaceid);
+      
+      docRef.update(score).then(function () {
+        console.info("Document successfully updated!");
+      })
+        .catch(function (error) {
+          console.info("Error updating document: ", error);
+        });
+    });
+    
   });

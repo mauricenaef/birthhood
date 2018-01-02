@@ -58,15 +58,15 @@ export class ExperienceAddBioComponent implements OnInit {
     });
 
     this.bio = this.formDataService.getBio();
-    console.log('Form Bio loaded');
+    //console.log('Form Bio loaded');
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-    console.log(this.bio);
+    //console.log(this.bio);
     this.formDataService.setBio(this.bio);
-    console.log("new Bio", this.formDataService.getBio());
+    //console.log("new Bio", this.formDataService.getBio());
   }
 
 }
