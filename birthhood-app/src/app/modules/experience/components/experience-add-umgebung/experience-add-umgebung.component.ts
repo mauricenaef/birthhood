@@ -17,20 +17,14 @@ export class ExperienceAddUmgebungComponent implements OnInit {
 
   ngOnInit() {
     this.umgebung = this.formDataService.getUmgebung();
-
     console.log('Form Umgebung loaded');
-
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-
     console.log('save form success');
     this.formDataService.setUmgebung(this.umgebung);
-
-    this.formDataService.saveToFirebase();
-
   }
 
 }

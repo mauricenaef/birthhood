@@ -52,8 +52,8 @@
     </div>
 
     <div class="medium-6 cell">
-      <label class="form_label" for="birth_place">Geburts Ort
-        <select #birthplace="ngModel" name="birth_place" id="birth_place" [(ngModel)]="bio.birth_place" required>
+      <label class="form_label" for="birthplace">Geburts Ort
+        <select #birthplace="ngModel" name="birthplace" id="birthplace" [(ngModel)]="bio.birthplace" required>
           <option *ngFor="let birthplace of birthplacelist" value="{{ birthplace.id }}">{{ birthplace.name }}</option>
         </select>
       </label>
