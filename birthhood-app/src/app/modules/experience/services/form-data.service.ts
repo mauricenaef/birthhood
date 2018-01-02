@@ -23,8 +23,9 @@ export class FormDataService {
       user => {
         this.formData.user_id = user.uid;
         this.experienceService.save(this.formData);
+        //this.formData.clear();
       }
-    )
+    );
   }
 
   getBio(): Bio {

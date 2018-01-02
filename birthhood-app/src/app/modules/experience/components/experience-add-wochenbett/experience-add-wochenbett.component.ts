@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Wochenbett } from '../../models/form-data';
 import { FormDataService } from '../../services/form-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-experience-add-wochenbett',
@@ -13,7 +14,10 @@ export class ExperienceAddWochenbettComponent implements OnInit {
   wochenbett: Wochenbett;
   form: any;
 
-  constructor(private formDataService: FormDataService) { }
+  constructor(
+    private formDataService: FormDataService,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit() {
     this.wochenbett = this.formDataService.getWochenbett();
@@ -26,6 +30,7 @@ export class ExperienceAddWochenbettComponent implements OnInit {
     console.log('save form success');
     this.formDataService.setWochenbett(this.wochenbett);
     this.formDataService.saveToFirebase();
+    this.toastr.success('Form has been submited sucessfully', 'Write to Firebase' );
   }
 
 }
