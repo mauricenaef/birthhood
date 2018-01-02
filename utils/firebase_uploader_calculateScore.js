@@ -11,7 +11,7 @@ ScoreCalculator.prototype.calculateScores = function (db) {
   var birthplaces = db.collection('birthplaces');
 
   var birthplaces_sync = []; //local birthplaces with ids
-  var scorenames = ["b", "g", "i", "u", "w"];
+  var scorenames = ["u", "e", "k", "m", "w"];
 
 
   //get all birthplaces

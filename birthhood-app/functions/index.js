@@ -14,15 +14,14 @@ const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
-let scorenames = ["b", "g", "i", "u", "w"];
-let scores = {};
-  scorenames.forEach((scorename) => {
-    scores[scorename] = [];
-  });
-  
+let scorenames = ["u", "e", "k", "m", "w"];
+
+
 function calculateScores(scores) {
   let returnscores = {};
+
   for (let scorename of scorenames) {
+
     let cleanArray = scores[scorename].filter(x => x != '' && x != "-");
     returnscores["score_" + scorename] = cleanArray.length > 0 ? cleanArray.reduce((a, b) => a + b) / cleanArray.length : null;
   }
@@ -32,20 +31,18 @@ function calculateScores(scores) {
 exports.createExperience = functions.firestore
   .document('birthexperiences/{documentId}')
   .onCreate((event) => {
-   
 
 
-
-    console.log("start");
+    let scores = {};
+    scorenames.forEach((scorename) => {
+      scores[scorename] = [];
+    });
 
     let db = admin.firestore();
     let birthplaceid = event.data.get('birthplace_id');
-    //let birthdate = event.data.get('birth_date');
-    console.info(event);
-    console.info(birthplaceid);
     let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceid);
-    
-    
+
+
     experiences.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         let thisexperience = doc.data();
@@ -58,10 +55,11 @@ exports.createExperience = functions.firestore
         }
       })
 
+
       let score = calculateScores(scores);
       score["experiences"] = querySnapshot.size;
       var docRef = db.collection('birthplaces').doc(birthplaceid);
-      
+
       docRef.update(score).then(function () {
         console.info("Document successfully updated!");
       })
@@ -69,5 +67,6 @@ exports.createExperience = functions.firestore
           console.info("Error updating document: ", error);
         });
     });
-    
+    return true;
+
   });
