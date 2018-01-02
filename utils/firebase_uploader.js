@@ -38,9 +38,9 @@ var db = admin.firestore();
 )*/
 
 
-//bpUploader.uploadBirthplaces(db, 'birthplaces.json');
+bpUploader.uploadBirthplaces(db, 'birthplaces.json');
 //exUploader.uploadExperiences(db, experiencesFilePath)
-sCalculator.calculateScores(db)
+//sCalculator.calculateScores(db)
 /* bpUploader.uploadBirthplaces(db, birthplacesFilePath).then(
     exUploader.uploadExperiences(db).then(
         sCalculator.calculateScores(db)
