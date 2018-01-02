@@ -19,24 +19,25 @@ import { ExperienceAddEmotionalComponent } from './modules/experience/components
 import { ExperienceAddWochenbettComponent } from './modules/experience/components/experience-add-wochenbett/experience-add-wochenbett.component';
 import { ExperienceAddMentalComponent } from './modules/experience/components/experience-add-mental/experience-add-mental.component';
 import { ExperienceAddKoerperlichComponent } from './modules/experience/components/experience-add-koerperlich/experience-add-koerperlich.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ImpressumComponent } from './components/impressum/impressum.component';
+import { SignupBirthplaceComponent } from './components/signup-birthplace/signup-birthplace.component';
+import { BirthcriteriaComponent } from './components/birthcriteria/birthcriteria.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
 
+  { path: 'about', component: AboutComponent },
+  { path: 'birthcriteria', component: BirthcriteriaComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'impressum', component: ImpressumComponent },
+  { path: 'signup-birthplace', component: SignupBirthplaceComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  /* {
-    path: 'experience/new', component: ExperienceAddComponent,
-    children: [
-      { path: '', component: ExperienceAddBioComponent },
-      { path: 'bio', component: ExperienceAddBioComponent },
-      { path: 'umgebung', component: ExperienceAddUmgebungComponent }
-    ]
-  }, */
   {
     path: 'birthplaces', component: BirthplacesComponent,
     children: [
-      /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
       { path: '', component: BirthplacesListComponent },
       { path: 'details/:id', component: BirthplaceDetailsComponent }
     ]
@@ -49,7 +50,6 @@ const routes: Routes = [
         path: 'experience/new', component: ExperienceAddComponent,
         canActivate: [AuthGuard],
         children: [
-          /*{ path: '', redirectTo: 'overview', pathMatch: 'full' },*/
           { path: '', component: ExperienceAddBioComponent },
           { path: 'bio', component: ExperienceAddBioComponent },
           { path: 'umgebung', component: ExperienceAddUmgebungComponent },

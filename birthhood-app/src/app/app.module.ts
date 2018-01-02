@@ -50,6 +50,10 @@ import { ExperienceAddMentalComponent } from './modules/experience/components/ex
 
 import { ToastrModule } from 'ngx-toastr';
 import { SortbyPipe } from './pipes/sortby.pipe';
+import { ImpressumComponent } from './components/impressum/impressum.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { BirthcriteriaComponent } from './components/birthcriteria/birthcriteria.component';
+import { SignupBirthplaceComponent } from './components/signup-birthplace/signup-birthplace.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +83,11 @@ import { SortbyPipe } from './pipes/sortby.pipe';
     ExperienceAddComponent,
     AboutComponent,
     ExperienceDynamicFormComponent,
-    SortbyPipe
+    SortbyPipe,
+    ImpressumComponent,
+    ContactComponent,
+    BirthcriteriaComponent,
+    SignupBirthplaceComponent
   ],
   imports: [
     BrowserModule,
