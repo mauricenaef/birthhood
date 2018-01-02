@@ -34,6 +34,7 @@ export class ExperienceAddBioComponent implements OnInit {
     monthNames: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
     monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
   };
+  public max : Date = new Date();
   public birth_date: any;
 
   constructor(
