@@ -54,7 +54,7 @@
     <div class="medium-6 cell">
       <label class="form_label" for="birthplace">Geburts Ort
         <select #birthplace="ngModel" name="birthplace" id="birthplace" [(ngModel)]="bio.birthplace" required>
-          <option *ngFor="let birthplace of birthplacelist" value="{{ birthplace.id }}">{{ birthplace.name }}</option>
+          <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}">{{ birthplace.name }}</option>
         </select>
       </label>
     </div>

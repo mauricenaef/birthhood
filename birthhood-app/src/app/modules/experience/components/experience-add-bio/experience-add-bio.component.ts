@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './experience-add-bio.component.html',
   styleUrls: ['./experience-add-bio.component.scss']
 })
+
 export class ExperienceAddBioComponent implements OnInit {
 
   title = 'Generelle Angaben';

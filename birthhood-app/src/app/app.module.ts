@@ -49,6 +49,7 @@ import { ExperienceAddWochenbettComponent } from './modules/experience/component
 import { ExperienceAddMentalComponent } from './modules/experience/components/experience-add-mental/experience-add-mental.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { SortbyPipe } from './pipes/sortby.pipe';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { ToastrModule } from 'ngx-toastr';
     ExperienceAddUmgebungComponent,
     ExperienceAddComponent,
     AboutComponent,
-    ExperienceDynamicFormComponent
+    ExperienceDynamicFormComponent,
+    SortbyPipe
   ],
   imports: [
     BrowserModule,
