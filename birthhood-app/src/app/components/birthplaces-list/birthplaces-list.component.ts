@@ -25,6 +25,7 @@ export class BirthplacesListComponent implements OnInit {
     responsive: {
       0: {
         items: 1,
+        stagePadding: 20
       },
       600: {
         items: 2,
