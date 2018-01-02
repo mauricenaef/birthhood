@@ -2,9 +2,7 @@
     <div class="grid-x grid-margin-x">
         <div class="form-container cell">
             <h2>Login</h2>
-        
-            <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
-        
+
             <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
         
               <input type="text" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
