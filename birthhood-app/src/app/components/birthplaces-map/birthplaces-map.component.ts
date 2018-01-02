@@ -176,7 +176,7 @@ fallback-location. HSR?*/
 
 
     this.items$ = birthplaceService.getBirhplacesOnMap();
-
+    
     //zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
       id => {

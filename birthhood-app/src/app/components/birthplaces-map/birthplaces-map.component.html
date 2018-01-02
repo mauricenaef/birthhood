@@ -11,10 +11,9 @@
 *ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects"
 (markerClick)="clickedMarker(m.id)"
 [latitude]="m.lat"
-
 [longitude]="m.lng"
 [label]="m.name"
-[iconUrl]="'assets/images/gm_marker_gh.png'"
+[iconUrl]="'assets/images/gm_marker_'+m.type+'.png'"
 >
 
 <!--agm-info-window>
