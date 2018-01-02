@@ -52,6 +52,7 @@ ScoreCalculator.prototype.calculateScores = function (db) {
           }
         })
         let score = calculateScores(scores);
+        score["experiences"] = querySnapshot.size;
         var docRef = db.collection('birthplaces').doc(birthplace.id);
 
         docRef.update(score).then(function () {
