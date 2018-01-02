@@ -6,6 +6,7 @@ import { FormDataService } from '../../services/form-data.service';
 import { BirthplaceService } from '../../../../services/birthplace.service';
 
 import { FormExperienceData } from '../../models/form-experience-data';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -34,10 +35,18 @@ export class ExperienceAddBioComponent implements OnInit {
   };
   public birth_date: any;
 
-  constructor(private af: AngularFireAuth, private formDataService: FormDataService, private birthPlaceService: BirthplaceService) {
-
+  constructor(
+    private af: AngularFireAuth, 
+    private formDataService: FormDataService, 
+    private birthPlaceService: BirthplaceService,
+    private toastr: ToastrService
+    ) {
     this.FormExperienceData = FormExperienceData;
     this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   ngOnInit() {
@@ -50,6 +59,8 @@ export class ExperienceAddBioComponent implements OnInit {
     this.bio = this.formDataService.getBio();
 
     console.log('Form Bio loaded');
+
+    
 
   }
 

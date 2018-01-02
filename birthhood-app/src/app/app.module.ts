@@ -48,6 +48,7 @@ import { ExperienceAddKoerperlichComponent } from './modules/experience/componen
 import { ExperienceAddWochenbettComponent } from './modules/experience/components/experience-add-wochenbett/experience-add-wochenbett.component';
 import { ExperienceAddMentalComponent } from './modules/experience/components/experience-add-mental/experience-add-mental.component';
 
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { ExperienceAddMentalComponent } from './modules/experience/components/ex
     FormsModule,
     DateTimePickerModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })

@@ -63,6 +63,8 @@
   <footer class="grid-x grid-padding-x form-footer">
     <div class="medium-12 cell">
       <button routerLink="umgebung" class="button button-next" [disabled]="!bioForm.valid" (click)="save(bioForm)">Weiter zu Schrit 2</button>
+
+      <button class="button hollow button-next" (click)="showSuccess()">Toaster</button>
     </div>
   </footer>
 
