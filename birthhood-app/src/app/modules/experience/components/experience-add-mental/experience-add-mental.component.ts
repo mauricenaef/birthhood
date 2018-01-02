@@ -25,7 +25,6 @@ export class ExperienceAddMentalComponent implements OnInit {
       return;
     console.log('save form success');
     this.formDataService.setMental(this.mental);
-    this.formDataService.saveToFirebase();
   }
 
 }

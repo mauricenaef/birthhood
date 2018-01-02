@@ -25,7 +25,6 @@ export class ExperienceAddEmotionalComponent implements OnInit {
       return;
     console.log('save form success');
     this.formDataService.setEmotional(this.emotional);
-    this.formDataService.saveToFirebase();
   }
 
 }

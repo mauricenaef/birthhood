@@ -25,7 +25,6 @@ export class ExperienceAddUmgebungComponent implements OnInit {
       return;
     console.log('save form success');
     this.formDataService.setUmgebung(this.umgebung);
-    this.formDataService.saveToFirebase();
   }
 
 }

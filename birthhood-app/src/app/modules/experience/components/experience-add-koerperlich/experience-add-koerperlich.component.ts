@@ -25,7 +25,6 @@ export class ExperienceAddKoerperlichComponent implements OnInit {
       return;
     console.log('save form success');
     this.formDataService.setKoerperlich(this.koerperlich);
-    this.formDataService.saveToFirebase();
   }
 
 }
