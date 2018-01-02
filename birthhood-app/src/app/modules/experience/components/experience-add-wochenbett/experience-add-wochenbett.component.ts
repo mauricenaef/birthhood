@@ -21,16 +21,20 @@ export class ExperienceAddWochenbettComponent implements OnInit {
 
   ngOnInit() {
     this.wochenbett = this.formDataService.getWochenbett();
-    console.log('Form Wochenbett loaded');
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-    console.log('save form success');
     this.formDataService.setWochenbett(this.wochenbett);
-    this.formDataService.saveToFirebase();
-    this.toastr.success('Form has been submited sucessfully', 'Write to Firebase' );
+    this.formDataService.saveToFirebase().then(
+      docRef => {
+        this.toastr.success('Form has been submited successfully', 'Write to Firebase');
+        //redirect to Experiences List
+      }
+    ).catch( error => {
+      this.toastr.success('Fehler', `Eintrag konnte nicht geschrieben werden: ${error}`);
+    }
+    );
   }
-
 }

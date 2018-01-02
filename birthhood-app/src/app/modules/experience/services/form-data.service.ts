@@ -6,6 +6,9 @@ import { FormFlowService } from '../services/form-flow.service';
 import { ExperienceService } from './experience.service';
 
 import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import 'rxjs/add/operator/toPromise';
+import "rxjs/add/operator/take";
 
 @Injectable()
 export class FormDataService {
@@ -18,14 +21,19 @@ export class FormDataService {
 
   }
 
-  saveToFirebase() {
-    this.af.auth.onAuthStateChanged(
-      user => {
+  saveToFirebase(): Promise<any> {
+    let userObs = this.af.authState;
+    //return new Promise((resolve) => {
+
+    return userObs.take(1).toPromise().then(user => {
+
         this.formData.user_id = user.uid;
-        this.experienceService.save(this.formData);
-        //this.formData.clear();
-      }
-    );
+        return this.experienceService.save(this.formData)
+
+      });
+      //.then(docRef => resolve("geklappt " + docRef.id))
+    //});
+
   }
 
   getBio(): Bio {
