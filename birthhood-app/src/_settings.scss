@@ -79,8 +79,15 @@
   * @color
   * @section Main Color Scheme
   */
-  $primary-color-bright: #FF8486;
+  $primary-color-bright: rgb(247, 144, 145);
  
+   /**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+  $primary-color-dark: rgb(219, 75, 77);
  
  /**
   * Secondary
@@ -112,6 +119,7 @@ $global-lineheight: 1.5;
 $foundation-palette: (
   primary: $primary-color,
   primary-bright: $primary-color-bright,
+  primary-dark: $primary-color-dark,
   secondary:$secondary-color,
   success: #3adb76,
   warning: #ffae00,
