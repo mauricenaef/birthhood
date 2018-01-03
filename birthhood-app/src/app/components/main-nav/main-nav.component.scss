@@ -16,8 +16,10 @@
             display: flex;
             flex-flow: column;
             text-align: center;
-            color: $body-font-color;
-    
+            color: lighten($body-font-color, 20%);
+            &.active {
+                color: $primary-color;
+            }
             svg {
                 width: 1.8em;
                 height: 1.8em;

@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { AgmMap } from '@agm/core/directives/map';
 import { Subject } from 'rxjs/Subject';
 import { Location } from "@angular/common";
+import { Birthplace } from '../../models/birthplace';
+import { LatLngBounds } from '@agm/core/services/google-maps-types';
 declare var google: any;
 
 @Component({
@@ -22,96 +24,146 @@ export class BirthplacesMapComponent implements OnInit {
       "elementType": "geometry",
       "stylers": [
         {
-          "hue": "#ff4400"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": -4
-        },
-        {
-          "gamma": 0.72
+          "color": "#f5f5f5"
         }
       ]
     },
     {
-      "featureType": "road",
-      "elementType": "labels.icon"
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
     },
     {
-      "featureType": "landscape.man_made",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#616161"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#f5f5f5"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.land_parcel",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.land_parcel",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#bdbdbd"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.neighborhood",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
       "elementType": "geometry",
       "stylers": [
         {
-          "hue": "#0077ff"
-        },
-        {
-          "gamma": 3.1
+          "color": "#eeeeee"
         }
       ]
     },
     {
-      "featureType": "water",
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
       "stylers": [
         {
-          "hue": "#00ccff"
-        },
-        {
-          "gamma": 0.44
-        },
-        {
-          "saturation": -33
+          "color": "#757575"
         }
       ]
     },
     {
       "featureType": "poi.park",
+      "elementType": "geometry",
       "stylers": [
         {
-          "hue": "#44ff00"
-        },
-        {
-          "saturation": -23
+          "color": "#e5e5e5"
         }
       ]
     },
     {
-      "featureType": "water",
+      "featureType": "poi.park",
       "elementType": "labels.text.fill",
       "stylers": [
         {
-          "hue": "#007fff"
-        },
-        {
-          "gamma": 0.77
-        },
-        {
-          "saturation": 65
-        },
-        {
-          "lightness": 99
+          "color": "#9e9e9e"
         }
       ]
     },
     {
-      "featureType": "water",
-      "elementType": "labels.text.stroke",
+      "featureType": "road",
+      "elementType": "geometry",
       "stylers": [
         {
-          "gamma": 0.11
-        },
+          "color": "#ffffff"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels",
+      "stylers": [
         {
-          "weight": 5.6
-        },
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "road.arterial",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          "saturation": 99
-        },
+          "color": "#757575"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
         {
-          "hue": "#0091ff"
-        },
+          "color": "#dadada"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          "lightness": -86
+          "color": "#616161"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#9e9e9e"
         }
       ]
     },
@@ -120,37 +172,43 @@ export class BirthplacesMapComponent implements OnInit {
       "elementType": "geometry",
       "stylers": [
         {
-          "lightness": -48
-        },
-        {
-          "hue": "#ff5e00"
-        },
-        {
-          "gamma": 1.2
-        },
-        {
-          "saturation": -23
+          "color": "#e5e5e5"
         }
       ]
     },
     {
-      "featureType": "transit",
-      "elementType": "labels.text.stroke",
+      "featureType": "transit.station",
+      "elementType": "geometry",
       "stylers": [
         {
-          "saturation": -64
-        },
+          "color": "#eeeeee"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
         {
-          "hue": "#ff9100"
-        },
+          "color": "#c9c9c9"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels.text",
+      "stylers": [
         {
-          "lightness": 16
-        },
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          "gamma": 0.47
-        },
-        {
-          "weight": 2.7
+          "color": "#9e9e9e"
         }
       ]
     }
@@ -161,9 +219,7 @@ export class BirthplacesMapComponent implements OnInit {
 
 
   latLng: LatLngLiteral;
-  // radius of earth in km
-  R = 6371;
-  zoomOutNumber = 3;
+  zoomOutNumber: number = 3;
   bounds: LatLngBoundsLiteral;
 
   constructor(public birthplaceService: BirthplaceService, private router: Router) {
@@ -181,7 +237,7 @@ fallback-location. HSR?*/
     birthplaceService.birthplaceClicked$.subscribe(
       id => {
         this.birthplaceService.getBirthplace(id).subscribe(x => {
-          let birthplace = x;
+          let birthplace: Birthplace = x;
           this.map.triggerResize()
             .then(() => {
               /*this.map._mapsWrapper.panTo({ lat: birthplace.lat, lng: birthplace.lng }));
@@ -230,42 +286,27 @@ fallback-location. HSR?*/
   trackFbObjects = (idx, obj) => obj.$key;
 
   clickedMarker(id: string) {
+    // make map small
     this.router.navigate(['/birthplaces/details', id]);
   }
 
-  private rad(x) {
-    return x * Math.PI / 180;
-  }
-
-  private calculateDistance(item): number {
-    let mlat = item.lat;
-    let mlng = item.lng;
-    let dLat = this.rad(mlat - this.latLng.lat);
-    let dLong = this.rad(mlng - this.latLng.lng);
-    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(this.rad(this.latLng.lat)) * Math.cos(this.rad(this.latLng.lat)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
-    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return this.R * c;
-
-  }
   zoomOut() {
-    let itemsWithDistances = [];
+
+    // full map
     this.birthplaceService.getBirthplacesFiltered().subscribe(
-      x => {
+      birthplaces=> {
 
-        x.map(item => {
-          item.distance = this.calculateDistance(item);
-          itemsWithDistances.push(item);
-        }
-        );
-
-        itemsWithDistances.sort((x, y) => x.distance - y.distance);
-        let nearestBirthplaces = itemsWithDistances.slice(0, this.zoomOutNumber);
-        let bounds = new google.maps.LatLngBounds();
+        birthplaces.sort((x, y) => new Birthplace(x).distance(this.latLng) - new Birthplace(y).distance(this.latLng));
+        let nearestBirthplaces: Birthplace[] = birthplaces.slice(0, this.zoomOutNumber);
+        let bounds: LatLngBounds = new google.maps.LatLngBounds();
 
         nearestBirthplaces.forEach(
-          thisBirthplace =>
-            bounds.extend(<LatLng>{ lat: thisBirthplace.lat, lng: thisBirthplace.lng })
+          thisBirthplace => {
+            let latLngObject = new google.maps.LatLng();
+            latLngObject.lat = thisBirthplace.lat;
+            latLngObject.lng = thisBirthplace.lng;
+            bounds.extend(latLngObject);
+          }
         );
 
         this.map._mapsWrapper.fitBounds(bounds);

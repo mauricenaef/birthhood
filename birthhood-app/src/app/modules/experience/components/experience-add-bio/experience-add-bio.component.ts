@@ -7,6 +7,7 @@ import { BirthplaceService } from '../../../../services/birthplace.service';
 
 import { FormExperienceData } from '../../models/form-experience-data';
 import { ToastrService } from 'ngx-toastr';
+import { Birthplace } from '../../../../models/birthplace';
 
 
 @Component({
@@ -17,10 +18,10 @@ import { ToastrService } from 'ngx-toastr';
 
 export class ExperienceAddBioComponent implements OnInit {
 
-  title = 'Generelle Angaben';
+  title : string = 'Generelle Angaben';
   bio: Bio;
   form: any;
-  birthplacelist;
+  birthplacelist: Birthplace[];
 
   FormExperienceData;
   userLoggedIn: boolean = false;
@@ -53,12 +54,12 @@ export class ExperienceAddBioComponent implements OnInit {
 
   ngOnInit() {
 
-    this.birthPlaceService.getBirthplaces().subscribe(x => {
-      this.birthplacelist = x;
+    this.birthPlaceService.getBirthplaces().subscribe(birthplaces => {
+      this.birthplacelist = birthplaces;
     });
 
     this.bio = this.formDataService.getBio();
-    //console.log('Form Bio loaded');
+
   }
 
   save(form: any) {

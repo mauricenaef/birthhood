@@ -9,6 +9,7 @@ import 'rxjs/add/operator/debounceTime';
 
 import 'rxjs/add/operator/distinctUntilChanged';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Birthplace } from '../../models/birthplace';
 
 @Component({
   selector: 'app-search',
@@ -17,9 +18,9 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 })
 export class SearchComponent implements OnInit {
 
-  searchresults: Observable<any>;
+  searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
-  private searchTerms = new BehaviorSubject<string>(null);
+  private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   constructor(private birthplaceService: BirthplaceService,
     private router: Router) { }
@@ -31,7 +32,7 @@ export class SearchComponent implements OnInit {
       .distinctUntilChanged()
       .switchMap(term =>
         term ? this.birthplaceService.search(term)
-          : Observable.of<string[]>([])
+          : Observable.of<Birthplace[]>([])
       )
       .catch(error => {
         // TODO: add real error handling
@@ -44,11 +45,11 @@ export class SearchComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
-  activateSearch(){
+  activateSearch(): void{
     this.isActive = true;
   }
 
-  deactivateSearch(){
+  deactivateSearch(): void{
     this.isActive = false;
   }
 

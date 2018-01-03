@@ -8,7 +8,7 @@ import { FormDataService } from '../../services/form-data.service';
 })
 export class ExperienceAddComponent implements OnInit {
 
-  title = 'Add new Birth Experience';
+  title: string = 'Add new Birth Experience';
 
   @Input() formData;
 
@@ -16,7 +16,6 @@ export class ExperienceAddComponent implements OnInit {
 
   ngOnInit() {
     this.formData = this.formDataService.getFormData();
-    console.log(this.title + ' loaded');
   }
 
 }
