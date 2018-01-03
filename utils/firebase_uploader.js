@@ -1,6 +1,5 @@
 bpUploader = require('./firebase_uploader_birthplaces.js').BirthplaceUploader;
 exUploader = require('./firebase_uploader_birthexperiences.js').ExperienceUploader;
-sCalculator = require('./firebase_uploader_calculateScore.js').ScoreCalculator;
 serviceAccount = require("./birthhood-0bd55101ecab.json");
 serviceAccount_backup = require("./birthhood2-d5eb892b23d2.json");
 birthplacesFilePath = 'birthplaces.json'
@@ -38,9 +37,9 @@ var db = admin.firestore();
 )*/
 
 
-bpUploader.uploadBirthplaces(db, 'birthplaces.json');
-//exUploader.uploadExperiences(db, experiencesFilePath)
-//sCalculator.calculateScores(db)
+//bpUploader.uploadBirthplaces(db, 'birthplaces.json');
+exUploader.uploadExperiences(db, experiencesFilePath)
+
 /* bpUploader.uploadBirthplaces(db, birthplacesFilePath).then(
     exUploader.uploadExperiences(db).then(
         sCalculator.calculateScores(db)
