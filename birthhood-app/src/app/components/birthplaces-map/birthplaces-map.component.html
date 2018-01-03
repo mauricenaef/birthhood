@@ -1,4 +1,4 @@
-<agm-map class="map" [latitude]="latLng.lat" [longitude]="latLng.lng"
+<agm-map class="map" [ngClass]="{'map-detail': isDetail }" [latitude]="latLng.lat" [longitude]="latLng.lng"
 
 (boundsChange)="this.bounds = $event"
 (idle)="birthplaceService.updateBounds(this.bounds)"
