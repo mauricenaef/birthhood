@@ -1,0 +1,12 @@
+
+.adr {
+    font-style: normal;
+}
+
+a {
+    &.link-icon {
+        .icon {
+            margin-left: .3em;
+        }
+    }
+}

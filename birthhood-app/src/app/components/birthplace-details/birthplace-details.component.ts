@@ -45,6 +45,10 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
         let htmlRef = document.getElementById('myChart')
         this.myChart = new Chart(htmlRef, {
           options: {
+            responsive: true,
+            legend: {
+                position: 'bottom',
+            },
             animation: {
               animateScale: true,
               animateRotate: false
@@ -54,22 +58,23 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
           data: {
             datasets: [{
               data: [
-                birthplace.score_e,
-                birthplace.score_k,
-                birthplace.score_m,
-                birthplace.score_u,
-                birthplace.score_w
+                birthplace.score_e_rounded,
+                birthplace.score_k_rounded,
+                birthplace.score_m_rounded,
+                birthplace.score_u_rounded,
+                birthplace.score_w_rounded
               ],
               backgroundColor: [
-                "rgba(255, 255, 0, 1)",
-                "rgba(0, 255, 0, 1)",
-                "rgba(0, 220, 255, 1)",
-                "rgba(255, 0, 255, 1)",
-                "rgba(0, 0, 255, 1)",
-
+                "rgba(76, 99, 90, 1)",
+                "rgba(102, 132, 120, 1)",
+                "rgba(139, 181, 164, 1)",
+                "rgba(181, 207, 197, 1)",
+                "rgba(202, 221, 213, 1)",
               ]
             }],
-
+            borderWidth: [
+              0
+            ],
             // These labels appear in the legend and in the tooltips when hovering different arcs
             labels: [
               'Emotional',

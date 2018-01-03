@@ -9,18 +9,16 @@
         <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital">
             <use xlink:href="#spital"></use>
         </svg>
-        <h1 class="detail-title">{{birthplace.name}} </h1>
+        <h1 class="detail-title">{{birthplace.name}}</h1>
     </header>
-    <main role="main" class="birthplace-details-main grid-container">
-        <div class="grid-x">
+    <main role="main" class="birthplace-details-main grid-container main-content">
+        <div class="grid-x grid-margin-x  align-middle">
             <div class="medium-6 cell polar-chart-container">
+                <h2 class="chart-title text-center">Score</h2>
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
 
             <div *ngIf="birthplace" class="medium-6 cell score-container">
-                <div *ngIf="birthplace.experiences">
-                    Anzahl Bewertungen: {{birthplace.experiences}}
-                </div>
                 <div *ngIf="!birthplace.experiences">
                     <div class="blank-slate">
                         <span class="blank-slate-text">🙈
@@ -30,8 +28,9 @@
 
                 </div>
                 <ul class="no-bullet score-list">
+                    <small class="score-list-description">⌀ Bewertung aus {{birthplace.experiences}} Einträge (max. Wert: 3)</small>
                     <li class="total-score-item score-item">
-                        <span class="score-item-title"><small>⌀ Bewertung</small> Total</span> <strong class="score">{{ birthplace.score | number : '1.1-1' }}</strong>
+                        <strong class="score-item-title">Total</strong> <strong class="score">{{ birthplace.score | number : '1.1-1' }} / 3</strong>
                     </li>
                     <li class="score-item score-u">
                         <span class="score-item-title">Umgebung</span> <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong></li>
@@ -47,9 +46,26 @@
             </div>
         </div>
     </main>
-    <footer *ngIf="birthplace" class="birthplace-details-footer">
-        {{birthplace.url}}
-        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}">Anfahrt</a>
-        {{ birthplace.strasse }} {{ birthplace.plz }} {{ birthplace.ort }}
+    <footer *ngIf="birthplace" class="birthplace-details-footer grid-container content-footer">
+        <div class="grid-x grid-margin-x align-bottom">
+            <div class="small-6 cell">
+                <address class="adr">
+                    <h4 class="h6"><strong>{{birthplace.name}}</strong></h4>
+                    <div class="street-address">{{ birthplace.strasse }}</div>
+                    <span class="postal-code">{{ birthplace.plz }}</span> <span class="locality">{{ birthplace.ort }}</span>
+                    <div class="country-name">Schweiz</div>
+                </address>
+                  
+            </div>
+            <div class="small-6 cell">
+                <a href="{{birthplace.url}}" target="_blank" class="link-icon">
+                    Link zur Webseite <svg class="icon"><use xlink:href="#link"></use></svg></a><br />
+                <a href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}" target="_blank" class="link-icon">
+                    Anfahrt <svg class="icon icon-map"><use xlink:href="#map"></use></svg>
+                    </a>
+            </div>
+        </div>
+        
+        
     </footer>
 </article>
