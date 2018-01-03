@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/merge';
 import 'rxjs/add/operator/take';
 import { ActivatedRoute } from '@angular/router';
+import { Birthplace } from '../../models/birthplace';
 
 @Component({
   selector: 'app-birthplaces-list',
@@ -13,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BirthplacesListComponent implements OnInit {
 
-  birthplaces;//Observable<any[]>;
+  birthplaces: Birthplace[];
   subscription: Subscription;
 
   public slider_options = {
@@ -39,25 +40,16 @@ export class BirthplacesListComponent implements OnInit {
     }
   }
 
-  trackByFn(birthplace: any) {
-    return birthplace != null ? birthplace.id : null;
-  }
-
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
-
-    //this.birthplaces = 
     this.birthplaceService.getBirhplacesOnMap()
-      .subscribe(x => this.birthplaces = x.splice(0, 7) );
+      .subscribe(birthplaces => this.birthplaces = birthplaces.splice(0, 7) );
   }
 
   ngOnInit() {
-
     this.birthplaceService.zoomOut();
   }
 
   //um punkte weniger flickern zu lassen
   trackFbObjects = (idx, obj) => obj.$key;
-
-
 
 }

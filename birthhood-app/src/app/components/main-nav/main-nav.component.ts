@@ -10,7 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class MainNavComponent implements OnInit {
 
-  isLateralNavAnimating = false;
+  isLateralNavAnimating: boolean = false;
   userLoggedIn: boolean = false;
   constructor(private af: AngularFireAuth, private router: Router) {
     this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false)
@@ -21,9 +21,6 @@ export class MainNavComponent implements OnInit {
   }
 
   toggle(event, htmlType) {
-    console.log(event, htmlType);
-    //event.preventDefault();
-    //stop if nav animation is running 
     if (!this.isLateralNavAnimating) {
       if ($(this).parents('.csstransitions').length > 0) this.isLateralNavAnimating = true;
 
@@ -31,7 +28,6 @@ export class MainNavComponent implements OnInit {
       $(this).toggleClass('is-active');
 
       $('.navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-        //animation is over
         this.isLateralNavAnimating = false;
       });
     }

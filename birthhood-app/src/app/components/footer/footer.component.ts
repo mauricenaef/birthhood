@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
-  isLateralNavAnimating = false;
+  isLateralNavAnimating: boolean = false;
   userLoggedIn: boolean = false;
 
   constructor(private af: AngularFireAuth, private router: Router) { 
@@ -21,10 +21,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggle(event, htmlType) {
-    console.log(event, htmlType);
-    //event.preventDefault();
-    //stop if nav animation is running 
+  toggle(event, htmlType: string): void {
     if (!this.isLateralNavAnimating) {
       if ($(this).parents('.csstransitions').length > 0) this.isLateralNavAnimating = true;
 
@@ -32,15 +29,13 @@ export class FooterComponent implements OnInit {
       $(this).toggleClass('is-active');
 
       $('.navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-        //animation is over
         this.isLateralNavAnimating = false;
       });
     }
   }
 
-  logout(){
+  logout(): void{
     this.af.auth.signOut();
-
     this.router.navigateByUrl('/');
   }
 }
