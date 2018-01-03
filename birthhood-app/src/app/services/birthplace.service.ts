@@ -77,7 +77,7 @@ export class BirthplaceService {
       this.getBirthplacesFiltered().map(items => items.filter(item => {
         let latLng: MarkerAGM = new MarkerAGM();
         latLng.constructor(item.lat, item.lng);
-        return this.displayedBounds.contains(latLng);
+        return this.displayedBounds? this.displayedBounds.contains(latLng): false;
       }
       )));
   }
@@ -94,7 +94,7 @@ export class BirthplaceService {
       bounds: this.displayedBounds,
       filter: this.filter
     });
-  }
+  } 
 
   updateBounds(bounds: LatLngBounds): void {
     this.displayedBounds = bounds ? bounds : this.displayedBounds;
