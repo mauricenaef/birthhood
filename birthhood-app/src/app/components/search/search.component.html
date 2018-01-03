@@ -27,10 +27,19 @@
       <div *ngIf="(searchresults | async)?.length==0 && searchBox.value" class="blank-slate">
         <span class="blank-slate-text">Keine Suchresultate.</span></div>
       <ul class="no-bullet search-results-list">
-        <li class="search-results-list-item" *ngFor="let item of searchresults | async">
-          <a [routerLink]="['/birthplaces/details', item.id]">
-            {{item.name}}
+        <li class="search-results-item" *ngFor="let item of searchresults | async">
+          <a class="search-results-label" [routerLink]="['/birthplaces/details', item.id]">
+            <span class="search-results-label-text">{{item.name}}</span>
+            <span class="search-results-label-icon">
+                <svg *ngIf="item.type == 'geburtshaus'" class="icon icon-geburtshaus">
+                    <use xlink:href="#geburtshaus"></use>
+                </svg>
+                <svg *ngIf="item.type == 'spital'" class="icon icon-spital">
+                    <use xlink:href="#spital"></use>
+                </svg>
+              </span>
           </a>
+          
         </li>
 
       </ul>
