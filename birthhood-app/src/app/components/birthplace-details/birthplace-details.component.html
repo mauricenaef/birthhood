@@ -1,7 +1,11 @@
 <article class="birthplace-detail-wrap" >
     <header *ngIf="birthplace" class="birthplace-details-header">
-        <img src="http://placehold.it/1200x500&text=Spital" alt="Spital">
-        <h1 class="detail-title">{{birthplace.name}}</h1>
+        <div class="hero-image-wrapper">
+                <img src="https://source.unsplash.com/1600x900/?building,hospitl,health" alt="Spital" class="hero-image">
+        </div>
+        <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus"><use xlink:href="#geburtshaus"></use></svg>
+        <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital"><use xlink:href="#spital"></use></svg>
+        <h1 class="detail-title">{{birthplace.name}} </h1>
     </header>
     <main role="main" class="birthplace-details-main grid-container">
         <div class="grid-x">

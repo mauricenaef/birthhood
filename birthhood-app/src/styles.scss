@@ -113,12 +113,13 @@ app-root {
 
     .main-container {
         position: relative;
+        padding-bottom: 6rem;
         z-index: 2;
         min-height: 100vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         background-color: $white;
-        //will-change: transform;
+        will-change: transform;
         -webkit-backface-visibility: hidden;
 
         backface-visibility: hidden;
@@ -138,7 +139,7 @@ app-root {
         height: 100%;
         width: 100%;
         color: $white;
-        background-color: dark-blue;
+        background-color: $medium-gray;
         visibility: hidden;
         transition: visibility 0s $animation-duration;
 
