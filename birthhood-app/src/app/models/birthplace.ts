@@ -65,4 +65,28 @@ export class Birthplace {
         }
         return sum / count;
     }
+
+    get score_e_rounded(): number {
+        return this.round(this.score_e, 1);
+    }
+    get score_k_rounded(): number {
+        return this.round(this.score_k, 1);
+    }
+    get score_m_rounded(): number {
+        return this.round(this.score_m, 1);
+    }
+    get score_u_rounded(): number {
+        return this.round(this.score_u, 1);
+    }
+    get score_w_rounded(): number {
+        return this.round(this.score_w, 1);
+    }
+
+
+    private round(number, precision) {
+        var factor = Math.pow(10, precision);
+        var tempNumber = number * factor;
+        var roundedTempNumber = Math.round(tempNumber);
+        return roundedTempNumber / factor;
+    };
 }

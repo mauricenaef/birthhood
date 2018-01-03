@@ -91,6 +91,17 @@ app-root {
 
 .main-content {
     padding-top: 5rem;
+    @include breakpoint(small only) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.content-footer {
+    @include breakpoint(small only) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 @include breakpoint(medium up) {
@@ -113,7 +124,7 @@ app-root {
 
     .main-container {
         position: relative;
-        padding-bottom: 6rem;
+        padding-bottom: 4rem;
         z-index: 2;
         min-height: 100vh;
         overflow-y: auto;

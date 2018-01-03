@@ -39,6 +39,7 @@
 
     .detail-title {
         position: absolute;
+        width: 80%;
         z-index: 10;
         bottom: 1rem;
         left: 2rem;
@@ -48,30 +49,50 @@
 }
 
 .score-list {
-    padding: 1rem 0 1rem 1rem;
+    .score-list-description {
+        font-size: rem-calc(14);
+        display: block;
+        opacity: .3;
+    }
     .total-score-item {
         font-size: rem-calc(19);
-        line-height: 1;
-        small {
-            font-size: rem-calc(14);
-            display: block;
-            opacity: .5;
-        }
+        line-height: 1; 
+        padding-bottom: 1em;  
     }
     .score-item {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        padding: .3em 0;
+        .score {
+            text-align: right;
+        }
+
         .score-item-title {
+            display: flex;
+            flex: 1;
             &:after {
                 content: "";
+                margin: 0 .6rem;
                 border-bottom: dotted 1px $medium-gray;
                 flex: 1;
             }
         }
-        .score {
-            padding-right: 1em;
-
-        }
     }
+}
+
+.birthplace-details-main {
+    padding-top: 1rem;
+    padding-bottom: 2rem
+}
+
+.polar-chart-container {
+    padding: 1rem;
+}
+
+.birthplace-details-footer {
+    background-color: lighten($light-gray, 5%);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-size: rem-calc(14);
 }
