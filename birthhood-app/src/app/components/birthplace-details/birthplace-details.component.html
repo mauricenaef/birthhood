@@ -1,5 +1,5 @@
-<article class="birthplace-detail-wrap" *ngIf="birthplace">
-    <header class="birthplace-details-header">
+<article class="birthplace-detail-wrap" >
+    <header *ngIf="birthplace" class="birthplace-details-header">
         <img src="http://placehold.it/1200x500&text=Spital" alt="Spital">
         <h1 class="detail-title">{{birthplace.name}}</h1>
     </header>
@@ -9,7 +9,7 @@
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
 
-            <div class="medium-6 cell score-container">
+            <div *ngIf="birthplace" class="medium-6 cell score-container">
                 <div *ngIf="birthplace.experiences">
                     <br> Anzahl Bewertungen: {{birthplace.experiences}}
                 </div>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </main>
-    <footer class="birthplace-details-footer">
+    <footer *ngIf="birthplace" class="birthplace-details-footer">
         {{birthplace.url}}
         <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}">Anfahrt</a>
         {{ birthplace.strasse }} {{ birthplace.plz }} {{ birthplace.ort }}
