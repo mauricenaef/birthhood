@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
   private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
-  constructor(private birthplaceService: BirthplaceService,
+  constructor(public birthplaceService: BirthplaceService,
     private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
