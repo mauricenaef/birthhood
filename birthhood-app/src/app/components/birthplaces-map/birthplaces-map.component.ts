@@ -214,6 +214,8 @@ export class BirthplacesMapComponent implements OnInit {
     }
   ];
 
+  isDetail: boolean = false;
+
   @ViewChild(AgmMap) private map: any;
   items$: Observable<any[]>;
 
@@ -288,6 +290,8 @@ fallback-location. HSR?*/
   clickedMarker(id: string) {
     // make map small
     this.router.navigate(['/birthplaces/details', id]);
+    // add class detail true to map
+    this.isDetail = true;
   }
 
   zoomOut() {
@@ -309,6 +313,8 @@ fallback-location. HSR?*/
 
         this.map._mapsWrapper.fitBounds(bounds);
         this.map._mapsWrapper.setCenter(this.latLng);
+        // remove class detail true map
+        this.isDetail = false;
       }
     );
   }
