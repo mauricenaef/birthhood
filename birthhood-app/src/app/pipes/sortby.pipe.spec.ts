@@ -1,6 +1,6 @@
 import { SortbyPipe } from './sortby.pipe';
 
-fdescribe('SortbyPipe', () => {
+describe('SortbyPipe', () => {
   it('create an instance', () => {
     const pipe = new SortbyPipe();
     expect(pipe).toBeTruthy();
