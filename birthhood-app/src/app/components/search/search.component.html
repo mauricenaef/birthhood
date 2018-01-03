@@ -10,11 +10,21 @@
 
     <div class="cell search-list-container">
       <div class="search-info">
-        <span *ngIf="(searchresults | async)?.length > 0" >{{(searchresults | async)?.length}} Resultate</span>
-        <span> xy filter ist aktiv</span>
+        <span *ngIf="(searchresults | async)?.length > 0">{{(searchresults | async)?.length}} Resultate</span>
+        <span *ngIf="birthplaceService.filter"> Nach
+          <span *ngIf="birthplaceService.filter.spital">
+            Spitälern</span>
+            <span *ngIf="birthplaceService.filter.spital && birthplaceService.filter.geburtshaus">
+              /
+            </span>
+          <span *ngIf="birthplaceService.filter.geburtshaus">
+            Geburtshäusern
+          </span>
+          suchen
+        </span>
       </div>
 
-      <div *ngIf="(searchresults | async)?.length==0 && searchBox.value">No records found.</div>
+      <div *ngIf="(searchresults | async)?.length==0 && searchBox.value" class="search-no-results">Keine Suchresultate.</div>
       <ul class="no-bullet search-results-list">
         <li class="search-results-list-item" *ngFor="let item of searchresults | async">
           <a [routerLink]="['/birthplaces/details', item.id]">

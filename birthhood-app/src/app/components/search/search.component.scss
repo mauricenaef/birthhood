@@ -1,5 +1,4 @@
 @import "~_settings.scss";
-
 .search-container {
     will-change: transform;
     -webkit-font-smooting: antialiased;
@@ -17,8 +16,7 @@
         z-index: 5;
         height: 100%;
         .search-input {
-            z-index: 10; //background-color: violet;
-            //transform: translateY(-250px);
+            z-index: 10; //transform: translateY(-250px);
         }
         .search-list-container {
             z-index: 10;
@@ -47,13 +45,9 @@
     }
 }
 
-.search-results-list {
-    //padding: 0 0.6em;
-}
+.search-results-list {}
 
 .search-results-list-item {
-    //font-size: rem-calc()
-    //padding: .5em 0;
     a {
         display: block;
         padding: .6em 0;
@@ -66,13 +60,20 @@
     }
 }
 
+.search-no-results {
+    text-align: center;
+    font-size: rem-calc(18px);
+    color: $medium-gray;
+    font-weight: $global-weight-bold;
+}
+
 .search-info {
     font-size: rem-calc(12px);
     color: $medium-gray;
     font-weight: $global-weight-bold;
     text-align: right;
     padding: .3em 0;
-    span:nth-of-type(2) {
+    >span:nth-of-type(2) {
         &::before {
             content: '|';
             display: inline-block;
