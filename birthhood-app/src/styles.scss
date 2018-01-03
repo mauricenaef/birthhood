@@ -132,11 +132,11 @@ app-root {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         background-color: $white;
-        will-change: transform;
+        //will-change: transform;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         transition: transform $animation-duration;
-        transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+        transition-timing-function: $cubic-animation;
 
         .footer-navigation-is-open & {
             transform: translateX(-100%);

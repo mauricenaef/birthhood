@@ -1,23 +1,19 @@
-<agm-map class="map" [ngClass]="{'map-detail': isDetail }" [latitude]="latLng.lat" [longitude]="latLng.lng"
+<div class="map-wrap">
+    <agm-map class="map" [ngClass]="{'map-detail': isDetail }" [latitude]="latLng.lat" [longitude]="latLng.lng" (boundsChange)="this.bounds = $event"
+        (idle)="birthplaceService.updateBounds(this.bounds)" (centerChange)="this.latLng = $event" [streetViewControl]="false"
+        [styles]="styles">
+        <agm-marker *ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects" (markerClick)="clickedMarker(m.id)"
+            [latitude]="m.lat" [longitude]="m.lng" [iconUrl]="'assets/images/gm_marker_'+m.type+'.png'">
 
-(boundsChange)="this.bounds = $event"
-(idle)="birthplaceService.updateBounds(this.bounds)"
-(centerChange)="this.latLng = $event"
-[streetViewControl]="false"
-[styles]="styles"
+            <!--agm-info-window>
+        <strong>InfoWindow content</strong>
+        </agm-info-window-->
 
->
-<agm-marker
-*ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects"
-(markerClick)="clickedMarker(m.id)"
-[latitude]="m.lat"
-[longitude]="m.lng"
-[iconUrl]="'assets/images/gm_marker_'+m.type+'.png'"
->
-
-<!--agm-info-window>
-<strong>InfoWindow content</strong>
-</agm-info-window-->
-
-</agm-marker>
-</agm-map>
+        </agm-marker>
+    </agm-map>
+    <a *ngIf="isDetail" routerLink="/" class="go-back go-back-overlay">
+        <svg class="icon icon-arrow-left">
+            <use xlink:href="#arrow-left"></use>
+        </svg>
+    </a>
+</div>
