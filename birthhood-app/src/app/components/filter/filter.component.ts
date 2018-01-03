@@ -15,6 +15,7 @@ export class FilterComponent implements OnInit {
 
   filter: BirthplaceFilter;
 
+
   constructor(private birthplaceService: BirthplaceService, private toastr: ToastrService) {
     this.filter = new BirthplaceFilter();
 

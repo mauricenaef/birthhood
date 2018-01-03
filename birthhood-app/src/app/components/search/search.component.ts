@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-
+import { HostListener } from '@angular/core';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/combinelatest';
 import 'rxjs/add/operator/debounceTime';
@@ -23,6 +23,12 @@ export class SearchComponent implements OnInit {
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
 
+  @ViewChild('searchBox') searchBox;
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) { 
+    if (event.key == "Escape") this.deactivateSearch();
+  }
   private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   constructor(public birthplaceService: BirthplaceService,
@@ -51,6 +57,8 @@ export class SearchComponent implements OnInit {
   }
 
   deactivateSearch(): void {
-    this.isActive = false;
+    
+    this.searchBox.nativeElement.blur();
+    if (this.isActive) this.isActive = false;
   }
 }

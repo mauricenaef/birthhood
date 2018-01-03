@@ -7,8 +7,8 @@
       </div>
       <div class="cell auto">
         <div class="switch switch-filter small">
-          <input id="geburtshaueser" class="switch-input" type="checkbox" [(ngModel)]="filter.geburtshaus" (change)="updateFilter()">
-          <label class="switch-paddle" for="geburtshaueser">
+          <input id="geburtshaeuser" [disabled]="!filter.spital" class="switch-input" type="checkbox" [(ngModel)]="filter.geburtshaus" (change)="updateFilter()">
+          <label class="switch-paddle" for="geburtshaeuser">
             <span class="show-for-sr">Zeige alle Geburtshäuser</span>
           </label>
         </div>
@@ -21,7 +21,7 @@
       </div>
       <div class="cell auto">
         <div class="switch switch-filter small">
-          <input id="spitaeler" class="switch-input" type="checkbox" [(ngModel)]="filter.spital" (change)="updateFilter()">
+          <input id="spitaeler" [disabled]="!filter.geburtshaus"  class="switch-input" type="checkbox" [(ngModel)]="filter.spital" (change)="updateFilter()">
           <label class="switch-paddle" for="spitaeler">
             <span class="show-for-sr">Zeige alle Spitäler</span>
           </label>
