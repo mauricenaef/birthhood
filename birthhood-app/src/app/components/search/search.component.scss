@@ -1,8 +1,10 @@
 @import "~_settings.scss";
+
 .search-container {
     will-change: transform;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
+    border-bottom: 1px solid $light-gray;
     .search-input {
         margin: 0;
     }

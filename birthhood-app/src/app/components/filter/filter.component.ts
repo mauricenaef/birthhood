@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Observable } from 'rxjs/Observable';
 import { BirthplaceFilter } from '../../models/birthplace-filter';
@@ -8,12 +8,17 @@ import * as $ from 'jquery';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss']
+  styleUrls: ['./filter.component.scss'],
+  inputs: ['show-filter']
 })
 export class FilterComponent implements OnInit {
+  
+  
+  @Input('show-filter')
 
   filter: BirthplaceFilter;
   isLateralNavAnimating = false;
+
 
   constructor(private birthplaceService: BirthplaceService) {
     this.filter = new BirthplaceFilter();

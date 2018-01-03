@@ -10,4 +10,12 @@
             right: 0;
         }
     } */
+    &.button-icon {
+        margin: 0;
+        padding: 0.35em 0.7em;
+        .icon {
+            width: 2em;
+            height: 2em;
+        }
+    }
 }
