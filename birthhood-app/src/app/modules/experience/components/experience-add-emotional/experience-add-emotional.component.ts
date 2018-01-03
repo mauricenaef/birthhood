@@ -9,7 +9,7 @@ import { FormDataService } from '../../services/experience-form-data.service';
 })
 export class ExperienceAddEmotionalComponent implements OnInit {
 
-  title = 'Beurteilen Sie die Emotionalität während der Geburt';
+  title: string = 'Beurteilen Sie die Emotionalität während der Geburt';
   emotional: Emotional;
   form: any;
 
@@ -17,13 +17,11 @@ export class ExperienceAddEmotionalComponent implements OnInit {
 
   ngOnInit() {
     this.emotional = this.formDataService.getEmotional();
-    console.log('Form Emotional loaded');
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-    console.log('save form success');
     this.formDataService.setEmotional(this.emotional);
   }
 

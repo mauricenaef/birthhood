@@ -10,7 +10,7 @@ export class SortbyPipe implements PipeTransform {
     if (typeof array === "undefined") {
       return array;
     }
-    array.sort((a: any, b: any) => {
+    array.sort((a: string, b: string) => {
       if (a[args] < b[args]) {
         return -1;
       } else if (a[args] > b[args]) {

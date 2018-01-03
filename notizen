@@ -3,6 +3,7 @@ Herausforderungen:
 - Firebase-services können schlecht gekapselt werden.
 - google maps API zu viele Anfragen
 - firestore: zu viele Anfragen
+- firestore: beta - z.B. Userid nicht abfragbar..
 
 Fragen:
 

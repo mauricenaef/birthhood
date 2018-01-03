@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-
 import { Bio } from '../../models/experience-form-data';
 import { FormDataService } from '../../services/experience-form-data.service';
 import { BirthplaceService } from '../../../../services/birthplace.service';
-
 import { FormExperienceData } from '../../models/form-experience-data';
 import { ToastrService } from 'ngx-toastr';
 import { Birthplace } from '../../../../models/birthplace';
@@ -18,12 +16,11 @@ import { Birthplace } from '../../../../models/birthplace';
 
 export class ExperienceAddBioComponent implements OnInit {
 
-  title : string = 'Generelle Angaben';
+  title: string = 'Generelle Angaben';
   bio: Bio;
   form: any;
   birthplacelist: Birthplace[];
 
-  FormExperienceData;
   userLoggedIn: boolean = false;
 
   public moment: Date = new Date();
@@ -44,35 +41,23 @@ export class ExperienceAddBioComponent implements OnInit {
     private birthPlaceService: BirthplaceService,
     private toastr: ToastrService
   ) {
-    this.FormExperienceData = FormExperienceData;
     this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
   }
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
-
   ngOnInit() {
-
     this.birthPlaceService.getBirthplaces().subscribe(birthplaces => {
       this.birthplacelist = birthplaces;
     });
-
     this.bio = this.formDataService.getBio();
-
   }
 
   save(form: any) {
     if (!form.valid) {
       return;
     }
-
-    // This saves the Birthplace Name from ID
+    // This saves the Birthplace Name based on ID
     this.bio.birthplace.name = this.birthplacelist.filter(x => x.id == this.bio.birthplace.id)[0].name;
-
-    console.log(this.bio);
     this.formDataService.setBio(this.bio);
-    //console.log("new Bio", this.formDataService.getBio());
   }
 
 }

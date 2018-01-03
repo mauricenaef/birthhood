@@ -9,7 +9,7 @@ import { FormDataService } from '../../services/experience-form-data.service';
 })
 export class ExperienceAddKoerperlichComponent implements OnInit {
 
-  title = 'Beurteilen Sie die Körperliche .. während der Geburt';
+  title: string = 'Beurteilen Sie die Körperliche .. während der Geburt';
   koerperlich: Koerperlich;
   form: any;
 
@@ -17,13 +17,11 @@ export class ExperienceAddKoerperlichComponent implements OnInit {
 
   ngOnInit() {
     this.koerperlich = this.formDataService.getKoerperlich();
-    console.log('Form Körperlich loaded');
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-    console.log('save form success');
     this.formDataService.setKoerperlich(this.koerperlich);
   }
 

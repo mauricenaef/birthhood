@@ -3,27 +3,27 @@
       <div class="cell">
         <a (click)='toggle($event, "footer")' class="show-for-small-only close-nav-trigger nav-trigger-footer">back</a>
         <ul class="menu vertical">
-          <li><a href="#">Geburstort Finden</a></li>
-          <li><a href="#">Geburt hinzufügen</a></li>
+          <li><a routerLink="/" routerLinkActive="active">Geburstort Finden</a></li>
+          <li><a routerLink="/user-dashboard/experience/new" routerLinkActive="active">Geburt hinzufügen</a></li>
           <li><a *ngIf="userLoggedIn"  (click)="logout()" >Logout</a></li>
         </ul>
       </div>
       <div class="cell">
         <ul class="menu vertical">
-          <li><a href="#">Über birthhood<sup>®</sup></a></li>
-          <li><a href="#">Geburtskriterien</a></li>
+          <li><a routerLink="/about" routerLinkActive="active">Über birthhood<sup>®</sup></a></li>
+          <li><a routerLink="/birthcriteria" routerLinkActive="active">Geburtskriterien</a></li>
         </ul>
       </div>
       <div class="cell">
         <ul class="menu vertical">
-          <li><a href="#">Ich bin ein Geburtshaus</a></li>
-          <li><a href="#">Ich bin ein Spital</a></li>
+          <li><a routerLink="/signup-birthplace" routerLinkActive="active">Ich bin ein Geburtshaus</a></li>
+          <li><a routerLink="/signup-birthplace" routerLinkActive="active">Ich bin ein Spital</a></li>
         </ul>
       </div>
       <div class="cell">
         <ul class="menu vertical">
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Kontakt</a></li>
+          <li><a routerLink="/impressum" routerLinkActive="active">Impressum</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">Kontakt</a></li>
         </ul>
       </div>
     </div>

@@ -9,7 +9,7 @@ import { FormDataService } from '../../services/experience-form-data.service';
 })
 export class ExperienceAddUmgebungComponent implements OnInit {
 
-  title = 'Beurteilen Sie die Umgebung während der Geburt';
+  title : string = 'Beurteilen Sie die Umgebung während der Geburt';
   umgebung: Umgebung;
   form: any;
 
@@ -17,13 +17,11 @@ export class ExperienceAddUmgebungComponent implements OnInit {
 
   ngOnInit() {
     this.umgebung = this.formDataService.getUmgebung();
-    console.log('Form Umgebung loaded');
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-    console.log('save form success');
     this.formDataService.setUmgebung(this.umgebung);
   }
 
