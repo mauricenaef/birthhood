@@ -21,8 +21,7 @@ export class SearchComponent implements OnInit {
 
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
-  filterIsVisible: boolean = false;
-
+ 
   private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   constructor(private birthplaceService: BirthplaceService,
@@ -53,9 +52,5 @@ export class SearchComponent implements OnInit {
 
   deactivateSearch(): void{
     this.isActive = false;
-  }
-
-  showFilter(): void {
-    this.filterIsVisible = true;
   }
 }
