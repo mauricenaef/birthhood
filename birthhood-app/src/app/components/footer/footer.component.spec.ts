@@ -1,4 +1,4 @@
-import { async, ComponentFixture,tick, fakeAsync, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, tick, fakeAsync, TestBed } from '@angular/core/testing';
 import { Location } from "@angular/common";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule, } from 'angularfire2';
@@ -14,7 +14,7 @@ import { BirthplaceDetailsComponent } from '../../components/birthplace-details/
 import { SearchComponent } from '../../components/search/search.component';
 import { FormsModule } from '@angular/forms';
 
-import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 
 import { OwlModule } from 'ngx-owl-carousel';
 
@@ -28,17 +28,8 @@ import { SignupBirthplaceComponent } from '../signup-birthplace/signup-birthplac
 import { ExperienceModule } from '../../modules/experience/experience.module';
 import { FilterComponent } from '../filter/filter.component';
 
+import { environment } from '../../../environments/environment'
 
-const environment = {
-  firebase: {
-    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-    authDomain: "birthhood.firebaseapp.com",
-    databaseURL: "https://birthhood.firebaseio.com",
-    projectId: "birthhood",
-    storageBucket: "birthhood.appspot.com",
-    messagingSenderId: "986661546141"
-  }
-  };
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -48,7 +39,7 @@ describe('FooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent,
+      declarations: [FooterComponent,
         SignupComponent,
         BirthplacesComponent,
         BirthplacesMapComponent,
@@ -56,28 +47,28 @@ describe('FooterComponent', () => {
         FilterComponent,
         BirthplacesListComponent,
         BirthplaceDetailsComponent,
-        
+
         AboutComponent,
         SignupBirthplaceComponent,
         ImpressumComponent,
         BirthcriteriaComponent,
         ContactComponent,
-        LoginComponent ],
-        providers: [AngularFireAuth, { provide: APP_BASE_HREF, useValue : '/' }],
-        imports: [
-          AngularFireModule.initializeApp(environment.firebase),
-          AppRoutingModule,
-          ExperienceModule,
-          OwlModule,
-          DateTimePickerModule,
-          AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
-          }),
-          FormsModule
-        ]
+        LoginComponent],
+      providers: [AngularFireAuth, { provide: APP_BASE_HREF, useValue: '/' }],
+      imports: [
+        AngularFireModule.initializeApp(environment.firebase),
+        AppRoutingModule,
+        ExperienceModule,
+        OwlModule,
+        DateTimePickerModule,
+        AgmCoreModule.forRoot({
+          apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
+        }),
+        FormsModule
+      ]
     })
-    .compileComponents();
-    location = TestBed.get(Location); 
+      .compileComponents();
+    location = TestBed.get(Location);
   }));
 
   beforeEach(() => {
@@ -92,7 +83,7 @@ describe('FooterComponent', () => {
 
   it('should redirect to main page upon logout', fakeAsync(() => {
     component.logout();
-    tick(); 
+    tick();
     expect(location.path()).toBe('/birthplaces');
   }));
 });

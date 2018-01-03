@@ -28,16 +28,8 @@ import { BirthcriteriaComponent } from '../birthcriteria/birthcriteria.component
 import { ContactComponent } from '../contact/contact.component';
 import { FilterComponent } from '../filter/filter.component';
 
-const environment = {
-  firebase: {
-    apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
-    authDomain: "birthhood.firebaseapp.com",
-    databaseURL: "https://birthhood.firebaseio.com",
-    projectId: "birthhood",
-    storageBucket: "birthhood.appspot.com",
-    messagingSenderId: "986661546141"
-  }
-};
+import { environment } from '../../../environments/environment'
+
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
