@@ -8,17 +8,35 @@ import { UserDashboardSidebarComponent } from './components/user-dashboard-sideb
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserExperienceListComponent } from './components/user-experience-list/user-experience-list.component';
 import { ExperienceService } from './services/experience.service';
-import { ExperienceDynamicFormComponent } from './components/experience-dynamic-form/experience-dynamic-form.component';
 import { ExperienceAddEmotionalComponent } from './components/experience-add-emotional/experience-add-emotional.component';
 import { ExperienceAddKoerperlichComponent } from './components/experience-add-koerperlich/experience-add-koerperlich.component';
 import { ExperienceAddMentalComponent } from './components/experience-add-mental/experience-add-mental.component';
 import { ExperienceAddWochenbettComponent } from './components/experience-add-wochenbett/experience-add-wochenbett.component';
+import { AppRoutingModule } from '../../app-routing.module';
+import { DateTimePickerModule } from 'ng-pick-datetime';
+import { FormsModule } from '@angular/forms';
+import { SortbyPipe } from '../../pipes/sortby.pipe';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
+    FormsModule,
+    DateTimePickerModule
   ],
-  declarations: [ExperienceAddComponent, ExperienceAddBioComponent, ExperienceAddNavbarComponent, ExperienceAddUmgebungComponent, UserDashboardSidebarComponent, UserDashboardComponent, UserExperienceListComponent, ExperienceDynamicFormComponent, ExperienceAddEmotionalComponent, ExperienceAddKoerperlichComponent, ExperienceAddMentalComponent, ExperienceAddWochenbettComponent ],
+  declarations: [
+    ExperienceAddComponent,
+    ExperienceAddBioComponent,
+    ExperienceAddNavbarComponent,
+    ExperienceAddUmgebungComponent,
+    UserDashboardSidebarComponent,
+    UserDashboardComponent,
+    UserExperienceListComponent,
+    ExperienceAddEmotionalComponent,
+    ExperienceAddKoerperlichComponent,
+    ExperienceAddMentalComponent,
+    ExperienceAddWochenbettComponent,
+    SortbyPipe],
   providers: [
     ExperienceService
   ]
