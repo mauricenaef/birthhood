@@ -13,9 +13,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   title = 'app';
-  showSpiner: boolean = true;
-
-
   constructor(public router: Router){
     //this.items =      db.collection('birthplaces').valueChanges();
     //console.log("sdf");
@@ -27,15 +24,12 @@ export class AppComponent {
     //let item = db.collection('birthplaces', ref => ref.where('NAME', '==', 'Geburtshaus Delphys') ).valueChanges();
     //item.subscribe(data => console.log(data));
     
-    let body = document.getElementsByTagName('body')[0];
-    body.classList.add("loaded"); 
-
-    this.showSpiner = false;
-
+     
   }
 
   ngAfterViewInit () {
-
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.remove("is-loading");
   }
 
 }

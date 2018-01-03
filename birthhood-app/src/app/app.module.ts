@@ -28,7 +28,6 @@ import { FilterComponent } from './components/filter/filter.component';
 import { OwlModule } from 'ngx-owl-carousel';
 
 import { MainNavComponent } from './components/main-nav/main-nav.component';
-import { LoaderComponent } from './components/loader/loader.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AboutComponent } from './components/about/about.component';
 
@@ -55,7 +54,6 @@ import { ExperienceModule } from './modules/experience/experience.module';
     SearchComponent,
     FilterComponent,
     MainNavComponent,
-    LoaderComponent,
    
     AboutComponent,
 

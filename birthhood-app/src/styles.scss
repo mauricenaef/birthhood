@@ -77,13 +77,12 @@ $dot-background-active: $color-base !default;
 @include foundation-visibility-classes;
 @include foundation-switch;
 
+// Global layout
+@import "/assets/scss/layout/layout";
 
 // Global Atomic Styles
 @import "/assets/scss/atoms/atoms";
-
-//@import "/assets/scss/molecules/molecules";
 @import "/assets/scss/molecules/molecules";
-//@import "/assets/scss/structures/structures";
 
 app-root {
     width: 100%;
