@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/combinelatest';
 import 'rxjs/add/operator/debounceTime';
 
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -21,7 +22,7 @@ export class SearchComponent implements OnInit {
 
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
- 
+
   private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   constructor(private birthplaceService: BirthplaceService,
@@ -29,16 +30,15 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
-    this.searchresults = this.searchTerms
-      .debounceTime(300)
-      .distinctUntilChanged()
-      .switchMap(term =>
-        term ? this.birthplaceService.search(term)
-          : Observable.of<Birthplace[]>([])
-      )
+    this.searchresults = Observable.combineLatest(this.searchTerms.debounceTime(300)
+      .distinctUntilChanged(),
+      this.birthplaceService.filterChanged$,
+    ).switchMap(combined => {
+      return combined[0] ? this.birthplaceService.search(combined[0]) : Observable.of<Birthplace[]>([]);
+    })
       .catch(error => {
         this.toastr.error(error, "Fehler bei Suche");
-        return Observable.of<any>([]);
+        return Observable.of<Birthplace[]>([]);
       });
   }
 
@@ -46,11 +46,11 @@ export class SearchComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
-  activateSearch(): void{
+  activateSearch(): void {
     this.isActive = true;
   }
 
-  deactivateSearch(): void{
+  deactivateSearch(): void {
     this.isActive = false;
   }
 }

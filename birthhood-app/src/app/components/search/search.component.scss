@@ -10,7 +10,6 @@
     .search-list-container {
         display: none;
     }
-    .search-overlay {}
     &.search-active {
         backface-visibility: hidden;
         z-index: 5;
@@ -45,11 +44,8 @@
     }
 }
 
-.search-results-list {}
-
-.search-results-list-item {
+.search-results-item {
     a {
-        display: block;
         padding: .6em 0;
         margin-left: .6em;
         border-bottom: 1px solid $light-gray;
@@ -74,4 +70,11 @@
             padding: 0 .6em;
         }
     }
+}
+
+.search-results-label{
+    display: flex;
+}
+.search-results-label-text {
+    flex: 1;
 }
