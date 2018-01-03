@@ -9,7 +9,7 @@ import { FormDataService } from '../../services/experience-form-data.service';
 })
 export class ExperienceAddMentalComponent implements OnInit {
 
-  title = 'Beurteilen Sie die Mental .. während der Geburt';
+  title: string = 'Beurteilen Sie die Mental .. während der Geburt';
   mental: Mental;
   form: any;
 
@@ -17,13 +17,11 @@ export class ExperienceAddMentalComponent implements OnInit {
 
   ngOnInit() {
     this.mental = this.formDataService.getMental();
-    console.log('Form Mental loaded');
   }
 
   save(form: any) {
     if (!form.valid)
       return;
-    console.log('save form success');
     this.formDataService.setMental(this.mental);
   }
 
