@@ -1,12 +1,11 @@
-<aside class="filter-container grid-container">
+<div class="filter-container grid-container" [ngClass]="{'filter-is-visible': show-filter }">
   <div class="app-menu-filter">
-    <div class="grid-x">
+    <div class="grid-x grid-padding-y">
       <div class="cell small-10 medium-8">
-        <a (click)='toggle($event, "filter")' class="show-for-small-only close-nav-trigger nav-trigger-footer">back</a>
-        <h3>Geburtshäuser</h3>
+        <h3 class="switch-label">Geburtshäuser</h3>
       </div>
       <div class="cell auto">
-        <div class="switch small">
+        <div class="switch switch-filter small">
           <input id="geburtshaueser" class="switch-input" type="checkbox" [(ngModel)]="filter.geburtshaus" (change)="updateFilter()">
           <label class="switch-paddle" for="geburtshaueser">
             <span class="show-for-sr">Zeige alle Geburtshäuser</span>
@@ -14,12 +13,12 @@
         </div>
       </div>
     </div>
-    <div class="grid-x">
+    <div class="grid-x grid-padding-y grid-margin-y">
       <div class="cell small-10 medium-8">
-        <h3>Spitäler</h3>
+        <h3 class="switch-label">Spitäler</h3>
       </div>
       <div class="cell auto">
-        <div class="switch small">
+        <div class="switch switch-filter small">
           <input id="spitaeler" class="switch-input" type="checkbox" [(ngModel)]="filter.spital" (change)="updateFilter()">
           <label class="switch-paddle" for="spitaeler">
             <span class="show-for-sr">Zeige alle Spitäler</span>
@@ -29,4 +28,4 @@
     </div>
 
   </div>
-</aside>
+</div>

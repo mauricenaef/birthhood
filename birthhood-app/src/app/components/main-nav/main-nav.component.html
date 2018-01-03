@@ -1,16 +1,7 @@
 <nav class="main-nav">
   <ul class="menu main-nav-list">
-    <li *ngIf="router.url == '/birthplaces'">
-      <a (click)='toggle($event, "filter")' class="nav-trigger-filter show-for-small-only">
-        <svg class="show-for-small-only icon icon-filter">
-          <use xlink:href="#filter"></use>
-        </svg>
-        <span>Filter</span>
-      </a>
-    </li>
-
-    <li *ngIf="router.url != '/birthplaces'">
-      <a routerLink="/" routerLinkActive="active">
+    <li>
+      <a routerLink="/birthplaces" routerLinkActive="active">
         <svg class="show-for-small-only icon icon-world2">
           <use xlink:href="#world2"></use>
         </svg>

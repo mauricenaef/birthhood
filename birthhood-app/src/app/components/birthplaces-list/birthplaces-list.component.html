@@ -1,3 +1,4 @@
+<app-filter></app-filter>
 <app-search></app-search>
 <owl-carousel *ngIf="birthplaces?.length > 0" [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']">
   <div class="item" *ngFor="let birthplace of birthplaces; let i = index; trackBy: trackFbObjects" style="height: 300px; background-color:gray;">
