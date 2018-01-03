@@ -25,23 +25,19 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   }
 
   ngOnInit() {
-
     this.subscription = this.route.params.subscribe(params => {
       this.id = params['id'];
       this.birthplaceService.zoomToBirthplace(this.id);
       this.birthplace$ = this.birthplaceService.getBirthplace(this.id);
     });
-
-    this.birthplace$.subscribe(birthplace => {
-      this.birthplace = new Birthplace( birthplace );
-    });
   }
 
   ngAfterViewInit() {
-
-
-    this.birthplace$.subscribe(
-      birthplace => {
+    
+    this.birthplace$.subscribe(birthplace => {
+      this.birthplace = new Birthplace( birthplace );
+  
+        //console.log(new Birthplace(birthplace));
         let htmlRef = document.getElementById('myChart')
         this.myChart = new Chart(htmlRef, {
           options: {
@@ -58,11 +54,11 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
           data: {
             datasets: [{
               data: [
-                birthplace.score_e_rounded,
-                birthplace.score_k_rounded,
-                birthplace.score_m_rounded,
-                birthplace.score_u_rounded,
-                birthplace.score_w_rounded
+                this.birthplace.score_e_rounded,
+                this.birthplace.score_k_rounded,
+                this.birthplace.score_m_rounded,
+                this.birthplace.score_u_rounded,
+                this.birthplace.score_w_rounded
               ],
               backgroundColor: [
                 "rgba(76, 99, 90, 1)",
@@ -85,9 +81,8 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
             ]
           }
         })
-      }
-    )
-
+     
+      });
 
 
   }
