@@ -12,13 +12,6 @@ import { BirthplacesMapComponent } from '../../components/birthplaces-map/birthp
 import { BirthplacesListComponent } from '../../components/birthplaces-list/birthplaces-list.component';
 import { BirthplaceDetailsComponent } from '../../components/birthplace-details/birthplace-details.component';
 import { SearchComponent } from '../../components/search/search.component';
-import { UserExperienceListComponent } from '../../modules/experience/components/user-experience-list/user-experience-list.component';
-import { UserDashboardComponent } from '../../modules/experience/components/user-dashboard/user-dashboard.component';
-import { UserDashboardSidebarComponent } from '../../modules/experience/components/user-dashboard-sidebar/user-dashboard-sidebar.component';
-import { ExperienceAddBioComponent } from '../../modules/experience/components/experience-add-bio/experience-add-bio.component';
-import { ExperienceAddNavbarComponent } from '../../modules/experience/components/experience-add-navbar/experience-add-navbar.component';
-import { ExperienceAddUmgebungComponent } from '../../modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
-import { ExperienceAddComponent } from '../../modules/experience/components/experience-add/experience-add.component';
 import { FormsModule } from '@angular/forms';
 
 import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
@@ -27,6 +20,13 @@ import { OwlModule } from 'ngx-owl-carousel';
 
 import { DateTimePickerModule } from 'ng-pick-datetime';
 import { FooterComponent } from './footer.component';
+import { AboutComponent } from '../about/about.component';
+import { BirthcriteriaComponent } from '../birthcriteria/birthcriteria.component';
+import { ContactComponent } from '../contact/contact.component';
+import { ImpressumComponent } from '../impressum/impressum.component';
+import { SignupBirthplaceComponent } from '../signup-birthplace/signup-birthplace.component';
+import { ExperienceModule } from '../../modules/experience/experience.module';
+import { FilterComponent } from '../filter/filter.component';
 
 
 const environment = {
@@ -53,21 +53,21 @@ describe('FooterComponent', () => {
         BirthplacesComponent,
         BirthplacesMapComponent,
         SearchComponent,
-        UserExperienceListComponent,
-        UserDashboardComponent,
-        UserDashboardSidebarComponent,
+        FilterComponent,
         BirthplacesListComponent,
         BirthplaceDetailsComponent,
-        ExperienceAddBioComponent,
-        ExperienceAddNavbarComponent,
-        ExperienceAddUmgebungComponent,
-        ExperienceAddComponent,
-
+        
+        AboutComponent,
+        SignupBirthplaceComponent,
+        ImpressumComponent,
+        BirthcriteriaComponent,
+        ContactComponent,
         LoginComponent ],
         providers: [AngularFireAuth, { provide: APP_BASE_HREF, useValue : '/' }],
         imports: [
           AngularFireModule.initializeApp(environment.firebase),
           AppRoutingModule,
+          ExperienceModule,
           OwlModule,
           DateTimePickerModule,
           AgmCoreModule.forRoot({
