@@ -1,10 +1,12 @@
-<div class="search-container grid-container" [ngClass]="{'search-active': isActive }">
+<div class="search-container grid-container" [ngClass]="{'search-active': isActive }" >
   <div class="grid-x grid-margin-x">
     <div class="cell search-input-container">
 
+      <span class="search-close-button" (click)="deactivateSearch()">close</span>
       <label for="search-input" class="show-for-sr">Search</label>
 
-      <input type="text" #searchBox id="search-input" class="input-text search-input" (focus)="activateSearch()" (keyup)="search(searchBox.value)"
+      <input type="text" #searchBox id="search-input" class="input-text search-input" 
+      (focus)="activateSearch()" (click)="activateSearch()"  (keyup)="search(searchBox.value)"
         placeholder="Suchen">
     </div>
 
@@ -47,5 +49,4 @@
 
     </div>
   </div>
-  <div class="search-overlay" (click)="deactivateSearch()"></div>
 </div>
