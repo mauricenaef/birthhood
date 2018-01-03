@@ -9,6 +9,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/toPromise';
 import "rxjs/add/operator/take";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class FormDataService {
@@ -22,18 +23,11 @@ export class FormDataService {
   }
 
   saveToFirebase(): Promise<any> {
-    let userObs = this.af.authState;
-    //return new Promise((resolve) => {
-
+    let userObs: Observable<firebase.User> = this.af.authState;
     return userObs.take(1).toPromise().then(user => {
-
-        this.experience.user_id = user.uid;
-        return this.experienceService.save(this.experience)
-
-      });
-      //.then(docRef => resolve("geklappt " + docRef.id))
-    //});
-
+    this.experience.user_id = user.uid;
+      return this.experienceService.save(this.experience)
+    });
   }
 
   getBio(): Bio {
@@ -41,8 +35,10 @@ export class FormDataService {
       birth_name: this.experience.birth_name,
       birth_date: this.experience.birth_date,
       birth_type: this.experience.birth_type,
-      birthplace: {name: this.experience.birthplace,
-      id: this.experience.birthplace_id},
+      birthplace: {
+        name: this.experience.birthplace,
+        id: this.experience.birthplace_id
+      },
     }
     return bio;
   }

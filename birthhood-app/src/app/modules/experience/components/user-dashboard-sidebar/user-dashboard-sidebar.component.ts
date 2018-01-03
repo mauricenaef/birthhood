@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 
@@ -10,22 +10,21 @@ import { Router } from '@angular/router';
 })
 export class UserDashboardSidebarComponent implements OnInit {
 
-  currentUser;
+  currentUser: firebase.User;
 
-  constructor( private af: AngularFireAuth , private router: Router) { }
+  constructor(private af: AngularFireAuth, private router: Router) { }
 
 
   ngOnInit() {
     this.af.auth.onAuthStateChanged(
-       x => {
-         this.currentUser = x ;
-         console.log(x);
-       }
-        )
+      user => {
+        this.currentUser = user;
+      }
+    )
   }
 
 
-  logout(){
+  logout() {
     this.af.auth.signOut();
 
     this.router.navigateByUrl('/');

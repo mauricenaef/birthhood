@@ -3,6 +3,7 @@ import { ExperienceService } from '../../services/experience.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import { Router } from '@angular/router';
+import { Experience } from '../../models/experience-form-data';
 
 @Component({
   selector: 'app-user-experience-list',
@@ -11,14 +12,12 @@ import { Router } from '@angular/router';
 })
 export class UserExperienceListComponent implements OnInit {
 
-  experienceList;
+  experienceList: Experience[];
 
   constructor(private af: AngularFireAuth, private experienceService: ExperienceService, private router: Router) { }
 
   ngOnInit() {
-    /*let userId = this.authService.currentUserId;
-    console.log("userexperience " + userId);
-*/
+
     this.af.auth.onAuthStateChanged(
       currentUser => {
         if (currentUser) {
@@ -27,7 +26,7 @@ export class UserExperienceListComponent implements OnInit {
           )
         } else {
           //ev. gar nicht nötig, da über ROuteGuard gekapselt wird
-    this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/');
         }
       }
     );
