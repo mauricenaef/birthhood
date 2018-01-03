@@ -29,19 +29,30 @@
                 </div>
                 <ul class="no-bullet score-list">
                     <li class="total-score-item score-item">
-                        <strong class="score-item-title">Total Score</strong> <strong class="score">{{ birthplace.score | number : '1.1-1' }} / 3</strong>
+                        <strong class="score-item-title">Total Score</strong>
+                        <strong class="score">{{ birthplace.score | number : '1.1-1' }} / 3</strong>
                     </li>
                     <small class="score-list-description">⌀ Bewertung basierend auf {{birthplace.experiences}} Geburten</small>
                     <li class="score-item score-u">
-                        <span class="score-item-title">Umgebung</span> <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong></li>
+                        <span class="score-item-title">Umgebung</span>
+                        <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong>
+                    </li>
                     <li class="score-item score-e">
-                        <span class="score-item-title">Emotional</span> <strong class="score">{{ birthplace.score_e | number : '1.1-1' }}</strong></li>
+                        <span class="score-item-title">Emotional</span>
+                        <strong class="score">{{ birthplace.score_e | number : '1.1-1' }}</strong>
+                    </li>
                     <li class="score-item score-k">
-                        <span class="score-item-title">Körperlich</span> <strong class="score">{{ birthplace.score_k | number : '1.1-1' }}</strong></li>
+                        <span class="score-item-title">Körperlich</span>
+                        <strong class="score">{{ birthplace.score_k | number : '1.1-1' }}</strong>
+                    </li>
                     <li class="score-item score-m">
-                        <span class="score-item-title">Mental</span> <strong class="score">{{ birthplace.score_m | number : '1.1-1' }}</strong></li>
+                        <span class="score-item-title">Mental</span>
+                        <strong class="score">{{ birthplace.score_m | number : '1.1-1' }}</strong>
+                    </li>
                     <li class="score-item score-w">
-                        <span class="score-item-title">Wochenbett</span> <strong class="score">{{ birthplace.score_w | number : '1.1-1' }}</strong></li>
+                        <span class="score-item-title">Wochenbett</span>
+                        <strong class="score">{{ birthplace.score_w | number : '1.1-1' }}</strong>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,22 +61,33 @@
         <div class="grid-x grid-margin-x align-bottom">
             <div class="small-6 cell">
                 <address class="adr">
-                    <h4 class="h6"><strong>{{birthplace.name}}</strong></h4>
+                    <h4 class="h6">
+                        <strong>{{birthplace.name}}</strong>
+                    </h4>
                     <div class="street-address">{{ birthplace.strasse }}</div>
-                    <span class="postal-code">{{ birthplace.plz }}</span> <span class="locality">{{ birthplace.ort }}</span>
+                    <span class="postal-code">{{ birthplace.plz }}</span>
+                    <span class="locality">{{ birthplace.ort }}</span>
                     <div class="country-name">Schweiz</div>
                 </address>
-                  
+
+                <a href="{{birthplace.url}}" target="_blank" class="link-icon button tiny hollow">
+                    Link zur Webseite
+                    <svg class="icon">
+                        <use xlink:href="#link"></use>
+                    </svg>
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}" target="_blank" class="link-icon button tiny hollow">
+                    Anfahrt
+                    <svg class="icon icon-map">
+                        <use xlink:href="#map"></use>
+                    </svg>
+                </a>
             </div>
             <div class="small-6 cell">
-                <a href="{{birthplace.url}}" target="_blank" class="link-icon">
-                    Link zur Webseite <svg class="icon"><use xlink:href="#link"></use></svg></a><br />
-                <a href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}" target="_blank" class="link-icon">
-                    Anfahrt <svg class="icon icon-map"><use xlink:href="#map"></use></svg>
-                    </a>
+
             </div>
         </div>
-        
-        
+
+
     </footer>
 </article>

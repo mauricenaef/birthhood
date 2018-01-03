@@ -33,60 +33,82 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   }
 
   ngAfterViewInit() {
-    
+
     this.birthplace$.subscribe(birthplace => {
-      this.birthplace = new Birthplace( birthplace );
-  
-        //console.log(new Birthplace(birthplace));
-        let htmlRef = document.getElementById('myChart')
-        this.myChart = new Chart(htmlRef, {
-          options: {
-            responsive: true,
-            legend: {
-                position: 'bottom',
-            },
-            animation: {
-              animateScale: true,
-              animateRotate: false
+      this.birthplace = new Birthplace(birthplace);
+
+      //console.log(new Birthplace(birthplace));
+      let htmlRef = document.getElementById('myChart')
+      this.myChart = new Chart(htmlRef, {
+        type: 'polarArea',
+        options: {
+          responsive: true,
+          legend: {
+            //    display: false,
+            position: 'bottom',
+          },
+          /* legendCallback: function(chart) {
+            var text = [];
+            text.push('<ul>');
+            for (var i=0; i<chart.data.datasets.length; i++) {
+              //console.log(chart.data.datasets[i]); // see what's inside the obj.
+              text.push('<li>');
+              text.push('<span style="background-color:' + chart.data.datasets[i].borderColor + '">' + chart.data.datasets[i].label + '</span>');
+              text.push('</li>');
+            }
+            text.push('</ul>');
+            return text.join("");
+          }, */
+          scale: {
+            //display: false
+            ticks: {
+              backdropPaddingX: 5,
+              backdropPaddingY: 5,
+              max: 3,
+              backdropColor: 'rgba(0, 0, 0, 0)',
+              major: {
+                fontSize: 22,
+              }
             }
           },
-          type: 'polarArea',
-          data: {
-            datasets: [{
-              data: [
-                this.birthplace.score_e_rounded,
-                this.birthplace.score_k_rounded,
-                this.birthplace.score_m_rounded,
-                this.birthplace.score_u_rounded,
-                this.birthplace.score_w_rounded
-              ],
-              backgroundColor: [
-                "rgba(76, 99, 90, 1)",
-                "rgba(102, 132, 120, 1)",
-                "rgba(139, 181, 164, 1)",
-                "rgba(181, 207, 197, 1)",
-                "rgba(202, 221, 213, 1)",
-              ]
-            }],
-            borderWidth: [
-              0
-            ],
-            // These labels appear in the legend and in the tooltips when hovering different arcs
-            labels: [
-              'Emotional',
-              'Körperlich',
-              'Mental',
-              'Umfeld',
-              'Wochenbett'
-            ]
+          animation: {
+            animateScale: true,
+            animateRotate: true
           }
-        })
-     
-      });
+        },
 
+        data: {
+          datasets: [{
+            data: [
+              this.birthplace.score_e_rounded,
+              this.birthplace.score_k_rounded,
+              this.birthplace.score_m_rounded,
+              this.birthplace.score_u_rounded,
+              this.birthplace.score_w_rounded
+            ],
+            backgroundColor: [
+              "rgba(76, 99, 90, 1)",
+              "rgba(102, 132, 120, 1)",
+              "rgba(139, 181, 164, 1)",
+              "rgba(181, 207, 197, 1)",
+              "rgba(202, 221, 213, 1)",
+            ],
+            borderWidth: 0,
+          }],
+          // These labels appear in the legend and in the tooltips when hovering different arcs
+          labels: [
+            'Emotional',
+            'Körperlich',
+            'Mental',
+            'Umfeld',
+            'Wochenbett'
+          ]
+        }
+      })
+
+    });
 
   }
-
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
