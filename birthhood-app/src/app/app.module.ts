@@ -29,8 +29,8 @@ import { FilterComponent } from './components/filter/filter.component';
 import { OwlModule } from 'ngx-owl-carousel';
 
 import { MainNavComponent } from './components/main-nav/main-nav.component';
-/*import { LoaderComponent } from './components/loader/loader.component';
-import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
+import { LoaderComponent } from './components/loader/loader.component';
+/*import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
 import { ExperienceAddNavbarComponent } from './modules/experience/components/experience-add-navbar/experience-add-navbar.component';
 import { ExperienceAddUmgebungComponent } from './modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
 import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
@@ -73,8 +73,8 @@ import { ExperienceModule } from './modules/experience/experience.module';
     SearchComponent,
     FilterComponent,
     MainNavComponent,
-    /*LoaderComponent,
-    ExperienceAddEmotionalComponent,
+    LoaderComponent,
+    /*ExperienceAddEmotionalComponent,
     ExperienceAddKoerperlichComponent,
     ExperienceAddWochenbettComponent,
     ExperienceAddMentalComponent,
