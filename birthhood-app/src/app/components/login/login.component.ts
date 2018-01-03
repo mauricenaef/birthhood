@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(formData) {
+  onSubmit(formData): void{
     if (formData.valid) {
       this.af.auth.signInWithEmailAndPassword(formData.value.email,
         formData.value.password).then(x => {

@@ -3,6 +3,7 @@ import { BirthplaceService } from '../../services/birthplace.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Chart } from 'chart.js';
+import { Birthplace } from '../../models/birthplace';
 
 @Component({
   selector: 'app-birthplace-details',
@@ -12,7 +13,7 @@ import { Chart } from 'chart.js';
 export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   subscription: Subscription;
-  birthplace;
+  birthplace: Birthplace;
   id: string;
   myChart: any;
 

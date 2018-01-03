@@ -302,9 +302,7 @@ fallback-location. HSR?*/
 
         nearestBirthplaces.forEach(
           thisBirthplace => {
-            let latLngObject = new google.maps.LatLng();
-            latLngObject.lat = thisBirthplace.lat;
-            latLngObject.lng = thisBirthplace.lng;
+            let latLngObject = new google.maps.LatLng(thisBirthplace.lat, thisBirthplace.lng);
             bounds.extend(latLngObject);
           }
         );

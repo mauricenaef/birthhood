@@ -10,6 +10,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Birthplace } from '../../models/birthplace';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-search',
@@ -23,7 +24,7 @@ export class SearchComponent implements OnInit {
   private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   constructor(private birthplaceService: BirthplaceService,
-    private router: Router) { }
+    private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -35,8 +36,7 @@ export class SearchComponent implements OnInit {
           : Observable.of<Birthplace[]>([])
       )
       .catch(error => {
-        // TODO: add real error handling
-        console.log(error);
+        this.toastr.success(error, "Fehler bei Suche");
         return Observable.of<any>([]);
       });
   }
