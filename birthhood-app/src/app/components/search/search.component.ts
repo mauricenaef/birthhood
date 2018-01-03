@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
           : Observable.of<Birthplace[]>([])
       )
       .catch(error => {
-        this.toastr.success(error, "Fehler bei Suche");
+        this.toastr.error(error, "Fehler bei Suche");
         return Observable.of<any>([]);
       });
   }
