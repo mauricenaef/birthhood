@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Umgebung } from '../../models/experience-form-data';
-import { FormDataService } from '../../services/experience-form-data.service';
+import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-umgebung',
@@ -13,7 +13,7 @@ export class ExperienceAddUmgebungComponent implements OnInit {
   umgebung: Umgebung;
   form: any;
 
-  constructor(private formDataService: FormDataService) { }
+  constructor(private formDataService: ExperienceFormDataService) { }
 
   ngOnInit() {
     this.umgebung = this.formDataService.getUmgebung();

@@ -12,7 +12,7 @@ import "rxjs/add/operator/take";
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class FormDataService {
+export class ExperienceFormDataService {
 
   private experience: Experience = new Experience();
   private isBioFormValid: boolean = false;

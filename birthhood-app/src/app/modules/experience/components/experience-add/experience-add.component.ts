@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormDataService } from '../../services/experience-form-data.service';
+import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add',
@@ -12,7 +12,7 @@ export class ExperienceAddComponent implements OnInit {
 
   @Input() formData;
 
-  constructor(private formDataService: FormDataService) { }
+  constructor(private formDataService: ExperienceFormDataService) { }
 
   ngOnInit() {
     this.formData = this.formDataService.getExperience();

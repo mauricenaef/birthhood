@@ -16,6 +16,8 @@ import { AppRoutingModule } from '../../app-routing.module';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 import { FormsModule } from '@angular/forms';
 import { SortbyPipe } from '../../pipes/sortby.pipe';
+import { ExperienceFormDataService } from './services/experience-form-data.service';
+import { FormFlowService } from './services/form-flow.service';
 
 @NgModule({
   imports: [
@@ -38,7 +40,7 @@ import { SortbyPipe } from '../../pipes/sortby.pipe';
     ExperienceAddWochenbettComponent,
     SortbyPipe],
   providers: [
-    ExperienceService
+    ExperienceService, ExperienceFormDataService, FormFlowService
   ]
 })
 export class ExperienceModule { }

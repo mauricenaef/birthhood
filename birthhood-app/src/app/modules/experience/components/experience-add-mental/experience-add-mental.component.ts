@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Mental } from '../../models/experience-form-data';
-import { FormDataService } from '../../services/experience-form-data.service';
+import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-mental',
@@ -13,7 +13,7 @@ export class ExperienceAddMentalComponent implements OnInit {
   mental: Mental;
   form: any;
 
-  constructor(private formDataService: FormDataService) { }
+  constructor(private formDataService: ExperienceFormDataService) { }
 
   ngOnInit() {
     this.mental = this.formDataService.getMental();

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Bio } from '../../models/experience-form-data';
-import { FormDataService } from '../../services/experience-form-data.service';
+import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 import { BirthplaceService } from '../../../../services/birthplace.service';
 import { FormExperienceData } from '../../models/form-experience-data';
 import { ToastrService } from 'ngx-toastr';
@@ -37,7 +37,7 @@ export class ExperienceAddBioComponent implements OnInit {
 
   constructor(
     private af: AngularFireAuth,
-    private formDataService: FormDataService,
+    private formDataService: ExperienceFormDataService,
     private birthPlaceService: BirthplaceService,
     private toastr: ToastrService
   ) {

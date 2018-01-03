@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Wochenbett } from '../../models/experience-form-data';
 import { ToastrService } from 'ngx-toastr';
-import { FormDataService } from '../../services/experience-form-data.service';
+import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-wochenbett',
@@ -15,7 +15,7 @@ export class ExperienceAddWochenbettComponent implements OnInit {
   form: any;
 
   constructor(
-    private formDataService: FormDataService,
+    private formDataService: ExperienceFormDataService,
     private toastr: ToastrService
   ) { }
 
