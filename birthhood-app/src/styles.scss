@@ -1,7 +1,6 @@
 @import "settings";
 @import "../node_modules/foundation-sites/scss/foundation";
 
-
 // Imported library files
 @import "../node_modules/ng-pick-datetime/assets/style/picker.min.css";
 @import "/assets/scss/libs/toaster";
@@ -40,28 +39,24 @@ $dot-background-active: $color-base !default;
     padding-bottom: 5rem;
 }
 
-
 // Datepicker
 .owl-dateTime-dialog {
     width: 100% !important;
+
     @include breakpoint(medium up) {
         width: auto !important;
     }
 }
+
 .owl-dateTime-cancel {
     right: 1em !important;
 }
 
-
-
 .owl-dateTime-inputWrapper {
-
     input[type="text"] {
         margin: 0;
     }
 }
-
-
 
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
@@ -90,16 +85,22 @@ app-root {
 
 .main-content {
     padding-top: 5rem;
-    @include breakpoint(small only) {
-        padding-left: 2rem;
-        padding-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include breakpoint(medium up) {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 
 .content-footer {
-    @include breakpoint(small only) {
-        padding-left: 2rem;
-        padding-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include breakpoint(medium up) {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 
@@ -107,6 +108,7 @@ app-root {
     .main-container {
         display: flex;
         flex-direction: column;
+
         app-main-nav {
             order: -1;
         }
@@ -131,7 +133,6 @@ app-root {
         background-color: $white;
         will-change: transform;
         -webkit-backface-visibility: hidden;
-
         backface-visibility: hidden;
         transition: transform $animation-duration;
         transition-timing-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
