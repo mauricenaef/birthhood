@@ -99,9 +99,7 @@ import { ExperienceModule } from './modules/experience/experience.module';
     AppRoutingModule,
     OwlModule,
     FormsModule,
-    
     ExperienceModule,
-    
     ToastrModule.forRoot({
       positionClass: 'toast-top-full-width',
       autoDismiss: false,
