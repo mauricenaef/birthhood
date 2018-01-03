@@ -24,7 +24,8 @@
         </span>
       </div>
 
-      <div *ngIf="(searchresults | async)?.length==0 && searchBox.value" class="search-no-results">Keine Suchresultate.</div>
+      <div *ngIf="(searchresults | async)?.length==0 && searchBox.value" class="blank-slate">
+        <span class="blank-slate-text">Keine Suchresultate.</span></div>
       <ul class="no-bullet search-results-list">
         <li class="search-results-list-item" *ngFor="let item of searchresults | async">
           <a [routerLink]="['/birthplaces/details', item.id]">
