@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Emotional } from '../../models/form-data';
-import { FormDataService } from '../../services/form-data.service';
+import { Emotional } from '../../models/experience-form-data';
+import { FormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-emotional',

@@ -1,4 +1,4 @@
-export class FormData {
+export class Experience {
 
     user_id: string = '';
     birth_name: string = '';
