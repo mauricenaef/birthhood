@@ -31,8 +31,9 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
       this.birthplaceService.zoomToBirthplace(this.id);
       this.birthplace$ = this.birthplaceService.getBirthplace(this.id);
     });
+
     this.birthplace$.subscribe(birthplace => {
-      this.birthplace = birthplace;
+      this.birthplace = new Birthplace( birthplace );
     });
   }
 

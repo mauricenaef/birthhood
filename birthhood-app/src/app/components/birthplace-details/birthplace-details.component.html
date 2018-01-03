@@ -1,10 +1,14 @@
-<article class="birthplace-detail-wrap" >
+<article class="birthplace-detail-wrap">
     <header *ngIf="birthplace" class="birthplace-details-header">
         <div class="hero-image-wrapper">
-                <img src="https://source.unsplash.com/1600x900/?building,hospitl,health" alt="Spital" class="hero-image">
+            <img src="https://source.unsplash.com/1600x900/?building,hospitl,health" alt="Spital" class="hero-image">
         </div>
-        <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus"><use xlink:href="#geburtshaus"></use></svg>
-        <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital"><use xlink:href="#spital"></use></svg>
+        <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus">
+            <use xlink:href="#geburtshaus"></use>
+        </svg>
+        <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital">
+            <use xlink:href="#spital"></use>
+        </svg>
         <h1 class="detail-title">{{birthplace.name}} </h1>
     </header>
     <main role="main" class="birthplace-details-main grid-container">
@@ -15,20 +19,30 @@
 
             <div *ngIf="birthplace" class="medium-6 cell score-container">
                 <div *ngIf="birthplace.experiences">
-                    <br> Anzahl Bewertungen: {{birthplace.experiences}}
+                    Anzahl Bewertungen: {{birthplace.experiences}}
                 </div>
                 <div *ngIf="!birthplace.experiences">
-                    noch keine bewertungen
+                    <div class="blank-slate">
+                        <span class="blank-slate-text">🙈
+                            <em>Noch keine bewertungen</em>
+                        </span>
+                    </div>
+
                 </div>
                 <ul class="no-bullet score-list">
                     <li class="total-score-item score-item">
-                        {{ birthplace.score }} Total
+                        <span class="score-item-title"><small>⌀ Bewertung</small> Total</span> <strong class="score">{{ birthplace.score | number : '1.1-1' }}</strong>
                     </li>
-                    <li class="score-item score-u"> {{ birthplace.score_u }} Umgebung</li>
-                    <li class="score-item score-e"> {{ birthplace.score_e }} Emotional</li>
-                    <li class="score-item score-k"> {{ birthplace.score_k }} Körperlich</li>
-                    <li class="score-item score-m"> {{ birthplace.score_m }} Mental</li>
-                    <li class="score-item score-w"> {{ birthplace.score_w }} Wochenbett</li>
+                    <li class="score-item score-u">
+                        <span class="score-item-title">Umgebung</span> <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong></li>
+                    <li class="score-item score-e">
+                        <span class="score-item-title">Emotional</span> <strong class="score">{{ birthplace.score_e | number : '1.1-1' }}</strong></li>
+                    <li class="score-item score-k">
+                        <span class="score-item-title">Körperlich</span> <strong class="score">{{ birthplace.score_k | number : '1.1-1' }}</strong></li>
+                    <li class="score-item score-m">
+                        <span class="score-item-title">Mental</span> <strong class="score">{{ birthplace.score_m | number : '1.1-1' }}</strong></li>
+                    <li class="score-item score-w">
+                        <span class="score-item-title">Wochenbett</span> <strong class="score">{{ birthplace.score_w | number : '1.1-1' }}</strong></li>
                 </ul>
             </div>
         </div>
