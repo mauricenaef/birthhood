@@ -1,21 +1,37 @@
-<a routerLink="/" class="">back</a>
-<ng-container *ngIf="birthplace">
-    <div class="bp-container">
-        {{birthplace.name}}
-        <br> {{birthplace.url}}
-        <br>
-        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}">Anfahrt</a>
-        <br>
-        <div *ngIf="birthplace.experiences">
-            <br> Anzahl Bewertungen: {{birthplace.experiences}}
-            <br>
-        </div>
-        <div *ngIf="!birthplace.experiences">
-            noch keine bewertungen
-        </div>
-    </div>
-</ng-container>
+<article class="birthplace-detail-wrap" *ngIf="birthplace">
+    <header class="birthplace-details-header">
+        <img src="http://placehold.it/1200x500&text=Spital" alt="Spital">
+        <h1 class="detail-title">{{birthplace.name}}</h1>
+    </header>
+    <main role="main" class="birthplace-details-main grid-container">
+        <div class="grid-x">
+            <div class="medium-6 cell polar-chart-container">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
 
-<div>
-        <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
+            <div class="medium-6 cell score-container">
+                <div *ngIf="birthplace.experiences">
+                    <br> Anzahl Bewertungen: {{birthplace.experiences}}
+                </div>
+                <div *ngIf="!birthplace.experiences">
+                    noch keine bewertungen
+                </div>
+                <ul class="no-bullet score-list">
+                    <li class="total-score-item score-item">
+                        {{ birthplace.score }} Total
+                    </li>
+                    <li class="score-item score-u"> {{ birthplace.score_u }} Umgebung</li>
+                    <li class="score-item score-e"> {{ birthplace.score_e }} Emotional</li>
+                    <li class="score-item score-k"> {{ birthplace.score_k }} Körperlich</li>
+                    <li class="score-item score-m"> {{ birthplace.score_m }} Mental</li>
+                    <li class="score-item score-w"> {{ birthplace.score_w }} Wochenbett</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="birthplace-details-footer">
+        {{birthplace.url}}
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}">Anfahrt</a>
+        {{ birthplace.strasse }} {{ birthplace.plz }} {{ birthplace.ort }}
+    </footer>
+</article>
