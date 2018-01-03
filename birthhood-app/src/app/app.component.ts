@@ -16,7 +16,7 @@ export class AppComponent {
   showSpiner: boolean = true;
 
 
-  constructor(private router: Router){
+  constructor(public router: Router){
     //this.items =      db.collection('birthplaces').valueChanges();
     //console.log("sdf");
     //this.items.subscribe(x => console.log(x));

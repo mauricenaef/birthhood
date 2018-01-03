@@ -222,9 +222,9 @@ export class BirthplacesMapComponent implements OnInit {
 
   latLng: LatLngLiteral;
   zoomOutNumber: number = 3;
-  bounds: LatLngBoundsLiteral;
+  bounds: LatLngBounds;//Literal;
 
-  constructor(public birthplaceService: BirthplaceService, private router: Router) {
+  constructor(public birthplaceService: BirthplaceService, public router: Router) {
     /*
 fallback-location. HSR?*/
     this.latLng = <LatLngLiteral>{
