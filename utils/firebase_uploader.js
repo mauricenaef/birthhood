@@ -28,7 +28,7 @@ config_backup = {
     credential: admin.credential.cert(serviceAccount_backup)
 }
 
-admin.initializeApp(config_backup);
+admin.initializeApp(config);
 var db = admin.firestore();
 
 
