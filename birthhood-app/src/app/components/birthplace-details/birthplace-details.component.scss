@@ -1,7 +1,5 @@
 @import "~_settings.scss";
 
-.birthplace-detail-wrap {}
-
 .birthplace-details-header {
     position: relative;
     background: $black;
@@ -46,5 +44,34 @@
         left: 2rem;
         font-weight: 700;
         color: $white;
+    }
+}
+
+.score-list {
+    padding: 1rem 0 1rem 1rem;
+    .total-score-item {
+        font-size: rem-calc(19);
+        line-height: 1;
+        small {
+            font-size: rem-calc(14);
+            display: block;
+            opacity: .5;
+        }
+    }
+    .score-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .score-item-title {
+            &:after {
+                content: "";
+                border-bottom: dotted 1px $medium-gray;
+                flex: 1;
+            }
+        }
+        .score {
+            padding-right: 1em;
+
+        }
     }
 }
