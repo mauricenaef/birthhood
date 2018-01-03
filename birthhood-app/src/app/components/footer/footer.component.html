@@ -1,29 +1,29 @@
 <footer class="footer-container grid-container">
     <div class="grid-x grid-padding-x medium-up-4 app-menu-footer">
       <div class="cell">
-        <a (click)='toggle($event, "footer")' class="show-for-small-only close-nav-trigger nav-trigger-footer">back</a>
+        <a (click)='toggle($event)' class="show-for-small-only close-nav-trigger nav-trigger-footer">back</a>
         <ul class="menu vertical">
-          <li><a routerLink="/" routerLinkActive="active">Geburstort Finden</a></li>
-          <li><a routerLink="/user-dashboard/experience/new" routerLinkActive="active">Geburt hinzufügen</a></li>
+          <li><a (click)='goto("/")'>Geburstort Finden</a></li>
+          <li><a (click)='goto("/user-dashboard/experience/new")'>Geburt hinzufügen</a></li>
           <li><a *ngIf="userLoggedIn"  (click)="logout()" >Logout</a></li>
         </ul>
       </div>
       <div class="cell">
         <ul class="menu vertical">
-          <li><a routerLink="/about" routerLinkActive="active">Über birthhood<sup>®</sup></a></li>
-          <li><a routerLink="/birthcriteria" routerLinkActive="active">Geburtskriterien</a></li>
+          <li><a (click)='goto("/about")' >Über birthhood<sup>®</sup></a></li>
+          <li><a (click)='goto("/birthcriteria")'>Geburtskriterien</a></li>
         </ul>
       </div>
       <div class="cell">
         <ul class="menu vertical">
-          <li><a routerLink="/signup-birthplace" routerLinkActive="active">Ich bin ein Geburtshaus</a></li>
-          <li><a routerLink="/signup-birthplace" routerLinkActive="active">Ich bin ein Spital</a></li>
+          <li><a (click)='goto("/signup-birthplace")'>Ich bin ein Geburtshaus</a></li>
+          <li><a (click)='goto("/signup-birthplace")'>Ich bin ein Spital</a></li>
         </ul>
       </div>
       <div class="cell">
         <ul class="menu vertical">
-          <li><a routerLink="/impressum" routerLinkActive="active">Impressum</a></li>
-          <li><a routerLink="/contact" routerLinkActive="active">Kontakt</a></li>
+          <li><a (click)='goto("/impressum")'>Impressum</a></li>
+          <li><a (click)='goto("/contact")'>Kontakt</a></li>
         </ul>
       </div>
     </div>

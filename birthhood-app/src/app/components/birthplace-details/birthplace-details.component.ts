@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Chart } from 'chart.js';
 import { Birthplace } from '../../models/birthplace';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-birthplace-details',
@@ -14,6 +15,7 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
 
   subscription: Subscription;
   birthplace: Birthplace;
+  birthplace$: Observable<Birthplace>;
   id: string;
   myChart: any;
 
@@ -27,68 +29,60 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
     this.subscription = this.route.params.subscribe(params => {
       this.id = params['id'];
       this.birthplaceService.zoomToBirthplace(this.id);
-      this.birthplaceService.getBirthplace(this.id).
-        subscribe(x => {
-          this.birthplace = x;
-        });
+      this.birthplace$ = this.birthplaceService.getBirthplace(this.id);
+    });
+    this.birthplace$.subscribe(birthplace => {
+      this.birthplace = birthplace;
     });
   }
 
   ngAfterViewInit() {
 
-    let htmlRef = document.getElementById('myChart')
-    this.myChart = new Chart(htmlRef, {
-      type: 'line',
-      data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
-          {
-            label: "My First dataset",
-            fill: true,
-            lineTension: 0.3,
-            backgroundColor: "rgba(75,192,192,0.4)",
-            borderColor: "rgba(75,192,192,1)",
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "rgba(75,192,192,1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(75,192,192,1)",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40],
-            spanGaps: false,
+
+    this.birthplace$.subscribe(
+      birthplace => {
+        let htmlRef = document.getElementById('myChart')
+        this.myChart = new Chart(htmlRef, {
+          options: {
+            animation: {
+              animateScale: true,
+              animateRotate: false
+            }
           },
-          {
-            label: "My Second dataset",
-            fill: false,
-            lineTension: 0.3,
-            backgroundColor: "rgba(169,68,66,0.98)",
-            borderColor: "rgba(169,68,66,0.98)",
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "rgba(169,68,66,0.98)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(169,68,66,0.98)",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: [60, 79, 90, 61, 76, 56, 80],
-            spanGaps: false,
+          type: 'polarArea',
+          data: {
+            datasets: [{
+              data: [
+                birthplace.score_e,
+                birthplace.score_k,
+                birthplace.score_m,
+                birthplace.score_u,
+                birthplace.score_w
+              ],
+              backgroundColor: [
+                "rgba(255, 255, 0, 1)",
+                "rgba(0, 255, 0, 1)",
+                "rgba(0, 220, 255, 1)",
+                "rgba(255, 0, 255, 1)",
+                "rgba(0, 0, 255, 1)",
+
+              ]
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+              'Emotional',
+              'Körperlich',
+              'Mental',
+              'Umfeld',
+              'Wochenbett'
+            ]
           }
-        ]
+        })
       }
-    })
+    )
+
+
 
   }
 

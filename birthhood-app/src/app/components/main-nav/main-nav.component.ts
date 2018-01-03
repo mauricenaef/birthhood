@@ -12,7 +12,7 @@ export class MainNavComponent implements OnInit {
 
   isLateralNavAnimating: boolean = false;
   userLoggedIn: boolean = false;
-  constructor(private af: AngularFireAuth, private router: Router) {
+  constructor(private af: AngularFireAuth, public router: Router) {
     this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false)
 
   }

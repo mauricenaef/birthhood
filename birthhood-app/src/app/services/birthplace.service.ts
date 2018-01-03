@@ -24,7 +24,7 @@ export class BirthplaceService {
 
   birthplaceClickedSource = new Subject<string>();
   birthplaceClicked$ = this.birthplaceClickedSource.asObservable();
-  
+
   private zoomOutSource = new Subject<any>();
   zoomOut$ = this.zoomOutSource.asObservable();
 
@@ -35,7 +35,7 @@ export class BirthplaceService {
   constructor(private db: AngularFirestore, private mapsAPILoader: MapsAPILoader) {
 
     this.birthplaceCollection = this.db.collection('birthplaces');
-    
+
     this.filter = <BirthplaceFilter>{
       spital: true,
       geburtshaus: true
@@ -45,7 +45,7 @@ export class BirthplaceService {
       bounds: null,
       filter: this.filter
     })
-   }
+  }
 
   getBirthplaces(): Observable<Birthplace[]> {
     return this.birthplaceCollection
@@ -77,15 +77,16 @@ export class BirthplaceService {
       this.getBirthplacesFiltered().map(items => items.filter(item => {
         let latLng: MarkerAGM = new MarkerAGM();
         latLng.constructor(item.lat, item.lng);
-        return this.displayedBounds.contains(latLng);
-      }
-      )));
+        return this.displayedBounds ? this.displayedBounds.contains(latLng) : false;
+      })
+      )
+    );
   }
 
   getBirthplace(id: string): Observable<any> {
     var docRef: AngularFirestoreDocument<Birthplace> = this.birthplaceCollection.doc(id);
     return <Observable<Birthplace>>docRef.valueChanges();
-  } 
+  }
 
 
   updateFilter(filter: BirthplaceFilter): void {

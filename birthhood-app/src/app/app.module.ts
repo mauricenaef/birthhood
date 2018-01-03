@@ -17,7 +17,7 @@ import { BirthplacesMapComponent } from './components/birthplaces-map/birthplace
 import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
 import { BirthplaceDetailsComponent } from './components/birthplace-details/birthplace-details.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BirthplaceService } from './services/birthplace.service';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './components/signup/signup.component';
@@ -27,10 +27,10 @@ import { SearchComponent } from './components/search/search.component';
 import { FilterComponent } from './components/filter/filter.component';
 
 import { OwlModule } from 'ngx-owl-carousel';
-import { DateTimePickerModule } from 'ng-pick-datetime';
+
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
+/*import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
 import { ExperienceAddNavbarComponent } from './modules/experience/components/experience-add-navbar/experience-add-navbar.component';
 import { ExperienceAddUmgebungComponent } from './modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
 import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
@@ -40,20 +40,21 @@ import { UserExperienceListComponent } from './modules/experience/components/use
 import { UserDashboardComponent } from './modules/experience/components/user-dashboard/user-dashboard.component';
 import { UserDashboardSidebarComponent } from './modules/experience/components/user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { ExperienceService } from './modules/experience/services/experience.service';
-import { AuthGuard } from './shared/guards/auth.guard';
+*/import { AuthGuard } from './shared/guards/auth.guard';
 import { AboutComponent } from './components/about/about.component';
-import { ExperienceDynamicFormComponent } from './modules/experience/components/experience-dynamic-form/experience-dynamic-form.component';
+/*import { ExperienceDynamicFormComponent } from './modules/experience/components/experience-dynamic-form/experience-dynamic-form.component';
 import { ExperienceAddEmotionalComponent } from './modules/experience/components/experience-add-emotional/experience-add-emotional.component';
 import { ExperienceAddKoerperlichComponent } from './modules/experience/components/experience-add-koerperlich/experience-add-koerperlich.component';
 import { ExperienceAddWochenbettComponent } from './modules/experience/components/experience-add-wochenbett/experience-add-wochenbett.component';
 import { ExperienceAddMentalComponent } from './modules/experience/components/experience-add-mental/experience-add-mental.component';
-
+*/
 import { ToastrModule } from 'ngx-toastr';
-import { SortbyPipe } from './pipes/sortby.pipe';
+
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BirthcriteriaComponent } from './components/birthcriteria/birthcriteria.component';
 import { SignupBirthplaceComponent } from './components/signup-birthplace/signup-birthplace.component';
+import { ExperienceModule } from './modules/experience/experience.module';
 
 @NgModule({
   declarations: [
@@ -65,25 +66,25 @@ import { SignupBirthplaceComponent } from './components/signup-birthplace/signup
     BirthplacesMapComponent,
     BirthplacesListComponent,
     BirthplaceDetailsComponent,
-    UserDashboardComponent,
+    /*UserDashboardComponent,
     UserExperienceListComponent,
-    UserDashboardSidebarComponent,
+    UserDashboardSidebarComponent,*/
     SignupComponent,
     SearchComponent,
     FilterComponent,
     MainNavComponent,
     LoaderComponent,
-    ExperienceAddEmotionalComponent,
+    /*ExperienceAddEmotionalComponent,
     ExperienceAddKoerperlichComponent,
     ExperienceAddWochenbettComponent,
     ExperienceAddMentalComponent,
     ExperienceAddBioComponent,
     ExperienceAddNavbarComponent,
     ExperienceAddUmgebungComponent,
-    ExperienceAddComponent,
+    ExperienceAddComponent,*/
     AboutComponent,
-    ExperienceDynamicFormComponent,
-    SortbyPipe,
+    /*ExperienceDynamicFormComponent,*/
+
     ImpressumComponent,
     ContactComponent,
     BirthcriteriaComponent,
@@ -98,8 +99,9 @@ import { SignupBirthplaceComponent } from './components/signup-birthplace/signup
     AppRoutingModule,
     OwlModule,
     FormsModule,
-    DateTimePickerModule,
-    ReactiveFormsModule,
+    
+    ExperienceModule,
+    
     ToastrModule.forRoot({
       positionClass: 'toast-top-full-width',
       autoDismiss: false,
@@ -110,8 +112,8 @@ import { SignupBirthplaceComponent } from './components/signup-birthplace/signup
       apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
     })
   ],
-  providers: [BirthplaceService, GoogleMapsAPIWrapper, FormDataService,
-     FormFlowService, ExperienceService,
+  providers: [BirthplaceService, GoogleMapsAPIWrapper,/* FormDataService,
+     FormFlowService, ExperienceService,*/
      AuthGuard ],
   bootstrap: [AppComponent]
 })

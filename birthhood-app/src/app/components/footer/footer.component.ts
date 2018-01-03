@@ -21,17 +21,22 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggle(event, htmlType: string): void {
+  toggle(event): void {
     if (!this.isLateralNavAnimating) {
       if ($(this).parents('.csstransitions').length > 0) this.isLateralNavAnimating = true;
 
-      $('body').toggleClass(htmlType + '-navigation-is-open');
+      $('body').toggleClass('footer-navigation-is-open');
       $(this).toggleClass('is-active');
 
       $('.navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
         this.isLateralNavAnimating = false;
       });
     }
+  }
+
+  goto(path: string) : void {
+    $('body').removeClass('footer-navigation-is-open');
+    this.router.navigateByUrl(path);
   }
 
   logout(): void{
