@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import { Bio } from '../../models/form-data';
-import { FormDataService } from '../../services/form-data.service';
+import { Bio } from '../../models/experience-form-data';
+import { FormDataService } from '../../services/experience-form-data.service';
 import { BirthplaceService } from '../../../../services/birthplace.service';
 
 import { FormExperienceData } from '../../models/form-experience-data';

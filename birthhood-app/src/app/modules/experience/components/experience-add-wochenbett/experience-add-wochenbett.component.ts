@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Wochenbett } from '../../models/form-data';
-import { FormDataService } from '../../services/form-data.service';
+import { Wochenbett } from '../../models/experience-form-data';
 import { ToastrService } from 'ngx-toastr';
+import { FormDataService } from '../../services/experience-form-data.service';
 //import { RouterModule, Routes } from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Mental } from '../../models/form-data';
-import { FormDataService } from '../../services/form-data.service';
+import { Mental } from '../../models/experience-form-data';
+import { FormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-mental',

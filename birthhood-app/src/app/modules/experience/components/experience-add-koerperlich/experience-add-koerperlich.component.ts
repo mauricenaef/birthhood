@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Koerperlich } from '../../models/form-data';
-import { FormDataService } from '../../services/form-data.service';
+import { Koerperlich } from '../../models/experience-form-data';
+import { FormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-koerperlich',
