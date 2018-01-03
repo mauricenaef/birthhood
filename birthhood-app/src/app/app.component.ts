@@ -13,23 +13,11 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   title = 'app';
-  constructor(public router: Router){
-    //this.items =      db.collection('birthplaces').valueChanges();
-    //console.log("sdf");
-    //this.items.subscribe(x => console.log(x));
-
-   
-    // Create a query against the collection.
-    //var query = birthplaces.where("state", "==", "CA");
-    //let item = db.collection('birthplaces', ref => ref.where('NAME', '==', 'Geburtshaus Delphys') ).valueChanges();
-    //item.subscribe(data => console.log(data));
-    
-     
-  }
+  constructor(public router: Router){}
 
   ngAfterViewInit () {
     let body = document.getElementsByTagName('body')[0];
-    body.classList.remove("is-loading");
+    setTimeout( _=> body.classList.remove("is-loading"), 5000);
   }
 
 }

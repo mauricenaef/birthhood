@@ -2,7 +2,7 @@
     opacity: 0;
     visibility: hidden;
     z-index: -1;
-    transform: opacity 650ms fade-out;
+    transform: all 650ms ease-out;
     background: $primary-color;
     position: fixed;
     top: 0;
@@ -18,7 +18,7 @@
         visibility: visible;
         opacity: 1;
         z-index: 1000;
-        transform: opacity 650ms fade-out;
+        transform: all 650ms ease-out;
     }
 
     .logo {
