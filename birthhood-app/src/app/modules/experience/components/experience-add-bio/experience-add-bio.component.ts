@@ -3,7 +3,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Bio } from '../../models/experience-form-data';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 import { BirthplaceService } from '../../../../services/birthplace.service';
-import { FormExperienceData } from '../../models/form-experience-data';
 import { ToastrService } from 'ngx-toastr';
 import { Birthplace } from '../../../../models/birthplace';
 
@@ -12,7 +11,7 @@ import { Birthplace } from '../../../../models/birthplace';
   selector: 'app-experience-add-bio',
   templateUrl: './experience-add-bio.component.html',
   styleUrls: ['./experience-add-bio.component.scss']
-})
+}) 
 
 export class ExperienceAddBioComponent implements OnInit {
 
