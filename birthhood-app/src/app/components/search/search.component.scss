@@ -1,32 +1,54 @@
 @import "~_settings.scss";
-
-$top-value: -349px;
+$top-value: -255px;
+.search-height-controller {
+    height: 5rem;
+}
 
 .search-container {
+    max-width: 40rem;
     will-change: transform;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
-    background:$white;
+    background: $white;
     transition: all .2s ease;
-    .search-input {
-        pointer-events: auto;
-        margin-bottom:1rem ;
-    }
     .search-close-button {
         display: none;
     }
     .search-list-container {
         display: none;
     }
+    .search-input {
+        z-index: 10;
+        margin-bottom: 0;
+    }
     &.search-active {
-        transform: translateY($top-value);
-        z-index: 100;
-        position: fixed;
+        position: relative;
+        z-index: 15;
         transition: all .2s ease;
-        width: 100vw;
-        height: 100vh;
+        overflow: hidden;
+        @include breakpoint(small only) {
+            transform: translateY($top-value);
+            width: 100vw;
+            height: 100vh;
+            .search-results-list {
+                padding-bottom: 6rem;
+            }
+        }
+        @include breakpoint(medium up) {
+            background: $white;
+            border-radius: $global-radius;
+            box-shadow: $box-shadow-small;
+            position: fixed;
+            transition: top 1 ease;
+            top: 10vh;
+            right: 0;
+            left: 0;
+            min-height: 60vh;
+            max-height: 80vh;
+        }
         .search-input {
             z-index: 10;
+            margin-bottom: 1rem;
         }
         .search-close-button {
             transition: all 0.2s ease;
@@ -37,8 +59,12 @@ $top-value: -349px;
             z-index: 10;
             display: block;
             overflow: scroll;
-            height: 80vh;
-
+            @include breakpoint(small only) {
+                max-height: 80vh;
+            }
+            @include breakpoint(medium up) {
+                max-height: 60vh;
+            }
         }
     }
 }
@@ -56,7 +82,6 @@ $top-value: -349px;
     }
 }
 
-
 .search-info {
     font-size: rem-calc(12px);
     color: $medium-gray;
@@ -72,12 +97,19 @@ $top-value: -349px;
     }
 }
 
-.search-results-label{
+.search-close-button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-results-label {
     display: flex;
 }
+
 .search-results-label-text {
     flex: 1;
 }
+
 .search-results-label-icon {
     margin-right: 1rem;
 }
