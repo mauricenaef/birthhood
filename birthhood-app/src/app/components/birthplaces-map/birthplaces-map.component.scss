@@ -6,6 +6,9 @@
 
 .map {
     height: 300px;
+    @include breakpoint(large up) {
+        height: 500px;
+    }
     position: relative;
     transform: height 550ms $cubic-animation;
     &.map-detail  {

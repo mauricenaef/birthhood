@@ -1,14 +1,15 @@
 @import "~_settings.scss";
 
 .site-header {
-    position: absolute;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    width: 100%;
+    z-index: 10;
+    box-shadow: -1px -5px 20px 0px rgba($black, .3);
+    background: $white;
     .logo-link {
         display: block;
-        background: rgba($white, .75);
-        border-radius: 100px;
-        padding: .5em;
+        padding: .4em 1.2em;
     }
     .logo {
         width: 2.75rem;

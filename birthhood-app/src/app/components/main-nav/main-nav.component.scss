@@ -1,7 +1,9 @@
 @import "~_settings.scss";
 
 .main-nav {
-
+    a {
+        color: lighten($body-font-color, 20%);
+    }
     @include breakpoint(small only) {
         background-color: $light-gray;
         box-shadow: 0 0 15px rgba($black, .3);
@@ -16,7 +18,7 @@
             display: flex;
             flex-flow: column;
             text-align: center;
-            color: lighten($body-font-color, 20%);
+            
             &.active {
                 color: $primary-color;
             }
@@ -35,10 +37,14 @@
     @include breakpoint(medium up) {
         .main-nav-list {
             justify-content: flex-end;
+            margin-right: 3vw;
         }
         a {
-            font-weight: $global-weight-bold;
-            text-transform: uppercase;
+            font-size: rem-calc(16px);
+            padding-bottom: 1.1em;
+            &.active {
+                border-bottom: 2px solid get-color(primary);
+            }
         }
     }
 }
