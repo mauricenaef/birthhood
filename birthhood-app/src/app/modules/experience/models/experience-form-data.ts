@@ -91,36 +91,41 @@ export class Experience {
         this.w5 = item.w5;
     }
 
+    private calculateAverage(scoreLetter: string): number {
+        let total: number = 0;
+        let sum: number = 0;
+        for (let i = 0; i < 10; i++) {
+            if ( this[scoreLetter+i.toString]) {
+                sum += this[scoreLetter+i.toString];
+                total = i;
+            }
+        }
+        return sum/total;
+    }
+
     get score() {
         //durchschnitt aller einzelnen scores
-        let sum = this.score_u + this.score_e + this.score_e + this.score_k + this.score_m + this.score_w;
+        let sum = this.score_u + this.score_e + this.score_k + this.score_m + this.score_w;
         return sum / 5;
     }
     get score_u() {
-        let total = this.u1 +
-            this.u2 + this.u3 + this.u4 + this.u5
-            + this.u6 + this.u7 + this.u8;
-        return total / 8;
+        return this.calculateAverage("u");
     }
 
     get score_e() {
-
-        return 22.6;
+        return this.calculateAverage("e");
     }
 
     get score_k() {
-
-        return 22.6;
+        return this.calculateAverage("k");
     }
 
     get score_m() {
-        let total = this.m1 + this.m2 + this.m3 + this.m4 + this.m5;
-        return total / 5;
+        return this.calculateAverage("m");
     }
 
     get score_w() {
-
-        return 22.6;
+        return this.calculateAverage("w");
     }
 
 
