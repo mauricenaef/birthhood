@@ -44,6 +44,89 @@ export class Experience {
     w4: number = null;
     w5: number = null;
 
+    constructor(item) {
+        this.user_id = item.user_id;
+        this.birth_name = item.birth_name;
+        this.birth_date = item.birth_date;
+        this.birth_type = item.birth_type;
+        this.birthplace_id = item.birthplace_id;
+        this.birthplace = item.birthplace;
+        this.u1 = item.u1;
+        this.u2 = item.u2;
+        this.u3 = item.u3;
+        this.u4 = item.u4;
+        this.u5 = item.u5;
+        this.u6 = item.u6;
+        this.u7 = item.u7;
+        this.u8 = item.u8;
+        this.e1 = item.e1;
+        this.e2 = item.e2;
+        this.e3 = item.e3;
+        this.e4 = item.e4;
+        this.e5 = item.e5;
+        this.e6 = item.e6;
+        this.e7 = item.e7;
+        this.e8 = item.e8;
+        this.e9 = item.e9;
+        this.k1 = item.k1;
+        this.k2 = item.k2;
+        this.k3 = item.k3;
+        this.k4 = item.k4;
+        this.k5 = item.k5;
+        this.k6 = item.k6;
+        this.k7 = item.k7;
+        this.k8 = item.k8;
+        this.k9 = item.k9;
+        this.k10 = item.k10;
+        this.m1 = item.m1;
+        this.m1 = item.m1;
+        this.m2 = item.m2;
+        this.m3 = item.m3;
+        this.m4 = item.m4;
+        this.m5 = item.m5;
+        this.w1 = item.w1;
+        this.w2 = item.w2;
+        this.w3 = item.w3;
+        this.w4 = item.w4;
+        this.w5 = item.w5;
+    }
+
+    get score() {
+        //durchschnitt aller einzelnen scores
+        let sum = this.score_u + this.score_e + this.score_e + this.score_k + this.score_m + this.score_w;
+        return sum / 5;
+    }
+    get score_u() {
+        let total = this.u1 +
+            this.u2 + this.u3 + this.u4 + this.u5
+            + this.u6 + this.u7 + this.u8;
+        return total / 8;
+    }
+
+    get score_e() {
+
+        return 22.6;
+    }
+
+    get score_k() {
+
+        return 22.6;
+    }
+
+    get score_m() {
+        let total = this.m1 + this.m2 + this.m3 + this.m4 + this.m5;
+        return total / 5;
+    }
+
+    get score_w() {
+
+        return 22.6;
+    }
+
+
+
+
+
     clear() {
         this.birth_name = '';
         this.birth_date = '';
