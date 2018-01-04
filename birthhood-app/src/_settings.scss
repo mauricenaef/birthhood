@@ -121,6 +121,7 @@ $foundation-palette: (
   primary-bright: $primary-color-bright,
   primary-dark: $primary-color-dark,
   secondary:$secondary-color,
+  secondary-bright:$secondary-color-bright,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -810,7 +811,7 @@ $slider-radius: $global-radius;
 $switch-background: $medium-gray;
 $switch-background-active: $primary-color;
 $switch-height: 2rem;
-$switch-height-tiny: 1.5rem;
+$switch-height-tiny: 1rem;
 $switch-height-small: 1.75rem;
 $switch-height-large: 2.5rem;
 $switch-radius: 100px;

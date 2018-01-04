@@ -1,33 +1,38 @@
-<div class="filter-container grid-container" >
-  <div class="app-menu-filter">
-    
-    <div class="grid-x grid-padding-y">
-      <div class="cell small-10 medium-8">
-        <h3 class="switch-label">Geburtshäuser</h3>
-      </div>
-      <div class="cell auto">
-        <div class="switch switch-filter small">
-          <input id="geburtshaeuser" [disabled]="!filter.spital" class="switch-input" type="checkbox" [(ngModel)]="filter.geburtshaus" (change)="updateFilter()">
-          <label class="switch-paddle" for="geburtshaeuser">
-            <span class="show-for-sr">Zeige alle Geburtshäuser</span>
-          </label>
+<div class="filter-container grid-container full">
+
+  <div class="grid-x grid-padding-x align-middle">
+
+    <div class="cell small-6 switch-geburtshaus">
+      <div class="grid-x grid-margin-x grid-padding-y align-middle">
+        <div class="cell small-8">
+            <label for="geburtshaeuser" class="switch-label">Geburtshäuser</label>
+        </div>
+        <div class="cell auto">
+          <div class="switch switch-filter tiny">
+            <input id="geburtshaeuser" [disabled]="!filter.spital" class="switch-input" type="checkbox" [(ngModel)]="filter.geburtshaus"
+              (change)="updateFilter()">
+            <label class="switch-paddle" for="geburtshaeuser">
+              <span class="show-for-sr">Zeige alle Geburtshäuser</span>
+            </label>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="grid-x grid-padding-y">
-      <div class="cell small-10 medium-8">
-        <h3 class="switch-label">Spitäler</h3>
-      </div>
-      <div class="cell auto">
-        <div class="switch switch-filter small">
-          <input id="spitaeler" [disabled]="!filter.geburtshaus"  class="switch-input" type="checkbox" [(ngModel)]="filter.spital" (change)="updateFilter()">
-          <label class="switch-paddle" for="spitaeler">
-            <span class="show-for-sr">Zeige alle Spitäler</span>
-          </label>
+    <div class="cell small-6 switch-spital">
+        <div class="grid-x grid-margin-x grid-padding-y align-middle">
+        <div class="cell small-8">
+          <label for="spitaeler" class="switch-label">Spitäler</label>
+        </div>
+        <div class="cell auto">
+          <div class="switch switch-filter tiny">
+            <input id="spitaeler" [disabled]="!filter.geburtshaus" class="switch-input" type="checkbox" [(ngModel)]="filter.spital" (change)="updateFilter()">
+            <label class="switch-paddle" for="spitaeler">
+              <span class="show-for-sr">Zeige alle Spitäler</span>
+            </label>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>

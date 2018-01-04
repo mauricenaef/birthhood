@@ -1,1 +1,21 @@
 @import "~_settings.scss";
+.filter-container {
+    border-bottom: 1px solid $light-gray;
+    .switch-geburtshaus {
+        background-color: lighten($medium-gray, 19%);
+        input:checked ~ .switch-paddle {
+            background: get-color(primary);
+        } 
+    }
+    .switch-spital {
+        background-color: lighten($medium-gray, 17%);
+        input:checked ~ .switch-paddle {
+            background: get-color(secondary); 
+        }
+    }
+    .switch-label {
+        font-size: rem-calc(16);
+        color: $medium-gray;
+        margin: 0 !important;
+    }
+}
