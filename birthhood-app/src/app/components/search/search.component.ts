@@ -59,8 +59,7 @@ export class SearchComponent implements OnInit {
   }
 
   deactivateSearch(): void {
-    //this.body.classList.remove("overflow-hidden");
-    //this.searchBox.nativeElement.blur();
+    this.body.classList.remove("overflow-hidden");
     this.isActive = false;
   }
 }
