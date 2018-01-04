@@ -15,7 +15,7 @@ describe('Class: Birthplace', () => {
         expect(distance2).toBe(78.62618767687454);
     });
 
-    fit('should round correctly', () => {
+    it('should round correctly', () => {
         birthplace = new Birthplace({score_e: 1.6666666});
         expect(birthplace.score_e_rounded).toBe(1.7);
     });
