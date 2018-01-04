@@ -22,10 +22,14 @@
         min-height: 10rem;
     }
     @include breakpoint(medium up) {
-        padding-bottom: 5rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
     background-color: whitesmoke;
     border-radius: 6px;
-    overflow: hidden;
+    @include breakpoint(medium up) {
+        overflow: hidden;
+    }
+    
     box-shadow: 1px -6px 280px rgba(0, 0, 0, 0.23);
 }

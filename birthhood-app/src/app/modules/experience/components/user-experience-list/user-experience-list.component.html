@@ -5,7 +5,7 @@
 </div>
 
 <div *ngIf="experienceList" class="grid-container experience-container">
-  <div class="grid-x grid-padding-x align-middle">
+  <div class="grid-x grid-padding-x">
 
     <div class="cell" *ngIf="experienceList.length == 0">
       <div class="empty-slate-container">
@@ -17,30 +17,49 @@
       </div>
     </div>
 
-    <div class="cell" *ngIf="experienceList.length != 0">
-      <ul *ngFor="let experience of experienceList">
-        <li class="grid-x experience-item">
-          <div class="cell medium-1 experience-item-icon">
-            <svg class="icon icon-spital">
-              <use xlink:href="#spital"></use>
+    <div class="cell experience" *ngIf="experienceList.length != 0">
+      <h2 class="section-title text-center">Ihre erfassten Geburten</h2>
+      <ul class="no-bullet experience-list">
+        <li class="grid-x experience-title align-middle hide-for-small-only">
+          <div class="cell medium-3 medium-offset-1">
+            <h5 class="list-header-title">Name</h5>
+          </div>
+          <div class="cell medium-2">
+            <h5 class="list-header-title">Datum</h5>
+          </div>
+          <div class="cell medium-auto">
+            <h5 class="list-header-title">Ort</h5>
+          </div>
+          <div class="cell medium-2">
+            <h5 class="list-header-title">Bewertung</h5>
+          </div>
+        </li>
+        <li *ngFor="let experience of experienceList" class="grid-x experience-item align-middle">
+          <div class="cell medium-1 experience-item-icon hide-for-small-only">
+            <svg class="icon icon-baby">
+              <use xlink:href="#baby"></use>
             </svg>
           </div>
           <div class="cell medium-3 experience-item-name">
-            <h3 class="experience-name h4">{{experience.birth_name}}</h3>
+            <h3 class="experience-name h5">{{experience.birth_name}}</h3>
           </div>
           <div class="cell medium-2 experience-item-date">
             <time>{{ experience.birth_date | date: 'dd.MM.yyyy' }}</time>
           </div>
-          <div class="cell auto experience-item-birthplace">{{experience.birthplace}}</div>
-          <div class="cell medium-1 experience-item-score">
-            <strong>{{ experience.score }}</strong>
+          <div class="cell medium-auto experience-item-birthplace">{{experience.birthplace}}</div>
+          <div class="cell medium-2 experience-item-score">
+            <strong>{{ experience.score }} / 3</strong>
           </div>
         </li>
       </ul>
     </div>
 
-    <div class="cell text-center">
-      <a routerLink="/user-dashboard/experience/new" class="button" routerLinkActive="active">Geburt hinzufügen.</a>
+    <div class="cell text-center add-experience-container">
+      <a routerLink="/user-dashboard/experience/new" class="button no-margin" routerLinkActive="active">
+        <ng-container *ngIf="experienceList.length == 0">Geburt hinzufügen</ng-container>
+        <ng-container *ngIf="experienceList.length != 0">Weitere Geburt hinzufügen</ng-container>
+
+      </a>
     </div>
 
 
