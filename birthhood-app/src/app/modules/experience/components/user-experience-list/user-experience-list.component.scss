@@ -3,6 +3,53 @@
 .experience-container {
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center
+    align-items: stretch;
+    justify-content: center;
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+}
+
+.add-experience-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.experience-list {
+    @include breakpoint(small only) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .experience-item {
+            width: 46%;
+            margin: .6rem 0;
+            border: 1px solid $light-gray;
+            border-radius: $global-radius;
+            > * {
+                padding: 0 1rem;
+            }
+        }
+    }
+
+
+    .experience-title {
+        padding: .6em 0;
+        border-bottom: 1px solid $light-gray;
+    }
+
+    .experience-name {
+        margin: 0;
+    }
+
+    .experience-item {
+        padding: .6em 0;
+
+        @include breakpoint(small only) {
+            .cell, .experience-name {
+                font-size: rem-calc(12);
+            }
+        }
+    }
 }
