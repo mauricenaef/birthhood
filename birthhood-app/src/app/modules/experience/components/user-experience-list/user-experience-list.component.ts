@@ -30,6 +30,7 @@ export class UserExperienceListComponent implements OnInit {
             for (let experience of experienceList) {
               returnExperiences.push(new Experience(experience));
             }
+            console.log(returnExperiences);
             this.experienceList = returnExperiences;
           });
         } else {

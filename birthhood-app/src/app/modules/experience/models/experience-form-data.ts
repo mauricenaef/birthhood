@@ -44,6 +44,8 @@ export class Experience {
     w4: number = null;
     w5: number = null;
 
+
+
     constructor(item) {
         this.user_id = item.user_id;
         this.birth_name = item.birth_name;

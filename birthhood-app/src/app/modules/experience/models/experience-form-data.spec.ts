@@ -5,7 +5,7 @@ describe('Class: Experience', () => {
 
 
   it('should calculate the correct distance', () => { 
-    experience = new Experience;
+    experience = Object.create(Experience.prototype);
     experience.birth_name = "test";
     experience.clear();
     expect(experience.birth_name).toBe(''); 
