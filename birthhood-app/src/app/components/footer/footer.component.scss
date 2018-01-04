@@ -1,0 +1,18 @@
+@import "~_settings.scss";
+
+.app-menu-footer {
+    .menu {
+        a {
+            padding-bottom: 0;
+            color: lighten($body-font-color, 30%);
+        }
+    }
+}
+
+@include breakpoint(medium up) {
+    .footer-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        border-top: 1px solid $light-gray;
+    }
+}
