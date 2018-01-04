@@ -71,7 +71,7 @@
  * @color
  * @section Main Color Scheme
  */
- $primary-color: #E06C6D;
+ $primary-color: #96939B;
 
  /**
   * Primary Bright
@@ -79,7 +79,7 @@
   * @color
   * @section Main Color Scheme
   */
-  $primary-color-bright: rgb(247, 144, 145);
+  $primary-color-bright: #A9A6AD;
  
    /**
   * Primary Dark
@@ -87,7 +87,7 @@
   * @color
   * @section Main Color Scheme
   */
-  $primary-color-dark: rgb(219, 75, 77);
+  $primary-color-dark:#454347;
  
  /**
   * Secondary
@@ -95,7 +95,7 @@
   * @color
   * @section Main Color Scheme
   */
- $secondary-color: #8BB5A4;
+ $secondary-color: #BFBFBF;
  
 /**
 * Seondary Bright
@@ -103,7 +103,24 @@
 * @color
 * @section Main Color Scheme
 */
-  $secondary-color-bright: #AFF8C8;
+  $secondary-color-bright: #E1E1E1;
+
+  /**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme
+  */
+  $geburtshaus-color: #E06C6D;
+
+
+  /**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme
+  */
+  $spital-color: #8BB5A4;
  
   /**
    * Alert
@@ -111,7 +128,7 @@
    * @color
    * @section Second Color Scheme
    */
- $alert-color: #cc4b37;
+ $alert-color: #df341a;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
@@ -122,9 +139,11 @@ $foundation-palette: (
   primary-dark: $primary-color-dark,
   secondary:$secondary-color,
   secondary-bright:$secondary-color-bright,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
+  spital: $spital-color,
+  geburtshaus: $geburtshaus-color,
+  success: #11b64e,
+  warning: #eba206,
+  alert: $alert-color,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -184,7 +203,7 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
@@ -204,8 +223,8 @@ $header-styles: (
     'h2': ('font-size': 28),
     'h3': ('font-size': 26),
     'h4': ('font-size': 21),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 18),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 16),
   ),
 );
 $header-text-rendering: optimizeLegibility;

@@ -1,6 +1,44 @@
 @import "~_settings.scss";
 
-.owl-carousel {
+.owl-item {
     padding-bottom: 5rem;
 }
 
+.card-item {
+    .card-content {
+        min-height: 25rem;
+        box-shadow: 0 0 29px rgba(0,0,0,.1);
+    }
+
+    .card-sup-title {
+        text-transform: capitalize;
+
+        //font-size: rem-calc(17);
+        margin-bottom: -.3em;
+        font-weight: 200;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .card-footer {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+
+        .icon {
+            position: absolute;
+            width: 1.6rem;
+            height: 1.6rem; 
+            right: 1rem;
+            bottom: 1rem;
+            &.icon-spital {
+                color: get-color(spital);
+            }
+            &.icon-geburtshaus {
+                color: get-color(geburtshaus);
+            }
+        }
+    }
+}

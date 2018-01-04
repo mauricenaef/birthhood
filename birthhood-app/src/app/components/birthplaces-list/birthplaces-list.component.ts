@@ -30,11 +30,13 @@ export class BirthplacesListComponent implements OnInit {
       },
       600: {
         items: 2,
+        stagePadding: 20
       },
       1000: {
         items: 3,
         center: true,
         loop: true,
+        stagePadding: 20,
         startPosition: 1
       }
     }
@@ -42,7 +44,14 @@ export class BirthplacesListComponent implements OnInit {
 
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
     this.birthplaceService.getBirhplacesOnMap()
-      .subscribe(birthplaces => this.birthplaces = birthplaces.splice(0, 7) );
+      .subscribe(birthplaces => {
+        let tempBirthplaces = birthplaces.splice(0, 7);
+        let returnBirthplaces: Birthplace[] = [];
+        for (let birthplace of tempBirthplaces) {
+          returnBirthplaces.push(new Birthplace(birthplace));
+        }
+        this.birthplaces = returnBirthplaces;
+      });
   }
 
   ngOnInit() {

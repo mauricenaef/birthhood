@@ -5,13 +5,13 @@
     .switch-geburtshaus {
         background-color: lighten($medium-gray, 19%);
         input:checked ~ .switch-paddle {
-            background: get-color(primary);
+            background: get-color(geburtshaus);
         } 
     }
     .switch-spital {
         background-color: lighten($medium-gray, 17%);
         input:checked ~ .switch-paddle {
-            background: get-color(secondary); 
+            background: get-color(spital); 
         }
     }
     .switch-label {

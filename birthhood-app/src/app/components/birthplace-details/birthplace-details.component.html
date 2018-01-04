@@ -1,6 +1,6 @@
 <article class="birthplace-detail-article grid-x align-center-middle">
     <div class="cell large-8 birthplace-detail">
-        <header *ngIf="birthplace" class="birthplace-details-header">
+        <header *ngIf="birthplace" class="birthplace-details-header card-header">
             <div class="hero-image-wrapper">
                 <img src="https://source.unsplash.com/1600x900/?building,hospitl,health" alt="Spital" class="hero-image">
             </div>
@@ -20,13 +20,13 @@
             <div class="grid-x grid-margin-x  align-middle">
 
                 <div class="medium-6 cell polar-chart-container">
-                    <h2 class="chart-title text-center">Score</h2>
+                    <h2 class="chart-title text-center">Bewertung</h2>
                     <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
 
                 <div *ngIf="birthplace" class="medium-6 cell score-container">
                     <div *ngIf="!birthplace.experiences">
-                        <div class="blank-slate">
+                        <div class="blank-slate text-center">
                             <span class="blank-slate-text">🙈
                                 <em>Noch keine bewertungen</em>
                             </span>
@@ -35,7 +35,7 @@
                     </div>
                     <ul *ngIf="birthplace.experiences > 0" class="no-bullet score-list">
                         <li class="total-score-item score-item">
-                            <strong class="score-item-title">Total Score</strong>
+                            <strong class="score-item-title">Total</strong>
                             <strong class="score">{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
                         </li>
                         <small class="score-list-description">⌀ Bewertung basierend auf
