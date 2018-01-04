@@ -3,6 +3,9 @@
 .main-nav {
     a {
         color: lighten($body-font-color, 20%);
+        &:hover, &:focus {
+            color: get-color(primary-bright);
+        }
     }
     @include breakpoint(small only) {
         background-color: $light-gray;
@@ -42,6 +45,9 @@
         a {
             font-size: rem-calc(16px);
             padding-bottom: 1.1em;
+            &:hover, &:focus {
+                border-bottom: 2px solid get-color(primary-bright);
+            }
             &.active {
                 border-bottom: 2px solid get-color(primary);
             }
