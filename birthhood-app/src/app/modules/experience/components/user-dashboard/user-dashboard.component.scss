@@ -15,6 +15,7 @@
 }
 
 .dashboard-main {
+    position: relative;
     background: $white;
     padding: 1rem;
     @include breakpoint(medium up) {
