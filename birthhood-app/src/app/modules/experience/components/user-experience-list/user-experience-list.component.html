@@ -1,5 +1,7 @@
 <div *ngIf="!experienceList">
-  loading....
+  <div class="typing_loader_container">
+    <div class="typing_loader"></div>
+  </div>
 </div>
 
 <div *ngIf="experienceList" class="grid-container experience-container">
@@ -31,7 +33,7 @@
           </div>
           <div class="cell auto experience-item-birthplace">{{experience.birthplace}}</div>
           <div class="cell medium-1 experience-item-score">
-            <strong>{{ experience.score_u }}</strong>
+            <strong>{{ experience.score }}</strong>
           </div>
         </li>
       </ul>
