@@ -1,11 +1,16 @@
 @import "~_settings.scss";
 
-.birthplace-detail-wrap {
-    margin: 0 auto;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 0 0 280px rgba(0,0,0,.2);
+@include breakpoint(large up) {
+    .birthplace-detail {
+        margin-top: 3rem;
+        margin-bottom: 3rem;  
+        background-color: whitesmoke;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 1px -6px 280px rgba(0, 0, 0, 0.23);
+    }
 }
+
 
 .birthplace-details-header {
     position: relative;

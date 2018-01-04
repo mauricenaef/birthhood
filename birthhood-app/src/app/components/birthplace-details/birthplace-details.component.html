@@ -1,99 +1,101 @@
-<article class="birthplace-detail-wrap">
-    <header *ngIf="birthplace" class="birthplace-details-header">
-        <div class="hero-image-wrapper">
-            <img src="https://source.unsplash.com/1600x900/?building,hospitl,health" alt="Spital" class="hero-image">
-        </div>
-        <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus">
-            <use xlink:href="#geburtshaus"></use>
-        </svg>
-        <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital">
-            <use xlink:href="#spital"></use>
-        </svg>
-        <div class="detail-title-wrap">
-            <p class="detail-sup-title">{{ birthplace.type }}</p>
-            <h1 class="detail-title">{{ birthplace.name }}</h1>
-        </div>
-        
-    </header>
-    <main role="main" class="birthplace-details-main grid-container main-content">
-        <div class="grid-x grid-margin-x  align-middle">
-
-            <div class="medium-6 cell polar-chart-container" >
-                <h2 class="chart-title text-center">Score</h2>
-                <canvas id="myChart" width="400" height="400"></canvas>
+<article class="birthplace-detail-article grid-x align-center-middle">
+    <div class="cell large-8 birthplace-detail">
+        <header *ngIf="birthplace" class="birthplace-details-header">
+            <div class="hero-image-wrapper">
+                <img src="https://source.unsplash.com/1600x900/?building,hospitl,health" alt="Spital" class="hero-image">
+            </div>
+            <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus">
+                <use xlink:href="#geburtshaus"></use>
+            </svg>
+            <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital">
+                <use xlink:href="#spital"></use>
+            </svg>
+            <div class="detail-title-wrap">
+                <p class="detail-sup-title">{{ birthplace.type }}</p>
+                <h1 class="detail-title">{{ birthplace.name }}</h1>
             </div>
 
-            <div *ngIf="birthplace" class="medium-6 cell score-container">
-                <div *ngIf="!birthplace.experiences">
-                    <div class="blank-slate">
-                        <span class="blank-slate-text">🙈
-                            <em>Noch keine bewertungen</em>
-                        </span>
+        </header>
+        <main role="main" class="birthplace-details-main grid-container main-content">
+            <div class="grid-x grid-margin-x  align-middle">
+
+                <div class="medium-6 cell polar-chart-container">
+                    <h2 class="chart-title text-center">Score</h2>
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+
+                <div *ngIf="birthplace" class="medium-6 cell score-container">
+                    <div *ngIf="!birthplace.experiences">
+                        <div class="blank-slate">
+                            <span class="blank-slate-text">🙈
+                                <em>Noch keine bewertungen</em>
+                            </span>
+                        </div>
+
                     </div>
+                    <ul *ngIf="birthplace.experiences > 0" class="no-bullet score-list">
+                        <li class="total-score-item score-item">
+                            <strong class="score-item-title">Total Score</strong>
+                            <strong class="score">{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
+                        </li>
+                        <small class="score-list-description">⌀ Bewertung basierend auf
+                            <span class="badge">{{birthplace.experiences}}</span>
+                            <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
+                            <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>.</small>
+                        <li class="score-item score-u">
+                            <span class="score-item-title">Umgebung</span>
+                            <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong>
+                        </li>
+                        <li class="score-item score-e">
+                            <span class="score-item-title">Emotional</span>
+                            <strong class="score">{{ birthplace.score_e | number : '1.1-1' }}</strong>
+                        </li>
+                        <li class="score-item score-k">
+                            <span class="score-item-title">Körperlich</span>
+                            <strong class="score">{{ birthplace.score_k | number : '1.1-1' }}</strong>
+                        </li>
+                        <li class="score-item score-m">
+                            <span class="score-item-title">Mental</span>
+                            <strong class="score">{{ birthplace.score_m | number : '1.1-1' }}</strong>
+                        </li>
+                        <li class="score-item score-w">
+                            <span class="score-item-title">Wochenbett</span>
+                            <strong class="score">{{ birthplace.score_w | number : '1.1-1' }}</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer *ngIf="birthplace" class="birthplace-details-footer grid-container content-footer">
+            <div class="grid-x grid-margin-x align-bottom">
+                <div class="small-8 medium-6 cell">
+                    <address class="adr">
+                        <h4 class="h6">
+                            <strong>{{birthplace.name}}</strong>
+                        </h4>
+                        <div class="street-address">{{ birthplace.strasse }}</div>
+                        <span class="postal-code">{{ birthplace.plz }}</span>
+                        <span class="locality">{{ birthplace.ort }}</span>
+                        <div class="country-name">Schweiz</div>
+                    </address>
+
+                    <a href="{{birthplace.url}}" target="_blank" class="link-icon button tiny hollow">
+                        Link zur Webseite
+                        <svg class="icon">
+                            <use xlink:href="#link"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}" target="_blank" class="link-icon button tiny hollow">
+                        Anfahrt
+                        <svg class="icon icon-map">
+                            <use xlink:href="#map"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="small-4 medium-6 cell">
 
                 </div>
-                <ul *ngIf="birthplace.experiences > 0" class="no-bullet score-list">
-                    <li class="total-score-item score-item">
-                        <strong class="score-item-title">Total Score</strong>
-                        <strong class="score">{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
-                    </li>
-                    <small class="score-list-description">⌀ Bewertung basierend auf <span class="badge">{{birthplace.experiences}}</span> <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
-                    <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>.</small>
-                    <li class="score-item score-u">
-                        <span class="score-item-title">Umgebung</span>
-                        <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong>
-                    </li>
-                    <li class="score-item score-e">
-                        <span class="score-item-title">Emotional</span>
-                        <strong class="score">{{ birthplace.score_e | number : '1.1-1' }}</strong>
-                    </li>
-                    <li class="score-item score-k">
-                        <span class="score-item-title">Körperlich</span>
-                        <strong class="score">{{ birthplace.score_k | number : '1.1-1' }}</strong>
-                    </li>
-                    <li class="score-item score-m">
-                        <span class="score-item-title">Mental</span>
-                        <strong class="score">{{ birthplace.score_m | number : '1.1-1' }}</strong>
-                    </li>
-                    <li class="score-item score-w">
-                        <span class="score-item-title">Wochenbett</span>
-                        <strong class="score">{{ birthplace.score_w | number : '1.1-1' }}</strong>
-                    </li>
-                </ul>
             </div>
-        </div>
-    </main>
-    <footer *ngIf="birthplace" class="birthplace-details-footer grid-container content-footer">
-        <div class="grid-x grid-margin-x align-bottom">
-            <div class="small-8 medium-6 cell">
-                <address class="adr">
-                    <h4 class="h6">
-                        <strong>{{birthplace.name}}</strong>
-                    </h4>
-                    <div class="street-address">{{ birthplace.strasse }}</div>
-                    <span class="postal-code">{{ birthplace.plz }}</span>
-                    <span class="locality">{{ birthplace.ort }}</span>
-                    <div class="country-name">Schweiz</div>
-                </address>
-
-                <a href="{{birthplace.url}}" target="_blank" class="link-icon button tiny hollow">
-                    Link zur Webseite
-                    <svg class="icon">
-                        <use xlink:href="#link"></use>
-                    </svg>
-                </a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination={{birthplace.name}}" target="_blank" class="link-icon button tiny hollow">
-                    Anfahrt
-                    <svg class="icon icon-map">
-                        <use xlink:href="#map"></use>
-                    </svg>
-                </a>
-            </div>
-            <div class="small-4 medium-6 cell">
-                
-            </div>
-        </div>
-
-
-    </footer>
+        </footer>
+    </div>
 </article>
