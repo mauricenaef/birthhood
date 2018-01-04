@@ -1,11 +1,13 @@
 @import "~_settings.scss";
 
+$top-value: -349px;
+
 .search-container {
     will-change: transform;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
     background:$white;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .search-input {
         pointer-events: auto;
         margin-bottom:1rem ;
@@ -17,10 +19,10 @@
         display: none;
     }
     &.search-active {
-        transform: translateY(-406px);
-        z-index: 5;
+        transform: translateY($top-value);
+        z-index: 100;
         position: fixed;
-        transition: all 0.2s ease;
+        transition: all .2s ease;
         width: 100vw;
         height: 100vh;
         .search-input {
