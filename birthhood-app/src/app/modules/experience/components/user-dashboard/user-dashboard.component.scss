@@ -18,6 +18,9 @@
     position: relative;
     background: $white;
     padding: 1rem;
+    @include breakpoint(small only) {
+        min-height: 10rem;
+    }
     @include breakpoint(medium up) {
         padding-bottom: 5rem;
     }
