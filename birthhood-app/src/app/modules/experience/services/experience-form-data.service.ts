@@ -14,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ExperienceFormDataService {
 
-  private experience: Experience = new Experience();
+  private experience: Experience = new Experience(null);
   private isBioFormValid: boolean = false;
   private isUmefeldFormValid: boolean = false;
 
