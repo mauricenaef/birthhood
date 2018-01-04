@@ -17,7 +17,8 @@
     </header>
     <main role="main" class="birthplace-details-main grid-container main-content">
         <div class="grid-x grid-margin-x  align-middle">
-            <div class="medium-6 cell polar-chart-container">
+
+            <div class="medium-6 cell polar-chart-container" >
                 <h2 class="chart-title text-center">Score</h2>
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
@@ -31,12 +32,12 @@
                     </div>
 
                 </div>
-                <ul class="no-bullet score-list">
+                <ul *ngIf="birthplace.experiences > 0" class="no-bullet score-list">
                     <li class="total-score-item score-item">
                         <strong class="score-item-title">Total Score</strong>
                         <strong class="score">{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
                     </li>
-                    <small class="score-list-description">⌀ Bewertung basierend auf <span class="badge">{{birthplace.experiences}}</span> <ng-container *ngIf="birthplace.experiences ==1">Geburt</ng-container>
+                    <small class="score-list-description">⌀ Bewertung basierend auf <span class="badge">{{birthplace.experiences}}</span> <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
                     <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>.</small>
                     <li class="score-item score-u">
                         <span class="score-item-title">Umgebung</span>
@@ -64,7 +65,7 @@
     </main>
     <footer *ngIf="birthplace" class="birthplace-details-footer grid-container content-footer">
         <div class="grid-x grid-margin-x align-bottom">
-            <div class="small-6 cell">
+            <div class="small-8 medium-6 cell">
                 <address class="adr">
                     <h4 class="h6">
                         <strong>{{birthplace.name}}</strong>
@@ -88,8 +89,8 @@
                     </svg>
                 </a>
             </div>
-            <div class="small-6 cell">
-
+            <div class="small-4 medium-6 cell">
+                
             </div>
         </div>
 

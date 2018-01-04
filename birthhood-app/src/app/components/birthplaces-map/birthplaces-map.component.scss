@@ -1,14 +1,15 @@
 @import "~_settings.scss";
 
 .map-wrap {
+    position: relative;    
+}
+
+.map {
+    height: 300px;
     position: relative;
-    .map {
-        height: 300px;
-        position: relative;
-        &.map-detail {
-            height: 100px;
-            transform: height 250ms 550ms $cubic-animation;
-        }
+    transform: height 550ms $cubic-animation;
+    &.map-detail  {
+        height: 100px;
+        transform: height 550ms $cubic-animation;
     }
-    
 }
