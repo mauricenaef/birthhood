@@ -3,7 +3,7 @@
       <div class="cell">
         <a (click)='toggle($event)' class="show-for-small-only close-nav-trigger nav-trigger-footer">back</a>
         <ul class="menu vertical">
-          <li><a (click)='goto("/")'>Geburstort Finden</a></li>
+          <li><a (click)='goto("/")'>Geburstort finden</a></li>
           <li><a (click)='goto("/user-dashboard/experience/new")'>Geburt hinzufügen</a></li>
           <li><a *ngIf="userLoggedIn"  (click)="logout()" >Logout</a></li>
         </ul>

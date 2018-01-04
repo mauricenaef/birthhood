@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngAfterViewInit () {
     let body = document.getElementsByTagName('body')[0];
-    setTimeout( _=> body.classList.remove("is-loading"), 5000);
+    setTimeout( _=> body.classList.remove("is-loading"));
   }
 
 }

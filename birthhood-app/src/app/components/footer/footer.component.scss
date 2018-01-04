@@ -5,6 +5,9 @@
         a {
             padding-bottom: 0;
             color: lighten($body-font-color, 30%);
+            &:hover, &:focus {
+                color: get-color(primary-bright);
+            }
         }
     }
 }
@@ -13,6 +16,7 @@
     .footer-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        margin-top: 3rem;
         border-top: 1px solid $light-gray;
     }
 }

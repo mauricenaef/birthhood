@@ -1,3 +1,6 @@
+.is-loading {
+    overflow: hidden;
+}
 .loading {
     opacity: 0;
     visibility: hidden;
@@ -17,7 +20,7 @@
     .is-loading & {
         visibility: visible;
         opacity: 1;
-        z-index: 1000;
+        z-index: 10000;
         transform: all 650ms ease-out;
     }
 
