@@ -6,7 +6,7 @@
   <div class="grid-x grid-padding-x align-middle">
 
     <div class="cell" *ngIf="experienceList.length == 0">
-      <div  class="empty-slate-container">
+      <div class="empty-slate-container">
         <div class="blank-slate text-center">
           <span class="blank-slate-text">🙈
             <em>Sie haben noch keine Geburt erfasst. </em>
@@ -16,19 +16,31 @@
     </div>
 
     <div class="cell" *ngIf="experienceList.length != 0">
-        <ul *ngFor="let experience of experienceList">
-            <li>datum: {{experience.birth_date}} </li>
-            <li>name: {{experience.birth_name}}</li>
-            <li>score: {{experience.score}</li>
-            <li>Geburtsort: {{experience.birthplace}}
-            </li>
-          </ul>
+      <ul *ngFor="let experience of experienceList">
+        <li class="grid-x experience-item">
+          <div class="cell medium-1 experience-item-icon">
+            <svg class="icon icon-spital">
+              <use xlink:href="#spital"></use>
+            </svg>
+          </div>
+          <div class="cell medium-3 experience-item-name">
+            <h3 class="experience-name h4">{{experience.birth_name}}</h3>
+          </div>
+          <div class="cell medium-2 experience-item-date">
+            <time>{{ experience.birth_date | date: 'dd.MM.yyyy' }}</time>
+          </div>
+          <div class="cell auto experience-item-birthplace">{{experience.birthplace}}</div>
+          <div class="cell medium-1 experience-item-score">
+            <strong>1</strong>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <div class="cell text-center">
-       <a routerLink="/user-dashboard/experience/new" class="button" routerLinkActive="active">Geburt hinzufügen.</a>
+      <a routerLink="/user-dashboard/experience/new" class="button" routerLinkActive="active">Geburt hinzufügen.</a>
     </div>
-   
+
 
   </div>
 </div>
