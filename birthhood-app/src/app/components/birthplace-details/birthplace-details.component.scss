@@ -74,6 +74,10 @@
 }
 
 .score-list {
+    padding: 1rem;
+    background: $white;
+    border-radius: $global-radius;
+    border: 1px solid lighten($light-gray, 2%);
     .score-list-description {
         font-size: rem-calc(14);
         display: block;
