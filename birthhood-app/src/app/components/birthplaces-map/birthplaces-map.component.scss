@@ -5,7 +5,10 @@
 }
 
 .map {
-    height: 300px;
+    height: 200px;
+    @include breakpoint(medium up) {
+        height: 300px;
+    }
     @include breakpoint(large up) {
         height: 500px;
     }
