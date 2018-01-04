@@ -7,7 +7,6 @@ import { HostListener } from '@angular/core';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/combinelatest';
 import 'rxjs/add/operator/debounceTime';
-
 import 'rxjs/add/operator/distinctUntilChanged';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Birthplace } from '../../models/birthplace';
@@ -22,6 +21,7 @@ export class SearchComponent implements OnInit {
 
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
+  body;
 
   @ViewChild('searchBox') searchBox;
 
@@ -46,6 +46,7 @@ export class SearchComponent implements OnInit {
         this.toastr.error(error, "Fehler bei Suche");
         return Observable.of<Birthplace[]>([]);
       });
+      this.body =  document.getElementsByTagName('body')[0];
   }
 
   search(term: string): void {
@@ -53,12 +54,13 @@ export class SearchComponent implements OnInit {
   }
 
   activateSearch(): void {
+    this.body.classList.add("overflow-hidden");
     this.isActive = true;
   }
 
   deactivateSearch(): void {
-    
-    this.searchBox.nativeElement.blur();
-    if (this.isActive) this.isActive = false;
+    //this.body.classList.remove("overflow-hidden");
+    //this.searchBox.nativeElement.blur();
+    this.isActive = false;
   }
 }

@@ -1,55 +1,56 @@
-<div class="search-container grid-container" [ngClass]="{'search-active': isActive }">
-  <div class="grid-x grid-margin-x">
-    <div class="cell search-input-container">
-
-      <a class="search-close-button" (click)="deactivateSearch()">
-        <svg class="icon icon-close">
-          <use xlink:href="#close"></use>
-        </svg>
-      </a>
-      <label for="search-input" class="show-for-sr">Search</label>
-
-      <input type="text" #searchBox id="search-input" class="input-text search-input" (focus)="activateSearch()" (click)="activateSearch()"
-        (keyup)="search(searchBox.value)" placeholder="Suchen">
-    </div>
-
-    <div class="cell search-list-container">
-      <div class="search-info">
-        <span *ngIf="(searchresults | async)?.length > 0">{{(searchresults | async)?.length}} Resultate</span>
-        <span *ngIf="birthplaceService.filter"> Nach
-          <span *ngIf="birthplaceService.filter.spital">
-            Spitälern</span>
-          <span *ngIf="birthplaceService.filter.spital && birthplaceService.filter.geburtshaus">
-            /
-          </span>
-          <span *ngIf="birthplaceService.filter.geburtshaus">
-            Geburtshäusern
-          </span>
-          suchen
-        </span>
+<div class="search-height-controller">
+    <div class="search-container grid-container" [ngClass]="{'search-active': isActive }">
+        <div class="grid-x grid-margin-x align-center">
+            <div class="cell search-input-container">
+      
+              <a class="search-close-button" (click)="deactivateSearch()">
+                <svg class="icon icon-close">
+                  <use xlink:href="#close"></use>
+                </svg>
+              </a>
+              <label for="search-input" class="show-for-sr">Search</label>
+      
+              <input type="text" #searchBox id="search-input" class="input-text search-input" (focus)="activateSearch()" (click)="activateSearch()"
+                (keyup)="search(searchBox.value)" placeholder="Suchen">
+            </div>
+      
+            <div class="cell search-list-container">
+              <div class="search-info">
+                <span *ngIf="(searchresults | async)?.length > 0">{{(searchresults | async)?.length}} Resultate</span>
+                <span *ngIf="birthplaceService.filter"> Nach
+                  <span *ngIf="birthplaceService.filter.spital">
+                    Spitälern</span>
+                  <span *ngIf="birthplaceService.filter.spital && birthplaceService.filter.geburtshaus">
+                    /
+                  </span>
+                  <span *ngIf="birthplaceService.filter.geburtshaus">
+                    Geburtshäusern
+                  </span>
+                  suchen
+                </span>
+              </div>
+      
+              <div *ngIf="(searchresults | async)?.length==0 && searchBox.value" class="blank-slate">
+                <span class="blank-slate-text">Keine Suchresultate.</span>
+              </div>
+              <ul class="no-bullet search-results-list">
+                <li class="search-results-item" *ngFor="let item of searchresults | async">
+                  <a class="search-results-label" [routerLink]="['/birthplaces/details', item.id]">
+                    <span class="search-results-label-text">{{item.name}}</span>
+                    <span class="search-results-label-icon">
+                      <svg *ngIf="item.type == 'geburtshaus'" class="icon icon-geburtshaus">
+                        <use xlink:href="#geburtshaus"></use>
+                      </svg>
+                      <svg *ngIf="item.type == 'spital'" class="icon icon-spital">
+                        <use xlink:href="#spital"></use>
+                      </svg>
+                    </span>
+                  </a>
+      
+                </li>
+      
+              </ul>
+            </div>
+        </div>
       </div>
-
-      <div *ngIf="(searchresults | async)?.length==0 && searchBox.value" class="blank-slate">
-        <span class="blank-slate-text">Keine Suchresultate.</span>
-      </div>
-      <ul class="no-bullet search-results-list">
-        <li class="search-results-item" *ngFor="let item of searchresults | async">
-          <a class="search-results-label" [routerLink]="['/birthplaces/details', item.id]">
-            <span class="search-results-label-text">{{item.name}}</span>
-            <span class="search-results-label-icon">
-              <svg *ngIf="item.type == 'geburtshaus'" class="icon icon-geburtshaus">
-                <use xlink:href="#geburtshaus"></use>
-              </svg>
-              <svg *ngIf="item.type == 'spital'" class="icon icon-spital">
-                <use xlink:href="#spital"></use>
-              </svg>
-            </span>
-          </a>
-
-        </li>
-
-      </ul>
-
-    </div>
-  </div>
 </div>
