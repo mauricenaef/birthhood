@@ -1,13 +1,34 @@
 <div *ngIf="!experienceList">
   loading....
 </div>
-<ul *ngFor="let experience of experienceList">
-  <li>datum: {{experience.birth_date}} </li>
-  <li>name: {{experience.birth_name}}</li>
-  <li>score: {{experience.score}</li>
-  <li>Geburtsort: {{experience.birthplace}}
-  </li>
-</ul>
-<p>
-  <a routerLink="/user-dashboard/experience/new" class="button" routerLinkActive="active">Geburt hinz.</a>
-</p>
+
+<div *ngIf="experienceList" class="grid-container experience-container">
+  <div class="grid-x grid-padding-x align-middle">
+
+    <div class="cell" *ngIf="experienceList.length == 0">
+      <div  class="empty-slate-container">
+        <div class="blank-slate text-center">
+          <span class="blank-slate-text">🙈
+            <em>Sie haben noch keine Geburt erfasst. </em>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell" *ngIf="experienceList.length != 0">
+        <ul *ngFor="let experience of experienceList">
+            <li>datum: {{experience.birth_date}} </li>
+            <li>name: {{experience.birth_name}}</li>
+            <li>score: {{experience.score}</li>
+            <li>Geburtsort: {{experience.birthplace}}
+            </li>
+          </ul>
+    </div>
+
+    <div class="cell text-center">
+       <a routerLink="/user-dashboard/experience/new" class="button" routerLinkActive="active">Geburt hinzufügen.</a>
+    </div>
+   
+
+  </div>
+</div>

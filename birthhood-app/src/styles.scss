@@ -97,7 +97,7 @@ app-root {
     }
 }
 .main-container {
-    padding-top: 3.6rem !important;
+    padding-top: 3.6rem;
 }
 
 @include breakpoint(medium up) {

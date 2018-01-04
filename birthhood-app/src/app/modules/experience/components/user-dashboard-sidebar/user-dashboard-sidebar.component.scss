@@ -7,15 +7,17 @@
     align-items: center;
         
     .avatar-container {
-        background-color: $secondary-color;
         width: 100px;
         height: 100px;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
     }
 
     .dashboard-login-time {
-        span {
-            display:block;
+        margin: 1rem 0;
+        p {
+            strong {
+                display: block;
+            }
         }
     }
 
@@ -26,6 +28,9 @@
             align-self: flex-end;
         }
     }
+}
 
+.user-avatar {
+    border-radius: 100px;
 }
 

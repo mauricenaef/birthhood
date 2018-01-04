@@ -1,0 +1,27 @@
+@import "~_settings.scss";
+
+.dashboard-sidebar {
+    @include breakpoint(small only) {
+        padding-top: 3rem;
+    }
+}
+
+.dashboard-container {
+    background: lighten($medium-gray, 20%);
+    padding-bottom: 3rem;
+    @include breakpoint(small only) {
+        padding-top: 1rem;
+    }
+}
+
+.dashboard-main {
+    background: $white;
+    padding: 1rem;
+    @include breakpoint(medium up) {
+        padding-bottom: 5rem;
+    }
+    background-color: whitesmoke;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 1px -6px 280px rgba(0, 0, 0, 0.23);
+}

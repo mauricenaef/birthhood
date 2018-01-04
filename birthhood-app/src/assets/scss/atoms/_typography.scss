@@ -15,6 +15,11 @@ a {
             height: 2rem;
             color: $white;
         }
+        &.go-back-dark {
+            .icon {
+                color: $body-font-color;
+            }
+        }
         
     }
     &.go-back-overlay {
