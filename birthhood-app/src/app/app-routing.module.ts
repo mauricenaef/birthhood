@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 //import { UIRouter }  from "@uirouter/angular";
 
 import { BirthplacesComponent } from './components/birthplaces/birthplaces.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './modules/login/components/signup/signup.component';
+import { LoginComponent } from './modules/login/components/login/login.component';
 import { BirthplaceDetailsComponent } from './components/birthplace-details/birthplace-details.component';
 import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
 
