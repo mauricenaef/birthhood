@@ -11,6 +11,7 @@ import { AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 import { OwlModule } from 'ngx-owl-carousel';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './../../app-routing.module';
+import { environment } from '../../../environments/environment';
 @NgModule({
   imports: [
     AppRoutingModule,
@@ -18,7 +19,7 @@ import { AppRoutingModule } from './../../app-routing.module';
     OwlModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
+      apiKey: environment.googleMapsKey
     })
   ],
   declarations: [
