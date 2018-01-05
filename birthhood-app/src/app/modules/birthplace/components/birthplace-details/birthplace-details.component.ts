@@ -40,30 +40,15 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
     this.birthplace$.subscribe(birthplace => {
       this.birthplace = new Birthplace(birthplace);
 
-      //console.log(new Birthplace(birthplace));
       let htmlRef = document.getElementById('myChart')
       this.myChart = new Chart(htmlRef, {
         type: 'polarArea',
         options: {
           responsive: true,
           legend: {
-            //    display: false,
             position: 'bottom',
           },
-          /* legendCallback: function(chart) {
-            var text = [];
-            text.push('<ul>');
-            for (var i=0; i<chart.data.datasets.length; i++) {
-              //console.log(chart.data.datasets[i]); // see what's inside the obj.
-              text.push('<li>');
-              text.push('<span style="background-color:' + chart.data.datasets[i].borderColor + '">' + chart.data.datasets[i].label + '</span>');
-              text.push('</li>');
-            }
-            text.push('</ul>');
-            return text.join("");
-          }, */
           scale: {
-            //display: false
             ticks: {
               backdropPaddingX: 5,
               backdropPaddingY: 5,

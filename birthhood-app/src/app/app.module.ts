@@ -25,6 +25,7 @@ import { SignupBirthplaceComponent } from './components/signup-birthplace/signup
 import { ExperienceModule } from './modules/experience/experience.module';
 import { LoginModule } from './modules/login/login.module';
 import { BirthplaceModule } from './modules/birthplace/birthplace.module';
+import { AuthService } from './modules/login/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { BirthplaceModule } from './modules/birthplace/birthplace.module';
     }),
 
   ],
-  providers: [
+  providers: [AuthService,
      AuthGuard ],
   bootstrap: [AppComponent]
 })

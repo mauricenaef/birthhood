@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
+import { AuthService } from '../../modules/login/services/auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,8 +13,8 @@ export class FooterComponent implements OnInit {
   isLateralNavAnimating: boolean = false;
   userLoggedIn: boolean = false;
 
-  constructor(private af: AngularFireAuth, private router: Router) { 
-    this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true: false)
+  constructor(private authService: AuthService, private router: Router) { 
+    this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true: false)
 
   }
 
@@ -40,7 +40,6 @@ export class FooterComponent implements OnInit {
   }
 
   logout(): void{
-    this.af.auth.signOut();
-    this.router.navigateByUrl('/');
+    this.authService.signOut();
   }
 }
