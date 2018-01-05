@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Bio } from '../../models/experience-form-data';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
-import { BirthplaceService } from '../../../../services/birthplace.service';
+import { BirthplaceService } from '../../../birthplace/services/birthplace.service';
 import { ToastrService } from 'ngx-toastr';
-import { Birthplace } from '../../../../models/birthplace';
+import { Birthplace } from '../../../birthplace/models/birthplace';
 
 
 @Component({

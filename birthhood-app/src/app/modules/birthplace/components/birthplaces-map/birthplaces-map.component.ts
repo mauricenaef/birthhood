@@ -11,7 +11,7 @@ import { LatLngBounds } from '@agm/core/services/google-maps-types';
 import { NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
-import * as mapstyles from '../../../assets/config/map-styles.json';
+import * as mapstyles from '../../../../../assets/config/map-styles.json';
 declare var google: any;
 
 @Component({

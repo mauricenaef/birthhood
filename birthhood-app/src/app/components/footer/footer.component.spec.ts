@@ -6,12 +6,12 @@ import { AngularFirestoreModule, } from 'angularfire2/firestore';
 import { AppRoutingModule } from '../../app-routing.module';
 import { LoginComponent } from '../../modules/login/components/login/login.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { BirthplacesComponent } from '../../components/birthplaces/birthplaces.component';
+import { BirthplacesComponent } from '../../modules/birthplace/components/birthplaces/birthplaces.component';
 import { SignupComponent } from '../../modules/login/components/signup/signup.component';
-import { BirthplacesMapComponent } from '../../components/birthplaces-map/birthplaces-map.component';
-import { BirthplacesListComponent } from '../../components/birthplaces-list/birthplaces-list.component';
-import { BirthplaceDetailsComponent } from '../../components/birthplace-details/birthplace-details.component';
-import { SearchComponent } from '../../components/search/search.component';
+import { BirthplacesMapComponent } from '../../modules/birthplace/components/birthplaces-map/birthplaces-map.component';
+import { BirthplacesListComponent } from '../../modules/birthplace/components/birthplaces-list/birthplaces-list.component';
+import { BirthplaceDetailsComponent } from '../../modules/birthplace/components/birthplace-details/birthplace-details.component';
+import { SearchComponent } from '../../modules/birthplace/components/search/search.component';
 import { FormsModule } from '@angular/forms';
 
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
@@ -26,7 +26,7 @@ import { ContactComponent } from '../contact/contact.component';
 import { ImpressumComponent } from '../impressum/impressum.component';
 import { SignupBirthplaceComponent } from '../signup-birthplace/signup-birthplace.component';
 import { ExperienceModule } from '../../modules/experience/experience.module';
-import { FilterComponent } from '../filter/filter.component';
+import { FilterComponent } from '../../modules/birthplace/components/filter/filter.component';
 
 import { environment } from '../../../environments/environment'
 

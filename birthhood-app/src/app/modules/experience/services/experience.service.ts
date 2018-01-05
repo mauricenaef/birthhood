@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { BirthplaceService } from '../../../services/birthplace.service';
+import { BirthplaceService } from '../../birthplace/services/birthplace.service';
 import { Observable } from 'rxjs/Observable';
 import { Experience } from '../models/experience-form-data';
 
