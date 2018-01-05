@@ -7,12 +7,12 @@ import { AngularFirestoreModule, } from 'angularfire2/firestore';
 import { AppRoutingModule } from '../../app-routing.module';
 import { LoginComponent } from '../../modules/login/components/login/login.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { BirthplacesComponent } from '../../components/birthplaces/birthplaces.component';
+import { BirthplacesComponent } from '../../modules/birthplace/components/birthplaces/birthplaces.component';
 import { SignupComponent } from '../../modules/login/components/signup/signup.component';
-import { BirthplacesMapComponent } from '../../components/birthplaces-map/birthplaces-map.component';
-import { BirthplacesListComponent } from '../../components/birthplaces-list/birthplaces-list.component';
-import { BirthplaceDetailsComponent } from '../../components/birthplace-details/birthplace-details.component';
-import { SearchComponent } from '../../components/search/search.component';
+import { BirthplacesMapComponent } from '../../modules/birthplace/components/birthplaces-map/birthplaces-map.component';
+import { BirthplacesListComponent } from '../../modules/birthplace/components/birthplaces-list/birthplaces-list.component';
+import { BirthplaceDetailsComponent } from '../../modules/birthplace/components/birthplace-details/birthplace-details.component';
+import { SearchComponent } from '../../modules/birthplace/components/search/search.component';
 import { FormsModule } from '@angular/forms';
 
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
@@ -26,9 +26,11 @@ import { SignupBirthplaceComponent } from '../signup-birthplace/signup-birthplac
 import { ImpressumComponent } from '../impressum/impressum.component';
 import { BirthcriteriaComponent } from '../birthcriteria/birthcriteria.component';
 import { ContactComponent } from '../contact/contact.component';
-import { FilterComponent } from '../filter/filter.component';
+import { FilterComponent } from '../../modules/birthplace/components/filter/filter.component';
 
 import { environment } from '../../../environments/environment'
+import { AuthService } from '../../modules/login/services/auth.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 describe('HeaderComponent', () => {
@@ -51,17 +53,22 @@ describe('HeaderComponent', () => {
         ImpressumComponent,
         BirthcriteriaComponent,
         ContactComponent,
-
         LoginComponent],
-      providers: [AngularFireAuth, { provide: APP_BASE_HREF, useValue: '/' }],
+      providers: [AngularFireAuth,AuthService, { provide: APP_BASE_HREF, useValue: '/' }],
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
         AppRoutingModule,
         OwlModule,
+        ToastrModule.forRoot({
+          positionClass: 'toast-top-full-width',
+          autoDismiss: false,
+          disableTimeOut: true,
+          closeButton: true
+        }),
         ExperienceModule,
         DateTimePickerModule,
         AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
+          apiKey: environment.googleMapsKey
         }),
         FormsModule
       ]

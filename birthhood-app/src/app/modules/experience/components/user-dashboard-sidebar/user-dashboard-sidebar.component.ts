@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../login/services/auth.service';
 
 @Component({
   selector: 'app-user-dashboard-sidebar',
@@ -12,11 +12,11 @@ export class UserDashboardSidebarComponent implements OnInit {
 
   currentUser: firebase.User;
 
-  constructor(private af: AngularFireAuth, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
 
   ngOnInit() {
-    this.af.auth.onAuthStateChanged(
+    this.authService.af.auth.onAuthStateChanged(
       user => {
         this.currentUser = user;
       }
@@ -25,8 +25,6 @@ export class UserDashboardSidebarComponent implements OnInit {
 
 
   logout() {
-    this.af.auth.signOut();
-
-    this.router.navigateByUrl('/');
+    this.authService.signOut();
   }
 }

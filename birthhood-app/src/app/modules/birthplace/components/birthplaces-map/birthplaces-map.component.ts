@@ -11,7 +11,7 @@ import { LatLngBounds } from '@agm/core/services/google-maps-types';
 import { NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
-import * as mapstyles from '../../../assets/config/map-styles.json';
+import * as mapstyles from '../../../../../assets/config/map-styles.json';
 declare var google: any;
 
 @Component({
@@ -35,7 +35,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
   bounds: LatLngBounds;
 
   routersubscription: Subscription;
-  
+
   constructor(public birthplaceService: BirthplaceService, public router: Router) {
     /*fallback-location. HSR?*/
     this.latLng = <LatLngLiteral>{
@@ -65,8 +65,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
             })
         });
       });
-    // subscribe for zoom out when navigating back to the map
-    birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
+
 
     // subscribe for detail to zoom in on marker
     this.routersubscription = this.router.events.subscribe(event => {
@@ -83,6 +82,8 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
+    // subscribe for zoom out when navigating back to the map
+    this.birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
     //only zoom out if not on Detail Page
     if (this.router.url == "/birthplaces") {
       if (navigator.geolocation) {

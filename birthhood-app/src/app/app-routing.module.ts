@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //import { UIRouter }  from "@uirouter/angular";
 
-import { BirthplacesComponent } from './components/birthplaces/birthplaces.component';
+import { BirthplacesComponent } from './modules/birthplace/components/birthplaces/birthplaces.component';
 import { SignupComponent } from './modules/login/components/signup/signup.component';
 import { LoginComponent } from './modules/login/components/login/login.component';
-import { BirthplaceDetailsComponent } from './components/birthplace-details/birthplace-details.component';
-import { BirthplacesListComponent } from './components/birthplaces-list/birthplaces-list.component';
-
-
+import { BirthplaceDetailsComponent } from './modules/birthplace/components/birthplace-details/birthplace-details.component';
+import { BirthplacesListComponent } from './modules/birthplace/components/birthplaces-list/birthplaces-list.component';
 import { ExperienceAddBioComponent } from './modules/experience/components/experience-add-bio/experience-add-bio.component';
 import { ExperienceAddUmgebungComponent } from './modules/experience/components/experience-add-umgebung/experience-add-umgebung.component';
 import { ExperienceAddComponent } from './modules/experience/components/experience-add/experience-add.component';
