@@ -31,6 +31,7 @@ export class BirthplaceService {
   filterChanged$: BehaviorSubject<any>;
   filter: BirthplaceFilter;
 
+  
 
   constructor(private db: AngularFirestore, private mapsAPILoader: MapsAPILoader) {
 

@@ -13,9 +13,9 @@
         height: 500px;
     }
     position: relative;
-    transform: height 550ms $cubic-animation;
+    //transform: height 550ms $cubic-animation;
     &.map-detail  {
         height: 100px;
-        transform: height 550ms $cubic-animation;
+        //transform: height 550ms $cubic-animation;
     }
 }

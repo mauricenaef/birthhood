@@ -8,6 +8,9 @@ import { Subject } from 'rxjs/Subject';
 import { Location } from "@angular/common";
 import { Birthplace } from '../../models/birthplace';
 import { LatLngBounds } from '@agm/core/services/google-maps-types';
+import { NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 declare var google: any;
 
 @Component({
@@ -16,7 +19,7 @@ declare var google: any;
   styleUrls: ['./birthplaces-map.component.scss'],
   outputs: ['selectedBirthplace']
 })
-export class BirthplacesMapComponent implements OnInit {
+export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
   // Custom Map Styles
   public styles = [
@@ -222,11 +225,11 @@ export class BirthplacesMapComponent implements OnInit {
 
   latLng: LatLngLiteral;
   zoomOutNumber: number = 3;
-  bounds: LatLngBounds;//Literal;
+  bounds: LatLngBounds;
 
+  routersubscription: Subscription;
   constructor(public birthplaceService: BirthplaceService, public router: Router) {
-    /*
-fallback-location. HSR?*/
+    /*fallback-location. HSR?*/
     this.latLng = <LatLngLiteral>{
       lat: 47.2,
       lng: 8.6
@@ -234,16 +237,15 @@ fallback-location. HSR?*/
 
 
     this.items$ = birthplaceService.getBirhplacesOnMap();
-    
-    //zoom to clicked Birthplace
+
+    //subscribe for zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
       id => {
         this.birthplaceService.getBirthplace(id).subscribe(x => {
           let birthplace: Birthplace = x;
           this.map.triggerResize()
             .then(() => {
-              /*this.map._mapsWrapper.panTo({ lat: birthplace.lat, lng: birthplace.lng }));
-              panToBounds scheint nicht zu funktionieren. setCenter oder panTo oder fitBounds
+              /* panToBounds scheint nicht zu funktionieren. setCenter oder panTo oder fitBounds
               https://developers.google.com/maps/documentation/javascript/reference?
               Hack: https://codepen.io/j4k/pen/gPmdWN */
 
@@ -254,8 +256,19 @@ fallback-location. HSR?*/
             })
         });
       });
-
+    // subscribe for zoom out when navigating back to the map
     birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
+
+    // subscribe for detail to zoom in on marker
+    this.routersubscription = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.urlAfterRedirects == "/birthplaces") {
+          this.isDetail = false;
+        } else {
+          this.isDetail = true;
+        }
+      }
+    })
   }
 
 
@@ -275,6 +288,9 @@ fallback-location. HSR?*/
     }
   }
 
+  ngOnDestroy() {
+    this.routersubscription.unsubscribe();
+  }
   private generateBounds(latLng: LatLngLiteral, buffer: number): LatLngBoundsLiteral {
     return {
       east: latLng.lng + buffer,
@@ -284,21 +300,18 @@ fallback-location. HSR?*/
     }
   }
 
-  //um punkte weniger flickern zu lassen
+  // to prevent flickering of map items
   trackFbObjects = (idx, obj) => obj.$key;
 
   clickedMarker(id: string) {
-    // make map small
     this.router.navigate(['/birthplaces/details', id]);
-    // add class detail true to map
-    this.isDetail = true;
+
   }
 
   zoomOut() {
-
-    // full map
+    // show full map
     this.birthplaceService.getBirthplacesFiltered().subscribe(
-      birthplaces=> {
+      birthplaces => {
 
         birthplaces.sort((x, y) => new Birthplace(x).distance(this.latLng) - new Birthplace(y).distance(this.latLng));
         let nearestBirthplaces: Birthplace[] = birthplaces.slice(0, this.zoomOutNumber);
@@ -310,11 +323,11 @@ fallback-location. HSR?*/
             bounds.extend(latLngObject);
           }
         );
-
-        this.map._mapsWrapper.fitBounds(bounds);
-        this.map._mapsWrapper.setCenter(this.latLng);
-        // remove class detail true map
-        this.isDetail = false;
+        
+        this.map.triggerResize()
+          .then(() => {
+            this.map._mapsWrapper.fitBounds(bounds);
+          })
       }
     );
   }
