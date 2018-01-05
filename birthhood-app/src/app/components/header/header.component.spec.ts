@@ -29,6 +29,8 @@ import { ContactComponent } from '../contact/contact.component';
 import { FilterComponent } from '../../modules/birthplace/components/filter/filter.component';
 
 import { environment } from '../../../environments/environment'
+import { AuthService } from '../../modules/login/services/auth.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 describe('HeaderComponent', () => {
@@ -51,17 +53,22 @@ describe('HeaderComponent', () => {
         ImpressumComponent,
         BirthcriteriaComponent,
         ContactComponent,
-
         LoginComponent],
-      providers: [AngularFireAuth, { provide: APP_BASE_HREF, useValue: '/' }],
+      providers: [AngularFireAuth,AuthService, { provide: APP_BASE_HREF, useValue: '/' }],
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
         AppRoutingModule,
         OwlModule,
+        ToastrModule.forRoot({
+          positionClass: 'toast-top-full-width',
+          autoDismiss: false,
+          disableTimeOut: true,
+          closeButton: true
+        }),
         ExperienceModule,
         DateTimePickerModule,
         AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
+          apiKey: environment.googleMapsKey
         }),
         FormsModule
       ]

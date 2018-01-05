@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import { Router } from '@angular/router';
 import { AuthService } from '../../modules/login/services/auth.service';
 
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienceService } from '../../services/experience.service';
-import { AngularFireAuth } from 'angularfire2/auth';
 
 import { Router } from '@angular/router';
 import { Experience } from '../../models/experience-form-data';
+import { AuthService } from '../../../login/services/auth.service';
 
 @Component({
   selector: 'app-user-experience-list',
@@ -15,13 +15,13 @@ export class UserExperienceListComponent implements OnInit {
   experienceList: Experience[];
 
   constructor(
-    private af: AngularFireAuth,
+    private authService: AuthService,
     private experienceService: ExperienceService,
     private router: Router) { }
 
   ngOnInit() {
 
-    this.af.auth.onAuthStateChanged(
+    this.authService.af.auth.onAuthStateChanged(
       currentUser => {
         if (currentUser) {
           this.experienceService.getExperiencesByUserId(currentUser.uid)
