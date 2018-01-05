@@ -15,8 +15,8 @@ export class UserExperienceListComponent implements OnInit {
   experienceList: Experience[];
 
   constructor(
-    private af: AngularFireAuth, 
-    private experienceService: ExperienceService, 
+    private af: AngularFireAuth,
+    private experienceService: ExperienceService,
     private router: Router) { }
 
   ngOnInit() {
@@ -25,14 +25,13 @@ export class UserExperienceListComponent implements OnInit {
       currentUser => {
         if (currentUser) {
           this.experienceService.getExperiencesByUserId(currentUser.uid)
-          .subscribe( experienceList => {
-            let returnExperiences: Experience[] = [];
-            for (let experience of experienceList) {
-              returnExperiences.push(new Experience(experience));
-            }
-            console.log(returnExperiences);
-            this.experienceList = returnExperiences;
-          });
+            .subscribe(experienceList => {
+              let returnExperiences: Experience[] = [];
+              for (let experience of experienceList) {
+                returnExperiences.push(new Experience(experience));
+              }
+              this.experienceList = returnExperiences;
+            });
         } else {
           //ev. gar nicht nötig, da über ROuteGuard gekapselt wird
           this.router.navigateByUrl('/');
