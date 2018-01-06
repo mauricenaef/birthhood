@@ -14,7 +14,7 @@
 }
 .card-item {
     .card-content {
-        min-height: 21rem;
+        min-height: 20rem;
         @include breakpoint(medium up) {
             min-height: 23rem;
         }
