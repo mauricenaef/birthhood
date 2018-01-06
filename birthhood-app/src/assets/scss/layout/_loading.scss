@@ -43,6 +43,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &.clear {
+        background-color: transparent;
+    }
 }
 
 .typing_loader {
@@ -52,21 +55,41 @@
     animation: typing 1s linear infinite alternate;
     position: relative;
     left: -12px;
+    .clear & {
+        animation: typing_dark 1s linear infinite alternate;
+    }
 }
 
 @keyframes typing {
     0% {
         background-color: rgba(255, 255, 255, 1);
-        box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+        box-shadow: 12px 0px 0px 0px rgba(99, 99, 99, 0.7), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
     }
 
     25% {
         background-color: rgba(255, 255, 255, 0.4);
-        box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+        box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 1), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
     }
 
     75% {
         background-color: rgba(255, 255, 255, 0.4);
         box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes typing_dark {
+    0% {
+        background-color: rgba(43, 43, 43, 1);
+        box-shadow: 12px 0px 0px 0px rgba(99, 99, 99, 0.7), 24px 0px 0px 0px rgba(43, 43, 43, 0.2);
+    }
+
+    25% {
+        background-color: rgba(43, 43, 43, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(43, 43, 43, 1), 24px 0px 0px 0px rgba(43, 43, 43, 0.2);
+    }
+
+    75% {
+        background-color: rgba(43, 43, 43, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(43, 43, 43, 0.2), 24px 0px 0px 0px rgba(43, 43, 43, 1);
     }
 }

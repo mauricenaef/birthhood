@@ -1,0 +1,39 @@
+$color-base: get-color(primary) !default;
+$color-white: $white !default;
+$color-gray: $light-gray !default;
+// nav
+$nav-color: $color-white !default;
+$nav-color-hover: $color-white !default;
+$nav-font-size: 14px !default;
+$nav-rounded: 3px !default;
+$nav-margin: 5px !default;
+$nav-padding: 4px 7px !default;
+$nav-background: $color-gray !default;
+$nav-background-hover: $color-base !default;
+$nav-disabled-opacity: 0.5 !default;
+
+// dots
+$dot-width: 10px !default;
+$dot-height: 10px !default;
+$dot-rounded: 30px !default;
+$dot-margin: 5px 7px !default;
+$dot-background: $color-gray !default;
+$dot-background-active: $color-base !default;
+
+@import "../node_modules/owl.carousel/src/scss/core";
+@import "../node_modules/owl.carousel/src/scss/animate";
+@import "../node_modules/owl.carousel/src/scss/lazyload";
+@import "../node_modules/owl.carousel/src/scss/theme";
+
+.owl-wrap {
+    min-height: 360px;
+    position: relative; 
+}
+
+.owl-stage {
+    padding-top: 1rem;
+}
+
+.owl-dots {
+    margin-bottom: 1rem !important;
+}

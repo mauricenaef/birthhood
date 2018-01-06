@@ -1,42 +1,54 @@
 <app-filter></app-filter>
 <app-search></app-search>
-<owl-carousel *ngIf="birthplaces?.length > 0" [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-  <div class="item card-item" *ngFor="let birthplace of birthplaces; let i = index; trackBy: trackFbObjects">
-    <div class="card card-content">
-      <header class="card-header">
-          <div class="hero-image-wrapper">
-              <img src="https://source.unsplash.com/400x225/?building,hospitl,health" alt="Spital" class="card-hero-image">
-          </div>
-      </header>
-      
-      <div class="card-section">
-        <p class="card-sup-title">{{ birthplace.type }}</p>
-        <h2 class=" h5">
-          <a [routerLink]="['/birthplaces/details', birthplace.id]">{{ birthplace.name }}</a>
-        </h2>
-      </div>
-      <footer class="card-footer card-section">
-        <div *ngIf="birthplace.experiences" class="card-footer-wrap">
-          <p class="card-total-score">
-            Gesamtbewertung <strong>{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
-          </p>
-          <small class="card-description">
-            <span class="badge">{{birthplace.experiences}}</span>
-            <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container><ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container></small>
-        </div>
-        <div *ngIf="!birthplace.experiences" class="card-footer-wrap">
-            <span class="blank-slate-text">
-                <em>Noch keine Bewertungen</em>
-            </span>
-        </div>
-        <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus">
-            <use xlink:href="#geburtshaus"></use>
-        </svg>
-        <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital">
-            <use xlink:href="#spital"></use>
-        </svg>
-      </footer>
-    </div>
 
+<div class="owl-wrap">
+  <div *ngIf="birthplaces.length == 0" class="owl-loader">
+    <div class="typing_loader_container clear">
+      <div class="typing_loader"></div>
+    </div>
   </div>
-</owl-carousel>
+
+  <owl-carousel *ngIf="birthplaces?.length > 0" [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    <div class="item card-item" *ngFor="let birthplace of birthplaces; let i = index; trackBy: trackFbObjects">
+      <div class="card card-content">
+        <header class="card-header">
+          <div class="hero-image-wrapper">
+            <img src="https://source.unsplash.com/400x225/?building,hospitl,health" alt="Spital" class="card-hero-image">
+          </div>
+        </header>
+
+        <div class="card-section">
+          <p class="card-sup-title">{{ birthplace.type }}</p>
+          <h2 class=" h5">
+            <a [routerLink]="['/birthplaces/details', birthplace.id]">{{ birthplace.name }}</a>
+          </h2>
+        </div>
+        <footer class="card-footer card-section">
+          <div *ngIf="birthplace.experiences" class="card-footer-wrap">
+            <p class="card-total-score">
+              Gesamtbewertung
+              <strong>{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
+            </p>
+            <small class="card-description">
+              <span class="badge">{{birthplace.experiences}}</span>
+              <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
+              <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>
+            </small>
+          </div>
+          <div *ngIf="!birthplace.experiences" class="card-footer-wrap">
+            <span class="blank-slate-text">
+              <em>Noch keine Bewertungen</em>
+            </span>
+          </div>
+          <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus">
+            <use xlink:href="#geburtshaus"></use>
+          </svg>
+          <svg *ngIf="birthplace.type == 'spital'" class="icon icon-spital">
+            <use xlink:href="#spital"></use>
+          </svg>
+        </footer>
+      </div>
+
+    </div>
+  </owl-carousel>
+</div>
