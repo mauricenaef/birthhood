@@ -56,6 +56,7 @@ export class SearchComponent implements OnInit {
   activateSearch(): void {
     //this.body.classList.add("overflow-hidden");
     this.isActive = true;
+    window.scrollTo(0, 0);
   }
 
   deactivateSearch(): void {
