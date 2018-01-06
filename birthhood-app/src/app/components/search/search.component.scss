@@ -10,21 +10,27 @@ $top-value: -255px;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
     background: $white;
-    transition: all .2s ease;
+    height: 0;
+    z-index: 15;
+    transition: all 250ms ease;
+    position: relative;
     .search-close-button {
         display: none;
     }
     .search-list-container {
-        display: none;
+        //display: none;
+        transition: all 250ms ease;
+        visibility: hidden;
+        height: 0;
     }
     .search-input {
         z-index: 10;
         margin-bottom: 0;
     }
-    &.search-active {
+    .search-active & {
         position: relative;
         z-index: 15;
-        transition: all .2s ease;
+        transition: all 250ms ease;
         overflow: hidden;
         @include breakpoint(small only) {
             transform: translateY($top-value);
@@ -39,7 +45,7 @@ $top-value: -255px;
             border-radius: $global-radius;
             box-shadow: $box-shadow-small;
             position: fixed;
-            transition: top 1 ease;
+            //transition: top 1 ease;
             top: 10vh;
             right: 0;
             left: 0;
@@ -47,17 +53,16 @@ $top-value: -255px;
             max-height: 80vh;
         }
         .search-input {
-            z-index: 10;
             margin-bottom: 1rem;
         }
         .search-close-button {
-            transition: all 0.2s ease;
             display: block;
             text-align: right;
         }
         .search-list-container {
-            z-index: 10;
-            display: block;
+            //display: block;
+            visibility: visible;
+            height: 100%;
             overflow: scroll;
             @include breakpoint(small only) {
                 max-height: 80vh;
@@ -66,6 +71,20 @@ $top-value: -255px;
                 max-height: 60vh;
             }
         }
+    }
+}
+
+.search-active {
+    &:after {
+        content: "";
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba($medium-gray, .6);
+        z-index: 9;
     }
 }
 
