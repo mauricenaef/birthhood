@@ -8,6 +8,14 @@
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+    &.icon-medium {
+      height: 2em;
+      width: 2em;
+    }
+    &.icon-large {
+      height: 4em;
+      width: 4em;
+    }
     &.icon-input {
       width: 2.4rem;
       height: 2.4rem;

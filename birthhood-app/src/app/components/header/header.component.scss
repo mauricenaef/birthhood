@@ -2,6 +2,7 @@
 
 .site-header {
     position: fixed;
+    display: flex;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -14,6 +15,16 @@
     .logo {
         width: 2.75rem;
         height: 2.75rem;
+    }
+    .icon-birthhood {
+        width: 8.5rem;
+        height: 3rem;
+        color: $medium-gray;
+        @include breakpoint(small only) {
+            position: absolute;
+            left: 50%;
+            margin-left: -4.25rem;
+        }
     }
 }
 
