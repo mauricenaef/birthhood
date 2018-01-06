@@ -1,8 +1,8 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase'
 import 'firebase/firestore'
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -13,11 +13,20 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   title = 'app';
-  constructor(public router: Router){}
+  constructor(public router: Router) { }
 
-  ngAfterViewInit () {
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
+  }
+
+  ngAfterViewInit() {
     let body = document.getElementsByTagName('body')[0];
-    setTimeout( _=> body.classList.remove("is-loading"));
+    setTimeout(_ => body.classList.remove("is-loading"));
   }
 
 }
