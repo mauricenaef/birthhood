@@ -1,11 +1,14 @@
 @import "~_settings.scss";
 $top-value: -255px;
+
 .search-height-controller {
     height: 5rem;
 }
 
 .search-container {
-    max-width: 40rem;
+    @include breakpoint(large up) {
+        max-width: 40rem;
+    }
     will-change: transform;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
