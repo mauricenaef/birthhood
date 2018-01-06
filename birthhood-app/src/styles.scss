@@ -2,11 +2,13 @@
 @import "../node_modules/foundation-sites/scss/foundation";
 
 // Imported library files
-@import "../node_modules/ng-pick-datetime/assets/style/picker.min.css";
+
+// Toaster
 @import "/assets/scss/libs/toaster";
 // Owl Carousel
 @import "/assets/scss/libs/owl_carousel";
-
+// Owl Calendar
+@import "/assets/scss/libs/owl_calendar";
 
 .owl-dateTime-cancel {
     right: 1em !important;
