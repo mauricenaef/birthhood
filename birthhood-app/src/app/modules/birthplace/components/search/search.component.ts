@@ -54,12 +54,12 @@ export class SearchComponent implements OnInit {
   }
 
   activateSearch(): void {
-    this.body.classList.add("overflow-hidden");
+    //this.body.classList.add("overflow-hidden");
     this.isActive = true;
   }
 
   deactivateSearch(): void {
-    this.body.classList.remove("overflow-hidden");
+    //this.body.classList.remove("overflow-hidden");
     this.isActive = false;
   }
 }

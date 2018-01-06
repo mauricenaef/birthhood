@@ -5,11 +5,11 @@ import { FormSteps } from '../models/form-steps';
 import { FormFlowService } from '../services/form-flow.service';
 import { ExperienceService } from './experience.service';
 
-import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/toPromise';
 import "rxjs/add/operator/take";
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../login/services/auth.service';
 
 @Injectable()
 export class ExperienceFormDataService {
@@ -18,12 +18,12 @@ export class ExperienceFormDataService {
   private isBioFormValid: boolean = false;
   private isUmefeldFormValid: boolean = false;
 
-  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService, private af: AngularFireAuth) {
+  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService, private authService: AuthService) {
 
   }
 
   saveToFirebase(): Promise<any> {
-    let userObs: Observable<firebase.User> = this.af.authState;
+    let userObs: Observable<firebase.User> = this.authService.af.authState;
     return userObs.take(1).toPromise().then(user => {
     this.experience.user_id = user.uid;
       return this.experienceService.save(this.experience)

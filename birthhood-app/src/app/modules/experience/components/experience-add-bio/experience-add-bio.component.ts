@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Bio } from '../../models/experience-form-data';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
-import { BirthplaceService } from '../../../../services/birthplace.service';
+import { BirthplaceService } from '../../../birthplace/services/birthplace.service';
 import { ToastrService } from 'ngx-toastr';
-import { Birthplace } from '../../../../models/birthplace';
+import { Birthplace } from '../../../birthplace/models/birthplace';
+import { AuthService } from '../../../login/services/auth.service';
 
 
 @Component({
@@ -35,12 +35,12 @@ export class ExperienceAddBioComponent implements OnInit {
   public birth_date: any;
 
   constructor(
-    private af: AngularFireAuth,
+    private authService: AuthService,
     private formDataService: ExperienceFormDataService,
     private birthPlaceService: BirthplaceService,
     private toastr: ToastrService
   ) {
-    this.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
+    this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
   }
 
   ngOnInit() {

@@ -81,7 +81,6 @@ export class Experience {
         this.k9 = item.k9;
         this.k10 = item.k10;
         this.m1 = item.m1;
-        this.m1 = item.m1;
         this.m2 = item.m2;
         this.m3 = item.m3;
         this.m4 = item.m4;
@@ -93,16 +92,15 @@ export class Experience {
         this.w5 = item.w5;
     }
 
-    private calculateAverage(scoreLetter: string): number {
-        let total: number = 0;
+    private calculateAverage(scoreLetter: string, count: number): number {
+
         let sum: number = 0;
-        for (let i = 0; i < 10; i++) {
-            if ( this[scoreLetter+i.toString]) {
-                sum += this[scoreLetter+i.toString];
-                total = i;
+        for (let i = 1; i <= count; i++) {
+            if (this[scoreLetter + i]) {
+                sum += this[scoreLetter + i];
             }
         }
-        return sum/total;
+        return sum / count;
     }
 
     get score() {
@@ -111,23 +109,23 @@ export class Experience {
         return sum / 5;
     }
     get score_u() {
-        return this.calculateAverage("u");
+        return this.calculateAverage("u", 8);
     }
 
     get score_e() {
-        return this.calculateAverage("e");
+        return this.calculateAverage("e", 9);
     }
 
     get score_k() {
-        return this.calculateAverage("k");
+        return this.calculateAverage("k", 10);
     }
 
     get score_m() {
-        return this.calculateAverage("m");
+        return this.calculateAverage("m", 5);
     }
 
     get score_w() {
-        return this.calculateAverage("w");
+        return this.calculateAverage("w", 5);
     }
 
 

@@ -20,6 +20,7 @@ export const environment = {
     projectId: "birthhood",
     storageBucket: "birthhood.appspot.com",
     messagingSenderId: "986661546141"
-  }
+  },
+  googleMapsKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
 
 };

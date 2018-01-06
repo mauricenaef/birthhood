@@ -1,0 +1,16 @@
+service cloud.firestore {
+  match /databases/{database}/documents/birthexperiences {
+    match /{birthexperience} {
+      allow read, update: if resource.data.user_id == request.auth.uid;
+    }
+
+    match /{birthexperiences=**} {
+      allow create: if request.auth.uid != '';
+    }
+  }
+  match /databases/{database}/documents/birthplaces {
+    match /{birthplaces=**} {
+      allow read;
+    }
+  }
+}
