@@ -38,10 +38,6 @@
                             <strong class="score-item-title">Total</strong>
                             <strong class="score">{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
                         </li>
-                        <small class="score-list-description">⌀ Bewertung basierend auf
-                            <span class="badge">{{birthplace.experiences}}</span>
-                            <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
-                            <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>.</small>
                         <li class="score-item score-u">
                             <span class="score-item-title">Umgebung</span>
                             <strong class="score">{{ birthplace.score_u | number : '1.1-1' }}</strong>
@@ -63,6 +59,13 @@
                             <strong class="score">{{ birthplace.score_w | number : '1.1-1' }}</strong>
                         </li>
                     </ul>
+                    <div *ngIf="birthplace.experiences > 0" class="text-center">
+                        <small class="score-list-description">Bewertung basierend auf
+                            <span class="badge">{{birthplace.experiences}}</span>
+                            <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
+                            <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>.</small>
+                    </div>
+
                 </div>
             </div>
         </main>
