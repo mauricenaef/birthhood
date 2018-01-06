@@ -32,6 +32,9 @@ $dot-background-active: $color-base !default;
 
 .owl-stage {
     padding-top: 1rem;
+    @include breakpoint(medium up) {
+        padding-top: 2rem;
+    }
 }
 
 .owl-dots {

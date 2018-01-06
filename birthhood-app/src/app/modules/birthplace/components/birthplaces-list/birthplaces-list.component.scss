@@ -16,7 +16,7 @@
     .card-content {
         min-height: 21rem;
         @include breakpoint(medium up) {
-            min-height: 25rem;
+            min-height: 23rem;
         }
         box-shadow: 0 0 29px rgba(0,0,0,.1);
     }
@@ -29,10 +29,15 @@
         font-weight: 200;
     }
 
-    p {
+    .card-total-score {
+        display: flex;
+        justify-content: space-between;
         margin: 0;
     }
 
+    .card-footer-wrap {
+        width: 100%;
+    }
     .card-footer {
         display: flex;
         align-items: flex-end;

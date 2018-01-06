@@ -28,8 +28,8 @@
         <footer class="card-footer card-section">
           <div *ngIf="birthplace.experiences" class="card-footer-wrap">
             <p class="card-total-score">
-              Gesamtbewertung
-              <strong>{{ birthplace.score | number : '1.1-1' }} von 3.0</strong>
+              <span>Gesamtbewertung</span>
+              <strong>{{ birthplace.score | number : '1.1-1' }} / 3.0</strong>
             </p>
             <small class="card-description">
               <span class="badge">{{birthplace.experiences}}</span>
