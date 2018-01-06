@@ -25,11 +25,6 @@
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
-    background-color: whitesmoke;
-    border-radius: 6px;
-    @include breakpoint(medium up) {
-        overflow: hidden;
-    }
-    
-    box-shadow: 1px -6px 280px rgba(0, 0, 0, 0.23);
+    border-radius: 6px;    
+    box-shadow: $box-shadow-large;
 }
