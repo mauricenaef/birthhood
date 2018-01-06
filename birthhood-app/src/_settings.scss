@@ -171,7 +171,7 @@ $print-transparent-backgrounds: true;
 
 $cubic-animation: cubic-bezier(0.91, 0.01, 0.6, 0.99);
 $box-shadow-large: 1px -6px 280px rgba(0, 0, 0, 0.23);
-$box-shadow-small: 1px -6px 2px rgba(0, 0, 0, 0.23);
+$box-shadow-small: 1px -6px 140px rgba(0, 0, 0, 0.23);
 @include add-foundation-colors;
 
 // 2. Breakpoints
