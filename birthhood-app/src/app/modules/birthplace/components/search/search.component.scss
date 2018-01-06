@@ -2,7 +2,7 @@
 $top-value: -255px;
 
 .search-height-controller {
-    height: 5rem;
+    height: 3.6rem;
 }
 
 .search-container {
@@ -13,6 +13,9 @@ $top-value: -255px;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
     background: $white;
+    @include breakpoint(large up) {
+        background: none;
+    }
     height: 0;
     z-index: 15;
     transition: all 250ms ease;
@@ -25,6 +28,7 @@ $top-value: -255px;
         transition: all 250ms ease;
         visibility: hidden;
         height: 0;
+        background-color: $white;
     }
     .search-input {
         z-index: 10;

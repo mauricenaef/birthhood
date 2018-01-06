@@ -1,5 +1,14 @@
 @import "~_settings.scss";
 
+.search-cell {
+    @include breakpoint(large up) {
+        border-top: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
+        background-color: lighten($medium-gray, 20%); 
+    }
+}
+
+
 .owl-item {
     padding-bottom: 5rem;
 }

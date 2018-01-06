@@ -1,15 +1,20 @@
 @import "~_settings.scss";
+
 .filter-container {
     border-top: 1px solid $light-gray;
     border-bottom: 1px solid $light-gray;
+    background: lighten($medium-gray, 19%); 
+    @include breakpoint(large up) {
+        border-right: 1px solid $light-gray;
+    }
     .switch-geburtshaus {
-        background-color: lighten($medium-gray, 19%);
+        background-color: lighten($medium-gray, 17%);
         input:checked ~ .switch-paddle {
             background: get-color(geburtshaus);
         } 
     }
     .switch-spital {
-        background-color: lighten($medium-gray, 17%);
+        background-color: lighten($medium-gray, 19%);
         input:checked ~ .switch-paddle {
             background: get-color(spital); 
         }
