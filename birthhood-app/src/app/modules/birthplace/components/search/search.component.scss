@@ -1,27 +1,45 @@
 @import "~_settings.scss";
+
 $top-value: -255px;
 
 .search-height-controller {
     height: 3.6rem;
+
+    @include breakpoint(large up) {
+        height: 2.6rem;
+    }
 }
 
 .search-container {
-    @include breakpoint(large up) {
-        max-width: 40rem;
-    }
+    max-width: 40rem;
     will-change: transform;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
     background: $white;
+
     @include breakpoint(large up) {
         background: none;
     }
+
+
+    @include breakpoint(xlarge up) {
+        padding: 0.4rem 1rem;
+    }
+
+
     height: 0;
     z-index: 15;
     transition: all 250ms ease;
     position: relative;
+
     .search-close-button {
         display: none;
+    }
+
+    .search-button {
+        position: absolute;
+        right: 1rem;
+        top: .46rem;
     }
     .search-list-container {
         //display: none;
@@ -30,50 +48,77 @@ $top-value: -255px;
         height: 0;
         background-color: $white;
     }
+    .search-input-container {
+        position: relative;
+    }
     .search-input {
         z-index: 10;
         margin-bottom: 0;
+        border-radius: 100px;
+        padding-left: 1rem;
     }
+
     .search-active & {
         position: relative;
-        z-index: 15;
+        z-index: 95;
         transition: all 250ms ease;
         overflow: hidden;
+
         @include breakpoint(small only) {
             transform: translateY($top-value);
             width: 100vw;
             height: 100vh;
+
             .search-results-list {
                 padding-bottom: 6rem;
             }
         }
+
+
         @include breakpoint(medium up) {
             background: $white;
             border-radius: $global-radius;
             box-shadow: $box-shadow-small;
             position: fixed;
+
             //transition: top 1 ease;
             top: 10vh;
             right: 0;
             left: 0;
             min-height: 60vh;
             max-height: 80vh;
+            padding: 1.5rem;
         }
+
+
         .search-input {
             margin-bottom: 1rem;
         }
         .search-close-button {
             display: block;
-            text-align: right;
+            position: absolute;
+            right: .3rem;
+            top: .4rem;
+
+            &:hover, &:focus {
+                opacity: .5;
+            }
         }
+        .search-button {
+            display: none;
+        }
+
         .search-list-container {
             //display: block;
             visibility: visible;
             height: 100%;
             overflow: scroll;
+
             @include breakpoint(small only) {
                 max-height: 80vh;
             }
+
+
             @include breakpoint(medium up) {
                 max-height: 60vh;
             }
@@ -90,7 +135,7 @@ $top-value: -255px;
         left: 0;
         top: 0;
         bottom: 0;
-        background: rgba($medium-gray, .6);
+        background: rgba($medium-gray, 0.6);
         z-index: 9;
     }
 }
@@ -102,6 +147,7 @@ $top-value: -255px;
         margin-right: .6em;
         border-bottom: 1px solid $light-gray;
     }
+
     &:hover,
     &:focus {
         background-color: $light-gray;
@@ -114,7 +160,8 @@ $top-value: -255px;
     font-weight: $global-weight-bold;
     text-align: right;
     padding: .3em 0;
-    >span:nth-of-type(2) {
+
+    > span:nth-of-type(2) {
         &::before {
             content: '|';
             display: inline-block;
