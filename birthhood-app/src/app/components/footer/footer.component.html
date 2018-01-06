@@ -1,13 +1,13 @@
 <footer class="footer-container grid-container">
   <div class="grid-x grid-padding-x medium-up-4 app-menu-footer">
-    <div class="cell">
-        <a (click)='toggle($event)' class="show-for-small-only close-nav-trigger nav-trigger-footer">
+    <div class="cell show-for-small-only">
+        <a (click)='toggle($event)' class="close-nav-trigger nav-trigger-footer">
             <svg class="icon icon-arrow-left icon-medium">
               <use xlink:href="#arrow-left"></use>
             </svg>
           </a>
     </div>
-    <div class="cell">
+    <div class="cell medium-3">
       <ul class="menu vertical">
         <li>
           <a (click)='goto("/")'>Geburstort finden</a>
@@ -17,10 +17,11 @@
         </li>
         <li>
           <a *ngIf="userLoggedIn" (click)="logout()">Logout</a>
+          <a *ngIf="!userLoggedIn" (click)='goto("/login")'>Login</a>
         </li>
       </ul>
     </div>
-    <div class="cell">
+    <div class="cell medium-3">
       <ul class="menu vertical">
         <li>
           <a (click)='goto("/about")'>Über birthhood
@@ -32,7 +33,7 @@
         </li>
       </ul>
     </div>
-    <div class="cell">
+    <div class="cell medium-3">
       <ul class="menu vertical">
         <li>
           <a (click)='goto("/signup-birthplace")'>Ich bin ein Geburtshaus</a>
@@ -42,7 +43,7 @@
         </li>
       </ul>
     </div>
-    <div class="cell">
+    <div class="cell medium-3">
       <ul class="menu vertical">
         <li>
           <a (click)='goto("/impressum")'>Impressum</a>
