@@ -12,6 +12,9 @@ export class AuthService {
   }
 
   signOut() {
+    this.af.auth.signOut().then(() => {
+      this.router.navigate(['/']);
+    });
     this.toastr.success(`${this.af.auth.currentUser.email} abgemeldet`, "Logout");
   }
   
