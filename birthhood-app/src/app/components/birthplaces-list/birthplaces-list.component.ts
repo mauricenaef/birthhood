@@ -38,8 +38,15 @@ export class BirthplacesListComponent implements OnInit {
         items: 3,
         center: true,
         loop: true,
-        stagePadding: 20,
-        startPosition: 1
+        stagePadding: 30,
+        startPosition: 0
+      }
+      1200: {
+        items: 4,
+        center: true,
+        loop: true,
+        stagePadding: 30,
+        startPosition: 0
       }
     }
   }
