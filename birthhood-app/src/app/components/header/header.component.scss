@@ -6,24 +6,38 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: -1px -5px 20px 0px rgba($black, .3);
+    box-shadow: -1px -5px 20px 0px rgba($black, 0.3);
     background: $white;
+
     .logo-link {
         display: block;
         padding: .4em 1.2em;
     }
+
     .logo {
         width: 2.75rem;
         height: 2.75rem;
     }
-    .icon-birthhood {
-        width: 8.5rem;
-        height: 3rem;
+
+    .text-link {
+        .icon {
+            width: 8.5rem;
+            height: 3rem;
+            @include breakpoint(medium up) {
+                margin-top: 0.2rem;
+            }
+        }
+
         color: $medium-gray;
+
         @include breakpoint(small only) {
+            display: block;
             position: absolute;
-            left: 50%;
+            margin-top: -1.5rem;
             margin-left: -4.25rem;
+            left: 50%;
+            top: 50%;
+
         }
     }
 }
@@ -33,4 +47,3 @@
         order: 3;
     }
 }
-
