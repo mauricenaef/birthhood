@@ -1,7 +1,7 @@
 <nav class="main-nav">
   <ul class="menu main-nav-list">
     <li>
-      <a routerLink="/birthplaces" routerLinkActive="active">
+      <a routerLink="/birthplaces" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <svg class="show-for-small-only icon icon-world2">
           <use xlink:href="#world2"></use>
         </svg>
@@ -10,7 +10,7 @@
     </li>
 
     <li>
-      <a routerLink="/about" routerLinkActive="active">
+      <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <svg class="show-for-small-only icon icon-stethoscope">
           <use xlink:href="#stethoscope"></use>
         </svg>
@@ -18,7 +18,7 @@
       </a>
     </li>
     <li *ngIf="userLoggedIn">
-      <a routerLink="/user-dashboard" routerLinkActive="active">
+      <a routerLink="/user-dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <svg class="show-for-small-only icon icon-woman-user">
             <use xlink:href="#woman-user"></use>
           </svg>
@@ -26,7 +26,7 @@
       </a>
     </li>
     <li *ngIf="!userLoggedIn">
-      <a routerLink="/login" routerLinkActive="active">
+      <a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <svg class="show-for-small-only icon icon-lock">
           <use xlink:href="#lock"></use>
         </svg>
@@ -34,7 +34,7 @@
       </a>
     </li>
     <li>
-      <a routerLink="/user-dashboard/experience/new" routerLinkActive="active">
+      <a routerLink="/user-dashboard/experience/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <svg class="show-for-small-only icon icon-baby">
           <use xlink:href="#baby"></use>
         </svg>

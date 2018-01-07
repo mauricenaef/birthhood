@@ -11,7 +11,7 @@
         background-color: $light-gray;
         box-shadow: 0 0 15px rgba($black, .3);
         position: fixed;
-        bottom: 0;
+        bottom: -1px;
         z-index: 100;
         width: 100%;
         .main-nav-list {
