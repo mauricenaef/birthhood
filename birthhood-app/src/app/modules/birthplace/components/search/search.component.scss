@@ -21,17 +21,16 @@ $top-value: -255px;
         background: none;
     }
 
-
     @include breakpoint(xlarge up) {
         padding: 0.4rem 1rem;
     }
-
-
     height: 0;
     z-index: 15;
     transition: all 250ms ease;
     position: relative;
-
+    .search-close-button, .search-button {
+        color: $dark-gray;
+    }
     .search-close-button {
         display: none;
     }
@@ -92,8 +91,9 @@ $top-value: -255px;
 
 
         .search-input {
-            margin-bottom: 1rem;
+            margin-bottom: .5rem;
         }
+        
         .search-close-button {
             display: block;
             position: absolute;
@@ -159,7 +159,7 @@ $top-value: -255px;
     color: $medium-gray;
     font-weight: $global-weight-bold;
     text-align: right;
-    padding: .3em 0;
+    padding: .3em;
 
     > span:nth-of-type(2) {
         &::before {
