@@ -40,3 +40,20 @@ $dot-background-active: $color-base !default;
 .owl-dots {
     margin-bottom: 1rem !important;
 }
+
+.owl-item {
+    padding-bottom: 5rem;
+    &.active {
+
+
+        &.center {
+            border-top: 2px solid get-color(primary);
+            border-radius: $global-radius;
+            .card-item {
+                
+                
+            }
+            
+        }
+    }
+}

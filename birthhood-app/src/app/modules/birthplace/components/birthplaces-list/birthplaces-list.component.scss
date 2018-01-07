@@ -9,10 +9,11 @@
 }
 
 
-.owl-item {
-    padding-bottom: 5rem;
-}
+
 .card-item {
+    .card-header + .card-footer {
+        padding-bottom: 0;
+    }
     .card-content {
         min-height: 20rem;
         @include breakpoint(medium up) {
@@ -33,6 +34,7 @@
         display: flex;
         justify-content: space-between;
         margin: 0;
+        padding-bottom: .125em;
     }
 
     .card-footer-wrap {
