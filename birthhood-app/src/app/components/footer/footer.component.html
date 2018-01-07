@@ -1,55 +1,124 @@
 <footer class="footer-container grid-container">
   <div class="grid-x grid-padding-x medium-up-4 app-menu-footer">
     <div class="cell show-for-small-only">
-        <a (click)='toggle($event)' class="close-nav-trigger nav-trigger-footer">
-            <svg class="icon icon-arrow-left icon-medium">
-              <use xlink:href="#arrow-left"></use>
-            </svg>
-          </a>
+      <a (click)='toggle($event)' class="close-nav-trigger nav-trigger-footer">
+        <svg class="icon icon-arrow-left icon-medium">
+          <use xlink:href="#arrow-left"></use>
+        </svg>
+      </a>
     </div>
     <div class="cell medium-3">
       <ul class="menu vertical">
-        <li>
-          <a (click)='goto("/")'>Geburstort finden</a>
+        <li class="menu-text">
+          Karte
         </li>
         <li>
-          <a (click)='goto("/user-dashboard/experience/new")'>Geburt hinzufügen</a>
+          <a (click)='goto("/")' routerLink="/birthplaces" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburstort finden</a>
         </li>
         <li>
-          <a *ngIf="userLoggedIn" (click)="logout()">Logout</a>
-          <a *ngIf="!userLoggedIn" (click)='goto("/login")'>Login</a>
+          <a (click)='goto("/user-dashboard/experience/new")' routerLink="/user-dashboard/experience/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburt hinzufügen</a>
+        </li>
+        <li *ngIf="userLoggedIn" >
+            <a (click)='goto("/user-dashboard/")' routerLink="/user-dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a>
+          </li>
+        <li>
+          <a *ngIf="userLoggedIn" (click)="logout()">
+            <strong>Logout</strong>
+            <svg class="icon icon-exit-logout">
+              <use xlink:href="#exit-logout"></use>
+            </svg>
+          </a>
+          <a *ngIf="!userLoggedIn" (click)='goto("/login")'>
+            <strong>Login</strong>
+            <svg class="icon icon-lock">
+              <use xlink:href="#lock"></use>
+            </svg>
+          </a>
         </li>
       </ul>
     </div>
     <div class="cell medium-3">
       <ul class="menu vertical">
+        <li class="menu-text">
+          birthhood
+        </li>
         <li>
-          <a (click)='goto("/about")'>Über birthhood
+          <a (click)='goto("/about")' routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Über birthhood
             <sup>®</sup>
           </a>
         </li>
         <li>
-          <a (click)='goto("/birthcriteria")'>Geburtskriterien</a>
+          <a (click)='goto("/birthcriteria")' routerLink="/birthcriteria" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburtskriterien</a>
         </li>
       </ul>
     </div>
     <div class="cell medium-3">
       <ul class="menu vertical">
-        <li>
-          <a (click)='goto("/signup-birthplace")'>Ich bin ein Geburtshaus</a>
+        <li class="menu-text">
+          Partner
         </li>
         <li>
-          <a (click)='goto("/signup-birthplace")'>Ich bin ein Spital</a>
+          <a (click)='goto("/signup-birthplace")' routerLink="/signup-birthplace" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ich bin ein Geburtshaus</a>
+        </li>
+        <li>
+          <a (click)='goto("/signup-birthplace")' routerLink="/signup-birthplace" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ich bin ein Spital</a>
         </li>
       </ul>
     </div>
     <div class="cell medium-3">
       <ul class="menu vertical">
-        <li>
-          <a (click)='goto("/impressum")'>Impressum</a>
+        <li class="menu-text">
+          Rechtliches
         </li>
         <li>
-          <a (click)='goto("/contact")'>Kontakt</a>
+          <a (click)='goto("/impressum")' routerLink="/impressum" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Impressum</a>
+        </li>
+        <li>
+          <a (click)='goto("/contact")' routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid-x align-middle credits-wrap">
+    <div class="cell medium-shrink">
+      <p class="credits">© 2007 - 2018 birthhod® ist eine eingetragene Marke.</p>
+    </div>
+    <div class="cell medium-auto">
+      <ul class="menu icons align-right share-menu">
+        <li>
+          <a href="" target="_blank">
+            <svg class="icon icon-share">
+              <use xlink:href="#share"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <svg class="icon icon-pinterest">
+              <use xlink:href="#pinterest"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <svg class="icon icon-google-plus">
+              <use xlink:href="#google-plus"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <svg class="icon icon-facebook">
+              <use xlink:href="#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank">
+            <svg class="icon icon-twitter">
+              <use xlink:href="#twitter"></use>
+            </svg>
+          </a>
         </li>
       </ul>
     </div>

@@ -2,17 +2,50 @@
 
 .app-menu-footer {
     .menu {
+        
         a {
             padding-bottom: 0;
             color: lighten($body-font-color, 30%);
+            &.active {
+                color: get-color(primary);
+            }
             &:hover, &:focus {
                 color: get-color(primary-bright);
             }
         }
+        @include breakpoint(small only) {
+            padding-bottom: 1rem;
+            a, .menu-text {
+                font-size: rem-calc(17);
+            }
+        }
+    }
+    .menu-text {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        @include breakpoint(small only) {
+            color: $light-gray;
+        }
     }
 }
 
+
+
+.credits {
+    padding: 0 2rem ;
+    @include breakpoint(medium up) {
+        padding: 0 1rem ;
+    }
+    margin: 0;
+    font-size: rem-calc(13);
+    color: $dark-gray;
+}
+
+
 @include breakpoint(medium up) {
+    .credits-wrap {
+        padding-top: 2rem;
+    }
     .footer-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
