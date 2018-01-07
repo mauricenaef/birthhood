@@ -42,18 +42,14 @@ $dot-background-active: $color-base !default;
 }
 
 .owl-item {
-    padding-bottom: 5rem;
+    @include breakpoint(medium up) {
+        padding-bottom: 1.5rem;
+    }
+    
     &.active {
-
-
         &.center {
             border-top: 2px solid get-color(primary);
-            border-radius: $global-radius;
-            .card-item {
-                
-                
-            }
-            
+            border-radius: $global-radius;            
         }
     }
 }
