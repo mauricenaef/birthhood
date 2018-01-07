@@ -29,11 +29,11 @@
         color: $white;
         border-radius: 100px;
         &.icon-geburtshaus {
-            background: rgba(get-color(secondary), 1);
+            background: rgba(get-color(geburtshaus), 1);
         }
 
         &.icon-spital {
-            background: rgba(get-color(primary), 1);
+            background: rgba(get-color(spital), 1);
         }
     }
 
