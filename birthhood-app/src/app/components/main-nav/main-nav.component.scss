@@ -44,12 +44,25 @@
         }
         a {
             font-size: rem-calc(16px);
-            padding-bottom: 1.1em;
-            &:hover, &:focus {
-                border-bottom: 2px solid get-color(primary-bright);
+            &:not(.highlighted) {
+                padding-bottom: 1.1em;
+                &:hover, &:focus {
+                    border-bottom: 2px solid get-color(primary-bright);
+                }
             }
             &.active {
                 border-bottom: 2px solid get-color(primary);
+                &.highlighted {
+                    border-bottom: none;
+                }
+            }
+            &.highlighted {
+                border-radius: 100px;
+                color: $white;
+                background-color: get-color(primary);
+                &:hover, &:focus {
+                    background-color: get-color(primary-bright);
+                }
             }
         }
     }
