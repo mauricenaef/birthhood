@@ -11,6 +11,14 @@
     </div>
   </div>
 
+  <div *ngIf="birthplaces?.length == 0">
+      <div class="blank-slate text-center">
+          <p class="blank-slate-text">
+              <em>Keine Geburtsorte auf der Karte</em>
+          </p>
+      </div>
+    </div>
+
   <owl-carousel *ngIf="birthplaces?.length > 0" [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item card-item" *ngFor="let birthplace of birthplaces; let i = index; trackBy: trackFbObjects">
       <div class="card card-content">
