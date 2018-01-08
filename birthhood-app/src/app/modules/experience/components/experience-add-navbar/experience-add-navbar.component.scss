@@ -3,17 +3,27 @@
 .menu-experience {
     padding: .6em;
     margin: .6rem 0 1rem;
+
     li {
         margin-right: 1rem;
+
         &:last-of-type {
             margin-right: 0;
         }
     }
-    a {
+
+    .menu-experience-link {
         display: block;
-        background: $primary-color;
+        width: 2rem;
+        height: 2rem;
+        line-height: 1;
+        background: $light-gray;
         color: $white;
         border-radius: 100px;
         padding: .6em .8em;
+
+        &.active {
+            background: get-color(primary);
+        }
     }
 }
