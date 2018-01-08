@@ -1,5 +1,5 @@
 <div *ngIf="!experienceList">
-  <div class="typing_loader_container">
+  <div class="typing_loader_container round">
     <div class="typing_loader"></div>
   </div>
 </div>
@@ -10,9 +10,8 @@
     <div class="cell" *ngIf="experienceList.length == 0">
       <div class="empty-slate-container">
         <div class="blank-slate text-center">
-          <span class="blank-slate-text">🙈
-            <em>Sie haben noch keine Geburt erfasst. </em>
-          </span>
+            <img src="/assets/images/graphics/baby_sleep.svg" alt="sleeping baby">            
+            <p class="blank-slate-text"><em>Sie haben noch keine Geburt erfasst. </em></p>
         </div>
       </div>
     </div>

@@ -46,6 +46,9 @@
     &.clear {
         background-color: transparent;
     }
+    &.round {
+        border-radius: $global-radius-large;
+    }
 }
 
 .typing_loader {
