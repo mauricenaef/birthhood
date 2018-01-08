@@ -2,10 +2,9 @@
 
 .app-menu-footer {
     .menu {
-        
         a {
             padding-bottom: 0;
-            color: lighten($body-font-color, 30%);
+            color: lighten($body-font-color, 40%);
             &.active {
                 color: get-color(primary);
             }

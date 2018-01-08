@@ -9,9 +9,15 @@
 .dashboard-container {
     background: lighten($medium-gray, 20%);
     padding-bottom: 3rem;
-    @include breakpoint(small only) {
-        padding-top: 1rem;
+    padding-top: 4rem;
+    @include breakpoint(medium up) {
+        padding-top: 7rem;
     }
+
+    @include breakpoint(large up) {
+        padding-top: 10rem;
+    }
+
 }
 
 .dashboard-main {
