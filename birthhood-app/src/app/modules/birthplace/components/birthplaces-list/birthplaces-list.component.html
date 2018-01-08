@@ -4,7 +4,8 @@
 </div>
 
 <div class="owl-wrap">
-  <div *ngIf="birthplaces?.length == 0" class="owl-loader">
+
+  <div *ngIf="!birthplaces" class="owl-loader">
     <div class="typing_loader_container clear">
       <div class="typing_loader"></div>
     </div>
