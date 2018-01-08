@@ -54,55 +54,20 @@ app-root {
     width: 100%;
 }
 
-.main-content {
-    padding-top: 5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
 
-    @include breakpoint(medium up) {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
 
-.content-footer {
-    padding-left: 2rem;
-    padding-right: 2rem;
-
-    @include breakpoint(medium up) {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
-.main-container {
-    padding-top: 3.6rem;
-}
-
-@include breakpoint(medium up) {
-    .main-container {
-        display: flex;
-        flex-direction: column;
-
-        app-main-nav {
-            order: -1;
-            position: fixed;
-            right: 0;
-            top: .7em;
-            z-index: 1010;
-        }
-    }
-}
 
 
 @include breakpoint(small only) {
-    $animation-duration: 0.5s;
+    $animation-duration: .5s;
 
     .navigation-is-open {
         overflow: hidden;
     }
 
-    .main-container {
+    .section-container {
         position: relative;
+        padding-top: 0;
         padding-bottom: 4rem;
         z-index: 2;
         min-height: 100vh;
