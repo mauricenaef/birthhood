@@ -16,10 +16,10 @@
           <a (click)='goto("/")' routerLink="/birthplaces" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburstort finden</a>
         </li>
         <li>
-          <a (click)='goto("/user-dashboard/experience/new")' routerLink="/user-dashboard/experience/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburt hinzufügen</a>
+          <a (click)='goto("/user-dashboard/experience/new")' routerLink="/user-dashboard/experience/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburtserlebnis hinzufügen</a>
         </li>
         <li *ngIf="userLoggedIn" >
-            <a (click)='goto("/user-dashboard/")' routerLink="/user-dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a>
+            <a (click)='goto("/user-dashboard")' routerLink="/user-dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a>
           </li>
         <li>
           <a *ngIf="userLoggedIn" (click)="logout()">
@@ -44,11 +44,11 @@
         </li>
         <li>
           <a (click)='goto("/about")' routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Über birthhood
-            <sup>®</sup>
+          
           </a>
         </li>
         <li>
-          <a (click)='goto("/birthcriteria")' routerLink="/birthcriteria" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburtskriterien</a>
+          <a (click)='goto("/birthcriteria")' routerLink="/birthcriteria" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Qualitätskatalog</a>
         </li>
       </ul>
     </div>

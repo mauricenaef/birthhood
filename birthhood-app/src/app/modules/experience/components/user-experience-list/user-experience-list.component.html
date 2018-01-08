@@ -10,8 +10,10 @@
     <div class="cell" *ngIf="experienceList.length == 0">
       <div class="empty-slate-container">
         <div class="blank-slate text-center">
-            <img src="/assets/images/graphics/baby_sleep.svg" alt="sleeping baby">            
-            <p class="blank-slate-text"><em>Sie haben noch keine Geburt erfasst. </em></p>
+          <img src="/assets/images/graphics/baby_sleep.svg" alt="sleeping baby">
+          <p class="blank-slate-text">
+            <em>Sie haben noch keine Geburt erfasst. </em>
+          </p>
         </div>
       </div>
     </div>
@@ -47,7 +49,7 @@
           </div>
           <div class="cell medium-auto experience-item-birthplace">{{experience.birthplace}}</div>
           <div class="cell medium-2 experience-item-score">
-            <strong>{{ experience.score }} / 3</strong>
+            <strong>{{ experience.score | number : '1.1-1'  }} / 3.0</strong>
           </div>
         </li>
       </ul>
@@ -57,7 +59,6 @@
       <a routerLink="/user-dashboard/experience/new" class="button no-margin" routerLinkActive="active">
         <ng-container *ngIf="experienceList.length == 0">Geburt hinzufügen</ng-container>
         <ng-container *ngIf="experienceList.length != 0">Weitere Geburt hinzufügen</ng-container>
-
       </a>
     </div>
 

@@ -18,7 +18,10 @@ export class ExperienceFormDataService {
   private isBioFormValid: boolean = false;
   private isUmefeldFormValid: boolean = false;
 
-  constructor(private formFlowService: FormFlowService, private experienceService: ExperienceService, private authService: AuthService) {
+  constructor(
+    private formFlowService: FormFlowService, 
+    private experienceService: ExperienceService, 
+    private authService: AuthService) {
 
   }
 
