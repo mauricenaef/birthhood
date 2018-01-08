@@ -23,7 +23,7 @@
         font-size: rem-calc(13);
         line-height: 1.3;
         @include breakpoint(medium up) {
-            font-size: rem-calc(16);
+            font-size: rem-calc(15);
         }
         color: $medium-gray;
         margin: 0 !important;
