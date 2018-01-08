@@ -88,7 +88,7 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
             'Emotional',
             'Körperlich',
             'Mental',
-            'Umfeld',
+            'Umgebung',
             'Wochenbett'
           ]
         }
