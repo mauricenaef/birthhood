@@ -54,9 +54,9 @@ import { AuthService } from './modules/login/services/auth.service';
     ExperienceModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-full-width',
-      autoDismiss: false,
-      disableTimeOut: true,
-      closeButton: true
+      autoDismiss: true,
+      disableTimeOut: false,
+      closeButton: false
     }),
 
   ],
