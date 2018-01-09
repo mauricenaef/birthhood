@@ -1,21 +1,30 @@
 @import "~_settings.scss";
 
 .map-wrap {
-    position: relative;    
+    position: relative;
+    background-color: #E5E3E0;
 }
 
 .map {
     height: 200px;
+
     @include breakpoint(medium up) {
         height: 300px;
     }
+
+
     @include breakpoint(large up) {
         height: 400px;
     }
+
+
     position: relative;
+
     //transform: height 550ms $cubic-animation;
-    &.map-detail  {
+    &.map-detail {
         height: 100px;
+
         //transform: height 550ms $cubic-animation;
+   
     }
 }

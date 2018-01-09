@@ -33,6 +33,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
   latLng: LatLngLiteral;
   zoomOutNumber: number = 3;
   bounds: LatLngBounds;
+  loaded: boolean = false;
 
   routersubscription: Subscription;
 
@@ -46,6 +47,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
     this.styles = mapstyles;
 
     this.items$ = birthplaceService.getBirhplacesOnMap();
+    this.loaded = false;
 
     //subscribe for zoom to clicked Birthplace
     birthplaceService.birthplaceClicked$.subscribe(
@@ -92,6 +94,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
+          this.loaded = true;
           this.zoomOut();
         });
       }
