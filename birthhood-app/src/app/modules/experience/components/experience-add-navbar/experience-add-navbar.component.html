@@ -11,22 +11,28 @@
     <div class="cell text-center">
         <ol class="menu align-center menu-experience">
             <li>
-              <a routerLink="./" title="Bio">1</a>
+              <!-- <a class="menu-experience-link" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Bio">1</a> -->
+              <span #bio [ngClass]="{'active': current == 'bio' }" class="menu-experience-link">1</span>
             </li>
             <li>
-              <a routerLink="umgebung" title="Umgebung">2</a>
+              <!-- <a class="menu-experience-link" routerLink="umgebung" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Umgebung">2</a> -->
+                <span #umgebung [ngClass]="{'active': current == 'umgebung' }" class="menu-experience-link">2</span>
             </li>
             <li>
-                <a routerLink="emotional" title="Emotional">3</a>
+                <!-- <a class="menu-experience-link" routerLink="emotional" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Emotional">3</a> -->
+                <span #emotional [ngClass]="{'active': current == 'emotional' }" class="menu-experience-link">3</span>
               </li>
             <li>
-              <a routerLink="koerperlich" title="Körperlich">4</a>
+              <!-- <a class="menu-experience-link" routerLink="koerperlich" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Körperlich">4</a> -->
+              <span #koerperlich [ngClass]="{'active': current == 'koerperlich' }" class="menu-experience-link">4</span>
             </li>
             <li>
-              <a routerLink="mental" title="Mental">5</a>
+              <!-- <a class="menu-experience-link" routerLink="mental" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Mental">5</a> -->
+              <span #mental [ngClass]="{'active': current == 'mental' }" class="menu-experience-link">5</span>
             </li>
             <li>
-              <a routerLink="wochenbett" title="Wochenbett">6</a>
+              <!-- <a class="menu-experience-link" routerLink="wochenbett" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Wochenbett">6</a> -->
+              <span #wochenbett [ngClass]="{'active': current == 'wochenbett' }" class="menu-experience-link">6</span>
             </li>
           </ol>
     </div>
