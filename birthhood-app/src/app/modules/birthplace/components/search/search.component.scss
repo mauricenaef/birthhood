@@ -87,6 +87,10 @@ $top-value: -255px;
             min-height: 60vh;
             max-height: 80vh;
             padding: 1.5rem;
+
+            .search-input-container-wrap {
+                height: 80%;
+            }
         }
 
 
@@ -112,7 +116,7 @@ $top-value: -255px;
             //display: block;
             visibility: visible;
             height: 100%;
-            overflow: scroll;
+            overflow-y: scroll;
 
             @include breakpoint(small only) {
                 max-height: 80vh;
