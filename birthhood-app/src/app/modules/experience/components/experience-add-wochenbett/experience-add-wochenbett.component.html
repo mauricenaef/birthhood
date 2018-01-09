@@ -1,4 +1,9 @@
 <form #wochenbettForm="ngForm" class="form form-experience form-experience-wochenbett grid-container" novalidate>
+
+  <div *ngIf="loading == true" class="typing_loader_container round">
+    <div class="typing_loader"></div>
+  </div>
+
   <header class="grid-x grid-padding-x form-header">
     <div class="medium-12 cell">
       <h2 class="form-title">{{title}}</h2>
@@ -109,7 +114,7 @@
               Ja
             </label>
           </li>
-          
+
           <li>
             <input type="radio" class="input-radio" [value]="0" #w4="ngModel" name="w4" id="w4_0" [(ngModel)]="wochenbett.w4" required>
             <label for="w4_0">
@@ -132,7 +137,7 @@
               Ja
             </label>
           </li>
-          
+
           <li>
             <input type="radio" class="input-radio" [value]="0" #w5="ngModel" name="w5" id="w5_0" [(ngModel)]="wochenbett.w5" required>
             <label for="w5_0">
