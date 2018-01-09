@@ -44,6 +44,7 @@
         }
         a {
             font-size: rem-calc(16px);
+            margin-left: .6em;
             &:not(.highlighted) {
                 padding-bottom: 1.1em;
                 &:hover, &:focus {
