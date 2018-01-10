@@ -66,6 +66,41 @@
     }
 }
 
+.boxed-container {
+    background: lighten($medium-gray, 20%);
+    padding-bottom: 3rem;
+    padding-top: 4rem;
+    @include breakpoint(medium up) {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+    @include breakpoint(large up) {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+}
+
+.boxed-main {
+    position: relative;
+    background: $white;
+    padding: 1rem;
+    @include breakpoint(small only) {
+        min-height: 10rem;
+    }
+    @include breakpoint(medium up) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    border-radius: 6px;    
+    box-shadow: $box-shadow-large;
+}
+
+.boxed-sidebar {
+    @include breakpoint(small only) {
+        padding-top: 3rem;
+    }
+}
+
 .content-footer {
     padding-left: 2rem;
     padding-right: 2rem;
