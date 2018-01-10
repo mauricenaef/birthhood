@@ -128,7 +128,7 @@
    * @color
    * @section Second Color Scheme
    */
- $alert-color: #df341a;
+ $alert-color: #e6391e;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
@@ -141,7 +141,7 @@ $foundation-palette: (
   secondary-bright:$secondary-color-bright,
   spital: $spital-color,
   geburtshaus: $geburtshaus-color,
-  success: #11b64e,
+  success: #53cc80,
   warning: #eba206,
   alert: $alert-color,
 );

@@ -2,7 +2,8 @@
     <div class="cell large-8 birthplace-detail">
         <header *ngIf="birthplace" class="birthplace-details-header card-header">
             <div class="hero-image-wrapper">
-                <img src="/assets/images/birthplace/hero_1600/hero_{{ birthplace.short_name }}.jpg" onerror="this.src='/assets/images/birthplace/hero_1600/hero_default.jpg'" class="hero-image">
+                <img src="/assets/images/birthplace/hero_1600/hero_{{ birthplace.short_name }}.jpg" onerror="this.src='/assets/images/birthplace/hero_1600/hero_default.jpg'"
+                    class="hero-image">
             </div>
             <svg *ngIf="birthplace.type == 'geburtshaus'" class="icon icon-geburtshaus">
                 <use xlink:href="#geburtshaus"></use>
@@ -19,6 +20,10 @@
         <main role="main" class="birthplace-details-main grid-container main-content">
             <div class="grid-x grid-margin-x align-middle">
 
+                <!-- <div *ngIf="loaded == false" class="typing_loader_container round clear">
+                    <div class="typing_loader"></div>
+                </div> -->
+
                 <div class="medium-6 cell polar-chart-container">
                     <h2 class="chart-title text-center">Bewertung</h2>
                     <canvas id="myChart" width="400" height="400"></canvas>
@@ -27,7 +32,7 @@
                 <div *ngIf="birthplace" class="medium-6 cell score-container">
                     <div *ngIf="!birthplace.experiences">
                         <div class="blank-slate text-center">
-                                <img src="/assets/images/graphics/baby_cry.svg" alt="crying baby">
+                            <img src="/assets/images/graphics/baby_cry.svg" alt="crying baby">
                             <p class="blank-slate-text">
                                 <em>Noch keine Bewertungen</em>
                             </p>
@@ -64,7 +69,8 @@
                         <small class="score-list-description">Bewertung basierend auf
                             <span class="badge">{{birthplace.experiences}}</span>
                             <ng-container *ngIf="birthplace.experiences == 1">Geburt</ng-container>
-                            <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container></small>
+                            <ng-container *ngIf="birthplace.experiences > 1">Geburten</ng-container>
+                        </small>
                     </div>
 
                 </div>

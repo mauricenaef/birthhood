@@ -10,6 +10,7 @@ a {
         }
     }
     &.go-back {
+        
         .icon {
             width: 2rem;
             height: 2rem;
@@ -19,6 +20,11 @@ a {
             .icon {
                 color: $body-font-color;
             }
+        }
+        &:hover, &:focus {
+            .icon {
+               color: get-color(primary); 
+            }   
         }
         
     }

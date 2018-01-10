@@ -83,6 +83,9 @@
 .boxed-main {
     position: relative;
     background: $white;
+    &.gray {
+        background: lighten($light-gray, 7%);
+    }
     padding: 1rem;
     @include breakpoint(small only) {
         min-height: 10rem;

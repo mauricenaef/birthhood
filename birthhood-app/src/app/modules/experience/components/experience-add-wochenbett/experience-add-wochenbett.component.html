@@ -151,9 +151,9 @@
 
   </div>
   <footer class="grid-x grid-padding-x form-footer">
-    <div class="medium-12 cell">
-      <button routerLink="../mental" class="button button-previous" (click)="save(wochenbettForm)">Zurück zu Mental</button>
-      <button class="button secondary button-submit" [disabled]="!wochenbettForm.valid" (click)="save(wochenbettForm)">Formular senden</button>
+    <div class="medium-12 cell  form-footer-actions">
+      <button routerLink="../mental" class="button secondary button-previous clear" (click)="save(wochenbettForm)"><svg class="icon icon-arrow-left"><use xlink:href="#arrow-left"></use></svg> Zurück zu Mental</button>
+      <button class="button button-submit" [disabled]="!wochenbettForm.valid" (click)="save(wochenbettForm)">Geburtserlebnis senden</button>
     </div>
   </footer>
 </form>

@@ -6,4 +6,8 @@
 */
 .form-label {
     padding: 0 .3em;
+    font-size: rem-calc(15);
+    @include breakpoint(medium up) {
+        font-size: rem-calc(13);
+    }
 }

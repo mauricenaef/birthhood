@@ -1,86 +1,107 @@
 .switch-list {
-	margin-bottom: 1rem;
-	.radio-group {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: .5rem 0;
-		margin: 0;
-		list-style-type: none;
-		li {
-			text-align: center;
-			flex: 1;
-			&:first-of-type {
-				border-radius: 100px 0 0 100px; 
-				label {
-					border-radius: 100px 0 0 100px; 
-				}
-			}
-			&:last-of-type {
-				border-radius: 0 100px 100px 0;
-				label {
-					border-radius: 0 100px 100px 0;
-				}
-			}
-		}
-		input {
-			display: none;
-		}
-		label {
-			padding: .5rem .25rem;
-			margin: 0 -1px !important;
-			background: $white;
-			color: $secondary-color;
-			display: block;
-			border: 2px solid darken($secondary-color, 10%);
+    margin-bottom: 1rem;
 
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
+    .radio-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem 0;
+        margin: 0;
+        list-style-type: none;
 
-			text-transform: uppercase;
-			font-weight: 700;
-            font-size: rem-calc(12);
-            .icon {
-                width: 1.2rem;
-                height: 1.2rem;
+        li {
+            text-align: center;
+            flex: 1;
+
+            &:first-of-type {
+                border-radius: 100px 0 0 100px;
+
+                label {
+                    border-radius: 100px 0 0 100px;
+                }
             }
-			@include breakpoint(small only) {
-				line-height: 1;
-			}
-			@include breakpoint(medium up) {
-				font-size: rem-calc(16);
-				padding: .5rem;
-			}
-			&:hover, &:focus {
-				background-color: rgba($secondary-color, .2);
-			}
-		}
-		input[type=radio]:checked + label {
-			color: darken($secondary-color, 35%);
-			background: darken($secondary-color, 15%);
-		}
-	}
-	@include breakpoint(medium up) {
-		&.inline-list {
-			display: flex;
-			flex-wrap: wrap;
-			margin-bottom: 5rem;
-			.radio-group {
-				padding-top: 0;
-			}
-			.switch-label {
-				padding-right: 1rem;
-				width: calc(100% - 20rem);
-				margin: 0;
-			}
-			.switch-container {
-				width: 20rem;
-			}
-			.switch-description {
-				padding: 0;
-				width: calc(100% - 22rem);
-			}
-		}
-	}
+
+            &:last-of-type {
+                border-radius: 0 100px 100px 0;
+
+                label {
+                    border-radius: 0 100px 100px 0;
+                }
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .5rem .25rem;
+            margin: 0 -1px !important;
+            background: $white;
+            color: $medium-gray;
+            border: 2px solid $light-gray;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: rem-calc(12);
+
+            .icon {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+
+            @include breakpoint(small only) {
+                line-height: 1;
+            }
+
+
+            @include breakpoint(medium up) {
+                font-size: rem-calc(16);
+                padding: .5rem;
+            }
+
+
+            &:hover, &:focus {
+				color: darken(get-color(success), 15%);
+				background-color: rgba(get-color(success), .5);
+            }
+        }
+
+        input[type=radio]:checked + label {
+            color: darken(get-color(success), 20%);
+            background: get-color(success);
+        }
+    }
+
+    @include breakpoint(medium up) {
+        &.inline-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+
+            .radio-group {
+                padding-top: 0;
+            }
+
+            .switch-label {
+                padding-right: 1rem;
+                width: calc(100% - 20rem);
+                margin: 0;
+            }
+
+            .switch-container {
+                width: 20rem;
+            }
+
+            .switch-description {
+                padding: 0;
+                width: calc(100% - 22rem);
+            }
+        }
+    }
 }

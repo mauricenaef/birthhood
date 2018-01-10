@@ -18,6 +18,7 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   birthplace$: Observable<Birthplace>;
   id: string;
   myChart: any;
+  /* public loaded: boolean = false; */
 
   constructor(private birthplaceService: BirthplaceService, private elementRef: ElementRef,
     private route: ActivatedRoute) {
@@ -30,6 +31,8 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
       this.birthplaceService.zoomToBirthplace(this.id);
       this.birthplace$ = this.birthplaceService.getBirthplace(this.id);
     });
+
+    /* this.loaded = false; */
   }
 
   ngAfterViewInit() {
@@ -101,4 +104,9 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  /* ngAfterViewChecked() {
+    console.log(this.loaded);
+    this.loaded = true;
+  } */
 }
