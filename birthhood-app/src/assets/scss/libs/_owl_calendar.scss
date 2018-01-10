@@ -1,21 +1,55 @@
-.icon-owl-cancel:before {
-    content: 'x';
+[class*='icon-owl-'], [class*=' icon-owl-'] {
+    &:before {
+        content: '';
+        position: relative;
+        border-style: solid;
+        border-width: 0.25em 0.25em 0 0;
+        display: inline-block;
+        width: 0.65em;
+        height: 0.65em;
+        left: 0.15em;
+        top: 0.15em;
+        transform: rotate(-45deg);
+        vertical-align: top;
+    }
 }
 
-.icon-owl-up-open:before {
-    content: 'up';
+.icon-owl-cancel {
+    &:before, &:after {
+        position: absolute;
+        left: 0;
+    }
+    &:before {
+        top: .1em;
+        transform: rotate(135deg);
+    }
+    &:after {
+        content: '';
+        border-style: solid;
+        border-width: 0.25em 0.25em 0 0;
+        display: inline-block;
+        width: 0.65em;
+        height: 0.65em;
+        top: .65em;
+        transform: rotate(-45deg);
+        vertical-align: top;
+    }
+    
 }
 
 .icon-owl-down-open:before {
-    content: 'down';
+    top: 0;
+    transform: rotate(135deg);
 }
 
 .icon-owl-left-open:before {
-    content: '<';
+    left: 0.25em;
+    transform: rotate(-135deg);
 }
 
 .icon-owl-right-open:before {
-    content: '>';
+    left: 0;
+    transform: rotate(45deg);
 }
 
 .owl-widget, .owl-widget * {
@@ -111,9 +145,9 @@
     transition: transform .2s ease;
 }
 
-.owl-calendar-control .owl-calendar-controlContent .month-control:hover, .owl-calendar-control .owl-calendar-controlContent .year-control:hover {
+/* .owl-calendar-control .owl-calendar-controlContent .month-control:hover, .owl-calendar-control .owl-calendar-controlContent .year-control:hover {
     transform: scale(1.2);
-}
+} */
 
 .owl-calendar-control .owl-calendar-controlContent .month-control {
     font-size: 1em;
@@ -124,7 +158,6 @@
 
 .owl-calendar-control .owl-calendar-controlContent .year-control {
     font-size: .8em;
-    font-style: italic;
     color: #999;
 }
 
