@@ -24,11 +24,11 @@
             width: 8rem;
             height: 2.8rem;
             @include breakpoint(medium up) {
-                margin-top: 0.2rem;
+                margin-top: .3rem;
             }
         }
 
-        color: $medium-gray;
+        color: darken($medium-gray, 10%);
 
         @include breakpoint(small only) {
             display: block;
