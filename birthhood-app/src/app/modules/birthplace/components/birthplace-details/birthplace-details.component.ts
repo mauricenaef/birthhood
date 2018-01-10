@@ -51,6 +51,12 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
           legend: {
             position: 'bottom',
           },
+          layout: {
+            padding: {
+                left: 10,
+                top: 10
+            }
+          },
           scale: {
             ticks: {
               backdropPaddingX: 5,
