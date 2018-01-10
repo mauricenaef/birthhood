@@ -1,16 +1,35 @@
-<div class="grid-container main-content">
-  <div class="grid-x grid-margin-x">
-    <div class="form-container cell">
-      <h2>Konto erstellen</h2>
-      <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
-
-        <input type="text" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
-        <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
-
-
-        <button type="submit" [disabled]="!formData.valid" class="button expanded">Konto erstellen</button>
-        <a routerLink="/login" >Sie haben bereits ein Konto? Loggen Sie sich ein.</a>
+<div class="grid-container boxed-container">
+  <div class="grid-x align-center">
+    <main role="main" class="boxed-main main-content cell medium-8 large-7">
+      <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="form form-signup grid-container">
+        <header class="grid-x grid-padding-x form-header text-center">
+          <div class="medium-12 cell">
+            <h2 class="section-title">Konto erstellen</h2>
+            <p class="intro">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </header>
+        <div class="form-body grid-x grid-padding-x">
+          <!-- <div class="cell">
+            <label for="Name">Name</label>
+            <input type="text" placeholder="Ihr Name" (ngModel)="Name" name="Name" class="input-text" required>
+          </div> -->
+          <div class="cell">
+            <label for="email">E-Mail</label>
+            <input type="email" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
+          </div>
+          <div class="cell">
+            <label for="password">Passwort</label>
+            <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
+          </div>
+        </div>
+        <footer class="grid-x grid-padding-x form-footer">
+          <div class="medium-12 cell text-center">
+            <button type="submit" [disabled]="!formData.valid" class="button expanded">Konto erstellen</button>
+            <a routerLink="/login">Sie haben bereits ein Konto? Loggen Sie sich ein.</a>
+          </div>
+        </footer>
       </form>
-    </div>
+
+    </main>
   </div>
 </div>

@@ -1,18 +1,32 @@
-<div class="grid-container main-content">
-    <div class="grid-x grid-margin-x">
-        <div class="form-container cell">
-            <h2>Login</h2>
+<div class="grid-container boxed-container">
+    <div class="grid-x align-center">
+        <main role="main" class="boxed-main main-content cell medium-8 large-7">
+            <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="form form-login grid-container">
+                <header class="grid-x grid-padding-x form-header text-center">
+                    <div class="medium-12 cell">
+                        <h2 class="section-title">Login</h2>
+                        <p class="intro">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </header>
+                <div class="form-body grid-x grid-padding-x">
+                    <div class="cell">
+                        <label for="email">E-Mail</label>
+                        <input type="email" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
+                    </div>
+                    <div class="cell">
+                        <label for="password">Passwort</label>
+                        <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
+                    </div>
 
-            <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
-        
-              <input type="text" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
-              <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
-        
-              <button type="submit" [disabled]="!formData.valid" class="button expanded">Log in</button>
-              <a routerLink="/signup" >Sie haben noch kein Konto?</a>
-          </form>
-        </div>
+                </div>
+                <footer class="grid-x grid-padding-x form-footer">
+                    <div class="medium-12 cell text-center">
+                        <button type="submit" [disabled]="!formData.valid" class="button expanded">Log in</button>
+                        <a routerLink="/signup">Sie haben noch kein Konto? Konto erstellen.</a>
+
+                    </div>
+                </footer>
+            </form>
+        </main>
     </div>
-  </div>
-
-
+</div>

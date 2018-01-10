@@ -16,7 +16,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
   ],
   declarations: [
     LoginComponent,
-
     SignupComponent
   ],
   providers: [AuthService, AngularFireAuth]
