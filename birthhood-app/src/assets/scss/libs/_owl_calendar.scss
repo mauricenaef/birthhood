@@ -296,3 +296,13 @@
 .owl-dateTime-btnWrapper .owl-dateTime-btn:last-child {
     border-left: 1px solid #0061a1;
 }
+
+.owl-dateTime-cancel {
+    right: 1em !important;
+}
+
+.owl-dateTime-inputWrapper {
+    input[type="text"] {
+        margin: 0;
+    }
+}

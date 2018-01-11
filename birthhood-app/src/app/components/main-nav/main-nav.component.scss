@@ -37,6 +37,18 @@
         }
     }
 
+    /* iPhone X Media Query */
+    @media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+        /* box-shadow: none;
+        width: 96vw;
+        left: 2vw;
+        border-radius: 8px; */
+        
+    }
+
     @include breakpoint(medium up) {
         .main-nav-list {
             justify-content: flex-end;

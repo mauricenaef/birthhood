@@ -25,6 +25,15 @@ $dot-background-active: $color-base !default;
 @import "../node_modules/owl.carousel/src/scss/lazyload";
 @import "../node_modules/owl.carousel/src/scss/theme";
 
+// Datepicker
+.owl-dateTime-dialog {
+    width: 100% !important;
+
+    @include breakpoint(medium up) {
+        width: auto !important;
+    }
+}
+
 .owl-wrap {
     min-height: 360px;
     position: relative; 
