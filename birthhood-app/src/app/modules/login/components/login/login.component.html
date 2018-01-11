@@ -15,7 +15,19 @@
                     </div>
                     <div class="cell">
                         <label for="password">Passwort</label>
-                        <input type="password" placeholder="Passwort" (ngModel)="password" name="password" class="input-text" required>
+                        <div class="show-hide-password">
+                            <input  [type]="show ? 'text' : 'password'" placeholder="Passwort" (ngModel)="password" name="password" class="input-text password" required>
+                            <a (click)="toggleShow($event)" class="show-hide-password-link" title="Passwort ein oder ausblenden">
+                                <svg *ngIf="show == true" class="icon icon-eye">
+                                    <use xlink:href="#eye"></use>
+                                </svg>
+                                <svg *ngIf="show == false" class="icon icon-eye-closed">
+                                    <use xlink:href="#eye-closed"></use>
+                                </svg>
+                            </a>
+                        </div>
+
+
                     </div>
 
                 </div>
