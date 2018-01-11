@@ -1,5 +1,15 @@
 @import "loading";
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+}
+
 .overflow-hidden {
     overflow: hidden;
 }
