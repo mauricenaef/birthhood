@@ -6,6 +6,16 @@
                     <div class="medium-12 cell">
                         <h2 class="section-title">Login</h2>
                         <p class="intro">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <button (click)="authService.googleLogin()" class="button google">
+                            <svg class="icon icon-google-plus">
+                                <use xlink:href="#google-plus"></use>
+                            </svg> mit Google Konto einloggen</button>
+                        <br />
+                        <!-- <button (click)="authService.facebookLogin()" class="button facebook">
+                            <svg class="icon icon-facebook">
+                                <use xlink:href="#facebook"></use>
+                            </svg> mit facebook Konto einloggen
+                        </button> -->
                     </div>
                 </header>
                 <div class="form-body grid-x grid-padding-x">
@@ -16,7 +26,8 @@
                     <div class="cell">
                         <label for="password">Passwort</label>
                         <div class="show-hide-password">
-                            <input  [type]="show ? 'text' : 'password'" placeholder="Passwort" (ngModel)="password" name="password" class="input-text password" required>
+                            <input [type]="show ? 'text' : 'password'" placeholder="Passwort" (ngModel)="password" name="password" class="input-text password"
+                                required>
                             <a (click)="toggleShow($event)" class="show-hide-password-link" title="Passwort ein oder ausblenden">
                                 <svg *ngIf="show == true" class="icon icon-eye">
                                     <use xlink:href="#eye"></use>
@@ -26,15 +37,14 @@
                                 </svg>
                             </a>
                         </div>
-
-
                     </div>
-
                 </div>
                 <footer class="grid-x grid-padding-x form-footer">
                     <div class="medium-12 cell text-center">
                         <button type="submit" [disabled]="!formData.valid" class="button expanded">Log in</button>
-                        <a routerLink="/signup">Sie haben noch kein Konto? Konto erstellen.</a>
+                        <a routerLink="/signup">Sie haben noch kein Konto?
+                            <strong>Konto erstellen.</strong>
+                        </a>
 
                     </div>
                 </footer>

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   public show: boolean = false;
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router,
     private toastr: ToastrService,
   ) {

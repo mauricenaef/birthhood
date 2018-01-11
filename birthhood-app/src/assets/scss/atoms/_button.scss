@@ -21,4 +21,18 @@
     &.no-margin {
         margin: 0;
     }
+
+    &.google {
+        background-color: $google-color;
+        &:hover, &:focus {
+            background-color: darken($google-color, 15%);
+        }
+    }
+
+    &.facebook {
+        background-color: $facebook-color;
+        &:hover, &:focus {
+            background-color: darken($facebook-color, 15%);
+        }
+    }
 }

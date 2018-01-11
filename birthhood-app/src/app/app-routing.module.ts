@@ -45,8 +45,7 @@ const routes: Routes = [
     children: [
       { path: '', component: UserExperienceListComponent },
       { 
-        path: 'experience/new', component: ExperienceAddComponent,
-        canActivate: [AuthGuard],
+        path: 'experience/new', component: ExperienceAddComponent, canActivate: [AuthGuard],
         children: [
           { path: '', component: ExperienceAddBioComponent },
           { path: 'bio', component: ExperienceAddBioComponent },

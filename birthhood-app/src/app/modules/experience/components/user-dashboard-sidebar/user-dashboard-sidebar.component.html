@@ -1,11 +1,11 @@
 <div class="dashboard-sidebar-container">
 
   <div class="avatar-container">
-    <img src="../assets/images/avatars/avatar_default.png" class="user-avatar" alt="Profilbild">
+    <img src="{{ currentUser?.photoURL }}" class="user-avatar" alt="Profilbild">
   </div>
 
   <div class="dashboard-email">
-    <h2 class="user-name">Alexandrea Sievi</h2>
+    <h2 class="user-name">{{ currentUser?.displayName }}</h2>
     <h3 class="h6">{{ currentUser?.email }}</h3>
   </div>
 
