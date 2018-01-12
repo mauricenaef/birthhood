@@ -42,11 +42,11 @@ const routes: Routes = [
   },
   {
     path: 'user-dashboard', component: UserDashboardComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: UserExperienceListComponent },
       { 
         path: 'experience/new', component: ExperienceAddComponent,
-        canActivate: [AuthGuard],
         children: [
           { path: '', component: ExperienceAddBioComponent },
           { path: 'bio', component: ExperienceAddBioComponent },
