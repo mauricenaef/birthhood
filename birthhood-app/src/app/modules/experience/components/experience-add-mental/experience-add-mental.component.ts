@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Mental } from '../../models/experience-form-data';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-experience-add-mental',
   templateUrl: './experience-add-mental.component.html',
@@ -13,7 +13,7 @@ export class ExperienceAddMentalComponent implements OnInit {
   mental: Mental;
   form: any;
 
-  constructor(private formDataService: ExperienceFormDataService) { }
+  constructor(private formDataService: ExperienceFormDataService, private router: Router) { }
 
   ngOnInit() {
     this.mental = this.formDataService.getMental();
@@ -23,6 +23,7 @@ export class ExperienceAddMentalComponent implements OnInit {
     if (!form.valid)
       return;
     this.formDataService.setMental(this.mental);
+    this.router.navigate(['/user-dashboard/experience/new/umgebung'])
   }
 
 }

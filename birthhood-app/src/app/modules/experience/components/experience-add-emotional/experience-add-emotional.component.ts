@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Emotional } from '../../models/experience-form-data';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-experience-add-emotional',
   templateUrl: './experience-add-emotional.component.html',
@@ -13,7 +13,7 @@ export class ExperienceAddEmotionalComponent implements OnInit {
   emotional: Emotional;
   form: any;
 
-  constructor(private formDataService: ExperienceFormDataService) { }
+  constructor(private formDataService: ExperienceFormDataService, private router: Router) { }
 
   ngOnInit() {
     this.emotional = this.formDataService.getEmotional();
@@ -23,6 +23,7 @@ export class ExperienceAddEmotionalComponent implements OnInit {
     if (!form.valid)
       return;
     this.formDataService.setEmotional(this.emotional);
+    this.router.navigate(['/user-dashboard/experience/new/umgebung'])
   }
 
 }
