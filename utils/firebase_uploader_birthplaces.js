@@ -52,10 +52,11 @@ BirthplaceUploader.prototype.uploadBirthplaces = function (db, birthplacesFilePa
                   });
               });
             });
+            (i == birthplaces.length) && resolve("Upload finished");
           }, i * 500);
         })(db);
       }
-      resolve("Upload finished");
+      
     })
 };
 

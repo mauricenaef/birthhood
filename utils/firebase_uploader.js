@@ -32,16 +32,7 @@ admin.initializeApp(config_prod);
 var db = admin.firestore();
 
 
-/*exUploader.uploadExperiences(db).then(
-   
-)*/
 
-
-//bpUploader.uploadBirthplaces(db, 'birthplaces.json');
-exUploader.uploadExperiences(db, experiencesFilePath)
-
-/* bpUploader.uploadBirthplaces(db, birthplacesFilePath).then(
-    exUploader.uploadExperiences(db).then(
-        sCalculator.calculateScores(db)
-    ))
-    .catch(error => console.log("hobbla", error)); */
+bpUploader.uploadBirthplaces(db, birthplacesFilePath).then(
+    exUploader.uploadExperiences(db))
+    .catch(error => console.log("error during Upload: ", error));
