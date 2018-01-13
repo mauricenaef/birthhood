@@ -29,6 +29,9 @@
 }
 
 .form-footer {
+    @include breakpoint(small only) {
+        padding-top: 1rem;
+    }   
     .form-footer-actions {
         display: flex;
         justify-content: space-between;
