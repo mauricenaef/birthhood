@@ -23,7 +23,7 @@ export class ExperienceAddMentalComponent implements OnInit {
     if (!form.valid)
       return;
     this.formDataService.setMental(this.mental);
-    this.router.navigate(['/user-dashboard/experience/new/umgebung'])
+    this.router.navigate(['/user-dashboard/experience/new/wochenbett'])
   }
 
 }
