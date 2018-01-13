@@ -15,4 +15,11 @@ firebase deploy --only firestore:rules
 firebase deploy --only functions
 
 
+
+
+npm install -g nucleus-styleguide
+in birthhood-app:
+nucleus
+
+
 ![birthhood_components](https://github.com/mauricenaef/birthhood/blob/master/assets/birthhood_components.png)
