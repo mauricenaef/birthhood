@@ -2,6 +2,9 @@
 /**
  * Created by tobiasbrunner on 02.11.17.
  * Upload Birthplaces module. Currently JSON Objects are stored in the js file
+ * 
+ * Timeout is needed, as we can't call googles geocoding to requently, since we don't have
+ * a commercial license.
  */
 var BirthplaceUploader = function () { };
 
