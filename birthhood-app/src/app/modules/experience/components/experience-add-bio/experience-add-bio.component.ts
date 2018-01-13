@@ -15,6 +15,7 @@ import { AuthService } from '../../../login/services/auth.service';
 
 export class ExperienceAddBioComponent implements OnInit {
 
+  today: string;
   title: string = 'Generelle Angaben';
   bio: Bio;
   form: any;
@@ -22,7 +23,6 @@ export class ExperienceAddBioComponent implements OnInit {
 
   userLoggedIn: boolean = false;
 
-  public moment: Date = new Date();
   public pickerColor: string = '#0070ba';
   public de = {
     firstDayOfWeek: 0,
@@ -41,10 +41,12 @@ export class ExperienceAddBioComponent implements OnInit {
     private toastr: ToastrService
   ) {
     this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
+    this.today = new Date().toJSON().split('T')[0];
   }
 
   ngOnInit() {
     this.birthPlaceService.getBirthplaces().subscribe(birthplaces => {
+      birthplaces.push(<Birthplace>{disabled: true, name: "-- Wählen sie einen Geburtsort --"})
       this.birthplacelist = birthplaces;
     });
     this.bio = this.formDataService.getBio();

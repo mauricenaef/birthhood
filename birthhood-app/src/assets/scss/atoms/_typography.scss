@@ -23,6 +23,11 @@ a {
                 color: $body-font-color;
             }
         }
+        &.go-back-light {
+            .icon {
+                color: $white;
+            }
+        }
         &:hover, &:focus {
             .icon {
                color: get-color(primary); 

@@ -17,6 +17,7 @@ export class Birthplace {
     score_m: number;
     score_u: number;
     score_w: number;
+    disabled: boolean = false;
 
     public constructor(input) {
         this.lat = input.lat;
