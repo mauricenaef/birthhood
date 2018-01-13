@@ -141,8 +141,7 @@ $foundation-palette: (
   secondary-bright:$secondary-color-bright,
   spital: $spital-color,
   geburtshaus: $geburtshaus-color,
-  success: #53cc80,
-  warning: #eba206,
+  success: $secondary-color,
   alert: $alert-color,
 );
 $light-gray: #e6e6e6;

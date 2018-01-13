@@ -19,7 +19,7 @@
     <div class="medium-12 cell">
       <label class="form_label" for="birth_date">Datum der Geburt
         <div class="input-group show-for-small-only">
-          <input type="date" name="birth_date" id="birth_date" [(ngModel)]="bio.birth_date" max="2017-12-12" required>
+          <input type="date" name="birth_date" id="birth_date" [(ngModel)]="bio.birth_date" [max]="today" required>
         </div>
         <div class="input-group hide-for-small-only">
           <owl-date-time 
@@ -61,8 +61,9 @@
     <div class="medium-6 cell">
       <label class="form_label" for="birthplace">Geburtsort
         <select #birthplace="ngModel" name="birthplace" id="birthplace" [(ngModel)]="bio.birthplace.id" required>
-          <option value="" disabled selected>Wählen Sie den Geburtsort</option>
-          <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}">{{ birthplace.name }}</option>
+          <!--option value="" disabled selected>Wählen Sie den Geburtsort</option-->
+          <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}"
+         [disabled]="birthplace.disabled" >{{ birthplace.name }}</option>
         </select>
       </label>
     </div>
