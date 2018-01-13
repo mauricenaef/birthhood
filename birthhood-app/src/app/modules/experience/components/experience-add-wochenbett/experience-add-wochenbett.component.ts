@@ -37,6 +37,7 @@ export class ExperienceAddWochenbettComponent implements OnInit {
         this.toastr.success('Ihre Bewertung wurde erfolgreich erfasst!', 'Vielen Dank für Ihre Angaben!');
         this.loading = false;
         //redirect to Experiences List
+        this.formDataService.resetExperience();
         this.router.navigate(['./user-dashboard']);
       }
     ).catch( error => {
