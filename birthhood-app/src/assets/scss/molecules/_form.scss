@@ -12,6 +12,9 @@
 
 .form-header {
     text-align: center;
+    @include breakpoint(small only) {
+        padding-bottom: 1rem;
+    }
     @include breakpoint(medium up) {
         margin-bottom: 2rem;
     }

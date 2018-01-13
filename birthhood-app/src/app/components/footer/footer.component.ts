@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggle(event): void {
+  toggle(): void {
     if (!this.isLateralNavAnimating) {
       if ($(this).parents('.csstransitions').length > 0) this.isLateralNavAnimating = true;
 

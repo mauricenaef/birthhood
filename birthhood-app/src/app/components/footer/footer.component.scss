@@ -17,13 +17,19 @@
             a, .menu-text {
                 font-size: rem-calc(17);
             }
+            a {
+                color: $white;
+            }
+            .menu-text {
+                color: get-color(primary-dark);
+            }
         }
     }
     .menu-text {
         padding-bottom: 0;
         margin-bottom: 0;
         @include breakpoint(small only) {
-            color: $light-gray;
+            color: $white;
         }
     }
 }
@@ -32,12 +38,17 @@
 
 .credits {
     padding: 0 2rem ;
-    @include breakpoint(medium up) {
-        padding: 0 1rem ;
-    }
     margin: 0;
     font-size: rem-calc(13);
-    color: $dark-gray;
+    color: $white;
+    @include breakpoint(medium up) {
+        padding: 0 1rem ;
+        color: $dark-gray;
+    }
+}
+
+.menu.icons {
+    justify-content: center;
 }
 
 
