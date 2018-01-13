@@ -12,7 +12,7 @@
         box-shadow: 0 0 15px rgba($black, .3);
         position: fixed;
         bottom: -1px;
-        z-index: 100;
+        z-index: 1000;
         width: 100%;
         .main-nav-list {
             justify-content: space-around;
