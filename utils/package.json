@@ -1,0 +1,17 @@
+{
+  "name": "birthhood_utils",
+  "version": "1.0.0",
+  "description": "uploader for Birthhood / firebase",
+  "main": "firebase_uploader.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "firebase": "^4.8.0",
+    "firebase-admin": "^5.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
