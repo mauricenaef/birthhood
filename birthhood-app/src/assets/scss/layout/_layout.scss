@@ -47,8 +47,6 @@ app-root {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
         z-index: 1;
         top: 0;
         right: 0;
@@ -62,6 +60,8 @@ app-root {
         .footer-container {
             max-height: 100vh;
             overflow-y: scroll;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         .app-menu-footer {

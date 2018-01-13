@@ -2,7 +2,7 @@
 
 .site-header {
     width: 100%;
-    background: $white;
+    background: lighten($light-gray, 7%);
     position: relative;
     z-index: 1000;
     @include breakpoint(medium up) {
@@ -34,7 +34,7 @@
             }
         }
 
-        color: darken($medium-gray, 10%);
+        color: darken($medium-gray, 15%);
 
         @include breakpoint(small only) {
             display: block;

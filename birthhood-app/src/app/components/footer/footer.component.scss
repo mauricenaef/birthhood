@@ -6,7 +6,7 @@
             padding-bottom: 0;
             color: lighten($body-font-color, 40%);
             &.active {
-                color: get-color(primary);
+                opacity: .5;
             }
             &:hover, &:focus {
                 color: get-color(primary-bright);
@@ -44,6 +44,12 @@
     @include breakpoint(medium up) {
         padding: 0 1rem ;
         color: $dark-gray;
+    }
+}
+
+@include breakpoint(small only) {
+    .credits-wrap {
+        text-align: center;
     }
 }
 

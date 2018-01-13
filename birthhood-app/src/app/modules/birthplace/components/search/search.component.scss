@@ -1,6 +1,6 @@
 @import "~_settings.scss";
 
-$top-value: -255px;
+$top-value: -238px;
 
 .search-height-controller {
     height: 3.6rem;
@@ -16,6 +16,7 @@ $top-value: -255px;
     -webkit-font-smooting: antialiased;
     padding: 1rem;
     background: $white;
+    transition: all 250ms ease;
 
     @include breakpoint(large up) {
         background: none;
@@ -26,7 +27,6 @@ $top-value: -255px;
     }
     height: 0;
     z-index: 15;
-    transition: all 250ms ease;
     position: relative;
     .search-close-button, .search-button {
         color: $dark-gray;
@@ -41,8 +41,6 @@ $top-value: -255px;
         top: .46rem;
     }
     .search-list-container {
-        //display: none;
-        transition: all 250ms ease;
         visibility: hidden;
         height: 0;
         background-color: $white;
@@ -60,17 +58,12 @@ $top-value: -255px;
     .search-active & {
         position: relative;
         z-index: 95;
-        transition: all 250ms ease;
         overflow: hidden;
 
         @include breakpoint(small only) {
             transform: translateY($top-value);
             width: 100vw;
             height: 100vh;
-
-            .search-results-list {
-                padding-bottom: 6rem;
-            }
         }
 
 
@@ -79,8 +72,6 @@ $top-value: -255px;
             border-radius: $global-radius;
             box-shadow: $box-shadow-small;
             position: fixed;
-
-            //transition: top 1 ease;
             top: 10vh;
             right: 0;
             left: 0;
@@ -89,7 +80,7 @@ $top-value: -255px;
             padding: 1.5rem;
 
             .search-input-container-wrap {
-                height: 80%;
+                height: 100%;
             }
         }
 
@@ -124,7 +115,7 @@ $top-value: -255px;
 
 
             @include breakpoint(medium up) {
-                max-height: 60vh;
+                height: calc(100% - 5rem);
             }
         }
     }

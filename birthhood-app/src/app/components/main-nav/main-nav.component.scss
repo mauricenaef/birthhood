@@ -8,8 +8,8 @@
         }
     }
     @include breakpoint(small only) {
-        background-color: $light-gray;
-        box-shadow: 0 0 15px rgba($black, .3);
+        background-color: lighten($light-gray, 6%);
+        box-shadow: 0 0 15px rgba($black, .2);
         position: fixed;
         bottom: -1px;
         z-index: 1000;
@@ -46,7 +46,7 @@
         width: 96vw;
         left: 2vw;
         border-radius: 8px; */
-        
+        padding-bottom: 16pt; 
     }
 
     @include breakpoint(medium up) {
