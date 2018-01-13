@@ -9,7 +9,9 @@ app-root {
 }
 
 .main-container {
-    padding-top: 5.6rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    background-color: $white;
     @include breakpoint(medium up) {
         padding-top: 3.6rem;
     }

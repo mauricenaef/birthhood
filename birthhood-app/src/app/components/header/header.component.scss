@@ -2,9 +2,12 @@
 
 .site-header {
     width: 100%;
-    background: lighten($light-gray, 7%);
+    background: $white;
     position: relative;
     z-index: 1000;
+    @include breakpoint(small only) {
+        border-bottom: 1px solid $light-gray;
+    }
     @include breakpoint(medium up) {
         position: fixed;
         display: flex;

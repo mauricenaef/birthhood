@@ -5,7 +5,8 @@
     ],
     "target": "../static/styleguide",
     "css":[
-        "../styleguide/custom-theme/style/changes.css"],
+        "../styleguide/custom-theme/style/changes.css",
+        "../styleguide/styles/birthhood.css"],
     "namespace": "page",
     "verbose": 3,
     "counterCSS": null,

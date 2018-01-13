@@ -9,12 +9,6 @@
     vertical-align: middle;
 }
 
-.input-radio {
-    .form-radio-group & {
-        display: none;
-    }
-}
-
 .show-hide-password {
     position: relative;
     .show-hide-password-link {
@@ -29,5 +23,13 @@
     .icon {
         width: 1.5rem;
         height: 1.5rem;
+    }
+}
+
+
+// belogins into shame.css
+.input-radio {
+    .form-radio-group & {
+        display: none;
     }
 }

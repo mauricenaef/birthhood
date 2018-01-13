@@ -3,6 +3,20 @@
     font-style: normal;
 }
 
+/**
+* @atom Typogrpahy
+* @section Typograpy > Anchors
+* @modifiers
+*  .link-icon Link anchor
+*  .link-icon Link anchor
+*  .link-icon Link anchor
+*  .link-icon Link anchor
+* @markup
+*  <a href="#" class="">Anchor Link</a><br />
+*  <a href="#" class="link-icon">Anchor Link</a><br />
+*  <a href="#" class="go-back">Anchor Link</a><br />
+*  <a href="#" class="go-back go-back-dark">Anchor Link</a><br />
+*/
 a {
     &.link-icon {
         .icon {
