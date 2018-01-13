@@ -13,7 +13,7 @@ service cloud.firestore {
       allow read;
     }
   }
-  match /databases/{database}/documents {
+  match /databases/{database}/documents/users {
 		match /{document=**} {
 			allow read, write: if request.auth.uid != '';
 		}
