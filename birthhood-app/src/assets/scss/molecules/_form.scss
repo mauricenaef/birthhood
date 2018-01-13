@@ -5,14 +5,12 @@
 
     .intro {
         margin-top: 0.2rem;
-        margin-bottom: 1.5rem;
         font-size: rem-calc(15);
         color: $dark-gray;
     }
 }
 
 .form-header {
-    margin-bottom: 1rem;
     text-align: center;
     @include breakpoint(medium up) {
         margin-bottom: 2rem;
@@ -22,7 +20,7 @@
 .form-body {
     background: $white;
     margin: 0 -1.62rem 1rem !important;
-    padding: 2rem 1rem 1rem !important;
+    padding: 1rem !important;
 
     @include breakpoint(medium up) {
         margin: 0 -1.92rem 3rem !important;

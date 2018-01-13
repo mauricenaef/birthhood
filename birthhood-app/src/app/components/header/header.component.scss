@@ -1,16 +1,22 @@
 @import "~_settings.scss";
 
 .site-header {
-    position: fixed;
-    display: flex;
-    top: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: -1px -5px 20px 0px rgba($black, .133);
     background: $white;
+    position: relative;
+    z-index: 1000;
+    @include breakpoint(medium up) {
+        position: fixed;
+        display: flex;
+        top: 0;
+        box-shadow: -1px -5px 20px 0px rgba($black, 0.133);
+    }
+
+
     .logo-link {
         display: block;
         padding: .4em 1.2em;
+        
     }
 
     .logo {
@@ -22,6 +28,7 @@
         .icon {
             width: 8rem;
             height: 2.8rem;
+
             @include breakpoint(medium up) {
                 margin-top: .3rem;
             }
@@ -32,11 +39,9 @@
         @include breakpoint(small only) {
             display: block;
             position: absolute;
-            margin-top: -1.5rem;
-            margin-left: -4.25rem;
+            margin-left: -4rem;
             left: 50%;
-            top: 50%;
-
+            top: .4rem;
         }
     }
 }

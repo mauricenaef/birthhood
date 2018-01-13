@@ -3,22 +3,25 @@
   <header class="grid-x grid-padding-x form-header">
     <div class="medium-12 cell">
       <h2 class="form-title">{{title}}</h2>
-      <p class="intro">Teilen Sie uns mit wie es bei der Geburt Ihres Kindes war! <br>(falls Sie mehrere Kinder haben bitte für jede Geburt einen Fragebogen ausfüllen):</p>
+      <p class="intro">Teilen Sie uns mit wie es bei der Geburt Ihres Kindes war! <br><small>(Falls Sie mehrere Kinder haben bitte für jede Geburt einen Fragebogen ausfüllen)</small></p>
     </div>
   </header>
 
   <div class="form-body grid-x grid-padding-x">
 
     <div class="medium-12 cell">
-      <label class="form_label" for="birth_name">Name des Kindes?
+      <label class="form_label" for="birth_name">Name des Kindes
         <input class="input-text" #birthname="ngModel" required id="birthname" name="birth_name" type="text" 
           [(ngModel)]="bio.birth_name">
       </label>
     </div>
 
     <div class="medium-12 cell">
-      <label class="form_label" for="birth_date">Datum der Geburt?
-        <div class="input-group">
+      <label class="form_label" for="birth_date">Datum der Geburt
+        <div class="input-group show-for-small-only">
+          <input type="date" name="birth_date" id="birth_date" [(ngModel)]="bio.birth_date" max="2017-12-12" required>
+        </div>
+        <div class="input-group hide-for-small-only">
           <owl-date-time 
             [(ngModel)]="bio.birth_date" 
             [inputId]="'birth_date'" 
@@ -47,6 +50,7 @@
     <div class="medium-6 cell">
       <label class="form_label" for="birth_type">Art der Geburt
         <select #birthtype="ngModel" name="birth_type" id="birthtype" [(ngModel)]="bio.birth_type" required>
+          <option value="" disabled selected>Wählen Sie die Art der Geburt</option>
           <option value="Vaginale Geburt">Vaginal</option>
           <option value="Ungeplanter Kaiserschnitt">Ungeplanter Kaiserschnitt</option>
           <option value="Geplanter Kaiserschnitt">Geplanter Kaiserschnitt</option>
@@ -55,8 +59,9 @@
     </div>
 
     <div class="medium-6 cell">
-      <label class="form_label" for="birthplace">Geburts Ort
+      <label class="form_label" for="birthplace">Geburtsort
         <select #birthplace="ngModel" name="birthplace" id="birthplace" [(ngModel)]="bio.birthplace.id" required>
+          <option value="" disabled selected>Wählen Sie den Geburtsort</option>
           <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}">{{ birthplace.name }}</option>
         </select>
       </label>

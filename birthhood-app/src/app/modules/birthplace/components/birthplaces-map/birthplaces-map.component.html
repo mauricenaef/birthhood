@@ -1,7 +1,5 @@
 <div class="map-wrap">
-    <div *ngIf="loaded == false" class="typing_loader_container clear">
-        <div class="typing_loader"></div>
-    </div>
+    
     <agm-map class="map" [ngClass]="{'map-detail': isDetail }" [latitude]="latLng.lat" [longitude]="latLng.lng" (boundsChange)="this.bounds = $event"
         (idle)="birthplaceService.updateBounds(this.bounds)" (centerChange)="this.latLng = $event" [streetViewControl]="false"
         [styles]="styles">

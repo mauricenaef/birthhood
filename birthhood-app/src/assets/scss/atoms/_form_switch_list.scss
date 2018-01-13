@@ -67,14 +67,14 @@
 
 
             &:hover, &:focus {
-				color: darken(get-color(success), 15%);
-				background-color: rgba(get-color(success), .5);
+				color: darken(get-color(primary), 15%);
+				background-color: rgba(get-color(primary), .5);
             }
         }
 
         input[type=radio]:checked + label {
-            color: darken(get-color(success), 20%);
-            background: get-color(success);
+            color: darken(get-color(primary), 20%);
+            background: get-color(primary);
         }
     }
 

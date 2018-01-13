@@ -7,7 +7,7 @@ experiencesFilePath = 'birthexperience_data.json'
 admin = require('firebase-admin');
 require('firebase/firestore');
 
-config = {
+config_prod = {
     apiKey: "AIzaSyBo-NplVsfsCeD_m_kZ_6Y8BzNnVKTHbIo",
     authDomain: "birthhood.firebaseapp.com",
     databaseURL: "https://birthhood.firebaseio.com",
@@ -17,7 +17,7 @@ config = {
     credential: admin.credential.cert(serviceAccount)
 };
 
-config_backup = {
+config_dev = {
     apiKey: "AIzaSyCpXT0NeCCpYWeL2vITlDbYmQ6HGekgDqI",
     authDomain: "birthhood2.firebaseapp.com",
     databaseURL: "https://birthhood2.firebaseio.com",
@@ -28,7 +28,7 @@ config_backup = {
     credential: admin.credential.cert(serviceAccount_backup)
 }
 
-admin.initializeApp(config);
+admin.initializeApp(config_prod);
 var db = admin.firestore();
 
 

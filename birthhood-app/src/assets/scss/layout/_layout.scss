@@ -152,7 +152,7 @@ app-root {
 .boxed-container {
     background: lighten($medium-gray, 20%);
     padding-bottom: 3rem;
-    padding-top: 4rem;
+    padding-top: 1rem;
     @include breakpoint(medium up) {
         padding-top: 7rem;
         padding-bottom: 7rem;
@@ -166,10 +166,11 @@ app-root {
 .boxed-main {
     position: relative;
     background: $white;
+    padding: 2rem 1rem;
     &.gray {
         background: lighten($light-gray, 7%);
     }
-    padding: 1rem;
+    
     @include breakpoint(small only) {
         min-height: 10rem;
     }
