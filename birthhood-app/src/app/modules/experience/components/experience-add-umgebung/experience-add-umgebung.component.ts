@@ -23,7 +23,7 @@ export class ExperienceAddUmgebungComponent implements OnInit {
     if (!form.valid)
       return;
     this.formDataService.setUmgebung(this.umgebung);
-    this.router.navigate(['/user-dashboard/experience/new/umgebung'])
+    this.router.navigate(['/user-dashboard/experience/new/emotional'])
   }
 
 }

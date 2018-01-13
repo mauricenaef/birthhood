@@ -24,7 +24,7 @@ export class ExperienceAddKoerperlichComponent implements OnInit {
     if (!form.valid)
       return;
     this.formDataService.setKoerperlich(this.koerperlich);
-    this.router.navigate(['/user-dashboard/experience/new/umgebung'])
+    this.router.navigate(['/user-dashboard/experience/new/mental'])
   }
 
 }
