@@ -60,7 +60,7 @@ export class ExperienceAddBioComponent implements OnInit {
     // This saves the Birthplace Name based on ID
     this.bio.birthplace.name = this.birthplacelist.filter(x => x.id == this.bio.birthplace.id)[0].name;
     this.formDataService.setBio(this.bio);
-    this.router.navigate(['./umgebung'])
+    this.router.navigate(['/user-dashboard/experience/new/umgebung'])
   }
 
 }
