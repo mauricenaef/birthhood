@@ -5,7 +5,7 @@ import { BirthplaceService } from '../../../birthplace/services/birthplace.servi
 import { ToastrService } from 'ngx-toastr';
 import { Birthplace } from '../../../birthplace/models/birthplace';
 import { AuthService } from '../../../login/services/auth.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experience-add-bio',
@@ -38,7 +38,8 @@ export class ExperienceAddBioComponent implements OnInit {
     private authService: AuthService,
     private formDataService: ExperienceFormDataService,
     private birthPlaceService: BirthplaceService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
     this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false);
   }
@@ -57,6 +58,7 @@ export class ExperienceAddBioComponent implements OnInit {
     // This saves the Birthplace Name based on ID
     this.bio.birthplace.name = this.birthplacelist.filter(x => x.id == this.bio.birthplace.id)[0].name;
     this.formDataService.setBio(this.bio);
+    this.router.navigate(['./umgebung'])
   }
 
 }
