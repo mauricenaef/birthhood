@@ -32,9 +32,6 @@ export class UserExperienceListComponent implements OnInit {
               }
               this.experienceList = returnExperiences;
             });
-        } else {
-          //ev. gar nicht nötig, da über ROuteGuard gekapselt wird
-          this.router.navigateByUrl('/');
         }
       }
     );
