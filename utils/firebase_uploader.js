@@ -28,11 +28,12 @@ config_dev = {
     credential: admin.credential.cert(serviceAccount_backup)
 }
 
-admin.initializeApp(config_prod);
+admin.initializeApp(config_dev);
 var db = admin.firestore();
 
 
 
-bpUploader.uploadBirthplaces(db, birthplacesFilePath).then(
-    exUploader.uploadExperiences(db))
-    .catch(error => console.log("error during Upload: ", error));
+bp = bpUploader.uploadBirthplaces(db, birthplacesFilePath);
+bp.then(() => exUploader.uploadExperiences(db, experiencesFilePath));
+/*
+    .catch(error => console.log("error during Upload: ", error));*/
