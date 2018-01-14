@@ -1,0 +1,1740 @@
+
+
+
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.app-menu-footer .menu a {
+  padding-bottom: 0;
+  color: #707070; }
+
+.app-menu-footer .menu a.active {
+  opacity: .5; }
+
+.app-menu-footer .menu a:hover, .app-menu-footer .menu a:focus {
+  color: #df8d8f; }
+
+@media screen and (max-width: 43.6875em) {
+  .app-menu-footer .menu {
+    padding-bottom: 1rem; }
+  .app-menu-footer .menu a, .app-menu-footer .menu .menu-text {
+    font-size: 1.0625rem; }
+  .app-menu-footer .menu a {
+    color: #fefefe; }
+  .app-menu-footer .menu .menu-text {
+    color: #bd3335; } }
+
+.app-menu-footer .menu-text {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+@media screen and (max-width: 43.6875em) {
+  .app-menu-footer .menu-text {
+    color: #fefefe; } }
+
+.credits {
+  padding: 0 2rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #fefefe; }
+
+@media screen and (min-width: 43.75em) {
+  .credits {
+    padding: 0 1rem;
+    color: #8a8a8a; } }
+
+@media screen and (max-width: 43.6875em) {
+  .credits-wrap {
+    text-align: center; } }
+
+.menu.icons {
+  justify-content: center; }
+
+@media screen and (min-width: 43.75em) {
+  .credits-wrap {
+    padding-top: 2rem; }
+  .footer-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid #e6e6e6; } }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.site-header {
+  width: 100%;
+  background: #fefefe;
+  position: relative;
+  z-index: 1000; }
+
+@media screen and (max-width: 43.6875em) {
+  .site-header {
+    border-bottom: 1px solid #e6e6e6; } }
+
+@media screen and (min-width: 43.75em) {
+  .site-header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    box-shadow: -1px -5px 20px 0px rgba(10, 10, 10, 0.133); } }
+
+.site-header .logo-link {
+  display: block;
+  padding: .4em 1.2em; }
+
+.site-header .logo {
+  width: 2.75rem;
+  height: 2.75rem; }
+
+.site-header .text-link {
+  color: #a4a4a4; }
+
+.site-header .text-link .icon {
+  width: 8rem;
+  height: 2.8rem; }
+
+@media screen and (min-width: 43.75em) {
+  .site-header .text-link .icon {
+    margin-top: .3rem; } }
+
+@media screen and (max-width: 43.6875em) {
+  .site-header .text-link {
+    display: block;
+    position: absolute;
+    margin-left: -4rem;
+    left: 50%;
+    top: .4rem; } }
+
+@media screen and (min-width: 43.75em) {
+  app-header {
+    order: 3; } }
+
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.main-nav {
+  /* iPhone X Media Query */ }
+
+.main-nav a {
+  color: #3d3d3d; }
+
+.main-nav a:hover, .main-nav a:focus {
+  color: #df8d8f; }
+
+@media screen and (max-width: 43.6875em) {
+  .main-nav {
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.2);
+    position: fixed;
+    bottom: -1px;
+    z-index: 2000;
+    width: 100%; }
+  .main-nav .main-nav-list {
+    justify-content: space-around; }
+  .main-nav a {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    padding: 0.7rem; }
+  .main-nav a.active {
+    color: #E06C6D; }
+  .main-nav a svg {
+    width: 1.8em;
+    height: 1.8em; }
+  .main-nav a span {
+    font-size: 0.8125rem;
+    padding: .6em 0 0; } }
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .main-nav {
+    /* box-shadow: none;
+        width: 96vw;
+        left: 2vw;
+        border-radius: 8px; */
+    padding-bottom: 16pt; } }
+
+@media screen and (min-width: 43.75em) {
+  .main-nav .main-nav-list {
+    justify-content: flex-end;
+    margin-right: 3vw; }
+  .main-nav a {
+    font-size: 1rem;
+    margin-left: .6em; }
+  .main-nav a:not(.highlighted) {
+    padding-bottom: 1.1em; }
+  .main-nav a:not(.highlighted):hover, .main-nav a:not(.highlighted):focus {
+    border-bottom: 2px solid #df8d8f; }
+  .main-nav a.active {
+    border-bottom: 2px solid #E06C6D; }
+  .main-nav a.active.highlighted {
+    border-bottom: none; }
+  .main-nav a.highlighted {
+    border-radius: 100px;
+    color: #fefefe;
+    background-color: #E06C6D; }
+  .main-nav a.highlighted:hover, .main-nav a.highlighted:focus {
+    background-color: #df8d8f; } }
+
+app-main-nav {
+  order: -1; }
+
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+@media screen and (min-width: 64em) {
+  .birthplace-detail {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 1px -6px 280px rgba(0, 0, 0, 0.23); } }
+
+.birthplace-details-header .icon {
+  position: absolute;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .5em;
+  top: 1em;
+  right: 1em;
+  z-index: 10;
+  color: #fefefe;
+  border-radius: 100px; }
+
+@media screen and (min-width: 43.75em) {
+  .birthplace-details-header .icon {
+    width: 3.5rem;
+    height: 3.5rem; } }
+
+.birthplace-details-header .icon.icon-geburtshaus {
+  background: #2d9b6f; }
+
+.birthplace-details-header .icon.icon-spital {
+  background: #42a4d1; }
+
+.birthplace-details-header .detail-title-wrap {
+  position: absolute;
+  width: 80%;
+  z-index: 10;
+  bottom: 1rem;
+  left: 2rem;
+  z-index: 10;
+  color: #fefefe; }
+
+.birthplace-details-header .detail-sup-title {
+  text-transform: capitalize;
+  font-size: 1.0625rem;
+  margin-bottom: -.3em;
+  font-weight: 200; }
+
+.birthplace-details-header .detail-title {
+  font-weight: 700; }
+
+/**
+* @structure Name
+* @markup
+*  <ul _ngcontent-c10 class='no-bullet score-list'>
+*   <li class='total-score-item score-item'><strong class="score-item-title">Total</strong><strong class="score">2.2 von 3.0</strong></li>
+*   <li class='score-item'><strong class="score-item-title">Umgebung</strong><strong class="score">2.1</strong></li>
+*  </ul>
+*/
+.score-list {
+  padding: 1rem;
+  background: #fefefe;
+  border-radius: 4px;
+  border: 1px solid #ebebeb; }
+
+.score-list .score-list-description {
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 1em;
+  color: #8a8a8a; }
+
+.score-list .total-score-item {
+  font-size: 1.1875rem;
+  line-height: 1;
+  padding-bottom: 1em; }
+
+.score-list .score-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: .3em 0; }
+
+.score-list .score-item .score {
+  text-align: right; }
+
+.score-list .score-item .score-item-title {
+  display: flex;
+  flex: 1; }
+
+.score-list .score-item .score-item-title:after {
+  content: "";
+  margin: 0 .6rem;
+  border-bottom: dotted 1px #cacaca;
+  flex: 1; }
+
+.birthplace-details-main {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 2rem; }
+
+.polar-chart-container {
+  padding: 1rem; }
+
+.birthplace-details-footer {
+  background-color: #f3f3f3;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  font-size: 0.875rem; }
+
+@media screen and (min-width: 43.75em) {
+  .birthplace-details-footer {
+    padding-top: 2rem; } }
+
+.birthplace-details-footer .adr {
+  margin-bottom: 1em; }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+@media screen and (min-width: 43.75em) {
+  app-birthplaces {
+    order: 1;
+    display: none; } }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+@media screen and (min-width: 64em) {
+  .search-cell {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fdfdfd; } }
+
+.card-item .card-header + .card-footer {
+  padding-bottom: 0; }
+
+.card-item .card-content {
+  min-height: 20rem;
+  box-shadow: 0 0 29px rgba(0, 0, 0, 0.1); }
+
+@media screen and (min-width: 43.75em) {
+  .card-item .card-content {
+    min-height: 23rem; } }
+
+.card-item .card-sup-title {
+  text-transform: capitalize;
+  margin-bottom: -.3em;
+  font-weight: 200; }
+
+.card-item .card-total-score {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding-bottom: .125em; }
+
+.card-item .card-footer-wrap {
+  width: 100%; }
+
+.card-item .card-footer {
+  display: flex;
+  align-items: flex-end;
+  position: relative; }
+
+.card-item .card-footer .icon {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  right: 1rem;
+  bottom: 1rem; }
+
+.card-item .card-footer .icon.icon-spital {
+  color: #42a4d1; }
+
+.card-item .card-footer .icon.icon-geburtshaus {
+  color: #2d9b6f; }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.map-wrap {
+  position: relative;
+  background-color: #E5E3E0; }
+
+.map {
+  height: 200px;
+  position: relative; }
+
+@media screen and (min-width: 43.75em) {
+  .map {
+    height: 300px; } }
+
+@media screen and (min-width: 64em) {
+  .map {
+    height: 400px; } }
+
+.map.map-detail {
+  height: 100px; }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.filter-container {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fafafa; }
+
+@media screen and (min-width: 64em) {
+  .filter-container {
+    border-right: 1px solid #e6e6e6; } }
+
+.filter-container .switch-geburtshaus {
+  background-color: whitesmoke; }
+
+.filter-container .switch-geburtshaus input:checked ~ .switch-paddle {
+  background: #2d9b6f; }
+
+.filter-container .switch-spital {
+  background-color: #fafafa; }
+
+.filter-container .switch-spital input:checked ~ .switch-paddle {
+  background: #42a4d1; }
+
+.filter-container .switch-label {
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: #cacaca;
+  margin: 0 !important; }
+
+@media screen and (min-width: 43.75em) {
+  .filter-container .switch-label {
+    font-size: 0.9375rem; } }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.search-height-controller {
+  height: 3.6rem; }
+
+@media screen and (min-width: 64em) {
+  .search-height-controller {
+    height: 2.6rem; } }
+
+.search-container {
+  max-width: 40rem;
+  will-change: transform;
+  -webkit-font-smooting: antialiased;
+  padding: 1rem;
+  background: #fefefe;
+  transition: all 250ms ease;
+  height: 0;
+  z-index: 15;
+  position: relative; }
+
+@media screen and (min-width: 64em) {
+  .search-container {
+    background: none; } }
+
+@media screen and (min-width: 64em) {
+  .search-container {
+    padding: 0.4rem 1rem; } }
+
+.search-container .search-close-button, .search-container .search-button {
+  color: #8a8a8a; }
+
+.search-container .search-close-button {
+  display: none; }
+
+.search-container .search-button {
+  position: absolute;
+  right: 1rem;
+  top: .46rem; }
+
+.search-container .search-list-container {
+  visibility: hidden;
+  height: 0;
+  background-color: #fefefe; }
+
+.search-container .search-input-container {
+  position: relative; }
+
+.search-container .search-input {
+  z-index: 10;
+  margin-bottom: 0;
+  border-radius: 100px;
+  padding-left: 1rem; }
+
+.search-active .search-container {
+  position: relative;
+  z-index: 95;
+  overflow: hidden; }
+
+@media screen and (max-width: 43.6875em) {
+  .search-active .search-container {
+    transform: translateY(-238px);
+    width: 100vw;
+    height: 100vh; } }
+
+@media screen and (min-width: 43.75em) {
+  .search-active .search-container {
+    background: #fefefe;
+    border-radius: 4px;
+    box-shadow: 1px -6px 140px rgba(0, 0, 0, 0.23);
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    left: 0;
+    min-height: 60vh;
+    max-height: 80vh;
+    padding: 1.5rem; }
+  .search-active .search-container .search-input-container-wrap {
+    height: 100%; } }
+
+.search-active .search-container .search-input {
+  margin-bottom: .5rem; }
+
+.search-active .search-container .search-close-button {
+  display: block;
+  position: absolute;
+  right: .3rem;
+  top: .4rem; }
+
+.search-active .search-container .search-close-button:hover, .search-active .search-container .search-close-button:focus {
+  opacity: .5; }
+
+.search-active .search-container .search-button {
+  display: none; }
+
+.search-active .search-container .search-list-container {
+  visibility: visible;
+  height: 100%;
+  overflow-y: scroll; }
+
+@media screen and (max-width: 43.6875em) {
+  .search-active .search-container .search-list-container {
+    max-height: 80vh; } }
+
+@media screen and (min-width: 43.75em) {
+  .search-active .search-container .search-list-container {
+    height: calc(100% - 5rem); } }
+
+.search-active:after {
+  content: "";
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(202, 202, 202, 0.6);
+  z-index: 9; }
+
+.search-results-item a {
+  padding: .6em 0;
+  margin-left: .6em;
+  margin-right: .6em;
+  border-bottom: 1px solid #e6e6e6; }
+
+.search-results-item:hover, .search-results-item:focus {
+  background-color: #e6e6e6; }
+
+.search-info {
+  font-size: 0.75rem;
+  color: #cacaca;
+  font-weight: bold;
+  text-align: right;
+  padding: .3em; }
+
+.search-info > span:nth-of-type(2)::before {
+  content: '|';
+  display: inline-block;
+  padding: 0 .6em; }
+
+.search-close-button {
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+
+.search-results-label {
+  display: flex; }
+
+.search-results-label-text {
+  flex: 1; }
+
+.search-results-label-icon {
+  margin-right: 1rem; }
+
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.input-group > :first-child {
+  flex: 1; }
+
+
+
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.menu-experience {
+  padding: .6em;
+  margin: .6rem 0 1rem; }
+
+.menu-experience li {
+  margin-right: 1rem; }
+
+.menu-experience li:last-of-type {
+  margin-right: 0; }
+
+.menu-experience .menu-experience-link {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  background: #cacaca;
+  color: #fefefe;
+  border-radius: 100px;
+  padding: .6em .8em; }
+
+.menu-experience .menu-experience-link.active {
+  background: #E06C6D; }
+
+
+
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.dashboard-sidebar-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.dashboard-sidebar-container .avatar-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem; }
+
+.dashboard-sidebar-container .user-name {
+  font-weight: 200; }
+
+.dashboard-sidebar-container .dashboard-login-time {
+  margin: 1rem 0; }
+
+.dashboard-sidebar-container .dashboard-login-time p strong {
+  display: block; }
+
+.dashboard-sidebar-container .dashboard-logout-button-container {
+  display: flex;
+  flex: 1; }
+
+.dashboard-sidebar-container .dashboard-logout-button-container .button {
+  align-self: flex-end; }
+
+.user-avatar {
+  border-radius: 100px; }
+
+/**
+ * Primary
+ * 
+ * @color
+ * @section Main Color Scheme
+ */
+/**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Primary Bright
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+  * Secondary
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+/**
+* Seondary Bright
+*
+* @color
+* @section Main Color Scheme
+*/
+/**
+  * Farbe Geburtshaus
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+  * Farbe Spital
+  *
+  * @color
+  * @section Theme Color Scheme
+  */
+/**
+   * Alert
+   * 
+   * @color
+   * @section Utils Color Scheme
+   */
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+.experience-container {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center; }
+
+.experience-container .section-title {
+  margin-bottom: 2rem; }
+
+.add-experience-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+
+@media screen and (max-width: 43.6875em) {
+  .experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .experience-list .experience-item {
+    width: 46%;
+    margin: .6rem 0;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px; }
+  .experience-list .experience-item > * {
+    padding: 0 1rem; } }
+
+.experience-list .experience-title {
+  padding: .6em 0;
+  border-bottom: 1px solid #e6e6e6; }
+
+.experience-list .experience-name {
+  margin: 0; }
+
+.experience-list .experience-item {
+  padding: .6em 0; }
+
+@media screen and (max-width: 43.6875em) {
+  .experience-list .experience-item .cell, .experience-list .experience-item .experience-name {
+    font-size: 0.75rem; } }
+
+

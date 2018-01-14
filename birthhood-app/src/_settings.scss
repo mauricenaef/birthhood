@@ -73,6 +73,14 @@
  */
  $primary-color: #E06C6D;
 
+    /**
+  * Primary Dark
+  * 
+  * @color
+  * @section Main Color Scheme
+  */
+  $primary-color-dark:rgb(189, 51, 53);
+
  /**
   * Primary Bright
   * 
@@ -80,14 +88,6 @@
   * @section Main Color Scheme
   */
   $primary-color-bright: rgb(223, 141, 143);
- 
-   /**
-  * Primary Dark
-  * 
-  * @color
-  * @section Main Color Scheme
-  */
-  $primary-color-dark:rgb(189, 51, 53);
  
  /**
   * Secondary
@@ -103,13 +103,13 @@
 * @color
 * @section Main Color Scheme
 */
-  $secondary-color-bright: #8BB5A4;
+  $secondary-color-bright: rgb(184, 245, 220);
 
   /**
   * Farbe Geburtshaus
   *
   * @color
-  * @section Theme
+  * @section Theme Color Scheme
   */
   $geburtshaus-color: rgb(45, 155, 111);
 
@@ -118,7 +118,7 @@
   * Farbe Spital
   *
   * @color
-  * @section Theme
+  * @section Theme Color Scheme
   */
   $spital-color: rgb(66, 164, 209);
  
@@ -126,9 +126,58 @@
    * Alert
    * 
    * @color
-   * @section Second Color Scheme
+   * @section Utils Color Scheme
    */
  $alert-color: #e6391e;
+
+
+/**
+* White Color
+*
+* @color
+* @section Gray Color Scheme
+*/
+$white-color: #fefefe;
+
+/**
+* Super Light Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+$super-light-gray-color:  #f8f8f8;
+
+ /**
+ * Light Gray
+ *
+ * @color
+ * @section Gray Color Scheme
+ */
+ $light-gray-color: #e6e6e6;
+
+/**
+* Medium Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+$medium-gray-color: #cacaca;
+
+/**
+* Dark Gray
+*
+* @color
+* @section Gray Color Scheme
+*/
+$dark-gray-color: #8a8a8a;
+
+/**
+* Black
+*
+* @color
+* @section Gray Color Scheme
+*/
+$black-color: #0a0a0a;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
@@ -144,12 +193,12 @@ $foundation-palette: (
   success: $secondary-color,
   alert: $alert-color,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
-$body-background: #f8f8f8;
+$light-gray:$light-gray-color;
+$medium-gray: $medium-gray-color;
+$dark-gray: $dark-gray-color;
+$black: $black-color;
+$white: $white-color;
+$body-background: $super-light-gray-color;
 $body-font-color: $black;
 $body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $body-antialiased: true;

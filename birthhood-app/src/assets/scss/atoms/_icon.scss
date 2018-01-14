@@ -8,25 +8,30 @@
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+
     &.icon-medium {
-      height: 2em;
-      width: 2em;
+        height: 2em;
+        width: 2em;
     }
+
     &.icon-large {
-      height: 4em;
-      width: 4em;
+        height: 4em;
+        width: 4em;
     }
+
     &.icon-xlarge {
-      height: 8em;
-      width: 8em;
+        height: 8em;
+        width: 8em;
     }
+
     &.icon-input {
-      width: 2.4rem;
-      height: 2.4rem;
-      margin: .3rem;
-      color: $medium-gray;
-      &.icon-calendar {
-        margin-top: -.6px;
-      }
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: .3rem;
+        color: $medium-gray;
+
+        &.icon-calendar {
+            margin-top: -.6px;
+        }
     }
 }

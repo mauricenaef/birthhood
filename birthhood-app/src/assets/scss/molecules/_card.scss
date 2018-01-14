@@ -1,3 +1,16 @@
+/**
+* Card Element
+* 
+* @molecule Button Card
+* @markup
+*  <ul class='menu align-right main-nav-list'>
+*    <li><a href=''>Home</a></li>
+*    <li><a href=''>About</a></li>
+*    <li><a href=''>Kontakt</a></li>
+*    <li><a href=''>Profil</a></li>
+*    <li><a href='' class='highlighted'>Geburten</a></li>
+*  </ul>
+*/
 .card-header {
     position: relative;
     background: $black;
@@ -14,3 +27,33 @@
         position: absolute;
     }
 }
+
+/**
+* Card Element
+* 
+* @molecule Button Card
+* @markup
+*  <ul class='menu align-right main-nav-list'>
+*    <li><a href=''>Home</a></li>
+*    <li><a href=''>About</a></li>
+*    <li><a href=''>Kontakt</a></li>
+*    <li><a href=''>Profil</a></li>
+*    <li><a href='' class='highlighted'>Geburten</a></li>
+*  </ul>
+*/
+.a {}
+
+/**
+* Card Element
+* 
+* @molecule Button Card
+* @markup
+*  <ul class='menu align-right main-nav-list'>
+*    <li><a href=''>Home</a></li>
+*    <li><a href=''>About</a></li>
+*    <li><a href=''>Kontakt</a></li>
+*    <li><a href=''>Profil</a></li>
+*    <li><a href='' class='highlighted'>Geburten</a></li>
+*  </ul>
+*/
+.b {}

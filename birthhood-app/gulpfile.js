@@ -1,11 +1,14 @@
-var gulp = require('gulp');
+let gulp = require('gulp');
 
-var path = require('path');
-var svgstore = require('gulp-svgstore');
-var cheerio = require('gulp-cheerio');
-var svgmin = require('gulp-svgmin');
-var rename = require('gulp-rename');
-var notify = require('gulp-notify');
+let path = require('path');
+let tildeImporter = require('node-sass-tilde-importer');
+let svgstore = require('gulp-svgstore');
+let cheerio = require('gulp-cheerio');
+let svgmin = require('gulp-svgmin');
+let rename = require('gulp-rename');
+let notify = require('gulp-notify');
+let concat = require('gulp-concat');
+let sass = require('gulp-sass');
 
 
 /*********************
@@ -36,6 +39,25 @@ gulp.task('svg-icons', function () {
         .pipe(gulp.dest('src/assets/images'))
         .pipe(notify("SVG Sprite created"));
 });
+
+/*********************
+Create Complete CSS for Styleguide
+*********************/
+gulp.task('sass', function(){
+
+    return gulp
+        .src(['src/app/**/*.scss'])
+        .pipe(sass())
+        .pipe(sass({
+            importer: tildeImporter,
+            includePaths: ['node_modules/'], 
+            errLogToConsole: true
+        }))
+        .pipe(concat('complete-style.css'))
+        .pipe(gulp.dest('../static/styleguide/styles/'))
+        .pipe(notify('All sass created and combined'));
+});
+
 
 
 gulp.task('default', function () {

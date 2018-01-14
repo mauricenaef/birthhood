@@ -1,35 +1,14 @@
 /**
-* @atom Button
-* @section Button > Default
+* @atom Primary Buttons
+* @section Buttons > Default
 * @modifiers
-*  .button.disabled Disabled Button
-*  .button.hollow Hollow Button
-*  .button.primary Primary Button
-*  .button.secondary Secondary Button
 *  .button.no-margin No Margin Button
-*  .button.button-icon Button Icon only
+*  .button.button-icon Button with Icon only
 * @markup
-*  <button class='button'>
-*    Formular Senden
-*  </button>
-*  <button class='button disabled'>
-*    Formular Senden
-*  </button>
-*  <button class='button hollow'>
-*    Formular Senden
-*  </button>
-*  <button class='button primary'>
-*    Formular Senden
-*  </button>
-*  <button class='button secondary'>
-*    Formular Senden
-*  </button>
-*  <button class='button no-margin'>
-*    Formular Senden
-*  </button>
-*  <button class='button button-icon'>
-*    icon
-*  </button>
+*  <button class='button'>Primary Button</button>
+*  <button class='button disabled'>Primary Disabled Button</button>
+*  <button class='button hollow'>Primary Hollow Button</button>
+*  <button class='button clear'>Primary Clear Button</button>
 */
 .button {
     &.button-icon {
@@ -44,3 +23,14 @@
         margin: 0;
     }
 }
+
+/**
+* @atom Secondary Buttons
+* @section Buttons > Default
+* @markup
+*  <button class='button secondary'>Secondary Button</button>
+*  <button class='button secondary disabled'>Secondary Disabled Button</button>
+*  <button class='button secondary hollow'>Secondary Hollow Button</button>
+*  <button class='button secondary clear'>Secondary Clear Button</button>
+*/
+.button.secondary {}

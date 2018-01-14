@@ -1,4 +1,4 @@
-@import "~_settings.scss";
+@import "../../../../../settings";
 
 @include breakpoint(large up) {
     .birthplace-detail {
@@ -58,6 +58,14 @@
     }
 }
 
+/**
+* @structure Name
+* @markup
+*  <ul _ngcontent-c10 class='no-bullet score-list'>
+*   <li class='total-score-item score-item'><strong class="score-item-title">Total</strong><strong class="score">2.2 von 3.0</strong></li>
+*   <li class='score-item'><strong class="score-item-title">Umgebung</strong><strong class="score">2.1</strong></li>
+*  </ul>
+*/
 .score-list {
     padding: 1rem;
     background: $white;

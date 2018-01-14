@@ -4,18 +4,15 @@
 }
 
 /**
-* @atom Typogrpahy
-* @section Typograpy > Anchors
+* @atom Go Back Anchors
+* @section Anchors > Icon Anchors
 * @modifiers
-*  .link-icon Link anchor
-*  .link-icon Link anchor
-*  .link-icon Link anchor
-*  .link-icon Link anchor
+*  .go-back-dark Dark Icon
+*  .go-back-light Light Icon
 * @markup
-*  <a href="#" class="">Anchor Link</a><br />
-*  <a href="#" class="link-icon">Anchor Link</a><br />
-*  <a href="#" class="go-back">Anchor Link</a><br />
-*  <a href="#" class="go-back go-back-dark">Anchor Link</a><br />
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-dark go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-light go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
 */
 a {
     &.link-icon {

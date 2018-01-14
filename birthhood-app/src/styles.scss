@@ -4,11 +4,11 @@
 // Imported library files
 
 // Toaster
-@import "/assets/scss/libs/toaster";
+@import "assets/scss/libs/toaster";
 // Owl Carousel
-@import "/assets/scss/libs/owl_carousel";
+@import "assets/scss/libs/owl_carousel";
 // Owl Calendar
-@import "/assets/scss/libs/owl_calendar";
+@import "assets/scss/libs/owl_calendar";
 
 
 @include foundation-global-styles;
@@ -27,8 +27,8 @@
 @include foundation-switch;
 
 // Global layout
-@import "/assets/scss/layout/layout";
+@import "assets/scss/layout/layout";
 
 // Global Atomic Styles
-@import "/assets/scss/atoms/atoms";
-@import "/assets/scss/molecules/molecules";
+@import "assets/scss/atoms/atoms";
+@import "assets/scss/molecules/molecules";
