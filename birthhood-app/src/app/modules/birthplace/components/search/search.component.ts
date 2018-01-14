@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit , OnDestroy{
 
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
   @ViewChild('searchBox') searchBox;
 
   @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) { 
+  handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key == "Escape") this.deactivateSearch();
   }
   private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>(null);
@@ -35,7 +35,19 @@ export class SearchComponent implements OnInit {
     private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.body = document.getElementsByTagName('body')[0];
 
+  }
+
+  ngOnDestroy() {
+    this.body.classList.remove("overflow-hidden");
+  }
+
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
+
+  activateSearch(): void {
     this.searchresults = Observable.combineLatest(this.searchTerms.debounceTime(300)
       .distinctUntilChanged(),
       this.birthplaceService.filterChanged$,
@@ -46,21 +58,16 @@ export class SearchComponent implements OnInit {
         this.toastr.error(error, "Fehler bei Suche");
         return Observable.of<Birthplace[]>([]);
       });
-      this.body =  document.getElementsByTagName('body')[0];
-  }
 
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
-
-  activateSearch(): void {
-    //this.body.classList.add("overflow-hidden");
+    this.body.classList.add("overflow-hidden");
     this.isActive = true;
     window.scrollTo(0, 0);
   }
 
   deactivateSearch(): void {
-    //this.body.classList.remove("overflow-hidden");
+    this.searchresults = null;
+    this.body.classList.remove("overflow-hidden");
+    this.searchBox.nativeElement.blur();
     this.isActive = false;
   }
 }

@@ -31,6 +31,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
   items$: Observable<any[]>;
 
   latLng: LatLngLiteral;
+  gestureHandling: string = "greedy";
   zoomOutNumber: number = 3;
   bounds: LatLngBounds;
   loaded: boolean = false;
@@ -97,7 +98,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
           };
           this.zoomOut();
         });
-      } 
+      }
     }
 
   }
