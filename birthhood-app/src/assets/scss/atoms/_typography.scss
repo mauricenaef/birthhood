@@ -10,9 +10,9 @@
 *  .go-back-dark Dark Icon
 *  .go-back-light Light Icon
 * @markup
-*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
-*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-dark go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
-*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-light go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-dark"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-light"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
 */
 a {
     &.link-icon {
