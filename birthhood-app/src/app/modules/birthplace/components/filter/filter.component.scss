@@ -1,30 +1,79 @@
 @import "../../../../../settings";
 
+/**
+* @section UI Input > Filter
+* @molecule Filter Switch
+* @markup
+*   <div class="filter-container grid-container full">
+*   <div class="grid-x grid-padding-x align-middle">
+*    <div class="cell small-6 switch-geburtshaus">
+*      <div class="grid-x grid-margin-x grid-padding-y grid-padding-x align-middle">
+*        <div class="cell small-8">
+*          <label for="geburtshaeuser" class="switch-label">Geburtshäuser</label>
+*        </div>
+*        <div class="cell auto">
+*          <div class="switch switch-filter tiny">
+*            <input id="geburtshaeuser" class="switch-input" type="checkbox" checked>
+*            <label class="switch-paddle" for="geburtshaeuser">
+*              <span class="show-for-sr">Zeige alle Geburtshäuser</span>
+*            </label>
+*          </div>
+*        </div>
+*      </div>
+*    </div>
+*    <div class="cell small-6 switch-spital">
+*      <div class="grid-x grid-margin-x grid-padding-y grid-padding-x align-middle">
+*        <div class="cell small-8">
+*          <label for="spitaeler" class="switch-label">Spitäler</label>
+*        </div>
+*        <div class="cell auto">
+*          <div class="switch switch-filter tiny">
+*            <input id="spitaeler" class="switch-input" type="checkbox" checked>
+*            <label class="switch-paddle" for="spitaeler">
+*              <span class="show-for-sr">Zeige alle Spitäler</span>
+*            </label>
+*          </div>
+*        </div>
+*      </div>
+*    </div>
+*   </div>
+*   </div>
+*/
 .filter-container {
     border-top: 1px solid $light-gray;
     border-bottom: 1px solid $light-gray;
-    background: lighten($medium-gray, 19%); 
+    background: lighten($medium-gray, 19%);
+
     @include breakpoint(large up) {
         border-right: 1px solid $light-gray;
     }
+
+
     .switch-geburtshaus {
         background-color: lighten($medium-gray, 17%);
+
         input:checked ~ .switch-paddle {
             background: get-color(geburtshaus);
-        } 
-    }
-    .switch-spital {
-        background-color: lighten($medium-gray, 19%);
-        input:checked ~ .switch-paddle {
-            background: get-color(spital); 
         }
     }
+
+    .switch-spital {
+        background-color: lighten($medium-gray, 19%);
+
+        input:checked ~ .switch-paddle {
+            background: get-color(spital);
+        }
+    }
+
     .switch-label {
         font-size: rem-calc(13);
         line-height: 1.3;
+        cursor: pointer;
         @include breakpoint(medium up) {
             font-size: rem-calc(15);
         }
+
+
         color: $medium-gray;
         margin: 0 !important;
     }

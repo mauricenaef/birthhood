@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+.SG-page .SG-page {
+    overflow: hidden;
+}
+
 .SG-layout {
     display: flex;
     max-width: 1100px;

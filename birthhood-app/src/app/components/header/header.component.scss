@@ -1,25 +1,36 @@
 @import "../../../settings";
 
+/**
+* @section Header > Logo
+* @molecule Header Logo
+* @markup
+*   <header class="site-header" style="position: relative;">
+*       <a href="" class="logo-link"><img src="assets/images/logo.svg" class="logo" title="logo"></a>
+*       <a href="" class="text-link"><svg class="icon icon-birthhood"><use xlink:href="#birthhood"></use></svg></a>
+*   </header>
+*/
 .site-header {
-    width: 100%;
-    background: $white;
     position: relative;
     z-index: 1000;
+    width: 100%;
+    background: $white;
+
     @include breakpoint(small only) {
         border-bottom: 1px solid $light-gray;
     }
+
+
     @include breakpoint(medium up) {
-        position: fixed;
         display: flex;
+        position: fixed;
         top: 0;
-        box-shadow: -1px -5px 20px 0px rgba($black, 0.133);
+        box-shadow: -1px -5px 20px 0 rgba($black, 0.133);
     }
 
 
     .logo-link {
         display: block;
         padding: .4em 1.2em;
-        
     }
 
     .logo {
@@ -28,6 +39,17 @@
     }
 
     .text-link {
+        color: darken($medium-gray, 15%);
+
+        @include breakpoint(small only) {
+            display: block;
+            position: absolute;
+            top: .4rem;
+            left: 50%;
+            margin-left: -4rem;
+        }
+
+
         .icon {
             width: 8rem;
             height: 2.8rem;
@@ -35,16 +57,6 @@
             @include breakpoint(medium up) {
                 margin-top: .3rem;
             }
-        }
-
-        color: darken($medium-gray, 15%);
-
-        @include breakpoint(small only) {
-            display: block;
-            position: absolute;
-            margin-left: -4rem;
-            left: 50%;
-            top: .4rem;
         }
     }
 }

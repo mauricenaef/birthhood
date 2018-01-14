@@ -7,31 +7,26 @@ app-main-nav {
 /**
 * Site Header Navigation Large up
 * 
-* @section Header
+* @section Header > Navigation
 * @molecule Main Nav (Large)
 * @markup
-*  <nav class='main-nav'>
-*  <ul class='menu main-nav-list'>
-*    <li><a href='' class='active'><span>Home</span></a></li>
-*    <li><a href=''><span>Über uns</span></a></li>
-*    <li><a href=''><span>Kontakt</span></a></li>
-*    <li><a href=''><span>Profil</span></a></li>
-*    <li><a href='' class='highlighted'><span>Geburten</span></a></li>
-*  </ul>
+*  <nav id="nav" class='main-nav'>
+*   <ul class='menu main-nav-list'>
+*    <li><a href='' class='active'><svg class="show-for-small-only icon icon-world2"><use xlink:href="#world2"></use></svg><span>Home</span></a></li>
+*    <li><a href=''><svg class="show-for-small-only icon icon-stethoscope"><use xlink:href="#world2"></use></svg><span>Über uns</span></a></li>
+*    <li><a href=''><svg class="show-for-small-only icon connenction"><use xlink:href="#connenction"></use></svg><span>Kontakt</span></a></li>
+*    <li><a href=''><svg class="show-for-small-only icon icon-woman-user"><use xlink:href="#woman-user"></use></svg><span>Profil</span></a></li>
+*    <li><a href='' class='highlighted'><svg class="show-for-small-only icon icon-baby"><use xlink:href="#baby"></use></svg><span>Geburten</span></a></li>
+*   </ul>
 *  </nav>
 */
 .main-nav {
-    a {
-        color: lighten($body-font-color, 20%);
-        &:hover, &:focus {
-            color: get-color(primary-bright);
-        }
-    }
     @include breakpoint(small only) {
-        background-color: lighten($light-gray, 6%);
-        box-shadow: 0 0 15px rgba($black, .2);
         position: fixed;
         bottom: -1px;
+        left: 0;
+        background-color: lighten($light-gray, 6%);
+        box-shadow: 0 0 15px rgba($black, .2);
         z-index: 2000;
         width: 100%;
         .main-nav-list {
@@ -62,10 +57,6 @@ app-main-nav {
     and (device-width : 375px) 
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) { 
-        /* box-shadow: none;
-        width: 96vw;
-        left: 2vw;
-        border-radius: 8px; */
         padding-bottom: 16pt; 
     }
 
@@ -99,4 +90,20 @@ app-main-nav {
             }
         }
     }
+    a {
+        color: lighten($body-font-color, 20%);
+        &:hover, &:focus {
+            color: get-color(primary-bright);
+        }
+    }
 }
+
+/**
+* Site Main Navigation Mobile
+* 
+* @section Header > Navigation
+* @molecule Main Nav (Mobile)
+* @markup
+*   <iframe src="#nav" width="380px" height="65" style="border: 0;" ></iframe>
+*/
+.main-nav {}

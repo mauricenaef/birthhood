@@ -18,6 +18,21 @@ $top-value: -238px;
     }
 }
 
+/**
+* @section UI Input > Search Input
+* @molecule Site Search
+* @markup
+*   <div class="search-container grid-container">
+*   <div class="grid-x grid-margin-x align-center search-input-container-wrap">
+*        <div class="cell search-input-container">
+*           <a class="search-close-button" ><svg class="icon icon-cancel"><use xlink:href="#cancel"></use></svg></a>
+*           <a class="search-button" ><svg class="icon icon-search"><use xlink:href="#search"></use></svg></a>
+*           <label for="search-input" class="show-for-sr">Search</label>
+*           <input type="text" id="search-input" class="input-text search-input" placeholder="Suchen">
+*        </div>
+*   </div>
+*   </div>
+*/
 .search-container {
     max-width: 40rem;
     will-change: transform;
