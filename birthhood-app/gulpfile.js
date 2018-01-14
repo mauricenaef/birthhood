@@ -46,11 +46,12 @@ Create Complete CSS for Styleguide
 gulp.task('sass', function(){
 
     return gulp
-        .src(['src/app/**/*.scss'])
+        .src(['src/**/*.scss'])
         .pipe(sass())
         .pipe(sass({
             importer: tildeImporter,
             includePaths: ['node_modules/'], 
+            outputStyle: 'compressed',
             errLogToConsole: true
         }))
         .pipe(concat('complete-style.css'))

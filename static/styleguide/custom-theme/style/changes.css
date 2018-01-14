@@ -14,6 +14,11 @@
 
 .SG-header {
     margin-bottom: 50px;
+    background: white;
+}
+
+.SG-header::before {
+    box-shadow: 0 -43px 14px #f8f8f8 inset;
 }
 
 .SG-logo__name {
@@ -36,9 +41,9 @@
     font-size: .8rem;
 }
 
-.SG-scroll-header {
+/* .SG-scroll-header {
     padding-top: 5.8em !important;
-}
+} */
 
 :not('.molecules') .SG-scroll-title {
     margin-bottom: -6em !important;
@@ -67,6 +72,7 @@
     padding: 10px 40px;
     color: #9b9b9b;
     border-top: 1px solid #efefef;
+    background: white;
     align-items: center;
     justify-content: space-between;
 }
@@ -81,7 +87,11 @@
     border-radius: 100% 100% 0 0;
     background: linear-gradient(to top, #ececec, #fff 100%);
     background-size: 131%;
-    box-shadow: 0 17px 27px white inset;
+    box-shadow: 0 17px 27px #f8f8f8 inset;
+}
+
+.SG-a {
+    border-bottom: none !important; 
 }
 
 .SG-footer p {

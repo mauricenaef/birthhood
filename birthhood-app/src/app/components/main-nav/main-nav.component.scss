@@ -1,5 +1,25 @@
 @import "../../../settings";
 
+app-main-nav {
+    order: -1;
+}
+
+/**
+* Site Header Navigation Large up
+* 
+* @section Header
+* @molecule Main Nav (Large)
+* @markup
+*  <nav class='main-nav'>
+*  <ul class='menu main-nav-list'>
+*    <li><a href='' class='active'><span>Home</span></a></li>
+*    <li><a href=''><span>Über uns</span></a></li>
+*    <li><a href=''><span>Kontakt</span></a></li>
+*    <li><a href=''><span>Profil</span></a></li>
+*    <li><a href='' class='highlighted'><span>Geburten</span></a></li>
+*  </ul>
+*  </nav>
+*/
 .main-nav {
     a {
         color: lighten($body-font-color, 20%);
@@ -79,8 +99,4 @@
             }
         }
     }
-}
-
-app-main-nav {
-    order: -1;
 }

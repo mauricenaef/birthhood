@@ -6,7 +6,6 @@
     "target": "../static/styleguide",
     "css":[
         "../styleguide/custom-theme/style/changes.css",
-        "../styleguide/styles/birthhood.css",
         "../styleguide/styles/complete-style.css",
         "https://i.icomoon.io/public/b43cca1545/birthhood/style.css"],
     "namespace": "page",

@@ -67,3 +67,29 @@ a {
     font-size: rem-calc(13);
     margin: 0;
 }
+
+/**
+* @atom Horizontal Ruler
+* @section Typography > Elements
+* @markup
+*   <hr class="section-divider" >
+*/
+hr.section-divider {
+    display: block;
+    margin-top: 1.5rem;
+    margin-bottom: 1.25rem;
+    border: 0;
+    text-align: center;
+    overflow: visible;
+    &::before {
+        content: '...';
+        display: inline-block;
+        font-weight: 400;
+        font-size: rem-calc(30px);
+        letter-spacing: .6em;
+        margin-left: .6em;
+        color: $body-font-color;
+        position: relative;
+        top: rem-calc(-30px);
+    }
+}

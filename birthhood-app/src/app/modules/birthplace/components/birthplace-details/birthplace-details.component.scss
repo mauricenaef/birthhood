@@ -58,12 +58,36 @@
     }
 }
 
+.birthplace-details-main {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 2rem
+}
+
+.birthplace-details-footer {
+    background-color: lighten($light-gray, 5%);
+    padding-top: 1rem;
+    @include breakpoint(medium up) {
+        padding-top: 2rem;
+    }
+    padding-bottom: 2rem;
+    font-size: rem-calc(14);
+    .adr {
+        margin-bottom: 1em;
+    }
+}
+
+
 /**
-* @structure Name
+* @molecule Score List
 * @markup
-*  <ul _ngcontent-c10 class='no-bullet score-list'>
+*  <ul class='no-bullet score-list' style="max-width: 20rem;">
 *   <li class='total-score-item score-item'><strong class="score-item-title">Total</strong><strong class="score">2.2 von 3.0</strong></li>
 *   <li class='score-item'><strong class="score-item-title">Umgebung</strong><strong class="score">2.1</strong></li>
+*   <li class='score-item'><strong class="score-item-title">Emotional</strong><strong class="score">1.2</strong></li>
+*   <li class='score-item'><strong class="score-item-title">Körperlich</strong><strong class="score">1.98</strong></li>
+*   <li class='score-item'><strong class="score-item-title">Mental</strong><strong class="score">1.75</strong></li>
+*   <li class='score-item'><strong class="score-item-title">Wochenbett</strong><strong class="score">1.22</strong></li>
 *  </ul>
 */
 .score-list {
@@ -71,12 +95,6 @@
     background: $white;
     border-radius: $global-radius;
     border: 1px solid lighten($light-gray, 2%);
-    .score-list-description {
-        font-size: rem-calc(14);
-        display: block;
-        margin-bottom: 1em;
-        color: lighten($body-font-color, 50%);
-    }
     .total-score-item {
         font-size: rem-calc(19);
         line-height: 1; 
@@ -104,25 +122,19 @@
     }
 }
 
-.birthplace-details-main {
-    position: relative;
-    padding-top: 1rem;
-    padding-bottom: 2rem
+/**
+* @molecule Score List Description
+* @markup
+*   <small class="score-list-description">Bewertung basierend auf <span class="badge">7</span> Geburten</small>
+*/
+.score-list-description {
+    font-size: rem-calc(14);
+    display: block;
+    margin-bottom: 1em;
+    color: lighten($body-font-color, 50%);
 }
+
 
 .polar-chart-container {
     padding: 1rem;
-}
-
-.birthplace-details-footer {
-    background-color: lighten($light-gray, 5%);
-    padding-top: 1rem;
-    @include breakpoint(medium up) {
-        padding-top: 2rem;
-    }
-    padding-bottom: 2rem;
-    font-size: rem-calc(14);
-    .adr {
-        margin-bottom: 1em;
-    }
 }

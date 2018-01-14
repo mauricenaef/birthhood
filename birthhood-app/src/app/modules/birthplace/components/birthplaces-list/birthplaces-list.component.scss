@@ -1,15 +1,27 @@
 @import "../../../../../settings";
 
-.search-cell {
-    @include breakpoint(large up) {
-        border-top: 1px solid $light-gray;
-        border-bottom: 1px solid $light-gray;
-        background-color: lighten($medium-gray, 20%); 
-    }
-}
-
-
-
+/**
+* @molecule Card Item
+* @markup
+*  <div class="card-item" style="max-width: 20rem;">
+*   <div class="card card-content">
+*       <header class="card-header">
+*           <div class="hero-image-wrapper"><img src="https://source.unsplash.com/400x225/?building,switzerland" class="card-hero-image" /></div>
+*       </header>
+*       <div class="card-section">
+*           <p class="card-sup-title">spital</p>
+*           <h2 class="h5"><a href="">See-Spital</a></h2>
+*       </div>
+*       <footer class="card-footer card-section">
+*           <div class="card-footer-wrap">
+*               <p class="card-total-score"><span>Gesamtbewertung</span><strong>1.8 / 3.0</strong></p>
+*               <small class="card-description"><span class="badge">2</span> Geburten</small>
+*           </div>
+*           <svg class="icon geburtshaus icon-geburtshaus"><use xlink:href="#geburtshaus"></use></svg>
+*       </footer>
+*    </div>
+*   </div>
+*/
 .card-item {
     .card-header + .card-footer {
         padding-bottom: 0;
@@ -24,8 +36,6 @@
 
     .card-sup-title {
         text-transform: capitalize;
-
-        //font-size: rem-calc(17);
         margin-bottom: -.3em;
         font-weight: 200;
     }
@@ -58,5 +68,14 @@
                 color: get-color(geburtshaus);
             }
         }
+    }
+}
+
+
+.search-cell {
+    @include breakpoint(large up) {
+        border-top: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
+        background-color: lighten($medium-gray, 20%); 
     }
 }

@@ -2,6 +2,14 @@
 
 $top-value: -238px;
 
+.search-cell {
+    @include breakpoint(large up) {
+        border-top: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
+        background-color: lighten($medium-gray, 20%); 
+    }
+}
+
 .search-height-controller {
     height: 3.6rem;
 
