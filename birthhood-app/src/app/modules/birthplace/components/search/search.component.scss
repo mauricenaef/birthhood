@@ -65,7 +65,7 @@ $top-value: -238px;
     }
     .search-list-container {
         visibility: hidden;
-        height: 0;
+        max-height: 0;
         background-color: $white;
     }
     .search-input-container {
@@ -127,13 +127,12 @@ $top-value: -238px;
         }
 
         .search-list-container {
-            //display: block;
             visibility: visible;
             height: 100%;
             overflow-y: scroll;
 
             @include breakpoint(small only) {
-                max-height: 80vh;
+                max-height: calc(100vh - 200px);
             }
 
 
