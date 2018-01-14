@@ -147,13 +147,26 @@ app-root {
         padding-top: 5rem;
         padding-left: 4rem;
         padding-right: 4rem;
+        &.flush {
+            padding-top: 0;
+        }
     }
 }
 
 .main-sidebar {
     padding-top: 2rem;
+    @include breakpoint(small only) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
     @include breakpoint(medium up) {
         padding-top: 5rem;
+        &.offset-title {
+            padding-top: 3rem;
+        }
+        &.flush {
+            padding-top: 0;
+        }
     }
 }
 
@@ -178,7 +191,10 @@ app-root {
     &.gray {
         background: lighten($light-gray, 7%);
     }
-    
+    &.padded {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
     @include breakpoint(small only) {
         min-height: 10rem;
     }
