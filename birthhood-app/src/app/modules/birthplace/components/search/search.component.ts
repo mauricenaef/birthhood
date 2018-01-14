@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit , OnDestroy{
 
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
@@ -37,6 +37,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.body = document.getElementsByTagName('body')[0];
 
+  }
+
+  ngOnDestroy() {
+    this.body.classList.remove("overflow-hidden");
   }
 
   search(term: string): void {
