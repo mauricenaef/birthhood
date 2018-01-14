@@ -5,8 +5,8 @@
     ],
     "target": "../static/styleguide",
     "css":[
-        "../styleguide/custom-theme/style/changes.css",
-        "../styleguide/styles/complete-style.css",
+        "../custom-theme/style/changes.css",
+        "../styles/complete-style.css",
         "https://i.icomoon.io/public/b43cca1545/birthhood/style.css"],
     "namespace": "page",
     "verbose": 3,
