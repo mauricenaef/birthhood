@@ -13,6 +13,9 @@ export const environment = {
     storageBucket: "",
     messagingSenderId: "836576784093"
   },
-  googleMapsKey: 'AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU'
+  googleMapsKey: 'AIzaSyDDOykheYkFHZlMZKvLNSxqs1XnyOAyKlk'
 
 };
+
+
+// old key AIzaSyDnyvyYQD2Kf70Qkxbmk0Q6RFBw-FKCJbU
