@@ -48,6 +48,7 @@ export class SearchComponent implements OnInit , OnDestroy{
   }
 
   activateSearch(): void {
+    window.scrollTo(0, 0);
     this.searchresults = Observable.combineLatest(this.searchTerms.debounceTime(300)
       .distinctUntilChanged(),
       this.birthplaceService.filterChanged$,
@@ -61,7 +62,7 @@ export class SearchComponent implements OnInit , OnDestroy{
 
     this.body.classList.add("overflow-hidden");
     this.isActive = true;
-    window.scrollTo(0, 0);
+    
   }
 
   deactivateSearch(): void {
