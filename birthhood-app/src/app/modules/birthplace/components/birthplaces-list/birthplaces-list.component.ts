@@ -49,8 +49,7 @@ export class BirthplacesListComponent implements OnInit {
         stagePadding: 30,
         startPosition: 0
       }
-    },
-    onDragged: this.sliderDraged,
+    }
   }
 
   constructor(
@@ -67,12 +66,6 @@ export class BirthplacesListComponent implements OnInit {
         this.birthplaces = returnBirthplaces;
       });
   }
-
-  sliderDraged(event) {
-    let draged_id = $('.owl-item.active .item').data('id');
-    console.log('Current active ID is ' + draged_id );
-  }
-
 
   ngOnInit() {
     this.birthplaceService.zoomOut();

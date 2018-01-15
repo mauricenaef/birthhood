@@ -114,10 +114,6 @@ export class BirthplaceService {
     this.zoomOutSource.next();
   }
 
-  zoomTo(id): void {
-    console.log('zoomed to id ' + id);
-  }
-
   search(term: string): Observable<Birthplace[]> {
     return this.getBirthplacesFiltered().map(birthplaces =>
       birthplaces.filter(item =>
