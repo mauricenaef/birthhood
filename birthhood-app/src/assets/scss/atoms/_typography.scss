@@ -38,6 +38,12 @@ a {
             .icon {
                 color: $white;
             }
+            &:hover, &:focus {
+                .icon {
+                    color: $white;
+                    opacity: .5;
+                }
+            }
         }
         &:hover, &:focus {
             .icon {
