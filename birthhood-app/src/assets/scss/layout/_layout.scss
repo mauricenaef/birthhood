@@ -31,8 +31,8 @@ app-root {
         padding-bottom: 4rem;
         z-index: 2;
         min-height: 100vh;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        /* overflow-y: auto;
+        -webkit-overflow-scrolling: touch; */
         background-color: $white;
 
         //will-change: transform;
