@@ -12,7 +12,7 @@
 * @markup
 *  <div style='position: relative; height: 100px;'><a href="#" class="go-back"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
 *  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-dark"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
-*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-light"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
+*  <div style='position: relative; height: 100px;'><a href="#" class="go-back go-back-light go-back-overlay"><svg class="icon arrow-left"><use xlink:href="#arrow-left"></use></svg></a></div>
 */
 a {
     &.link-icon {
@@ -25,9 +25,9 @@ a {
         align-items: center;
         justify-content: center;  
         .icon {
-            margin-top: -.2em;
             width: 2rem;
             height: 2rem;
+            margin-top: -.2em;
         }
         &.go-back-dark {
             .icon {
@@ -51,12 +51,12 @@ a {
     }
     &.go-back-overlay {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         z-index: 100;
         top: 0;
         left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: 100%;
         background-color: rgba($black, .5);
@@ -76,20 +76,20 @@ a {
 */
 hr.section-divider {
     display: block;
+    overflow: visible;
     margin-top: 1.5rem;
     margin-bottom: 1.25rem;
-    border: 0;
     text-align: center;
-    overflow: visible;
+    border: 0;
     &::before {
-        content: '...';
-        display: inline-block;
-        font-weight: 400;
         font-size: rem-calc(30px);
-        letter-spacing: .6em;
-        margin-left: .6em;
-        color: $body-font-color;
+        font-weight: 400;
         position: relative;
         top: rem-calc(-30px);
+        display: inline-block;
+        margin-left: .6em;
+        content: '...';
+        letter-spacing: .6em;
+        color: $body-font-color;
     }
 }

@@ -12,10 +12,10 @@
 .show-hide-password {
     position: relative;
     .show-hide-password-link {
-        color: $dark-gray;
         position: absolute;
-        right: 1rem;
         top: .5em;
+        right: 1rem;
+        color: $dark-gray;
         &:hover, &:focus {
             color: $black;
         }

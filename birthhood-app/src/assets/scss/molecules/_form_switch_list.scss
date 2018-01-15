@@ -1,17 +1,44 @@
 .switch-list {
     margin-bottom: 1rem;
 
+    @include breakpoint(medium up) {
+        &.inline-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+
+            .radio-group {
+                padding-top: 0;
+            }
+
+            .switch-label {
+                width: calc(100% - 20rem);
+                margin: 0;
+                padding-right: 1rem;
+            }
+
+            .switch-container {
+                width: 20rem;
+            }
+
+            .switch-description {
+                width: calc(100% - 22rem);
+                padding: 0;
+            }
+        }
+    }
+
     .radio-group {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: .5rem 0;
         margin: 0;
+        padding: .5rem 0;
         list-style-type: none;
 
         li {
-            text-align: center;
             flex: 1;
+            text-align: center;
 
             &:first-of-type {
                 border-radius: 100px 0 0 100px;
@@ -35,25 +62,20 @@
         }
 
         label {
+            font-size: rem-calc(12);
+            font-weight: 700;
             display: flex;
-            justify-content: center;
+            overflow: hidden;
             align-items: center;
-            padding: .5rem .25rem;
+            justify-content: center;
             margin: 0 -1px !important;
-            background: $white;
+            padding: .5rem .25rem;
+            white-space: nowrap;
+            text-transform: uppercase;
+            text-overflow: ellipsis;
             color: $medium-gray;
             border: 2px solid $light-gray;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-size: rem-calc(12);
-
-            .icon {
-                width: 1.8rem;
-                height: 1.8rem;
-            }
+            background: $white;
 
             @include breakpoint(small only) {
                 line-height: 1;
@@ -63,6 +85,11 @@
             @include breakpoint(medium up) {
                 font-size: rem-calc(16);
                 padding: .5rem;
+            }
+
+            .icon {
+                width: 1.8rem;
+                height: 1.8rem;
             }
 
 
@@ -75,33 +102,6 @@
         input[type=radio]:checked + label {
             color: darken(get-color(secondary), 20%);
             background: get-color(secondary);
-        }
-    }
-
-    @include breakpoint(medium up) {
-        &.inline-list {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 5rem;
-
-            .radio-group {
-                padding-top: 0;
-            }
-
-            .switch-label {
-                padding-right: 1rem;
-                width: calc(100% - 20rem);
-                margin: 0;
-            }
-
-            .switch-container {
-                width: 20rem;
-            }
-
-            .switch-description {
-                padding: 0;
-                width: calc(100% - 22rem);
-            }
         }
     }
 }

@@ -5,8 +5,8 @@
 *  <label class="form_label">First Name</label>
 */
 .form-label {
-    padding: 0 .3em;
     font-size: rem-calc(15);
+    padding: 0 .3em;
     @include breakpoint(medium up) {
         font-size: rem-calc(13);
     }

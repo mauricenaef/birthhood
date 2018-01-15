@@ -3,7 +3,7 @@
 
 @include breakpoint(medium up) {
     app-birthplaces {
-        order: 1;
         display: none;
+        order: 1;
     }
 }

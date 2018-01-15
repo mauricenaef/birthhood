@@ -12,7 +12,6 @@ $top-value: -289px;
 
 .search-height-controller {
     height: 3.6rem;
-
     @include breakpoint(large up) {
         height: 2.6rem;
     }
@@ -34,12 +33,15 @@ $top-value: -289px;
 *   </div>
 */
 .search-container {
+    position: relative;
+    z-index: 15;
     max-width: 40rem;
+    height: 0;
+    padding: 1rem;
+    transition: all 250ms ease;
+    background: $white;
     will-change: transform;
     -webkit-font-smooting: antialiased;
-    padding: 1rem;
-    background: $white;
-    transition: all 250ms ease;
 
     @include breakpoint(large up) {
         background: none;
@@ -48,9 +50,6 @@ $top-value: -289px;
     @include breakpoint(large up) {
         padding: 0.4rem 1rem;
     }
-    height: 0;
-    z-index: 15;
-    position: relative;
     .search-close-button, .search-button {
         color: $dark-gray;
     }
@@ -60,8 +59,8 @@ $top-value: -289px;
 
     .search-button {
         position: absolute;
-        right: 1rem;
         top: .46rem;
+        right: 1rem;
     }
     .search-list-container {
         visibility: hidden;
@@ -74,8 +73,8 @@ $top-value: -289px;
     .search-input {
         z-index: 10;
         margin-bottom: 0;
-        border-radius: 100px;
         padding-left: 1rem;
+        border-radius: 100px;
     }
 
     .search-active & {
@@ -84,16 +83,13 @@ $top-value: -289px;
         overflow: hidden;
 
         @include breakpoint(small only) {
-            transform: translateY($top-value);
             width: 100vw;
             height: 100vh;
+            transform: translateY($top-value);
         }
 
 
         @include breakpoint(medium up) {
-            background: $white;
-            border-radius: $global-radius;
-            box-shadow: $box-shadow-small;
             position: fixed;
             top: 10vh;
             right: 0;
@@ -101,6 +97,9 @@ $top-value: -289px;
             min-height: 60vh;
             max-height: 80vh;
             padding: 1.5rem;
+            border-radius: $global-radius;
+            background: $white;
+            box-shadow: $box-shadow-small;
 
             .search-input-container-wrap {
                 height: 100%;
@@ -113,10 +112,10 @@ $top-value: -289px;
         }
         
         .search-close-button {
-            display: block;
             position: absolute;
-            right: .3rem;
             top: .4rem;
+            right: .3rem;
+            display: block;
 
             &:hover, &:focus {
                 opacity: .5;
@@ -128,9 +127,9 @@ $top-value: -289px;
 
         .search-list-container {
             visibility: visible;
-            max-height: 100%;
-            height: 100%;
             overflow-y: scroll;
+            height: 100%;
+            max-height: 100%;
 
             @include breakpoint(small only) {
                 max-height: calc(100vh - 200px);
@@ -146,23 +145,23 @@ $top-value: -289px;
 
 .search-active {
     &:after {
-        content: "";
         position: fixed;
-        height: 100%;
-        width: 100%;
-        left: 0;
+        z-index: 9;
         top: 0;
         bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
         background: rgba($medium-gray, 0.6);
-        z-index: 9;
     }
 }
 
 .search-results-item {
     a {
-        padding: .6em 0;
-        margin-left: .6em;
         margin-right: .6em;
+        margin-left: .6em;
+        padding: .6em 0;
         border-bottom: 1px solid $light-gray;
     }
 
@@ -174,16 +173,16 @@ $top-value: -289px;
 
 .search-info {
     font-size: rem-calc(12px);
-    color: $medium-gray;
     font-weight: $global-weight-bold;
-    text-align: right;
     padding: .3em;
+    text-align: right;
+    color: $medium-gray;
 
     > span:nth-of-type(2) {
         &::before {
-            content: '|';
             display: inline-block;
             padding: 0 .6em;
+            content: '|';
         }
     }
 }

@@ -55,11 +55,9 @@ gulp.task('sass', function(){
             errLogToConsole: true
         }))
         .pipe(concat('complete-style.css'))
-        .pipe(gulp.dest('../static/styleguide/styles/'))
+        .pipe(gulp.dest('../static/styleguide/style/'))
         .pipe(notify('All sass created and combined'));
 });
-
-
 
 gulp.task('default', function () {
     console.log("Hi! I'm Gulp default task!");

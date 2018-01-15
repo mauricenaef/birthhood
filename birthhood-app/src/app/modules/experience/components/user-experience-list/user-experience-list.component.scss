@@ -1,11 +1,10 @@
 @import "../../../../../settings";
 
 .experience-container {
-    height: 100%;
     display: flex;
     align-items: stretch;
     justify-content: center;
-
+    height: 100%;
     .section-title {
         margin-bottom: 2rem;
     }
@@ -13,8 +12,8 @@
 
 .add-experience-container {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
+    justify-content: center;
 }
 
 .experience-list {
@@ -33,7 +32,6 @@
         }
     }
 
-
     .experience-title {
         padding: .6em 0;
         border-bottom: 1px solid $light-gray;
@@ -45,7 +43,6 @@
 
     .experience-item {
         padding: .6em 0;
-
         @include breakpoint(small only) {
             .cell, .experience-name {
                 font-size: rem-calc(12);

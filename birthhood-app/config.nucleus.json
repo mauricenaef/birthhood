@@ -4,10 +4,7 @@
         "src/**/*.scss"
     ],
     "target": "../static/styleguide",
-    "css":[
-        "../custom-theme/style/changes.css",
-        "../styles/complete-style.css",
-        "https://i.icomoon.io/public/b43cca1545/birthhood/style.css"],
+    "css":[],
     "namespace": "page",
     "verbose": 3,
     "counterCSS": null,

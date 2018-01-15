@@ -1,27 +1,27 @@
 .icon {
+    position: relative;
     display: inline-flex;
     align-self: center;
-    margin-bottom: -0.2em;
-    position: relative;
-    height: 1em;
     width: 1em;
+    height: 1em;
+    margin-bottom: -0.2em;
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
 
     &.icon-medium {
-        height: 2em;
         width: 2em;
+        height: 2em;
     }
 
     &.icon-large {
-        height: 4em;
         width: 4em;
+        height: 4em;
     }
 
     &.icon-xlarge {
-        height: 8em;
         width: 8em;
+        height: 8em;
     }
 
     &.icon-input {

@@ -35,8 +35,8 @@ $dot-background-active: $color-base !default;
 }
 
 .owl-wrap {
-    min-height: 360px;
-    position: relative; 
+    position: relative;
+    min-height: 360px; 
 }
 
 .owl-stage {
@@ -52,8 +52,8 @@ $dot-background-active: $color-base !default;
 }
 
 .owl-item {
-    -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    -webkit-backface-visibility: hidden;
     @include breakpoint(medium up) {
         padding-bottom: 1.5rem;
     }

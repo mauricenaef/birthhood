@@ -19,8 +19,8 @@
       </div>
     </div>
 
-  <owl-carousel *ngIf="birthplaces?.length > 0" [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-    <div class="item card-item" *ngFor="let birthplace of birthplaces; let i = index; trackBy: trackFbObjects">
+  <owl-carousel #slider *ngIf="birthplaces?.length > 0" [options]="slider_options" [items]="birthplaces" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    <div class="item card-item" *ngFor="let birthplace of birthplaces; let i = index; trackBy: trackFbObjects" [attr.data-id]="birthplace.id">
       <div class="card card-content">
         <header class="card-header">
           <div class="hero-image-wrapper">

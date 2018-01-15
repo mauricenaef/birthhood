@@ -1,27 +1,24 @@
 @import "../../../../../settings";
 
 .menu-experience {
-    padding: .6em;
     margin: .6rem 0 1rem;
-
+    padding: .6em;
     li {
         margin-right: 1rem;
-
         &:last-of-type {
             margin-right: 0;
         }
     }
 
     .menu-experience-link {
+        line-height: 1;
         display: block;
         width: 2rem;
         height: 2rem;
-        line-height: 1;
-        background: $medium-gray;
+        padding: .6em .8em;
         color: $white;
         border-radius: 100px;
-        padding: .6em .8em;
-
+        background: $medium-gray;
         &.active {
             background: get-color(primary);
         }

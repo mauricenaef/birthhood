@@ -23,20 +23,20 @@ app-main-nav {
 .main-nav {
     @include breakpoint(small only) {
         position: fixed;
+        z-index: 2000;
         bottom: -1px;
         left: 0;
+        width: 100%;
         background-color: lighten($light-gray, 6%);
         box-shadow: 0 0 15px rgba($black, .2);
-        z-index: 2000;
-        width: 100%;
         .main-nav-list {
             justify-content: space-around;
         }
         a {
             display: flex;
             flex-flow: column;
-            text-align: center;
             padding: 0.7rem;
+            text-align: center;
             &.active {
                 color: $primary-color;
             }
@@ -81,10 +81,11 @@ app-main-nav {
                 }
             }
             &.highlighted {
-                border-radius: 100px;
                 color: $white;
+                border-radius: 100px;
                 background-color: get-color(primary);
                 &:hover, &:focus {
+                    color: $white;
                     background-color: get-color(primary-bright);
                 }
             }

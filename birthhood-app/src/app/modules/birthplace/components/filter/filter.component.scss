@@ -47,8 +47,7 @@
     @include breakpoint(large up) {
         border-right: 1px solid $light-gray;
     }
-
-
+    
     .switch-geburtshaus {
         background-color: lighten($medium-gray, 17%);
 
@@ -68,13 +67,11 @@
     .switch-label {
         font-size: rem-calc(13);
         line-height: 1.3;
+        margin: 0 !important;
         cursor: pointer;
+        color: $medium-gray;
         @include breakpoint(medium up) {
             font-size: rem-calc(15);
         }
-
-
-        color: $medium-gray;
-        margin: 0 !important;
     }
 }

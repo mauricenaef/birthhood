@@ -4,7 +4,7 @@
 * @section Header > Logo
 * @molecule Header Logo
 * @markup
-*   <header class="site-header" style="position: relative;">
+*   <header class="site-header" style="position: relative; z-index: -1;">
 *       <a href="" class="logo-link"><img src="assets/images/logo.svg" class="logo" title="logo"></a>
 *       <a href="" class="text-link"><svg class="icon icon-birthhood"><use xlink:href="#birthhood"></use></svg></a>
 *   </header>
@@ -21,9 +21,9 @@
 
 
     @include breakpoint(medium up) {
-        display: flex;
         position: fixed;
         top: 0;
+        display: flex;
         box-shadow: -1px -5px 20px 0 rgba($black, 0.133);
     }
 
@@ -42,10 +42,10 @@
         color: darken($medium-gray, 15%);
 
         @include breakpoint(small only) {
-            display: block;
             position: absolute;
             top: .4rem;
             left: 50%;
+            display: block;
             margin-left: -4rem;
         }
 

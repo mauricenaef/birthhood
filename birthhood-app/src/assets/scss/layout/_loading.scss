@@ -1,30 +1,30 @@
 .loading {
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
-    transform: all 650ms ease-out;
-    background: $primary-color;
     position: fixed;
+    z-index: -1;
     top: 0;
     left: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    transform: all 650ms ease-out;
+    opacity: 0;
+    background: $primary-color;
 
     .is-loading & {
-        visibility: visible;
-        opacity: 1;
         z-index: 10000;
+        visibility: visible;
         transform: all 650ms ease-out;
+        opacity: 1;
     }
 
     .logo {
-        margin-bottom: 1rem;
         width: 4rem;
         height: 4rem;
+        margin-bottom: 1rem;
         opacity: .75;
     }
 }
@@ -52,15 +52,15 @@
 */
 .typing_loader_container {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: get-color(primary);
+    z-index: 90;
     top: 0;
     left: 0;
-    z-index: 90;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: get-color(primary);
     &.clear {
         background-color: transparent;
     }
@@ -70,12 +70,12 @@
 }
 
 .typing_loader {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    animation: typing 1s linear infinite alternate;
     position: relative;
     left: -12px;
+    width: 6px;
+    height: 6px;
+    animation: typing 1s linear infinite alternate;
+    border-radius: 50%;
     .clear & {
         animation: typing_dark 1s linear infinite alternate;
     }

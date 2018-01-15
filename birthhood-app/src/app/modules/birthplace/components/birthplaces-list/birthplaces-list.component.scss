@@ -29,19 +29,19 @@
     }
     .card-content {
         min-height: 20rem;
+        box-shadow: 0 0 29px rgba(0,0,0,.1);
         @include breakpoint(medium) {
             min-height: 26rem;
         }
         @include breakpoint(large up) {
             min-height: 23rem;
         }
-        box-shadow: 0 0 29px rgba(0,0,0,.1);
     }
 
     .card-sup-title {
-        text-transform: capitalize;
-        margin-bottom: -.3em;
         font-weight: 200;
+        margin-bottom: -.3em;
+        text-transform: capitalize;
     }
 
     .card-total-score {
@@ -55,16 +55,16 @@
         width: 100%;
     }
     .card-footer {
+        position: relative;
         display: flex;
         align-items: flex-end;
-        position: relative;
 
         .icon {
-            position: absolute;
-            width: 1.6rem;
-            height: 1.6rem; 
+            position: absolute; 
             right: 1rem;
             bottom: 1rem;
+            width: 1.6rem;
+            height: 1.6rem;
             &.icon-spital {
                 color: get-color(spital);
             }

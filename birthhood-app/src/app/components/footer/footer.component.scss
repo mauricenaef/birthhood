@@ -11,6 +11,9 @@
             &:hover, &:focus {
                 color: get-color(primary-bright);
             }
+            .icon {
+                margin-left: .1em;
+            }
         }
         @include breakpoint(small only) {
             padding-bottom: 1rem;
@@ -26,8 +29,8 @@
         }
     }
     .menu-text {
-        padding-bottom: 0;
         margin-bottom: 0;
+        padding-bottom: 0;
         @include breakpoint(small only) {
             color: $white;
         }
@@ -37,9 +40,9 @@
 
 
 .credits {
-    padding: 0 2rem ;
-    margin: 0;
     font-size: rem-calc(13);
+    margin: 0;
+    padding: 0 2rem ;
     color: $white;
     @include breakpoint(medium up) {
         padding: 0 1rem ;
@@ -48,6 +51,11 @@
 }
 
 @include breakpoint(small only) {
+    .footer-container {
+        .close-nav-trigger {
+            padding: 1rem 0; 
+        }
+    }
     .credits-wrap {
         text-align: center;
     }

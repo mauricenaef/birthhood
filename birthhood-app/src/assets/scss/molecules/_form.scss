@@ -4,8 +4,8 @@
     }
 
     .intro {
-        margin-top: 0.2rem;
         font-size: rem-calc(15);
+        margin-top: 0.2rem;
         color: $dark-gray;
     }
 }
@@ -21,9 +21,9 @@
 }
 
 .form-body {
-    background: $white;
     margin: 0 -1.62rem 1rem !important;
     padding: 1rem !important;
+    background: $white;
 
     @include breakpoint(medium up) {
         margin: 0 -1.92rem 3rem !important;
