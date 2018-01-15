@@ -12,12 +12,14 @@ app-root {
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
     background-color: $white;
+
     @include breakpoint(medium up) {
         padding-top: 3.6rem;
     }
 }
+
 @include breakpoint(small only) {
-    $animation-duration: .5s;
+    $animation-duration: 0.5s;
 
     .navigation-is-open {
         overflow: hidden;
@@ -32,6 +34,7 @@ app-root {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         background-color: $white;
+
         //will-change: transform;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
@@ -45,13 +48,13 @@ app-root {
     }
 
     app-footer {
-        position: fixed;
         display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
         flex-direction: column;
         justify-content: space-between;
         z-index: 1;
-        top: 0;
-        right: 0;
         min-height: 100%;
         width: 100%;
         color: $white;
@@ -68,7 +71,7 @@ app-root {
 
         .app-menu-footer {
             /* all navigation content */
-            /* height: 100%; */
+            height: 100%;
             overflow-y: auto;
             padding: 1rem;
 
@@ -76,9 +79,10 @@ app-root {
             //will-change: transform;
 
             backface-visibility: hidden;
-           /*  transform: translateX(50%);
-            transition: transform $animation-duration;
-            transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78); */
+
+             /* transform: translateX(50%);
+             transition: transform $animation-duration;
+             transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78); */
         }
 
         .footer-navigation-is-open & {
@@ -95,21 +99,20 @@ app-root {
     }
 }
 
-@media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-        .section-container {
-            padding-bottom: 8rem;
-        }
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .section-container {
+        padding-bottom: 8rem;
+    }
 }
 
 @include breakpoint(medium up) {
     .site {
         min-height: 100vh;
+
         app-root {
-            flex: 1 1 auto;
             display: flex;
+            flex: 1 1 auto;
             flex-flow: column nowrap;
             flex-direction: column;
             height: 100%;
@@ -121,8 +124,8 @@ app-root {
             width: 100%;
             -webkit-box-flex: 1 0 auto;
             -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
             -webkit-flex: 1 0 auto;
+            flex: 1 0 auto;
         }
     }
 
@@ -131,10 +134,10 @@ app-root {
         flex-direction: column;
 
         app-main-nav {
-            order: -1;
             position: fixed;
-            right: 0;
             top: .7em;
+            right: 0;
+            order: -1;
             z-index: 1010;
         }
     }
@@ -143,10 +146,12 @@ app-root {
 
 .main-content {
     padding: 0 2rem;
+
     @include breakpoint(medium up) {
         padding-top: 5rem;
         padding-left: 4rem;
         padding-right: 4rem;
+
         &.flush {
             padding-top: 0;
         }
@@ -155,15 +160,20 @@ app-root {
 
 .main-sidebar {
     padding-top: 2rem;
+
     @include breakpoint(small only) {
         padding-left: 2rem;
         padding-right: 2rem;
     }
+
+
     @include breakpoint(medium up) {
         padding-top: 5rem;
+
         &.offset-title {
             padding-top: 3rem;
         }
+
         &.flush {
             padding-top: 0;
         }
@@ -174,10 +184,13 @@ app-root {
     background: lighten($medium-gray, 20%);
     padding-bottom: 3rem;
     padding-top: 1rem;
+
     @include breakpoint(medium up) {
         padding-top: 7rem;
         padding-bottom: 7rem;
     }
+
+
     @include breakpoint(large up) {
         padding-top: 10rem;
         padding-bottom: 10rem;
@@ -188,22 +201,28 @@ app-root {
     position: relative;
     background: $white;
     padding: 2rem 1rem;
-    &.gray {
-        background: lighten($light-gray, 7%);
-    }
-    &.padded {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+    border-radius: 6px;
+    box-shadow: $box-shadow-large;
+
     @include breakpoint(small only) {
         min-height: 10rem;
     }
+
+
     @include breakpoint(medium up) {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
-    border-radius: 6px;    
-    box-shadow: $box-shadow-large;
+
+
+    &.gray {
+        background: lighten($light-gray, 7%);
+    }
+
+    &.padded {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 .boxed-sidebar {

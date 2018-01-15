@@ -6,25 +6,17 @@
 }
 
 .map {
-    height: 200px;
-
+    height: 250px;
     @include breakpoint(medium up) {
-        height: 300px;
+        height: 350px;
     }
-
-
     @include breakpoint(large up) {
         height: 400px;
     }
-
-
     position: relative;
-
-    //transform: height 550ms $cubic-animation;
+    transform: height 550ms $cubic-animation;
     &.map-detail {
         height: 100px;
-
-        //transform: height 550ms $cubic-animation;
-   
+        transform: height 550ms $cubic-animation;
     }
 }
