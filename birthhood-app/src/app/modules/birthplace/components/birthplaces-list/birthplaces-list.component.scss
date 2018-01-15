@@ -29,7 +29,10 @@
     }
     .card-content {
         min-height: 20rem;
-        @include breakpoint(medium up) {
+        @include breakpoint(medium) {
+            min-height: 26rem;
+        }
+        @include breakpoint(large up) {
             min-height: 23rem;
         }
         box-shadow: 0 0 29px rgba(0,0,0,.1);

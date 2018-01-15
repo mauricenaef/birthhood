@@ -54,7 +54,7 @@ export class BirthplacesListComponent implements OnInit {
   constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
     this.birthplaceService.getBirhplacesOnMap()
       .subscribe(birthplaces => {
-        let tempBirthplaces = birthplaces.splice(0, 7);
+        let tempBirthplaces = birthplaces.splice(0, 9);
         let returnBirthplaces: Birthplace[] = [];
         for (let birthplace of tempBirthplaces) {
           returnBirthplaces.push(new Birthplace(birthplace));
