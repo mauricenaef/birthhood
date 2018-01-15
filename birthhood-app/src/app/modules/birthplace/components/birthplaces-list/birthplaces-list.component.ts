@@ -6,6 +6,7 @@ import 'rxjs/add/operator/merge';
 import 'rxjs/add/operator/take';
 import { ActivatedRoute } from '@angular/router';
 import { Birthplace } from '../../models/birthplace';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-birthplaces-list',
@@ -48,10 +49,14 @@ export class BirthplacesListComponent implements OnInit {
         stagePadding: 30,
         startPosition: 0
       }
-    }
+    },
+    onDragged: this.sliderDraged,
   }
 
-  constructor(public birthplaceService: BirthplaceService, private route: ActivatedRoute) {
+  constructor(
+    public birthplaceService: BirthplaceService, 
+    private route: ActivatedRoute,
+  ) {
     this.birthplaceService.getBirhplacesOnMap()
       .subscribe(birthplaces => {
         let tempBirthplaces = birthplaces.splice(0, 9);
@@ -62,6 +67,12 @@ export class BirthplacesListComponent implements OnInit {
         this.birthplaces = returnBirthplaces;
       });
   }
+
+  sliderDraged(event) {
+    let draged_id = $('.owl-item.active .item').data('id');
+    console.log('Current active ID is ' + draged_id );
+  }
+
 
   ngOnInit() {
     this.birthplaceService.zoomOut();
