@@ -4,7 +4,7 @@
       <header class="text-center">
         <h1>Ich bin ein Geburtshaus</h1>
       </header>
-      <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="form form-login grid-container">
+      <form class="form form-login grid-container">
           <header class="grid-x grid-padding-x form-header text-center">
               <div class="medium-12 cell">
                   <p class="intro">Loggen Sie sich hier ein um Ihr Geburtshaus zu erfassen.</p>
@@ -13,7 +13,7 @@
           <div class="form-body grid-x grid-padding-x">
               <div class="cell">
                   <label for="email">E-Mail</label>
-                  <input type="email" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
+                  <input type="email" placeholder="Email Addresse.."  name="email" class="input-text" required>
               </div>
               <div class="cell">
                   <label for="password">Passwort</label>
@@ -35,8 +35,8 @@
           </div>
           <footer class="grid-x grid-padding-x form-footer">
               <div class="medium-12 cell text-center">
-                  <button type="submit" [disabled]="!formData.valid" class="button expanded">Log in</button>
-                  <a routerLink="/signup">Sie haben noch kein Konto? <br><strong>Erstellen Sie ein Konto.</strong></a>
+                  <button type="submit" class="button expanded">Log in</button>
+                  <a>Sie haben noch kein Konto? <br><strong>Erstellen Sie ein Konto.</strong></a>
 
               </div>
           </footer>

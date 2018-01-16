@@ -20,7 +20,6 @@ export class ExperienceAddBioComponent implements OnInit {
   bio: Bio;
   form: any;
   birthplacelist: Birthplace[];
-
   userLoggedIn: boolean = false;
 
   public pickerColor: string = '#0070ba';

@@ -11,6 +11,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Birthplace } from '../../models/birthplace';
 import { ToastrService } from 'ngx-toastr';
+import { window } from 'rxjs/operator/window';
 
 @Component({
   selector: 'app-search',
@@ -48,6 +49,7 @@ export class SearchComponent implements OnInit , OnDestroy{
   }
 
   activateSearch(): void {
+    document.body.scrollTop = 0;
     // scroll top element top of Content Wrap
     let element = document.getElementById("content-wrap");
     element.scrollTo(0, 0);

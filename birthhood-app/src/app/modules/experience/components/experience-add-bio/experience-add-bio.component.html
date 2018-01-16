@@ -61,9 +61,8 @@
     <div class="medium-6 cell">
       <label class="form_label" for="birthplace">Geburtsort
         <select #birthplace="ngModel" name="birthplace" id="birthplace" [(ngModel)]="bio.birthplace.id" required>
-          <!--option value="" disabled selected>Wählen Sie den Geburtsort</option-->
-          <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}"
-         [disabled]="birthplace.disabled" >{{ birthplace.name }}</option>
+          <option value="" disabled selected="selected">Wählen Sie den Geburtsort</option>
+          <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}" [disabled]="birthplace.disabled" >{{ birthplace.name }}</option>
         </select>
       </label>
     </div>
@@ -72,7 +71,6 @@
   <footer class="grid-x grid-padding-x form-footer">
     <div class="medium-12 cell form-footer-actions single">
       <button class="button button-next" [disabled]="!bioForm.valid" (click)="save(bioForm)">Weiter zu Umgebung</button>
-
     </div>
   </footer>
 
