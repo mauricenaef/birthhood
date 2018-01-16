@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupBirthplaceComponent implements OnInit {
 
+  //set Password to show default
+  public show: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleShow() {
+    this.show = !this.show;
+    if (this.show) {
+      this.show = true;
+    } else {
+      this.show = false;
+    }
   }
 
 }
