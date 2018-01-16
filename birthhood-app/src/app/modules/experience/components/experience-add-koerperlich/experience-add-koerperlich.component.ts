@@ -21,8 +21,10 @@ export class ExperienceAddKoerperlichComponent implements OnInit {
   }
 
   save(form: any) {
-    if (!form.valid)
+    if (!form.valid) {
       return;
+    }
+    
     this.formDataService.setKoerperlich(this.koerperlich);
     this.router.navigate(['/user-dashboard/experience/new/mental'])
   }

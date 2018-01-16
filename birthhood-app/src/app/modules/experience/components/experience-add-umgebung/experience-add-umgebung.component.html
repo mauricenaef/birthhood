@@ -378,11 +378,11 @@
 
   <footer class="grid-x grid-padding-x form-footer">
     <div class="medium-12 cell form-footer-actions">
-      <button routerLink=".." class="button secondary button-previous clear" >
+      <button type="button" routerLink=".." class="button secondary button-previous clear" >
         <svg class="icon icon-arrow-left">
           <use xlink:href="#arrow-left"></use>
         </svg> Zurück zu Generelle Angaben</button>
-      <button class="button button-next" [disabled]="!umgebungForm.valid" (click)="save(umgebungForm)">Weiter zu Emotional</button>
+      <button type="button" class="button button-next" [disabled]="!umgebungForm.valid" (click)="save(umgebungForm)">Weiter zu Emotional</button>
     </div>
   </footer>
 </form>

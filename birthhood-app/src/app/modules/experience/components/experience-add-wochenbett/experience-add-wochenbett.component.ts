@@ -28,8 +28,10 @@ export class ExperienceAddWochenbettComponent implements OnInit {
   }
 
   save(form: any) {
-    if (!form.valid)
+    if (!form.valid) {
       return;
+    }
+    
     this.loading = true;
     this.formDataService.setWochenbett(this.wochenbett);
     this.formDataService.saveToFirebase().then(

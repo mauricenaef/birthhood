@@ -170,11 +170,11 @@
   </div>
   <footer class="grid-x grid-padding-x form-footer">
     <div class="medium-12 cell form-footer-actions">
-      <button routerLink="../koerperlich" class="button secondary button-previous clear" (click)="save(mentalForm)">
+      <button type="button" routerLink="../koerperlich" class="button secondary button-previous clear" (click)="save(mentalForm)">
         <svg class="icon icon-arrow-left">
           <use xlink:href="#arrow-left"></use>
         </svg> Zurück zu Körperlich</button>
-      <button class="button button-next" [disabled]="!mentalForm.valid" (click)="save(mentalForm)">Weiter zu Wochenbett</button>
+      <button type="button" class="button button-next" [disabled]="!mentalForm.valid" (click)="save(mentalForm)">Weiter zu Wochenbett</button>
     </div>
   </footer>
 </form>

@@ -20,8 +20,10 @@ export class ExperienceAddEmotionalComponent implements OnInit {
   }
 
   save(form: any) {
-    if (!form.valid)
+    if (!form.valid) {
       return;
+    }
+    
     this.formDataService.setEmotional(this.emotional);
     this.router.navigate(['/user-dashboard/experience/new/koerperlich'])
   }

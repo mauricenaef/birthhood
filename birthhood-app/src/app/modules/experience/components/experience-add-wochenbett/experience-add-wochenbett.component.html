@@ -152,7 +152,7 @@
   </div>
   <footer class="grid-x grid-padding-x form-footer">
     <div class="medium-12 cell  form-footer-actions">
-      <button routerLink="../mental" class="button secondary button-previous clear" (click)="save(wochenbettForm)"><svg class="icon icon-arrow-left"><use xlink:href="#arrow-left"></use></svg> Zurück zu Mental</button>
+      <button type="button" routerLink="../mental" class="button secondary button-previous clear" (click)="save(wochenbettForm)"><svg class="icon icon-arrow-left"><use xlink:href="#arrow-left"></use></svg> Zurück zu Mental</button>
       <button class="button button-submit" [disabled]="!wochenbettForm.valid" (click)="save(wochenbettForm)">Geburtserlebnis senden</button>
     </div>
   </footer>
