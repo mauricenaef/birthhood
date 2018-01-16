@@ -1,0 +1,10 @@
+@import "../../../settings";
+
+.impressum {
+    font-size: 85%;
+    @include breakpoint(medium up) {
+        column-count: 2;
+        column-gap: 6rem;
+        column-rule: 1px dashed $medium-gray;
+    }
+}

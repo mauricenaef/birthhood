@@ -192,6 +192,9 @@ $foundation-palette: (
   geburtshaus: $geburtshaus-color,
   success: $secondary-color,
   alert: $alert-color,
+  light-gray: $light-gray-color,
+  medium-gray: $medium-gray-color,
+  dark-gray: $dark-gray-color,
 );
 $light-gray:$light-gray-color;
 $medium-gray: $medium-gray-color;
@@ -269,8 +272,8 @@ $header-styles: (
     'h6': ('font-size': 14),
   ),
   medium: (
-    'h1': ('font-size': 31),
-    'h2': ('font-size': 28),
+    'h1': ('font-size': 32),
+    'h2': ('font-size': 27),
     'h3': ('font-size': 26),
     'h4': ('font-size': 21),
     'h5': ('font-size': 18),
@@ -278,10 +281,10 @@ $header-styles: (
   ),
 );
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 80%;
+$small-font-size: 70%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
+$paragraph-lineheight: 1.7;
+$paragraph-margin-bottom: 1.33rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
@@ -327,7 +330,7 @@ $subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
 $subheader-font-weight: 200;
 $subheader-margin-top: 0.2rem;
-$subheader-margin-bottom: 0.5rem;
+$subheader-margin-bottom: .6em;
 $stat-font-size: 2.5rem;
 
 // 6. Abide
@@ -436,11 +439,11 @@ $buttongroup-radius-on-each: true;
 // -----------
 
 $callout-background: $white;
-$callout-background-fade: 85%;
-$callout-border: 1px solid rgba($black, 0.25);
-$callout-margin: 0 0 1rem 0;
-$callout-padding: 1rem;
-$callout-font-color: $body-font-color;
+$callout-background-fade: 0%;
+$callout-border: none;
+$callout-margin: 0 0 2rem 0;
+$callout-padding: 1rem 1.33rem;
+$callout-font-color: $white;
 $callout-font-color-alt: $body-background;
 $callout-radius: $global-radius;
 $callout-link-tint: 30%;

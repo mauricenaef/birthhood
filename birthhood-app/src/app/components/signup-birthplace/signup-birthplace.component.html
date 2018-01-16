@@ -4,6 +4,43 @@
       <header class="text-center">
         <h1>Ich bin ein Geburtshaus</h1>
       </header>
+      <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="form form-login grid-container">
+          <header class="grid-x grid-padding-x form-header text-center">
+              <div class="medium-12 cell">
+                  <p class="intro">Loggen Sie sich hier ein um Ihr Geburtshaus zu erfassen.</p>
+              </div>
+          </header>
+          <div class="form-body grid-x grid-padding-x">
+              <div class="cell">
+                  <label for="email">E-Mail</label>
+                  <input type="email" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
+              </div>
+              <div class="cell">
+                  <label for="password">Passwort</label>
+                  <div class="show-hide-password">
+                      <input [type]="show ? 'text' : 'password'" placeholder="Passwort" (ngModel)="password" name="password" class="input-text password" required>
+                      <a (click)="toggleShow()" class="show-hide-password-link" title="Passwort ein oder ausblenden">
+                          <svg *ngIf="show == true" class="icon icon-eye">
+                              <use xlink:href="#eye"></use>
+                          </svg>
+                          <svg *ngIf="show == false" class="icon icon-eye-closed">
+                              <use xlink:href="#eye-closed"></use>
+                          </svg>
+                      </a>
+                  </div>
+
+
+              </div>
+
+          </div>
+          <footer class="grid-x grid-padding-x form-footer">
+              <div class="medium-12 cell text-center">
+                  <button type="submit" [disabled]="!formData.valid" class="button expanded">Log in</button>
+                  <a routerLink="/signup">Sie haben noch kein Konto? <br><strong>Erstellen Sie ein Konto.</strong></a>
+
+              </div>
+          </footer>
+      </form>
     </section>
     <section class="spital-section medium-6 cell">
         <header class="text-center">

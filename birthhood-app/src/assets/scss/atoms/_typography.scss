@@ -1,6 +1,32 @@
+.subheader {
+    font-size: rem-calc(22);
+    @include breakpoint(medium up) {
+        font-size: rem-calc(26);
+    }
+}
+
+.stand-out {
+    font-size: 110%;
+    font-weight: $global-weight-bold;
+    
+}
+
+blockquote {
+    p {
+        font-size: rem-calc(28);
+    }
+}
 
 .adr {
     font-style: normal;
+}
+
+.section-header {
+    padding-bottom: 2rem;
+}
+
+.section-footer {
+    padding-top: 1rem;
 }
 
 /**
@@ -85,6 +111,10 @@ hr.section-divider {
     overflow: visible;
     margin-top: 1.5rem;
     margin-bottom: 1.25rem;
+    &.big {
+        margin-top: 3.5rem;
+        margin-bottom: 3.25rem;
+    }
     text-align: center;
     border: 0;
     &::before {
