@@ -48,7 +48,10 @@ export class SearchComponent implements OnInit , OnDestroy{
   }
 
   activateSearch(): void {
-    window.scrollTo(0, 0);
+    // scroll top element top of Content Wrap
+    let element = document.getElementById("content-wrap");
+    element.scrollTo(0, 0);
+
     this.searchresults = Observable.combineLatest(this.searchTerms.debounceTime(300)
       .distinctUntilChanged(),
       this.birthplaceService.filterChanged$,
