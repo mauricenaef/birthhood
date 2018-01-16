@@ -20,7 +20,10 @@ export class AppComponent {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
-      window.scrollTo(0, 0)
+      // scroll top element top of Content Wrap
+      let element = document.getElementById("content-wrap");
+      element.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     });
   }
 
