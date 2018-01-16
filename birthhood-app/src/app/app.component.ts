@@ -29,7 +29,7 @@ export class AppComponent {
 
   ngAfterViewInit() {
     let body = document.getElementsByTagName('body')[0];
-    setTimeout(_ => body.classList.remove("is-loading"));
+    setTimeout(_ => body.classList.remove("is-loading"), 1000);
   }
 
 }
