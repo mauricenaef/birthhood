@@ -22,7 +22,7 @@ app-main-nav {
 */
 .main-nav {
     @include breakpoint(small only) {
-        position: fixed;
+        position: absolute;
         z-index: 2000;
         bottom: -1px;
         left: 0;

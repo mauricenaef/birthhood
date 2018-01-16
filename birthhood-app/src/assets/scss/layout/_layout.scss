@@ -9,8 +9,6 @@ app-root {
 }
 
 .main-container {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
     background-color: $white;
     @include breakpoint(medium up) {
         padding-top: 3.6rem;
@@ -21,6 +19,28 @@ app-root {
 @include breakpoint(small only) {
     $animation-duration: 0.5s;
 
+    body {
+        background: $white;
+    }
+
+    .main-container {
+        overflow: hidden;
+        height: 100vh;
+        padding-top: 0;
+    }
+    .content-wrap {
+        overflow-y: scroll;
+        height: calc(100% - 7.7rem);
+        padding-bottom: 2rem;
+        /* iPhone X Media Query */
+        @media only screen 
+        and (device-width : 375px) 
+        and (device-height : 812px) 
+        and (-webkit-device-pixel-ratio : 3) { 
+            height: calc(100% - 9rem); 
+        }
+    }
+
     .navigation-is-open {
         overflow: hidden;
     }
@@ -29,19 +49,13 @@ app-root {
         position: relative;
         z-index: 2;
         min-height: 100vh;
-        padding-top: 0;
-        padding-bottom: 4rem;
         transition: transform $animation-duration;
         transition-timing-function: $cubic-animation;
-        /* overflow-y: auto;
-        -webkit-overflow-scrolling: touch; */
-
         background-color: $white;
-
-        //will-change: transform;
+        -webkit-overflow-scrolling: touch;
+        will-change: transform;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-
         .footer-navigation-is-open & {
             max-height: 100vh;
             transform: translateX(-100%);
@@ -72,18 +86,19 @@ app-root {
 
         .app-menu-footer {
             overflow-y: auto;
+
             /* all navigation content */
             height: 100%;
             padding: 1rem;
+            transition: transform $animation-duration;
+            transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
+
+            transform: translateX(50%);
 
             /* Force Hardware Acceleration in WebKit */
-            //will-change: transform;
+            will-change: transform;
 
             backface-visibility: hidden;
-
-             /* transform: translateX(50%);
-             transition: transform $animation-duration;
-             transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78); */
         }
 
         .footer-navigation-is-open & {
@@ -100,12 +115,6 @@ app-root {
     }
 }
 
-
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-    .section-container {
-        padding-bottom: 8rem;
-    }
-}
 
 @include breakpoint(medium up) {
     .site {
@@ -147,6 +156,7 @@ app-root {
 
 .main-content {
     padding: 1rem 2rem;
+
     @include breakpoint(medium up) {
         padding-top: 5rem;
         padding-right: 4rem;
