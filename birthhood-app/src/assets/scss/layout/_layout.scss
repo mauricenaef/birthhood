@@ -186,10 +186,10 @@ app-root {
 }
 
 .boxed-container {
+    height: 100%;
     padding-top: 1rem;
     padding-bottom: 3rem;
     background: lighten($medium-gray, 20%);
-
     @include breakpoint(medium up) {
         padding-top: 7rem;
         padding-bottom: 7rem;
@@ -244,9 +244,4 @@ app-root {
         padding-right: 4rem;
         padding-left: 4rem;
     }
-}
-
-
-.form-header {
-    display: none !important;
 }

@@ -38,7 +38,11 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   ngAfterViewInit() {
 
     let body = document.getElementsByTagName('body')[0];
+    let element = document.getElementById("content-wrap");
+    
     setTimeout( _=> body.classList.add("is-detail"), 1000);
+    document.body.scrollTop = 0;
+    element.scrollTo(0, 0);
 
     this.birthplace$.subscribe(birthplace => {
       this.birthplace = new Birthplace(birthplace);
