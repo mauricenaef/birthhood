@@ -1,11 +1,15 @@
 @import "../../../settings";
 
 @include breakpoint(medium up) {
+    .overlap-wrap {
+        margin-bottom: -19%;
+        transform: translateY(-32%);
+    }
+
     .overlap-content {
-        transform: translateY(-15%);
-        background: $white;
         padding-top: 3.6rem;
         padding-bottom: 3.6rem;
+        background: $white;
         box-shadow: $box-shadow-large;
     }
 }
