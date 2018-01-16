@@ -31,7 +31,6 @@ app-root {
     .content-wrap {
         overflow-y: scroll;
         height: calc(100% - 7.7rem);
-        padding-bottom: 2rem;
         /* iPhone X Media Query */
         @media only screen 
         and (device-width : 375px) 
@@ -170,13 +169,9 @@ app-root {
 
 .main-sidebar {
     padding-top: 2rem;
-
     @include breakpoint(small only) {
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding: 2rem;
     }
-
-
     @include breakpoint(medium up) {
         padding-top: 5rem;
 
