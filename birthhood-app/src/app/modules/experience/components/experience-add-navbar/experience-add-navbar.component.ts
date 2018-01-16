@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { NavigationEnd } from '@angular/router';
+import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 
 @Component({
   selector: 'app-experience-add-navbar',
@@ -16,7 +17,8 @@ export class ExperienceAddNavbarComponent implements OnInit {
   constructor(
     private router: Router,
     private renderer: Renderer2,
-    public elementRef: ElementRef
+    public elementRef: ElementRef,
+    private formDataService: ExperienceFormDataService
   ) {
 
     this.routersubscription = this.router.events.subscribe(event => {
@@ -39,6 +41,11 @@ export class ExperienceAddNavbarComponent implements OnInit {
       }
     });
 
+   }
+
+   reset() {
+     this.formDataService.resetExperience();
+     this.router.navigate(['/user-dashboard']);
    }
 
   ngOnInit() {

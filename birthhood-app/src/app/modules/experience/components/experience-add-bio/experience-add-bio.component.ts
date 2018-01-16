@@ -46,8 +46,8 @@ export class ExperienceAddBioComponent implements OnInit {
 
   ngOnInit() {
     this.birthPlaceService.getBirthplaces().subscribe(birthplaces => {
-      birthplaces.push(<Birthplace>{disabled: true, id: "dummyid", name: "-- Wählen sie einen Geburtsort --"})
       this.birthplacelist = birthplaces;
+      birthplaces.push(<Birthplace>{disabled: false, id: "", name: "-- Wählen sie einen Geburtsort --"})
     });
     this.bio = this.formDataService.getBio();
   }

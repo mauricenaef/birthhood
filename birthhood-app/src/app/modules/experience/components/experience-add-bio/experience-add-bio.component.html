@@ -61,7 +61,7 @@
     <div class="medium-6 cell">
       <label class="form_label" for="birthplace">Geburtsort
         <select #birthplace="ngModel" name="birthplace" id="birthplace" [(ngModel)]="bio.birthplace.id" required>
-          <option value="" disabled selected="selected">Wählen Sie den Geburtsort</option>
+          <!-- <option value="" selected="selected">Wählen Sie den Geburtsort</option> -->
           <option *ngFor="let birthplace of birthplacelist | sortby : 'name'" value="{{ birthplace.id }}" [disabled]="birthplace.disabled" >{{ birthplace.name }}</option>
         </select>
       </label>
