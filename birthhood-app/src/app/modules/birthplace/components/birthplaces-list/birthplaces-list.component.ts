@@ -15,6 +15,12 @@ import * as $ from 'jquery';
 })
 export class BirthplacesListComponent implements OnInit {
 
+  sliderDragged = () => {
+    let dragged_id = $('.owl-item.active .item').data('id');
++   console.log(dragged_id);
+    this.birthplaceService.carouselDragged(dragged_id);//console.log('Current active ID is ' + draged_id );
+  }
+
   birthplaces: Birthplace[];
   subscription: Subscription;
 
@@ -49,7 +55,8 @@ export class BirthplacesListComponent implements OnInit {
         stagePadding: 30,
         startPosition: 0
       }
-    }
+    },
+    onDragged: this.sliderDragged
   }
 
   constructor(
@@ -70,6 +77,9 @@ export class BirthplacesListComponent implements OnInit {
   ngOnInit() {
     this.birthplaceService.zoomOut();
   }
+
+
+
 
   //um punkte weniger flickern zu lassen
   trackFbObjects = (idx, obj) => obj.$key;
