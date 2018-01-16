@@ -1,5 +1,11 @@
 @import "../../../settings";
 
+.callout-edge-to-edge {
+    border-radius: 0;
+    margin: 0 -4rem;
+    padding: 2rem 4rem;
+}
+
 @include breakpoint(medium up) {
     .overlap-wrap {
         margin-bottom: -19%;
