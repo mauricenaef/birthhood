@@ -285,7 +285,7 @@
     "strasse": "Im Ergel 1",
     "plz": 5404,
     "ort": "Baden",
-    "url": "www.kantonsspitalbaden.ch/"
+    "url": "http://www.kantonsspitalbaden.ch/"
   },
   {
     "type": "spital",
@@ -321,7 +321,7 @@
     "strasse": "Burgstrasse 99",
     "plz": 8750,
     "ort": "Glarus",
-    "url": "www.ksgl.ch"
+    "url": "http://www.ksgl.ch"
   },
   {
     "type": "spital",
@@ -339,7 +339,7 @@
     "strasse": "Spitalcampus 1",
     "plz": 8596,
     "ort": "Münsterlingen",
-    "url": "www.stgag.ch"
+    "url": "http://www.stgag.ch"
   },
   {
     "type": "spital",
@@ -348,7 +348,7 @@
     "strasse": "Ennetmooserstrasse 19",
     "plz": 6370,
     "ort": "Stans",
-    "url": "www.ksnw.ch"
+    "url": "http://www.ksnw.ch"
   },
   {
     "type": "spital",
@@ -429,7 +429,7 @@
     "strasse": "Asylstrasse 19",
     "plz": 8810,
     "ort": "Horgen",
-    "url": "www.see-spital.ch"
+    "url": "http://www.see-spital.ch"
   },
   {
     "type": "spital",
@@ -456,7 +456,7 @@
     "strasse": "Promenade 4",
     "plz": 7270,
     "ort": "Davos Platz",
-    "url": "www.spitaldavos.ch"
+    "url": "http://www.spitaldavos.ch"
   },
   {
     "type": "spital",
@@ -465,7 +465,7 @@
     "strasse": "Oberburgstrasse 54",
     "plz": 3400,
     "ort": "Burgdorf",
-    "url": "www.spital-emmental.ch"
+    "url": "http://www.spital-emmental.ch"
   },
   {
     "type": "spital",
@@ -474,7 +474,7 @@
     "strasse": "Adelbodenstrasse 27",
     "plz": 3714,
     "ort": "Frutigen",
-    "url": "www.spitalfmi.ch"
+    "url": "http://www.spitalfmi.ch"
   },
   {
     "type": "spital",
@@ -483,7 +483,7 @@
     "strasse": "Spitalstrasse 44",
     "plz": 9472,
     "ort": "Grabs",
-    "url": "www.spitalgrabs.ch"
+    "url": "http://www.spitalgrabs.ch"
   },
   {
     "type": "spital",
@@ -492,7 +492,7 @@
     "strasse": "Werdstrasse 1A",
     "plz": 9410,
     "ort": "Heiden",
-    "url": "www.spitalverbund.ch"
+    "url": "http://www.spitalverbund.ch"
   },
   {
     "type": "spital",
@@ -501,7 +501,7 @@
     "strasse": "Spitalstrasse 6",
     "plz": 9100,
     "ort": "Herisau",
-    "url": "www.spitalverbund.ch"
+    "url": "http://www.spitalverbund.ch"
   },
   {
     "type": "spital",
@@ -537,7 +537,7 @@
     "strasse": "Gasterstrasse 25",
     "plz": 8730,
     "ort": "Uznach",
-    "url": "www.spital-linth.ch"
+    "url": "http://www.spital-linth.ch"
   },
   {
     "type": "spital",
@@ -546,7 +546,7 @@
     "strasse": "Asylstrasse 10",
     "plz": 8708,
     "ort": "Männedorf",
-    "url": "www.spitalmaennedorf.ch"
+    "url": "http://www.spitalmaennedorf.ch"
   },
   {
     "type": "spital",
@@ -564,7 +564,7 @@
     "strasse": "Spitalstrasse 144",
     "plz": 5630,
     "ort": "Muri",
-    "url": "www.spital-muri.ch"
+    "url": "http://www.spital-muri.ch"
   },
   {
     "type": "spital",
@@ -573,7 +573,7 @@
     "strasse": "Via Nouva 3",
     "plz": 7503,
     "ort": "Samaden",
-    "url": "www.spital-oberengadin.ch"
+    "url": "http://www.spital-oberengadin.ch"
   },
   {
     "type": "spital",
@@ -582,7 +582,7 @@
     "strasse": "St. Urbanstrasse 67",
     "plz": 4900,
     "ort": "Langenthal",
-    "url": "www.sro.ch"
+    "url": "http://www.sro.ch"
   },
   {
     "type": "spital",
@@ -600,7 +600,7 @@
     "strasse": "Waldeggstrasse 10",
     "plz": 6430,
     "ort": "Schwyz",
-    "url": "www.spital-schwyz.ch"
+    "url": "http://www.spital-schwyz.ch"
   },
   {
     "type": "spital",
@@ -609,7 +609,7 @@
     "strasse": "Krankenhausstrasse 12",
     "plz": 3600,
     "ort": "Thun",
-    "url": "www.spitalstsag.ch"
+    "url": "http://www.spitalstsag.ch"
   },
   {
     "type": "spital",
@@ -618,7 +618,7 @@
     "strasse": "Alte Str. 31",
     "plz": 7430,
     "ort": "Thusis",
-    "url": "www.spitalthusis.ch"
+    "url": "http://www.spitalthusis.ch"
   },
   {
     "type": "spital",
