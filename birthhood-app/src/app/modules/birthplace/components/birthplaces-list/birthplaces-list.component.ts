@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild , ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
@@ -13,11 +13,14 @@ import * as $ from 'jquery';
   templateUrl: './birthplaces-list.component.html',
   styleUrls: ['./birthplaces-list.component.scss']
 })
-export class BirthplacesListComponent implements  OnInit {
+export class BirthplacesListComponent implements OnInit {
 
   sliderDragged = () => {
-    let dragged_id = this.elRef.nativeElement.querySelector('.owl-item.active.center .item').getAttribute('data-id');
-    this.birthplaceService.carouselDragged(dragged_id);
+    let item = this.elRef.nativeElement.querySelector('.owl-item.active.center .item')
+    if (item) {
+      let dragged_id = item.getAttribute('data-id');
+      this.birthplaceService.carouselDragged(dragged_id);
+    }
   }
 
   owl;
@@ -62,9 +65,9 @@ export class BirthplacesListComponent implements  OnInit {
   }
 
   constructor(
-    public birthplaceService: BirthplaceService, 
+    public birthplaceService: BirthplaceService,
     private route: ActivatedRoute,
-    private elRef:ElementRef
+    private elRef: ElementRef
   ) {
     this.birthplaceService.getBirhplacesOnMap()
       .subscribe(birthplaces => {
@@ -74,7 +77,7 @@ export class BirthplacesListComponent implements  OnInit {
           returnBirthplaces.push(new Birthplace(birthplace));
         }
         this.birthplaces = returnBirthplaces;
-        
+
       });
   }
 
@@ -82,13 +85,13 @@ export class BirthplacesListComponent implements  OnInit {
     this.birthplaceService.zoomOut();
   }
 
-/*   ngAfterViewInit(){
-    this.owl = $('.owl-carousel');
-    this.owl.on('changed.owl.carousel', function(event) {
-      console.log("changed");
-      this.onDragged();
-    })
-  } */
+  /*   ngAfterViewInit(){
+      this.owl = $('.owl-carousel');
+      this.owl.on('changed.owl.carousel', function(event) {
+        console.log("changed");
+        this.onDragged();
+      })
+    } */
 
 
 
