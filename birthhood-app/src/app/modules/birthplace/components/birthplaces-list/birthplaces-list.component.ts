@@ -1,4 +1,4 @@
-import { Component, OnInit , OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild , ElementRef, OnDestroy } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
@@ -13,17 +13,18 @@ import * as $ from 'jquery';
   templateUrl: './birthplaces-list.component.html',
   styleUrls: ['./birthplaces-list.component.scss']
 })
-export class BirthplacesListComponent implements OnInit {
+export class BirthplacesListComponent implements  OnInit {
 
   sliderDragged = () => {
-    let dragged_id = $('.owl-item.active .item').data('id');
-+   console.log(dragged_id);
-    this.birthplaceService.carouselDragged(dragged_id);//console.log('Current active ID is ' + draged_id );
+    let dragged_id = this.elRef.nativeElement.querySelector('.owl-item.active.center .item').getAttribute('data-id');
+    this.birthplaceService.carouselDragged(dragged_id);
   }
 
+  owl;
   birthplaces: Birthplace[];
   subscription: Subscription;
 
+  @ViewChild('slider') private owlSlider: any;
   public slider_options = {
     items: 3,
     dots: true,
@@ -56,12 +57,14 @@ export class BirthplacesListComponent implements OnInit {
         startPosition: 0
       }
     },
-    onDragged: this.sliderDragged
+    onDragged: this.sliderDragged,
+    onInitialized: this.sliderDragged
   }
 
   constructor(
     public birthplaceService: BirthplaceService, 
     private route: ActivatedRoute,
+    private elRef:ElementRef
   ) {
     this.birthplaceService.getBirhplacesOnMap()
       .subscribe(birthplaces => {
@@ -71,12 +74,21 @@ export class BirthplacesListComponent implements OnInit {
           returnBirthplaces.push(new Birthplace(birthplace));
         }
         this.birthplaces = returnBirthplaces;
+        
       });
   }
 
   ngOnInit() {
     this.birthplaceService.zoomOut();
   }
+
+/*   ngAfterViewInit(){
+    this.owl = $('.owl-carousel');
+    this.owl.on('changed.owl.carousel', function(event) {
+      console.log("changed");
+      this.onDragged();
+    })
+  } */
 
 
 
