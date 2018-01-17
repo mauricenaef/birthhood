@@ -31,7 +31,8 @@ export class BirthplaceService {
   filterChanged$: BehaviorSubject<any>;
   filter: BirthplaceFilter;
 
-  
+  private carouselUpdated = new Subject<string>();
+  carouselUpdated$ = this.carouselUpdated.asObservable();
 
   constructor(private db: AngularFirestore, private mapsAPILoader: MapsAPILoader) {
 
@@ -96,6 +97,10 @@ export class BirthplaceService {
       bounds: this.displayedBounds,
       filter: this.filter
     });
+  }
+
+  carouselDragged(cardId: string): void {
+    this.carouselUpdated.next(cardId);
   }
 
   updateBounds(bounds: LatLngBounds): void {

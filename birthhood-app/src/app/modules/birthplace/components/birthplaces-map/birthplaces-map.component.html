@@ -5,7 +5,7 @@
         [gestureHandling]="gestureHandling"
         [styles]="styles">
         <agm-marker *ngFor="let m of items$ | async; let i = index; trackBy: trackFbObjects" (markerClick)="clickedMarker(m.id)"
-            [latitude]="m.lat" [longitude]="m.lng" [iconUrl]="'assets/images/gm_marker_'+m.type+'.svg'">
+            [latitude]="m.lat" [longitude]="m.lng" [iconUrl]="selectedId == m.id ? 'assets/images/gm_marker_'+m.type+'_selected.svg' : 'assets/images/gm_marker_'+m.type+'.svg'">
         </agm-marker>
     </agm-map>
     <a *ngIf="isDetail" routerLink="/" class="go-back go-back-light go-back-overlay">
