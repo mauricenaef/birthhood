@@ -6,6 +6,10 @@ app-root {
 
 .overflow-hidden {
     overflow: hidden;
+
+    .content-wrap {
+        overflow: hidden;
+    }
 }
 
 .main-container {
