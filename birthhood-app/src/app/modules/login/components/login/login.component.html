@@ -11,7 +11,7 @@
                 <div class="form-body grid-x grid-padding-x">
                     <div class="cell">
                         <label for="email">E-Mail</label>
-                        <input type="email" placeholder="Email Addresse.." (ngModel)="email" name="email" class="input-text" required>
+                        <input type="email" placeholder="Email Addresse.." [(ngModel)]="email" name="email" class="input-text" required>
                     </div>
                     <div class="cell">
                         <label for="password">Passwort</label>
@@ -26,7 +26,7 @@
                                 </svg>
                             </a>
                         </div>
-
+                        <p><a (click)="resetPassword(email)">Passwort vergessen? <strong>Fordern Sie ein neues an!</strong></a></p>
 
                     </div>
 

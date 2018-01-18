@@ -26,6 +26,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  resetPassword(resetEmail: string) {
+    if (!resetEmail) {
+      this.toastr.error("Bitte geben Sie Ihre Email an!", "Keine Email angegeben")
+    } else {
+      this.authService.resetPassword(resetEmail)
+    }
+    
+  }
+
   toggleShow() {
     this.show = !this.show;
     if (this.show) {
@@ -34,6 +43,8 @@ export class LoginComponent implements OnInit {
       this.show = false;
     }
   }
+
+
 
 
   onSubmit(formData): void {
