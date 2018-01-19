@@ -19,7 +19,6 @@
         border-bottom: 1px solid $light-gray;
     }
 
-
     @include breakpoint(medium up) {
         position: fixed;
         top: 0;

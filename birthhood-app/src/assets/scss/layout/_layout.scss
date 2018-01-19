@@ -15,37 +15,51 @@ app-root {
 .main-container {
     background-color: $white;
     @include breakpoint(medium up) {
-        padding-top: 3.6rem;
         padding-bottom: 3.6rem;
     }
 }
 
 @include breakpoint(small only) {
-    $animation-duration: 0.5s;
-
+    $animation-duration: .5s;
+    html,
     body {
         background: $white;
     }
 
-    .main-container {
-        overflow: hidden;
-        height: 100vh;
-        padding-top: 0;
+    app-header {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        width: 100%;
     }
+
+    app-main-nav {
+        position: fixed;
+        z-index: 100;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer {
+        padding-top: 3.6rem;
+        padding-bottom: 4.2rem;
+    }
+
     .content-wrap {
-        overflow-y: scroll;
-        height: calc(100% - 7.7rem);
-        /* iPhone X Media Query */
-        @media only screen 
-        and (device-width : 375px) 
-        and (device-height : 812px) 
-        and (-webkit-device-pixel-ratio : 3) { 
-            height: calc(100% - 9rem); 
-        }
+        padding-top: 3.6rem;
+        padding-bottom: 4.2rem;
     }
 
     .navigation-is-open {
         overflow: hidden;
+    }
+
+    app-header, app-main-nav {
+        transition: transform $animation-duration;
+        transition-timing-function: $cubic-animation;
+        .footer-navigation-is-open & {
+            transform: translateX(-100%);
+        }
     }
 
     .section-container {
@@ -56,11 +70,12 @@ app-root {
         transition-timing-function: $cubic-animation;
         background-color: $white;
         -webkit-overflow-scrolling: touch;
-        will-change: transform;
+        //will-change: transform;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         .footer-navigation-is-open & {
-            max-height: 100vh;
+            overflow: hidden;
+            height: 100vh;
             transform: translateX(-100%);
         }
     }
@@ -82,31 +97,23 @@ app-root {
 
         .footer-container {
             overflow-y: scroll;
-            max-height: 100vh;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            height: 100vh;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
 
         .app-menu-footer {
             overflow-y: auto;
-
-            /* all navigation content */
-            height: 100%;
-            padding: 1rem;
             transition: transform $animation-duration;
             transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
-
             transform: translateX(50%);
-
-            /* Force Hardware Acceleration in WebKit */
             will-change: transform;
-
             backface-visibility: hidden;
         }
 
         .footer-navigation-is-open & {
             visibility: visible;
-            transition: visibility 0s 0s;
+            transition: visibility 0s 0s; 
 
             .app-menu-footer {
                 transition: transform ($animation-duration - 0.2s);

@@ -20,9 +20,7 @@ export class AppComponent {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
-      // scroll top element top of Content Wrap
-      let element = document.getElementById("content-wrap");
-      element.scrollTo(0, 0);
+      // scroll top of body
       window.scrollTo(0, 0);
     });
   }

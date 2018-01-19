@@ -22,29 +22,33 @@ app-main-nav {
 */
 .main-nav {
     @include breakpoint(small only) {
-        position: absolute;
+        /* position: absolute;
         z-index: 2000;
         bottom: -1px;
         left: 0;
-        width: 100%;
+        width: 100%; */
         background-color: lighten($light-gray, 6%);
-        box-shadow: 0 0 15px rgba($black, .2);
+        box-shadow: 0 0 15px rgba($black, 0.2);
+
         .main-nav-list {
             justify-content: space-around;
         }
+
         a {
             display: flex;
             flex-flow: column;
             padding: 0.7rem;
             text-align: center;
+
             &.active {
                 color: $primary-color;
             }
+
             svg {
                 width: 1.8em;
                 height: 1.8em;
             }
-    
+
             span {
                 font-size: rem-calc(13);
                 padding: .6em 0 0;
@@ -52,38 +56,48 @@ app-main-nav {
         }
     }
 
+
     /* iPhone X Media Query */
-    @media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-        padding-bottom: 16pt; 
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+        padding-bottom: 16pt;
     }
 
     @include breakpoint(medium up) {
+        position: fixed;
+        z-index: 1000;
+        top: .7rem;
+        right: -1vw;
+
         .main-nav-list {
             justify-content: flex-end;
             margin-right: 3vw;
         }
+
         a {
             font-size: rem-calc(16px);
             margin-left: .6em;
+
             &:not(.highlighted) {
                 padding-bottom: 1.1em;
+
                 &:hover, &:focus {
                     border-bottom: 2px solid get-color(primary-bright);
                 }
             }
+
             &.active {
                 border-bottom: 2px solid get-color(primary);
+
                 &.highlighted {
                     border-bottom: none;
                 }
             }
+
             &.highlighted {
                 color: $white;
                 border-radius: 100px;
                 background-color: get-color(primary);
+
                 &:hover, &:focus {
                     color: $white;
                     background-color: get-color(primary-bright);
@@ -91,8 +105,11 @@ app-main-nav {
             }
         }
     }
+
+
     a {
         color: lighten($body-font-color, 20%);
+
         &:hover, &:focus {
             color: get-color(primary-bright);
         }
