@@ -34,6 +34,8 @@ export class BirthplacesListComponent implements OnInit {
   subscription: Subscription;
 
   @ViewChild('slider') private owlSlider: any;
+
+  // not moved to config due tue Callbackfunctions
   public slider_options = {
     items: 3,
     dots: true,
