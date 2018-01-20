@@ -36,7 +36,6 @@ export class SearchComponent implements OnInit , OnDestroy{
 
   ngOnInit() {
     this.body = document.getElementsByTagName('body')[0];
-
   }
 
   ngOnDestroy() {

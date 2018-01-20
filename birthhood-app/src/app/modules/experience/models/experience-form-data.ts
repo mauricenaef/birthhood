@@ -105,7 +105,7 @@ export class Experience {
     }
 
     get score() {
-        //durchschnitt aller einzelnen scores
+        /** Average of all Scores */
         let sum = this.score_u + this.score_e + this.score_k + this.score_m + this.score_w;
         return sum / 5;
     }
@@ -128,10 +128,6 @@ export class Experience {
     get score_w() {
         return this.calculateAverage("w", 5);
     }
-
-
-
-
 
     clear() {
         this.birth_name = '';

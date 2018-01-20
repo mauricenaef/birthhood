@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Birthplace } from '../../models/birthplace';
 import * as $ from 'jquery';
 import { fadeInAnimation } from '../../../../shared/animations/fade-in.animation';
+import { appConfig } from '../../../../config/app.config';
 
 @Component({
   selector: 'app-birthplaces-list',
@@ -78,7 +79,7 @@ export class BirthplacesListComponent implements OnInit {
   ) {
     this.birthplaceService.getBirhplacesOnMap()
       .subscribe(birthplaces => {
-        let tempBirthplaces = birthplaces.splice(0, 9);
+        let tempBirthplaces = birthplaces.splice(0, appConfig.list.maxItems );
         let returnBirthplaces: Birthplace[] = [];
         for (let birthplace of tempBirthplaces) {
           returnBirthplaces.push(new Birthplace(birthplace));
