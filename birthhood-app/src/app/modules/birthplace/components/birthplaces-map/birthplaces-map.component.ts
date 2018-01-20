@@ -40,8 +40,21 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
   constructor(public birthplaceService: BirthplaceService, public router: Router) {
 
+    /** take preconfigured Center */
     this.latLng = appConfig.map.initialLatLng;
 
+    //only zoom out if not on Detail Page
+    if (this.router.url == "/birthplaces") {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.latLng = <LatLngLiteral>{
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          this.zoomOut();
+        });
+      }
+    }
     this.styles = mapstyles;
 
     this.items$ = birthplaceService.getBirhplacesOnMap();
@@ -85,18 +98,6 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // subscribe for zoom out when navigating back to the map
     this.birthplaceService.zoomOut$.subscribe(x => this.zoomOut());
-    //only zoom out if not on Detail Page
-    if (this.router.url == "/birthplaces") {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-          this.latLng = <LatLngLiteral>{
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          this.zoomOut();
-        });
-      }
-    }
 
     //subscribe to carousel-drag
     this.birthplaceService.carouselUpdated$.subscribe(
