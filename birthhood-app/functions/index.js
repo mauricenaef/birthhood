@@ -28,45 +28,51 @@ function calculateScores(scores) {
   return returnscores;
 }
 
+function updateScores(birthplaceId) {
+  console.info(birthplaceId);
+  let scores = {};
+  scorenames.forEach((scorename) => {
+    scores[scorename] = [];
+  });
+
+  let db = admin.firestore();
+  //let birthplaceid = event.data.get('birthplace_id');
+  let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceId);
+
+  experiences.get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      let thisexperience = doc.data();
+      for (var property in thisexperience) {
+        if (thisexperience.hasOwnProperty(property)) {
+          if (scorenames.includes(property.charAt(0)) && property.length < 4) {
+            scores[property.charAt(0)].push(thisexperience[property])
+          }
+        }
+      }
+    })
+
+    let score = calculateScores(scores);
+    score["experiences"] = querySnapshot.size;
+    var docRef = db.collection('birthplaces').doc(birthplaceId);
+
+    docRef.update(score).then(function () {
+      console.info("Document successfully updated!");
+    })
+      .catch(function (error) {
+        console.info("Error updating document: ", error);
+      });
+  });
+  return true;
+}
+
 exports.createExperience = functions.firestore
   .document('birthexperiences/{documentId}')
   .onCreate((event) => {
+    updateScores(event.data.get('birthplace_id'));
+  });
 
-
-    let scores = {};
-    scorenames.forEach((scorename) => {
-      scores[scorename] = [];
-    });
-
-    let db = admin.firestore();
-    let birthplaceid = event.data.get('birthplace_id');
-    let experiences = db.collection('birthexperiences').where('birthplace_id', '==', birthplaceid);
-
-
-    experiences.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        let thisexperience = doc.data();
-        for (var property in thisexperience) {
-          if (thisexperience.hasOwnProperty(property)) {
-            if (scorenames.includes(property.charAt(0)) && property.length < 4) {
-              scores[property.charAt(0)].push(thisexperience[property])
-            }
-          }
-        }
-      })
-
-
-      let score = calculateScores(scores);
-      score["experiences"] = querySnapshot.size;
-      var docRef = db.collection('birthplaces').doc(birthplaceid);
-
-      docRef.update(score).then(function () {
-        console.info("Document successfully updated!");
-      })
-        .catch(function (error) {
-          console.info("Error updating document: ", error);
-        });
-    });
-    return true;
-
+exports.deleteExperience = functions.firestore
+  .document('birthexperiences/{documentId}')
+  .onDelete((event) => {
+    updateScores(event.data.previous.data().birthplace_id);
   });

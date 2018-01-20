@@ -1,7 +1,7 @@
 service cloud.firestore {
   match /databases/{database}/documents/birthexperiences {
     match /{birthexperience} {
-      allow read, update: if resource.data.user_id == request.auth.uid;
+      allow read, delete, update: if resource.data.user_id == request.auth.uid;
     }
 
     match /{birthexperiences=**} {

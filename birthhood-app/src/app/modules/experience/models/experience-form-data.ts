@@ -1,5 +1,5 @@
 export class Experience {
-
+    id: string = '';
     user_id: string = '';
     birth_name: string = '';
     birth_date: string = '';
@@ -47,6 +47,7 @@ export class Experience {
 
 
     constructor(item) {
+        this.id = item.id;
         this.user_id = item.user_id;
         this.birth_name = item.birth_name;
         this.birth_date = item.birth_date;
