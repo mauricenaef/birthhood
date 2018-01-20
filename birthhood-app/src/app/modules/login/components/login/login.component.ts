@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 import { fadeInAnimation } from '../../../../shared/animations/fade-in.animation';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ import { fadeInAnimation } from '../../../../shared/animations/fade-in.animation
   host: { '[@fadeInAnimation]': '' }
 })
 export class LoginComponent implements OnInit {
-  @HostBinding('style.display') display = 'block'; 
+  @HostBinding('style.display') display = 'block';
   email: string;
   password: string;
   //set Password to show default
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.authService.resetPassword(resetEmail)
     }
-    
+
   }
 
   toggleShow() {
@@ -50,17 +51,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(formData): void {
+  onSubmit(formData: FormGroup): void {
     if (formData.valid) {
-      this.authService.af.auth.signInWithEmailAndPassword(formData.value.email,
-        formData.value.password).then(x => {
-          this.router.navigate(['/user-dashboard']);
-          this.toastr.success(`Mit ${formData.value.email} eingeloggt`, "Login");
-        }
-        ).catch(err => {
-          this.toastr.error(err, "Fehler bei Login");
-        })
-        ;
+      this.authService.signInWithEmailAndPassword(<EmailPasswordCredentials>{
+        email: formData.value.email, password:
+          formData.value.password
+      }).then(x => {
+        this.router.navigate(['/user-dashboard']);
+      });
     }
   }
 }
