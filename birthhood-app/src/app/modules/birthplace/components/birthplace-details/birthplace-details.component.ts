@@ -6,6 +6,7 @@ import { Chart } from 'chart.js';
 import { Birthplace } from '../../models/birthplace';
 import { Observable } from 'rxjs/Observable';
 import { fadeInAnimation } from '../../../../shared/animations/fade-in.animation';
+import { MetaService } from '@ngx-meta/core';
 
 @Component({
   selector: 'app-birthplace-details',
@@ -27,7 +28,8 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   /* public loaded: boolean = false; */
 
   constructor(private birthplaceService: BirthplaceService, private elementRef: ElementRef,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute, private meta: MetaService) {
+
 
   }
 
@@ -36,9 +38,11 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
       this.id = params['id'];
       this.birthplaceService.zoomToBirthplace(this.id);
       this.birthplace$ = this.birthplaceService.getBirthplace(this.id);
+      this.birthplace$.subscribe(x => {
+        this.meta.setTitle(`${x.name}`);
+      }
+      )
     });
-
-    /* this.loaded = false; */
   }
 
   ngAfterViewInit() {
