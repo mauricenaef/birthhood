@@ -56,25 +56,14 @@ firebase deploy --only hosting
 * LogIn with credentials
 * Reset Password
 * Add new Birthexperience
+* Delete own Birthexperience
 
-## Running the tests
+## Running Unit Test
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+Unit Test done with 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+cd birthhood-app
+ng test
 ```
 
 ## UserTest
@@ -112,7 +101,7 @@ firebase deploy
 
 ## Deployment
 
-For Live Deployment to firebase and [birthhod.rg](htts://birthhood.org)
+For Live Deployment to firebase and [birthhod.org](htts://birthhood.org)
 
 First build the production Folder to deploy from with the AOT Combilation
 ```
@@ -142,17 +131,9 @@ firebase deploy --only hosting
 
 ## Additional Things
 
+* [Live Site](https://birthhood.org) - Live Site
+* [Styleguide](https://styleguide.birthhood.org/index.html) - Live Styleguide
 * [Invision Prototype](https://invis.io/SAF0GILUE) - Prototype used to make User Tests
-* []
-
-
-## Contributing
-
-
-
-## Versioning
-
-
 
 ## Authors
 
