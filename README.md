@@ -68,7 +68,7 @@ ng test
 
 ## UserTest
 
-Extensive User Test with the [invision Prototype](https://invis.io/SAF0GILUE) have been made. Pictures are located in the  [User Testing Proof Folder](assets/user testng proof)
+Extensive User Test with the [invision Prototype](https://invis.io/SAF0GILUE) have been made. Pictures are located in the  assets/User Testing Proof Folder
 
 ## StyleGuide
 
