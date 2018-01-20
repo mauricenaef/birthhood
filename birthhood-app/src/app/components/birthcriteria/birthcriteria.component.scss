@@ -1,0 +1,13 @@
+@import "../../../settings";
+
+.criteria {
+    
+    li {
+        margin-bottom: 1.25rem;
+        strong {
+            font-size: rem-calc(18);
+            padding-bottom: .125em;
+            display: block;
+        }
+    }
+}
