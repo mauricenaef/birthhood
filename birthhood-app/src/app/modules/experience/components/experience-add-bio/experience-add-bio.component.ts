@@ -45,6 +45,7 @@ export class ExperienceAddBioComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.formDataService.resetExperience();
     this.birthPlaceService.getBirthplaces().subscribe(birthplaces => {
       this.birthplacelist = birthplaces;
       birthplaces.push(<Birthplace>{disabled: false, id: "", name: "-- Wählen sie einen Geburtsort --"})
