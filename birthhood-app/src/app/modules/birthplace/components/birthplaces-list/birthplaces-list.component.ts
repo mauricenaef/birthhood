@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy , HostBinding} from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
@@ -7,14 +7,20 @@ import 'rxjs/add/operator/take';
 import { ActivatedRoute } from '@angular/router';
 import { Birthplace } from '../../models/birthplace';
 import * as $ from 'jquery';
+import { fadeInAnimation } from '../../../../shared/animations/fade-in.animation';
 
 @Component({
   selector: 'app-birthplaces-list',
   templateUrl: './birthplaces-list.component.html',
-  styleUrls: ['./birthplaces-list.component.scss']
+  styleUrls: ['./birthplaces-list.component.scss'],
+    // make fade in animation available to this component
+    animations: [fadeInAnimation],
+
+    // attach the fade in animation to the host (root) element of this component
+    host: { '[@fadeInAnimation]': '' }
 })
 export class BirthplacesListComponent implements OnInit {
-
+  @HostBinding('style.display') display = 'block';
   sliderDragged = () => {
     let item = this.elRef.nativeElement.querySelector('.owl-item.active.center .item')
     if (item) {

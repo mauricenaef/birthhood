@@ -1,18 +1,24 @@
-import { Component, OnInit, ElementRef, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, OnDestroy, HostBinding, AfterViewInit } from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Chart } from 'chart.js';
 import { Birthplace } from '../../models/birthplace';
 import { Observable } from 'rxjs/Observable';
+import { fadeInAnimation } from '../../../../shared/animations/fade-in.animation';
 
 @Component({
   selector: 'app-birthplace-details',
   templateUrl: './birthplace-details.component.html',
-  styleUrls: ['./birthplace-details.component.scss']
+  styleUrls: ['./birthplace-details.component.scss'],
+  // make fade in animation available to this component
+  animations: [fadeInAnimation],
+
+  // attach the fade in animation to the host (root) element of this component
+  host: { '[@fadeInAnimation]': '' }
 })
 export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewInit {
-
+  @HostBinding('style.display') display = 'block'; 
   subscription: Subscription;
   birthplace: Birthplace;
   birthplace$: Observable<Birthplace>;
