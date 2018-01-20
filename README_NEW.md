@@ -19,23 +19,42 @@ git clone https://github.com/mauricenaef/birthhood.git
 ### Installing
 
 Make sure you are cd into the main project folder and install npm packages
-
 ```
 npm install
 ```
 
 Once done, serve the Application
-
 ```
+cd birthhood-app 
 ng serve
 ```
 
 your Application should now be running under [http://localhost:4200/](http://localhost:4200/birthplaces)
-
 To build the Application (AOT) use:
 ```
+cd birthhood-app
 ng build --aot --prod
 ```
+
+For Live Deployment to firebase and [birthhod.rg](htts://birthhood.org)
+````
+cd birthhood-app
+firebase deploy --only hosting
+````
+
+## Features of the App
+
+### All Users
+* Browse Birthplaces on the map
+* Search Birthplace with Live search
+* Interact with Carousel
+* View Birthplace details
+
+### Logged in Users only
+* SignUp
+* LogIn with credentials
+* Reset Password
+* Add new Birthexperience
 
 ## Running the tests
 
@@ -56,33 +75,76 @@ Explain what these tests test and why
 ```
 Give an example
 ```
+## StyleGuide
+
+The LIVE Styleguide is available under [birthood styleguide](https://styleguide.birthhood.org/index.html) and is created with comment notes in the respective SCSS files. The Styleguide follows Atomic Design Rules [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/). Styleguide is sectioned into following parts:
+
+* Nuclides (All Collors and Font Rules go here)
+* Atoms (Basic building blocks)
+* Molecules (Combination of Atoms)
+* Structures (Combination of Molecules)
+
+Styleguide depends on the Apps Final CSS file to display all designs. To generate and Deploy the Styleguide from start to end follow these steps:
+
+Create complete-styles.css
+```
+cd birthhood-app
+gulp sass    
+```
+
+Generate local Style guide in static folder
+```
+cd birthhood-app
+nucleus   
+```
+
+Deploy to firebase to subdomain
+```
+cd static
+firebase deploy    
+```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+For Live Deployment to firebase and [birthhod.rg](htts://birthhood.org)
+````
+cd birthhood-app
+firebase deploy --only hosting
+````
 
 ## Built With
 
-* [Foundation 6](https://foundation.zurb.com/) - Foundation Flex Grid
+* [Angular](https://angular.io/) - Angular
+* [Angular CLI](https://cli.angular.io/) - Angular CLI
+* [Firebase](https://firebase.google.com/) - Firebase Google
+* [Google Maps](https://developers.google.com/maps/) - Google Maps API
+* [Chart.js](http://www.chartjs.org/) - Chart.js
+* [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/) - owl.carousel
+* [ngx-toaster](https://github.com/scttcper/ngx-toastr) - Toaster
+* [Foundation 6](https://foundation.zurb.com/) - Foundation for Sites Flex Grid
+* [Gulp](https://gulpjs.com/) - gulp
+* [nucleus](https://github.com/holidaypirates/nucleus) - nucleus styleguide
 
 
 ## Additional Things
 
-[Invision Prototype](https://invis.io/SAF0GILUE)
+* [Invision Prototype](https://invis.io/SAF0GILUE) - Prototype used to make User Tests
+* 
+
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Marcel Maurice Naef** - *Project Owner* - [mauricenaef](https://github.com/mauricenaef)
+* **Tobias Brunner** - *Project Owner* - [t1brunne](https://github.com/t1brunne)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -90,6 +152,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Hat tip to Andrea Glauser for providing the initial data and Inspiration to the Project
+* Thanks to all the guys at SO for having had the same issues we had 
