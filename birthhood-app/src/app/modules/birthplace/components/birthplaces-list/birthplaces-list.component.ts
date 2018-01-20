@@ -91,15 +91,6 @@ export class BirthplacesListComponent implements OnInit {
     this.birthplaceService.zoomOut();
   }
 
-  /*   ngAfterViewInit(){
-      this.owl = $('.owl-carousel');
-      this.owl.on('changed.owl.carousel', function(event) {
-        console.log("changed");
-        this.onDragged();
-      })
-    } */
-
-
 
 
   //um punkte weniger flickern zu lassen

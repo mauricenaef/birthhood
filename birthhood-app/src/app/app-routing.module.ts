@@ -22,11 +22,19 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { SignupBirthplaceComponent } from './components/signup-birthplace/signup-birthplace.component';
 import { BirthcriteriaComponent } from './components/birthcriteria/birthcriteria.component';
+import { MetaGuard, MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioning } from '@ngx-meta/core';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
 
-  { path: 'about', component: AboutComponent },
+  { path: 'about',
+  canActivate: [MetaGuard],
+   component: AboutComponent,
+  data: {
+    meta: {
+      title: 'Über uns'
+    }
+  } },
   { path: 'birthcriteria', component: BirthcriteriaComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'impressum', component: ImpressumComponent },
@@ -34,10 +42,22 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {
-    path: 'birthplaces', component: BirthplacesComponent,
+    path: 'birthplaces',
+    canActivateChild: [MetaGuard],
+    component: BirthplacesComponent,
     children: [
-      { path: '', component: BirthplacesListComponent },
-      { path: 'details/:id', component: BirthplaceDetailsComponent }
+      {
+        path: '',
+        component: BirthplacesListComponent,
+        data: {
+          meta: {
+            title: 'Willkommen'
+          }
+        }
+      },
+      { path: 'details/:id',
+      component: BirthplaceDetailsComponent,
+     }
     ]
   },
   {
@@ -45,7 +65,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: UserExperienceListComponent },
-      { 
+      {
         path: 'experience/new', component: ExperienceAddComponent,
         children: [
           { path: '', component: ExperienceAddBioComponent },
@@ -56,17 +76,38 @@ const routes: Routes = [
           { path: 'mental', component: ExperienceAddMentalComponent },
           { path: 'wochenbett', component: ExperienceAddWochenbettComponent }
         ]
-     }
+      }
     ]
   }
 ];
+
+export function metaFactory(): MetaLoader {
+  return new MetaStaticLoader({
+    pageTitlePositioning: PageTitlePositioning.PrependPageTitle,
+    pageTitleSeparator: ' - ',
+    applicationName: 'birthhood',
+    defaults: {
+      title: 'Der Geburtsortfinder',
+      description: 'Finden Sie den geeigneten Geburtsort für Sie und Ihr Kind',
+      'og:image': 'https://birthhood.org/icon.png',
+      'og:type': 'website',
+      'og:locale': 'ch_DE',
+      'og:locale:alternate': '',
+      'twitter:title': '',
+    }
+  });
+}
 
 @NgModule({
   imports: [
     RouterModule.forRoot(
       routes/*,
       { enableTracing: true } */// <-- debugging purposes only
-    )
+    ),
+    MetaModule.forRoot({
+      provide: MetaLoader,
+      useFactory: (metaFactory)
+    })
   ],
   exports: [RouterModule]
 })
