@@ -12,7 +12,7 @@ import { NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import * as mapstyles from '../../../../config/map-styles.json';
-import { mapConfig } from '../../../../config/map';
+import { appConfig } from '../../../../config/app.config';
 declare var google: any;
 
 @Component({
@@ -29,11 +29,10 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
   isDetail: boolean = false;
 
   @ViewChild(AgmMap) private map: any;
-  items$: Observable<any[]>;
+  items$: Observable<Birthplace[]>;
 
   latLng: LatLngLiteral;
-  gestureHandling: string = "greedy";
-  zoomOutNumber: number = 3;
+  gestureHandling: string = appConfig.map.gestureHandling;
   bounds: LatLngBounds;
   loaded: boolean = false;
   selectedId: string;
@@ -41,7 +40,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
   constructor(public birthplaceService: BirthplaceService, public router: Router) {
 
-    this.latLng = mapConfig.initialLatLng;
+    this.latLng = appConfig.map.initialLatLng;
 
     this.styles = mapstyles;
 
@@ -61,7 +60,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
               this.map._mapsWrapper.fitBounds(this.generateBounds(
                 { lat: birthplace.lat, lng: birthplace.lng },
-                mapConfig.zoomFactor
+                appConfig.map.zoomFactor
               ))
             })
         });
@@ -134,7 +133,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
       birthplaces => {
 
         birthplaces.sort((x, y) => new Birthplace(x).distance(this.latLng) - new Birthplace(y).distance(this.latLng));
-        let nearestBirthplaces: Birthplace[] = birthplaces.slice(0, this.zoomOutNumber);
+        let nearestBirthplaces: Birthplace[] = birthplaces.slice(0, appConfig.map.zoomOutNumber);
         let bounds: LatLngBounds = new google.maps.LatLngBounds();
 
         nearestBirthplaces.forEach(
