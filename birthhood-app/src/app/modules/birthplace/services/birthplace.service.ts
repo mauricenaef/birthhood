@@ -4,7 +4,6 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { AgmCoreModule, MapsAPILoader, LatLngBounds, LatLng } from '@agm/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/filter';
 import { MarkerAGM } from '../models/marker-agm';
