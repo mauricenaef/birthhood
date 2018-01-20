@@ -11,7 +11,8 @@ import { LatLngBounds } from '@agm/core/services/google-maps-types';
 import { NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
-import * as mapstyles from '../../../../../assets/config/map-styles.json';
+import * as mapstyles from '../../../../config/map-styles.json';
+import { mapConfig } from '../../../../config/map';
 declare var google: any;
 
 @Component({
@@ -39,11 +40,8 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
   routersubscription: Subscription;
 
   constructor(public birthplaceService: BirthplaceService, public router: Router) {
-    /*fallback-location. HSR?*/
-    this.latLng = <LatLngLiteral>{
-      lat: 47.2,
-      lng: 8.6
-    };
+
+    this.latLng = mapConfig.initialLatLng;
 
     this.styles = mapstyles;
 
@@ -63,7 +61,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
               this.map._mapsWrapper.fitBounds(this.generateBounds(
                 { lat: birthplace.lat, lng: birthplace.lng },
-                0.0005
+                mapConfig.zoomFactor
               ))
             })
         });
