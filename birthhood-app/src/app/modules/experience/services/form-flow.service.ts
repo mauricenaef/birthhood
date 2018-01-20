@@ -31,24 +31,4 @@ export class FormFlowService {
     });
   }
 
-  getFirstInvalidStep(step: string): string {
-    // If all the previous steps are validated, return blank
-    // Otherwise, return the first invalid step
-    let found : boolean= false;
-    let valid : boolean= true;
-    let redirectToStep: string = '';
-    for (let i: number = 0; i < this.formflow.length && !found && valid; i++) {
-      let item = this.formflow[i];
-      if (item.step === step) {
-        found = true;
-        redirectToStep = '';
-      }
-      else {
-        valid = item.valid;
-        redirectToStep = item.step
-      }
-    }
-    return redirectToStep;
-  }
-
 }

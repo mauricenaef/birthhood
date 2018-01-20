@@ -10,6 +10,7 @@ import 'rxjs/add/operator/toPromise';
 import "rxjs/add/operator/take";
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../login/services/auth.service';
+import { DocumentReference } from '@firebase/firestore';
 
 @Injectable()
 export class ExperienceFormDataService {
@@ -25,7 +26,7 @@ export class ExperienceFormDataService {
 
   }
 
-  saveToFirebase(): Promise<any> {
+  saveToFirebase(): Promise<DocumentReference> {
     let userObs: Observable<firebase.User> = this.authService.af.authState;
     return userObs.take(1).toPromise().then(user => {
     this.experience.user_id = user.uid;

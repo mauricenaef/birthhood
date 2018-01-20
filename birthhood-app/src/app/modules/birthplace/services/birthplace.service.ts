@@ -13,6 +13,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { BirthplaceFilter } from '../models/birthplace-filter';
 import { LatLngBoundsLiteral } from '@agm/core/services/google-maps-types';
 import { Birthplace } from '../models/birthplace';
+import { BirthplaceBoundsStream } from '../models/birthplace-bounds-stream';
 
 declare var google: any;
 
@@ -25,10 +26,10 @@ export class BirthplaceService {
   birthplaceClickedSource = new Subject<string>();
   birthplaceClicked$ = this.birthplaceClickedSource.asObservable();
 
-  private zoomOutSource = new Subject<any>();
+  private zoomOutSource = new Subject<void>();
   zoomOut$ = this.zoomOutSource.asObservable();
 
-  filterChanged$: BehaviorSubject<any>;
+  filterChanged$: BehaviorSubject<BirthplaceBoundsStream>;
   filter: BirthplaceFilter;
 
   private carouselUpdated = new Subject<string>();
@@ -43,7 +44,7 @@ export class BirthplaceService {
       geburtshaus: true
     }
 
-    this.filterChanged$ = new BehaviorSubject<any>({
+    this.filterChanged$ = new BehaviorSubject<BirthplaceBoundsStream>({
       bounds: null,
       filter: this.filter
     })
@@ -85,7 +86,7 @@ export class BirthplaceService {
     );
   }
 
-  getBirthplace(id: string): Observable<any> {
+  getBirthplace(id: string): Observable<Birthplace> {
     var docRef: AngularFirestoreDocument<Birthplace> = this.birthplaceCollection.doc(id);
     return <Observable<Birthplace>>docRef.valueChanges();
   }
