@@ -29,7 +29,6 @@ export class BirthplacesListComponent implements OnInit {
     }
   }
 
-  owl;
   birthplaces: Birthplace[];
   subscription: Subscription;
 
@@ -83,7 +82,6 @@ export class BirthplacesListComponent implements OnInit {
           returnBirthplaces.push(new Birthplace(birthplace));
         }
         this.birthplaces = returnBirthplaces;
-
       });
   }
 
@@ -91,9 +89,7 @@ export class BirthplacesListComponent implements OnInit {
     this.birthplaceService.zoomOut();
   }
 
-
-
-  //um punkte weniger flickern zu lassen
+  // um punkte weniger flickern zu lassen
   trackFbObjects = (idx, obj) => obj.$key;
 
 }

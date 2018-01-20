@@ -14,7 +14,6 @@ import { MetaService } from '@ngx-meta/core';
   styleUrls: ['./birthplace-details.component.scss'],
   // make fade in animation available to this component
   animations: [fadeInAnimation],
-
   // attach the fade in animation to the host (root) element of this component
   host: { '[@fadeInAnimation]': '' }
 })
@@ -24,8 +23,7 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
   birthplace: Birthplace;
   birthplace$: Observable<Birthplace>;
   id: string;
-  myChart: any;
-  /* public loaded: boolean = false; */
+  myChart: Chart;
 
   constructor(private birthplaceService: BirthplaceService, private elementRef: ElementRef,
     private route: ActivatedRoute, private meta: MetaService) {

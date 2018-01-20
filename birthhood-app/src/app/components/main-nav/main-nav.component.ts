@@ -14,7 +14,6 @@ export class MainNavComponent implements OnInit {
   userLoggedIn: boolean = false;
   constructor(private authService: AuthService, public router: Router) {
     this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false)
-
   }
 
   ngOnInit() {
