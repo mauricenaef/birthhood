@@ -27,20 +27,76 @@ import { MetaGuard, MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioni
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
 
-  { path: 'about',
-  canActivate: [MetaGuard],
-   component: AboutComponent,
-  data: {
-    meta: {
-      title: 'Über uns'
+  {
+    path: 'about',
+    canActivate: [MetaGuard],
+    component: AboutComponent,
+    data: {
+      meta: {
+        title: 'Über uns'
+      }
     }
-  } },
-  { path: 'birthcriteria', component: BirthcriteriaComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'impressum', component: ImpressumComponent },
-  { path: 'signup-birthplace', component: SignupBirthplaceComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  },
+  {
+    path: 'birthcriteria',
+    canActivate: [MetaGuard],
+    component: BirthcriteriaComponent,
+    data: {
+      meta: {
+        title: 'Qualitätskatalog'
+      }
+    }
+  },
+  {
+    path: 'contact',
+    canActivate: [MetaGuard],
+    component: ContactComponent,
+    data: {
+      meta: {
+        title: 'Kontakt'
+      }
+    }
+  },
+  {
+    path: 'impressum',
+    canActivate: [MetaGuard],
+    component: ImpressumComponent,
+    data: {
+      meta: {
+        title: 'Impressum'
+      }
+    }
+  },
+  {
+    path: 'signup-birthplace',
+    canActivate: [MetaGuard],
+    component: SignupBirthplaceComponent,
+    data: {
+      meta: {
+        title: 'Geburtsort Anmelden'
+      }
+    }
+  },
+  {
+    path: 'login',
+    canActivate: [MetaGuard],
+    component: LoginComponent,
+    data: {
+      meta: {
+        title: 'Einloggen'
+      }
+    }
+  },
+  {
+    path: 'signup',
+    canActivate: [MetaGuard],
+    component: SignupComponent,
+    data: {
+      meta: {
+        title: 'Anmelden'
+      }
+    }
+  },
   {
     path: 'birthplaces',
     canActivateChild: [MetaGuard],
@@ -55,14 +111,25 @@ const routes: Routes = [
           }
         }
       },
-      { path: 'details/:id',
-      component: BirthplaceDetailsComponent,
-     }
+      {
+        path: 'details/:id',
+        component: BirthplaceDetailsComponent,
+        data: {
+          meta: {
+            title: 'Details'
+          }
+        }
+      }
     ]
   },
   {
     path: 'user-dashboard', component: UserDashboardComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, MetaGuard],
+    data: {
+      meta: {
+        title: 'Ihre Geburtserlebnisse'
+      }
+    },
     children: [
       { path: '', component: UserExperienceListComponent },
       {

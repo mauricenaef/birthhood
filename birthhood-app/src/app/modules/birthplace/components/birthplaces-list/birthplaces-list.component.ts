@@ -56,16 +56,14 @@ export class BirthplacesListComponent implements OnInit {
       1024: {
         items: 3,
         center: true,
-        loop: true,
         stagePadding: 30,
-        startPosition: 0
+        startPosition: 3
       },
       1200: {
         items: 4,
         center: true,
-        loop: true,
         stagePadding: 30,
-        startPosition: 0
+        startPosition: 3
       }
     },
     onDragged: this.sliderDragged,

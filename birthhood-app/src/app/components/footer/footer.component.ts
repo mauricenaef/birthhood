@@ -14,8 +14,8 @@ export class FooterComponent implements OnInit {
   isLateralNavAnimating: boolean = false;
   userLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) { 
-    this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true: false)
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.af.auth.onAuthStateChanged(user => this.userLoggedIn = user ? true : false)
 
   }
 
@@ -35,12 +35,17 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  goto(path: string) : void {
+  hideMobileNavigation() {
     $('body').removeClass('footer-navigation-is-open');
+  }
+
+  goto(path: string): void {
+    this.hideMobileNavigation();
     this.router.navigateByUrl(path);
   }
 
-  logout(): void{
+  logout(): void {
+    this.hideMobileNavigation();
     this.authService.signOut();
   }
 }

@@ -13,13 +13,13 @@
           Karte
         </li>
         <li>
-          <a (click)='goto("/")' routerLink="/birthplaces" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburstort finden</a>
+          <a (click)='goto("/")' >Geburstort finden</a>
         </li>
         <li>
-          <a (click)='goto("/user-dashboard/experience/new")' routerLink="/user-dashboard/experience/new" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburtserlebnis hinzufügen</a>
+          <a (click)='goto("/user-dashboard/experience/new")'  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Geburtserlebnis hinzufügen</a>
         </li>
         <li *ngIf="userLoggedIn" >
-            <a (click)='goto("/user-dashboard")' routerLink="/user-dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a>
+            <a (click)='goto("/user-dashboard")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profil</a>
           </li>
         <li>
           <a *ngIf="userLoggedIn" (click)="logout()">
@@ -43,12 +43,12 @@
           birthhood
         </li>
         <li>
-          <a (click)='goto("/about")' routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Über birthhood
+          <a (click)='goto("/about")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Über birthhood
           
           </a>
         </li>
         <li>
-          <a (click)='goto("/birthcriteria")' routerLink="/birthcriteria" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Qualitätskatalog</a>
+          <a (click)='goto("/birthcriteria")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Qualitätskatalog</a>
         </li>
         <li>
           <a href="https://styleguide.birthhood.org/index.html" target="_blank">Styleguide <svg class="icon share"><use xlink:href="#share"></use></svg></a>
@@ -61,10 +61,10 @@
           Partner
         </li>
         <li>
-          <a (click)='goto("/signup-birthplace")' routerLink="/signup-birthplace" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ich bin ein Geburtshaus</a>
+          <a (click)='goto("/signup-birthplace")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ich bin ein Geburtshaus</a>
         </li>
         <li>
-          <a (click)='goto("/signup-birthplace")' routerLink="/signup-birthplace" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ich bin ein Spital</a>
+          <a (click)='goto("/signup-birthplace")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ich bin ein Spital</a>
         </li>
       </ul>
     </div>
@@ -74,10 +74,10 @@
           Rechtliches
         </li>
         <li>
-          <a (click)='goto("/impressum")' routerLink="/impressum" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Impressum</a>
+          <a (click)='goto("/impressum")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Impressum</a>
         </li>
         <li>
-          <a (click)='goto("/contact")' routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kontakt</a>
+          <a (click)='goto("/contact")' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kontakt</a>
         </li>
       </ul>
     </div>

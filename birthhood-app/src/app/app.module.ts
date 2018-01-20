@@ -9,7 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { MainNavComponent } from './components/main-nav/main-nav.component';
@@ -26,13 +26,12 @@ import { ExperienceModule } from './modules/experience/experience.module';
 import { LoginModule } from './modules/login/login.module';
 import { BirthplaceModule } from './modules/birthplace/birthplace.module';
 import { AuthService } from './modules/login/services/auth.service';
-
+import { appConfig } from './config/app.config';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-
     MainNavComponent,
     AboutComponent,
     ImpressumComponent,
@@ -47,21 +46,14 @@ import { AuthService } from './modules/login/services/auth.service';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
-
     FormsModule,
     BirthplaceModule,
     LoginModule,
     ExperienceModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-full-width',
-      autoDismiss: true,
-      disableTimeOut: false,
-      closeButton: false
-    }),
-
+    ToastrModule.forRoot(appConfig.toastr)
   ],
   providers: [AuthService,
-     AuthGuard ],
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
