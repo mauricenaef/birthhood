@@ -58,6 +58,14 @@ firebase deploy --only hosting
 * Add new Birthexperience
 * Delete own Birthexperience
 
+### Upcoming features
+* Social Login
+* Add Name on sign up
+* Edit Profile
+* Sign up for birthplace owners
+* Edit for birthplace owners
+
+
 ## Running Unit Test
 
 Unit Test done with Karma and Jasmine
