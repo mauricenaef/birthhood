@@ -3,6 +3,7 @@ import { Wochenbett } from '../../models/experience-form-data';
 import { ToastrService } from 'ngx-toastr';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-experience-add-wochenbett',
@@ -13,7 +14,6 @@ export class ExperienceAddWochenbettComponent implements OnInit {
 
   title = 'Beurteilen Sie das Wochenbett nach der Geburt';
   wochenbett: Wochenbett;
-  form: any;
   loading: boolean = false;
 
   constructor(
@@ -27,7 +27,7 @@ export class ExperienceAddWochenbettComponent implements OnInit {
     this.loading = false;
   }
 
-  save(form: any) {
+  save(form: FormGroup) {
     if (!form.valid) {
       return;
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Emotional } from '../../models/experience-form-data';
 import { ExperienceFormDataService } from '../../services/experience-form-data.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-experience-add-emotional',
   templateUrl: './experience-add-emotional.component.html',
@@ -11,7 +12,6 @@ export class ExperienceAddEmotionalComponent implements OnInit {
 
   title: string = 'Beurteilen Sie die Emotionalität während der Geburt';
   emotional: Emotional;
-  form: any;
 
   constructor(private formDataService: ExperienceFormDataService, private router: Router) { }
 
@@ -19,7 +19,7 @@ export class ExperienceAddEmotionalComponent implements OnInit {
     this.emotional = this.formDataService.getEmotional();
   }
 
-  save(form: any) {
+  save(form: FormGroup) {
     if (!form.valid) {
       return;
     }

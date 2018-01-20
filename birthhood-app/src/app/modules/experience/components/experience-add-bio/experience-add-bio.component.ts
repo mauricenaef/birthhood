@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Birthplace } from '../../../birthplace/models/birthplace';
 import { AuthService } from '../../../login/services/auth.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-experience-add-bio',
@@ -18,7 +19,6 @@ export class ExperienceAddBioComponent implements OnInit {
   today: string;
   title: string = 'Generelle Angaben';
   bio: Bio;
-  form: any;
   birthplacelist: Birthplace[];
   userLoggedIn: boolean = false;
 
@@ -45,7 +45,6 @@ export class ExperienceAddBioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.formDataService.resetExperience();
     this.birthPlaceService.getBirthplaces().subscribe(birthplaces => {
       this.birthplacelist = birthplaces;
       birthplaces.push(<Birthplace>{disabled: false, id: "", name: "-- Wählen sie einen Geburtsort --"})
@@ -53,7 +52,7 @@ export class ExperienceAddBioComponent implements OnInit {
     this.bio = this.formDataService.getBio();
   }
 
-  save(form: any) {
+  save(form: FormGroup) {
     if (!form.valid) {
       return;
     }

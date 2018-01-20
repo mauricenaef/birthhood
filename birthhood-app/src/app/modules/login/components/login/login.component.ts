@@ -50,9 +50,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-
-
   onSubmit(formData): void {
     if (formData.valid) {
       this.authService.af.auth.signInWithEmailAndPassword(formData.value.email,

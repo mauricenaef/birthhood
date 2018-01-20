@@ -8,8 +8,6 @@ import { ExperienceFormDataService } from '../../services/experience-form-data.s
 })
 export class ExperienceAddComponent implements OnInit {
 
-  title: string = 'Add new Birth Experience';
-
   @Input() formData;
 
   constructor(private formDataService: ExperienceFormDataService) { }

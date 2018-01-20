@@ -37,14 +37,13 @@ export class Birthplace {
         this.score_u = input.score_u;
         this.score_w = input.score_w;
     }
-    private rad(x) {
+    private rad(x): number  {
         return x * Math.PI / 180;
     }
 
     public distance(mapCenter: LatLngLiteral): number {
         // radius of earth in km
         let R = 6371;
-
         let dLat = this.rad(this.lat - mapCenter.lat);
         let dLong = this.rad(this.lng - mapCenter.lng);
         let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -84,7 +83,7 @@ export class Birthplace {
     }
 
 
-    private round(number, precision) {
+    private round(number, precision): number {
         var factor = Math.pow(10, precision);
         var tempNumber = number * factor;
         var roundedTempNumber = Math.round(tempNumber);

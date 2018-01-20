@@ -12,7 +12,6 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
 
-  title = 'app';
   constructor(public router: Router) { }
 
   ngOnInit() {

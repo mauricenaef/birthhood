@@ -48,9 +48,7 @@ export class ExperienceAddNavbarComponent implements OnInit {
      this.router.navigate(['/user-dashboard']);
    }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() { }
 
   ngOnDestroy() {
     this.routersubscription.unsubscribe();

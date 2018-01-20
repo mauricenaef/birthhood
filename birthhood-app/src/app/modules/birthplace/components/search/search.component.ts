@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit , OnDestroy{
 
   searchresults: Observable<Birthplace[]>;
   isActive: boolean = false;
-  body;
+  body: HTMLElement;
 
   @ViewChild('searchBox') searchBox;
 

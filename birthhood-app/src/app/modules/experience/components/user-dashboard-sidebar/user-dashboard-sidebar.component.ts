@@ -14,7 +14,6 @@ export class UserDashboardSidebarComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-
   ngOnInit() {
     this.authService.af.auth.onAuthStateChanged(
       user => {
