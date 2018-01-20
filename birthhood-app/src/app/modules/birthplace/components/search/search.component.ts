@@ -11,7 +11,6 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Birthplace } from '../../models/birthplace';
 import { ToastrService } from 'ngx-toastr';
-import { window } from 'rxjs/operator/window';
 
 @Component({
   selector: 'app-search',

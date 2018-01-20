@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy , HostBinding} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef , HostBinding} from '@angular/core';
 import { BirthplaceService } from '../../services/birthplace.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
