@@ -10,7 +10,7 @@ export const appConfig = {
         /** zoom out Factor for Detail-View of Map */
         zoomFactor : 0.0005,
         /** zoom Map out to display at least this number of Birthplaces */
-        zoomOutNumber: 3,
+        zoomOutNumber: 4,
         /** map-Gesture-handlig */
         gestureHandling: "greedy"
 
@@ -19,6 +19,13 @@ export const appConfig = {
     list: {
         /** max items to display in Carousel */
         maxItems: 9
+    },
+    toastr: {
+        positionClass: 'toast-top-full-width',
+        autoDismiss: true,
+        disableTimeOut: false,
+        closeButton: false,
+        timeOut: 2000
     }
     
 };
