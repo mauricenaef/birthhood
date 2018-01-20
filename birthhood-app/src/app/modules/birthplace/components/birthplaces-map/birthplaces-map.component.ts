@@ -103,18 +103,7 @@ export class BirthplacesMapComponent implements OnInit, OnDestroy {
 
     //subscribe to carousel-drag
     this.birthplaceService.carouselUpdated$.subscribe(
-      /*(id => {
-        this.birthplaceService.getBirthplace(id).subscribe(x => {
-          let birthplace: Birthplace = x;
-          this.map.triggerResize()
-            .then(() => {
-              console.log("repaint");
-              this.map._mapsWrapper.panTo(<LatLngLiteral>
-                { lat: birthplace.lat, lng: birthplace.lng })
-            })
-        });
-      });*/
-      x => this.selectedId = x //console.log("yess", x)
+      x => this.selectedId = x
     );
 
   }
