@@ -27,7 +27,14 @@ import { MetaGuard, MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioni
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
 
-  { path: 'about', component: AboutComponent },
+  { path: 'about',
+  canActivate: [MetaGuard],
+   component: AboutComponent,
+  data: {
+    meta: {
+      title: 'Über uns'
+    }
+  } },
   { path: 'birthcriteria', component: BirthcriteriaComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'impressum', component: ImpressumComponent },
@@ -85,7 +92,8 @@ export function metaFactory(): MetaLoader {
       'og:image': 'https://birthhood.org/icon.png',
       'og:type': 'website',
       'og:locale': 'ch_DE',
-      'og:locale:alternate': ''
+      'og:locale:alternate': '',
+      'twitter:title': '',
     }
   });
 }

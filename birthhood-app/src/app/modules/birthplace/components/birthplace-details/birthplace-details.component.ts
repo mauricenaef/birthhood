@@ -123,8 +123,4 @@ export class BirthplaceDetailsComponent implements OnInit, OnDestroy, AfterViewI
     this.subscription.unsubscribe();
   }
 
-  /* ngAfterViewChecked() {
-    console.log(this.loaded);
-    this.loaded = true;
-  } */
 }
