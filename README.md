@@ -60,7 +60,7 @@ firebase deploy --only hosting
 
 ## Running Unit Test
 
-Unit Test done with 
+Unit Test done with Karma and Jasmine
 ```
 cd birthhood-app
 ng test
