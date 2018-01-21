@@ -2,8 +2,8 @@
 
 .callout-edge-to-edge {
     border-radius: 0;
-    margin: 0 -2.6rem 1.5rem;
-    padding: 2rem 2.6rem;
+    margin: 0 -2rem 1.5rem;
+    padding: 2rem 3rem;
     @include breakpoint(medium up) {
         margin: 0 -4rem 2rem;
         padding: 2rem 4rem;

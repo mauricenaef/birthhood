@@ -4,6 +4,10 @@ app-root {
     width: 100%;
 }
 
+.content-wrap {
+    overflow-x: hidden;
+}
+
 .overflow-hidden {
     overflow: hidden;
 
@@ -176,7 +180,7 @@ app-root {
 
 .main-content {
     height: 100%;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
 
     @include breakpoint(medium up) {
         padding-top: 5rem;

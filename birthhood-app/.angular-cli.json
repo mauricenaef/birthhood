@@ -11,7 +11,13 @@
         "assets",
         "favicon.ico",
         "apple-touch-icon.png",
-        "startup.png"
+        "startup.png",
+        "assets/images/startup/startup-568h@2x.png",
+        "assets/images/startup/startup-667h@2x.png",
+        "assets/images/startup/startup-Landscape-736h@3x.png",
+        "assets/images/startup/startup-Portrait.png",
+        "assets/images/startup/startup-Portrait@2x.png",
+        "assets/images/startup/startup@2x.png"
       ],
       "index": "index.html",
       "main": "main.ts",
