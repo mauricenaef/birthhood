@@ -20,7 +20,7 @@ git clone https://github.com/mauricenaef/birthhood.git
 
 *birthhood*s backend is based on google firebase firestore. If you would like to run the application, you need to have a corresponding firebase account and project set up. Make sure to enable *login with email and password* for your firebase project.
 
-To set up the app for your firebase backend, amend the _src/environments/environment*.ts_ file accordingly.
+To set up the app for your firebase backend, amend the _src/environments/environment*.ts_ file accordingly (firebase project as well as service-key).
 
 To set up your firebase project with the needed firebase functions and security rules, run 
 ````
