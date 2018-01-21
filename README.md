@@ -37,7 +37,7 @@ cd birthhood-app
 ng build --aot --prod
 ```
 
-For Live Deployment to firebase and [birthhod.rg](htts://birthhood.org)
+For Live Deployment to firebase and [birthhod.org](https://birthhood.org)
 ````
 cd birthhood-app
 firebase deploy --only hosting
@@ -46,8 +46,9 @@ firebase deploy --only hosting
 ## Features of the App
 
 ### All Users
+* Geolocate user
 * Browse Birthplaces on the map
-* Search Birthplace with Live search
+* Search Birthplace with live search
 * Interact with Carousel
 * View Birthplace details
 
@@ -109,7 +110,7 @@ firebase deploy
 
 ## Deployment
 
-For Live Deployment to firebase and [birthhod.org](htts://birthhood.org)
+For Live Deployment to firebase and [birthhod.org](https://birthhood.org)
 
 First build the production Folder to deploy from with the AOT Combilation
 ```
