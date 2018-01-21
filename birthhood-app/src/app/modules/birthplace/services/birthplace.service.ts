@@ -74,6 +74,11 @@ export class BirthplaceService {
       });
   }
 
+  /** unfortunately, firebase firestore does not provide any geo-functionality nor does
+   * it allow range-filters with more than two paramters. We therefore have to fetch all
+   * birthplaces from firestore and cannot filter this on the backend. Yet. As soon as the
+   * entity "geopoint" will be supported by firebase firestore, this will be corrected.
+   */
   getBirhplacesOnMap(): Observable<Birthplace[]> {
     return this.filterChanged$.switchMap(filter =>
       this.getBirthplacesFiltered().map(items => items.filter(item => {
@@ -119,6 +124,10 @@ export class BirthplaceService {
     this.zoomOutSource.next();
   }
 
+  /** Firebase firestore does not allow any search functions as of yet. 
+   * The only alternative would be to set up an elastic-search service with synced 
+   * data from firestore, which would be out of scope for this project.
+  */
   search(term: string): Observable<Birthplace[]> {
     return this.getBirthplacesFiltered().map(birthplaces =>
       birthplaces.filter(item =>
