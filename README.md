@@ -20,11 +20,11 @@ git clone https://github.com/mauricenaef/birthhood.git
 
 *birthhood*s backend is based on google firebase firestore. If you would like to run the application, you need to have a corresponding firebase account and project set up.
 
-To set up the app for your firebase backend, amend the src/environments/environment*.ts file accordingly.
+To set up the app for your firebase backend, amend the _src/environments/environment*.ts_ file accordingly.
 
 To initialize your firebase backend with some sample data, follow these steps:
-1. configure your firebase-account and projekt in utils/firebase_uploader.js
-2. configure your google-maps key in utils/firebase_uploader.js
+1. configure your firebase-account and projekt in *utils/firebase_uploader.js*
+2. configure your google-maps key in *utils/firebase_uploader.js*
 
 cd into "utils" and run
 ```
@@ -38,21 +38,21 @@ Make sure you are cd into the main project folder and install npm packages
 npm install
 ```
 
-Once done, serve the Application
+Once done, serve the application
 ```
 cd birthhood-app 
 ng serve
 ```
 
-Your Application should now be running under [http://localhost:4200/](http://localhost:4200/birthplaces)
+Your application should now be running under [http://localhost:4200/](http://localhost:4200/birthplaces)
 
 ### Configuration
 
-Further configuration of the application can be set in src/app/config/
+Further configuration of the application can be set in *src/app/config/*
 
 ## Features of the app
 
-### All Users
+### All users
 * Geolocate user
 * Browse birthplaces on the map
 * Search birthplace with live search
@@ -74,7 +74,7 @@ Further configuration of the application can be set in src/app/config/
 * Edit for birthplace owners
 
 
-## Running Unit Test
+## Running unit tests
 
 Unit test done with Karma and Jasmine
 ```
@@ -82,11 +82,11 @@ cd birthhood-app
 ng test
 ```
 
-## UserTest
+## User testing
 
-Extensive user testing with the [invision Prototype](https://invis.io/SAF0GILUE) has been done. Pictures are located in the assets/User Testing Proof Folder
+Extensive user testing with the [invision Prototype](https://invis.io/SAF0GILUE) has been done. Pictures are located in the *assets/User Testing Proof Folder*
 
-## StyleGuide
+## Styleguide
 
 The LIVE Styleguide is available under [birthood styleguide](https://styleguide.birthhood.org/index.html) and is created with comment notes in the respective SCSS files. The Styleguide follows Atomic Design Rules [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/). Styleguide is sectioned into following parts:
 
