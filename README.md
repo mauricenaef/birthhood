@@ -1,5 +1,5 @@
 ![birthhood_components](/assets/read-me-header.png)
-# birthhood
+# *birthhood*
 
 CAS FEE 2017 Projektarbeit 2
 
@@ -50,7 +50,7 @@ Your Application should now be running under [http://localhost:4200/](http://loc
 
 Further configuration of the application can be set in src/app/config/
 
-## Features of the App
+## Features of the app
 
 ### All Users
 * Geolocate user
@@ -59,7 +59,7 @@ Further configuration of the application can be set in src/app/config/
 * Interact with carousel
 * View birthplace details
 
-### Logged in Users only
+### Logged in users only
 * Sign up
 * Log in with credentials
 * Reset password
@@ -168,5 +168,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to Andrea Glauser for providing the initial data and Inspiration to the Project
+* Hat tip to Andrea Glauser for providing the initial data and inspiration to the project
 * Thanks to all the guys at SO for having had the same issues we had 
