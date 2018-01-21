@@ -140,6 +140,7 @@ Alternatively you can serve the AOT build using node.js. To do so, run
 ````
 node server.js
 ````
+Your AOT build will now be running on [http://localhost:3000/](http://localhost:3000/birthplaces)
 
 ## Built With
 
