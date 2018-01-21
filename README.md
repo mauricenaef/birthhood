@@ -3,7 +3,7 @@
 
 CAS FEE 2017 Projektarbeit 2
 
-birthhood is an angular application which allows the pregnant female user to find a suitable birth place for giving birth. The birthplaces are rated by best practice experience guidelines and give an overview around 5 main birth experience criteria (umgebung, …).
+*birthhood* is an angular application which allows the pregnant female user to find a suitable birth place for giving birth. The birthplaces are rated by best practice experience guidelines and give an overview around 5 main birth experience criteria (umgebung, …).
  
 
 ## Getting Started
@@ -18,7 +18,7 @@ git clone https://github.com/mauricenaef/birthhood.git
 ```
 ### Setting up the backend
 
-birthhoods backend is based on google firebase firestore. If you would like to run the application, you need to have a corresponding firebase account and project set up.
+*birthhood*s backend is based on google firebase firestore. If you would like to run the application, you need to have a corresponding firebase account and project set up.
 
 To set up the app for your firebase backend, amend the src/environments/environment*.ts file accordingly.
 
