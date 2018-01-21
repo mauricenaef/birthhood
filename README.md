@@ -18,12 +18,17 @@ git clone https://github.com/mauricenaef/birthhood.git
 ```
 ### Setting up the backend
 
-*birthhood*s backend is based on google firebase firestore. If you would like to run the application, you need to have a corresponding firebase account and project set up.
+*birthhood*s backend is based on google firebase firestore. If you would like to run the application, you need to have a corresponding firebase account and project set up. Make sure to enable *login with email and password* for your firebase project.
 
 To set up the app for your firebase backend, amend the _src/environments/environment*.ts_ file accordingly.
 
+To set up your firebase project with the needed firebase functions and security rules, run 
+````
+firebase deploy
+````
+
 To initialize your firebase backend with some sample data, follow these steps:
-1. configure your firebase-account and projekt in *utils/firebase_uploader.js*
+1. configure your firebase-account and project in *utils/firebase_uploader.js*
 2. configure your google-maps key in *utils/firebase_uploader.js*
 
 cd into *utils* and run
