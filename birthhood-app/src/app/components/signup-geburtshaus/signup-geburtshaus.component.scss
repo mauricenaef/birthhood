@@ -1,0 +1,26 @@
+@import "../../../settings";
+
+main, section {
+    position: relative;
+}
+
+@include breakpoint(medium up) {
+    .signup-birthplace-geburtshaus {
+        position: relative;
+        height: 100%;
+        background: url("/assets/images/newborn.jpg") no-repeat;
+        background-size: cover;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background: rgba($white, 0.4);
+        }
+    }
+}

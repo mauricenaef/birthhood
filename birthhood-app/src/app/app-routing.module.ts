@@ -20,9 +20,10 @@ import { ExperienceAddKoerperlichComponent } from './modules/experience/componen
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ImpressumComponent } from './components/impressum/impressum.component';
-import { SignupBirthplaceComponent } from './components/signup-birthplace/signup-birthplace.component';
 import { BirthcriteriaComponent } from './components/birthcriteria/birthcriteria.component';
 import { MetaGuard, MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioning } from '@ngx-meta/core';
+import { SignupGeburtshausComponent } from './components/signup-geburtshaus/signup-geburtshaus.component';
+import { SignupSpitalComponent } from './components/signup-spital/signup-spital.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/birthplaces', pathMatch: 'full' },
@@ -68,12 +69,22 @@ const routes: Routes = [
     }
   },
   {
-    path: 'signup-birthplace',
+    path: 'signup-geburtshaus',
     canActivate: [MetaGuard],
-    component: SignupBirthplaceComponent,
+    component: SignupGeburtshausComponent,
     data: {
       meta: {
-        title: 'Geburtsort Anmelden'
+        title: 'Geburtshaus Anmelden'
+      }
+    }
+  },
+  {
+    path: 'signup-spital',
+    canActivate: [MetaGuard],
+    component: SignupSpitalComponent,
+    data: {
+      meta: {
+        title: 'Spital Anmelden'
       }
     }
   },

@@ -21,12 +21,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BirthcriteriaComponent } from './components/birthcriteria/birthcriteria.component';
-import { SignupBirthplaceComponent } from './components/signup-birthplace/signup-birthplace.component';
 import { ExperienceModule } from './modules/experience/experience.module';
 import { LoginModule } from './modules/login/login.module';
 import { BirthplaceModule } from './modules/birthplace/birthplace.module';
 import { AuthService } from './modules/login/services/auth.service';
 import { appConfig } from './config/app.config';
+import { SignupGeburtshausComponent } from './components/signup-geburtshaus/signup-geburtshaus.component';
+import { SignupSpitalComponent } from './components/signup-spital/signup-spital.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { appConfig } from './config/app.config';
     ImpressumComponent,
     ContactComponent,
     BirthcriteriaComponent,
-    SignupBirthplaceComponent
+    SignupGeburtshausComponent,
+    SignupSpitalComponent
   ],
   imports: [
     BrowserModule,

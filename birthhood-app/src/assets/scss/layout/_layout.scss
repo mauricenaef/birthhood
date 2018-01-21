@@ -14,14 +14,20 @@ app-root {
 
 .main-container {
     background-color: $white;
+
     @include breakpoint(medium up) {
         padding-top: 3.6rem;
         padding-bottom: 3.6rem;
+
+        &.full {
+            padding-bottom: 0;
+        }
     }
 }
 
 @include breakpoint(small only) {
-    $animation-duration: .5s;
+    $animation-duration: 0.5s;
+
     html,
     body {
         background: $white;
@@ -58,6 +64,7 @@ app-root {
     app-header, app-main-nav {
         transition: transform $animation-duration;
         transition-timing-function: $cubic-animation;
+
         .footer-navigation-is-open & {
             transform: translateX(-100%);
         }
@@ -71,9 +78,11 @@ app-root {
         transition-timing-function: $cubic-animation;
         background-color: $white;
         -webkit-overflow-scrolling: touch;
+
         //will-change: transform;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+
         .footer-navigation-is-open & {
             overflow: hidden;
             height: 100vh;
@@ -114,7 +123,7 @@ app-root {
 
         .footer-navigation-is-open & {
             visibility: visible;
-            transition: visibility 0s 0s; 
+            transition: visibility 0s 0s;
 
             .app-menu-footer {
                 transition: transform ($animation-duration - 0.2s);
@@ -166,7 +175,8 @@ app-root {
 
 
 .main-content {
-    padding: 1rem 2rem;
+    height: 100%;
+    padding: 2rem 0;
 
     @include breakpoint(medium up) {
         padding-top: 5rem;
@@ -181,9 +191,12 @@ app-root {
 
 .main-sidebar {
     padding-top: 2rem;
+
     @include breakpoint(small only) {
         padding: 2rem;
     }
+
+
     @include breakpoint(medium up) {
         padding-top: 5rem;
 
@@ -202,6 +215,7 @@ app-root {
     padding-top: 1rem;
     padding-bottom: 3rem;
     background: lighten($medium-gray, 20%);
+
     @include breakpoint(medium up) {
         padding-top: 7rem;
         padding-bottom: 7rem;

@@ -22,7 +22,6 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 import { ExperienceModule } from '../../modules/experience/experience.module';
 import { AboutComponent } from '../about/about.component';
-import { SignupBirthplaceComponent } from '../signup-birthplace/signup-birthplace.component';
 import { ImpressumComponent } from '../impressum/impressum.component';
 import { BirthcriteriaComponent } from '../birthcriteria/birthcriteria.component';
 import { ContactComponent } from '../contact/contact.component';
@@ -31,6 +30,8 @@ import { FilterComponent } from '../../modules/birthplace/components/filter/filt
 import { environment } from '../../../environments/environment'
 import { AuthService } from '../../modules/login/services/auth.service';
 import { ToastrModule } from 'ngx-toastr';
+import { SignupGeburtshausComponent } from '../signup-geburtshaus/signup-geburtshaus.component';
+import { SignupSpitalComponent } from '../signup-spital/signup-spital.component';
 
 
 describe('HeaderComponent', () => {
@@ -49,8 +50,9 @@ describe('HeaderComponent', () => {
         BirthplaceDetailsComponent,
         FilterComponent,
         AboutComponent,
-        SignupBirthplaceComponent,
         ImpressumComponent,
+        SignupGeburtshausComponent,
+        SignupSpitalComponent,
         BirthcriteriaComponent,
         ContactComponent,
         LoginComponent],

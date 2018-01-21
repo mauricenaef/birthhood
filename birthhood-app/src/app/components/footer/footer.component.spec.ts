@@ -13,7 +13,6 @@ import { AboutComponent } from '../about/about.component';
 import { BirthcriteriaComponent } from '../birthcriteria/birthcriteria.component';
 import { ContactComponent } from '../contact/contact.component';
 import { ImpressumComponent } from '../impressum/impressum.component';
-import { SignupBirthplaceComponent } from '../signup-birthplace/signup-birthplace.component';
 
 import { environment } from '../../../environments/environment'
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -22,6 +21,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AuthService } from '../../modules/login/services/auth.service';
+import { SignupGeburtshausComponent } from '../signup-geburtshaus/signup-geburtshaus.component';
+import { SignupSpitalComponent } from '../signup-spital/signup-spital.component';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -33,8 +34,9 @@ describe('FooterComponent', () => {
     TestBed.configureTestingModule({
       declarations: [FooterComponent,
         AboutComponent,
-        SignupBirthplaceComponent,
         ImpressumComponent,
+        SignupGeburtshausComponent,
+        SignupSpitalComponent,
         BirthcriteriaComponent,
         ContactComponent],
       providers: [ AuthService, { provide: APP_BASE_HREF, useValue: '/' }],

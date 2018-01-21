@@ -1,0 +1,74 @@
+<div class="grid-container full signup-birthplace-geburtshaus">
+    <main class="grid-x align-middle main-content" id="geburtshaus" role="main">
+        <section class="geburtshaus-section medium-7 large-6 small-order-2 cell">
+            <form class="form form-login grid-container callout padded">
+                <header class="grid-x grid-padding-x form-header text-center">
+                    <div class="medium-12 cell">
+                        <h1>Ich bin ein Geburtshaus</h1>
+                        <p class="intro">Anmeldung ist kostenlos. Alle Angaben sind Pflicht. Nur berechtigte Personen können die Anmeldung abschliessen.</p>
+                    </div>
+                </header>
+                <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                        <label for="name">Name des Geburtshauses</label>
+                        <input type="text" name="name" placeholder="Name des Geburtshauses" class="input-text" required>
+                    </div>
+                    <div class="cell">
+                        <label for="user_name">Ihr Name</label>
+                        <input type="text" name="user_name" placeholder="Ihr Name" class="input-text" required>
+                    </div>
+
+                    <div class="small-4 cell">
+                        <label for="name">PLZ</label>
+                        <input type="text" name="name" placeholder="Postleitzahl" class="input-text" required>
+                    </div>
+
+                    <div class="small-8 cell">
+                        <label for="name">Ort</label>
+                        <input type="text" name="name" placeholder="Ort" class="input-text" required>
+                    </div>
+                    <div class="small-6 cell">
+                        <label for="email">E-Mail</label>
+                        <input type="email" placeholder="Email Addresse.." name="email" class="input-text" required>
+                    </div>
+                    <div class="small-6 cell">
+                            <label for="tel">Mobil Telefon</label>
+                            <input type="tel" placeholder="Ihre Mobil Nummer" name="tel" class="input-text" required>
+                        </div>
+                    <div class="cell">
+                        <label for="password">Passwort</label>
+                        <div class="show-hide-password">
+                            <input [type]="show ? 'text' : 'password'" placeholder="Passwort" name="password" class="input-text password" required>
+                            <a (click)="toggleShow()" class="show-hide-password-link" title="Passwort ein oder ausblenden">
+                                <svg *ngIf="show == true" class="icon icon-eye">
+                                    <use xlink:href="#eye"></use>
+                                </svg>
+                                <svg *ngIf="show == false" class="icon icon-eye-closed">
+                                    <use xlink:href="#eye-closed"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <footer class="grid-x grid-padding-x form-footer">
+                    <div class="cell text-center">
+                        <button type="submit" class="button expanded">Als Geburtshaus registrieren</button>
+                        <a>Sie haben schon ein Konto?
+                            <br>
+                            <strong>Zum Admin Bereich wechseln</strong>
+                        </a>
+
+                    </div>
+                </footer>
+            </form>
+        </section>
+        <section class="spital-section medium-auto small-order-1 medium-offset-1 grid-container cell">
+            <div class="text-center">
+                <svg class="icon geburtshaus icon-xlarge icon-spaced"><use xlink:href="#geburtshaus"></use></svg>
+                <h2>Kostenlos als Geburtshaus anmelden und Ihre Daten online verwalten!</h2>
+                <p>Durch die Anmeldung haben Sie Zugriff auf das Profil Ihrer entsprechenden Geburtstätte Seite und können Ihr Angebot sowie Kontakt Angaben verwalten.</p>
+            </div>
+        </section>
+    </main>
+</div>
