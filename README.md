@@ -26,7 +26,7 @@ To initialize your firebase backend with some sample data, follow these steps:
 1. configure your firebase-account and projekt in *utils/firebase_uploader.js*
 2. configure your google-maps key in *utils/firebase_uploader.js*
 
-cd into "utils" and run
+cd into *utils* and run
 ```
 node firebase_uploader.js
 ```
@@ -88,22 +88,22 @@ Extensive user testing with the [invision Prototype](https://invis.io/SAF0GILUE)
 
 ## Styleguide
 
-The LIVE Styleguide is available under [birthood styleguide](https://styleguide.birthhood.org/index.html) and is created with comment notes in the respective SCSS files. The Styleguide follows Atomic Design Rules [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/). Styleguide is sectioned into following parts:
+The LIVE Styleguide is available under [birthood styleguide](https://styleguide.birthhood.org/index.html) and is created with comment notes in the respective SCSS files. The styleguide follows Atomic Design Rules [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/). The styleguide is sectioned into following parts:
 
 * Nuclides (All colors and font rules go here)
 * Atoms (Basic building blocks)
 * Molecules (Combination of atoms)
 * Structures (Combination of molecules)
 
-Styleguide depends on the apps final CSS file to display all designs. To generate and deploy the Styleguide from start to end follow these steps:
+Styleguide depends on the apps final CSS file to display all designs. To generate and deploy the styleguide from start to end follow these steps:
 
-Create complete-styles.css
+Create *complete-styles.css*
 ```
 cd birthhood-app
 gulp sass    
 ```
 
-Generate local Styleguide in static folder
+Generate local styleguide in static folder
 ```
 cd birthhood-app
 nucleus   
@@ -131,7 +131,7 @@ cd birthhood-app
 firebase deploy --only hosting
 ```
 
-Alternativley you can serve the AOT build using node.js. To do so, run
+Alternatively you can serve the AOT build using node.js. To do so, run
 ````
 node server.js
 ````
@@ -150,7 +150,7 @@ node server.js
 * [nucleus](https://github.com/holidaypirates/nucleus) - nucleus styleguide
 
 
-## Additional Things
+## Additional things
 
 * [Live Site](https://birthhood.org) - Live Site
 * [Styleguide](https://styleguide.birthhood.org/index.html) - Live Styleguide
